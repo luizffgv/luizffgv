@@ -4,7 +4,7 @@
 * ## am
   * 🇧🇷 Brazilian
   * studying **computer science**
-  * learning **Java**
+  * learning **Haskell** and **Java**
   * pretty darn scared of algorithm analysis
 * ## love
   * modern standards, like
