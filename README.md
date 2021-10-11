@@ -1,4 +1,4 @@
-[![Recursion](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white&label=Recursion)](https://github.com/luizffgv)
+[![Recursion ](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white&label=Recursion)](https://github.com/luizffgv)
 
 # 👋 Hi there, I
 
