@@ -2,22 +2,6 @@
 
 ![](badge.svg)
 
-## What is this project?
-
-- Brazilian 🇧🇷
-- studying **computer science**
-- slowly learning **Haskell** and **Java**
-
-## What this project appreciates
-
-- modern standards, like
-  - **C++20**
-  - **C11/C17** (even a tad **C23**)
-  - **Java 16** (just a little bit)
-- more template metaprogramming than it should
-- conditional compilation because it's something you simply can't live without
-- functions like `map`, `reduce` and `accumulate` because they make it look smarter
-
 ![Metrics](https://github.com/luizffgv/luizffgv/blob/main/github-metrics.svg)
 
 <!-- <div> -->
