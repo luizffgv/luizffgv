@@ -1,5 +1,3 @@
-# luizffgv
-
 ![](badge.svg)
 
 ![Metrics](https://github.com/luizffgv/luizffgv/blob/main/github-metrics.svg)
