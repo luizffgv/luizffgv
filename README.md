@@ -18,20 +18,7 @@
 - conditional compilation because it's something you simply can't live without
 - functions like `map`, `reduce` and `accumulate` because they make it look smarter
 
-## Contributors
-
-- Books
-  - C Programming: A Modern Approach (2nd Edition)
-  - The C++ Programming Language (4th Edition)
-  - Java® Notes for Professionals
-  - Haskell Programming from First Principles
-- The nice folks updating [cppreference](https://en.cppreference.com)
-
-## Disclaimer
-
-```
-This README is meant to be a joke and while the Contributors section has material that contributed to my current knowledge, none of the books and websites mentioned have a real connection to me.
-```
+![Metrics](https://github.com/luizffgv/luizffgv/blob/main/github-metrics.svg)
 
 <!-- <div> -->
 <!-- <img align="center" src="https://github-readme-stats.vercel.app/api?username=luizffgv&theme=gotham&bg_color=0000&hide_border=true&show_icons=1&custom_title=Some cringe stats display&count_private=true"> -->
