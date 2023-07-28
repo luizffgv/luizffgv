@@ -186,7 +186,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst entries = [\n    { name: \"Sobre mim\", url: \"/\", urlAlternatives: [\"/index.html\", \"/index\"] },\n    {\n        name: \"Projetos\",\n        url: \"/projetos.html\",\n        urlAlternatives: [\"/projetos.html\"],\n    },\n];\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (entries);\n\n\n//# sourceURL=webpack://luizf.dev.br/./src/scripts/navbar-entries.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst entries = [\n    { name: \"Sobre mim\", url: \"/\", urlAlternatives: [\"/index.html\", \"/index\"] },\n    {\n        name: \"Projetos\",\n        url: \"/projetos.html\",\n        urlAlternatives: [\"/projetos\"],\n    },\n];\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (entries);\n\n\n//# sourceURL=webpack://luizf.dev.br/./src/scripts/navbar-entries.ts?");
 
 /***/ }),
 
