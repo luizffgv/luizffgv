@@ -1,0 +1,100 @@
+@keyframes slide-in {
+  0% {
+    scale: 0.9;
+    rotate: 5deg;
+  }
+
+  15%,
+  85% {
+    scale: 1;
+    rotate: 0deg;
+  }
+
+  100% {
+    scale: 0.9;
+    rotate: -5deg;
+  }
+}
+
+@keyframes eye-blink {
+  0% {
+  }
+
+  50% {
+    transform: scaleY(0.25);
+  }
+
+  100% {
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    rotate: z 0deg;
+  }
+  25% {
+    rotate: z -1.25deg;
+  }
+  50% {
+    rotate: z 2.5deg;
+  }
+  75% {
+    rotate: z -1.25deg;
+  }
+  100% {
+    rotate: z 0deg;
+  }
+}
+
+.project {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 0px;
+  width: 512px;
+
+  animation: slide-in linear;
+  animation-timeline: view();
+
+  transition: box-shadow 250ms ease;
+
+  .title-container {
+    /* Here we use a min-height equal to the image height so project titles stay at the same height whether or not an image is present */
+    min-height: 48px;
+
+    .image {
+      height: 48px;
+    }
+
+    .license {
+      opacity: 0.5;
+    }
+  }
+}
+
+.project:is(:hover, :has(:focus-visible)) {
+  box-shadow: var(--raiar-glow-primary);
+}
+
+.project:hover .button-details {
+  animation: 500ms ease wiggle;
+}
+
+.button-view:hover span {
+  animation: 350ms ease 150ms eye-blink;
+}
+
+.button-details span {
+  position: relative;
+}
+
+.button-details span::after {
+  content: "add";
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: rotate 350ms ease;
+}
+
+.button-details:hover span::after {
+  rotate: 45deg;
+}

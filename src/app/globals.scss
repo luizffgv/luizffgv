@@ -1,0 +1,56 @@
+@use "raiar/sass/raiar.scss" with (
+  $color-primary: #ff3d83,
+  $color-dark-primary: #ff4e8e,
+  $color-danger: #e63f3f,
+  $color-dark-danger: #e63f3f,
+  $color-dark-interactive-bg: #1a1a1a,
+  $card-padding: 24px 32px 16px 32px,
+  $fieldset-padding: 8px
+);
+
+button {
+  // To support icons alongside text, as Raiar doesn't yet support that as of
+  // writing this.
+  align-items: center;
+  display: flex;
+  gap: 8px;
+
+  // Raiar default buttons lack contrast with raiar-card in light mode.
+  &:is(html:not(.raiar-dark) &):not(:hover) {
+    outline: 1px solid var(--raiar-color-element-border);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  font-weight: inherit;
+}
+
+.button {
+  @extend button;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-fit {
+  width: fit-content;
+}
+
+.no-list-style {
+  list-style: none;
+}
+
+.display-contents {
+  display: contents;
+}

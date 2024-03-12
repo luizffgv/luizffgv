@@ -1,0 +1,11 @@
+.card {
+  width: fit-content;
+
+  .small {
+    opacity: 0.5;
+  }
+}
+
+.card :global(.raiar-list-text) {
+  max-width: 512px;
+}
