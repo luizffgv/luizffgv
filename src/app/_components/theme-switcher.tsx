@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import styles from "./theme-switcher.module.css";
 
 export default function ThemeSwitcher() {
@@ -20,15 +19,15 @@ export default function ThemeSwitcher() {
         >
           <span className={styles["toggle-button-text"]}></span>
         </button>
-        <Link
-          href="/color-picker"
-          className="button"
+        <button
+          id="button-primary-choose"
           aria-label="Escolher cor primária"
+          disabled
         >
           <span className="material-symbols-outlined" aria-hidden="true">
             brush
           </span>
-        </Link>
+        </button>
       </div>
     </div>
   );

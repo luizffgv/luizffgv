@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Inter } from "next/font/google";
 import "./globals.scss";
-import styles from "./layout.module.scss";
+import styles from "./layout.module.css";
 import ThemeSwitcher from "./_components/theme-switcher";
 import Goo from "./_components/goo";
 
@@ -19,10 +19,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html
@@ -45,11 +43,6 @@ export default function RootLayout({
           <ThemeSwitcher></ThemeSwitcher>
         </header>
         {children}
-        <div
-          className={`${styles["modal-container"]} raiar gap flex-col align-items-center justify-content-safe-center`}
-        >
-          {modal}
-        </div>
       </body>
     </html>
   );
