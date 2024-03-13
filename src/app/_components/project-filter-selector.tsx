@@ -1,9 +1,16 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import {
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { ProjectFilterContext } from "../_contexts/project-filters";
 import projects, { ProjectRaw, Tag } from "projects-list";
 import styles from "./project-filter-selector.module.scss";
+import { useSearchParams } from "next/navigation";
 
 const allTags = [
   ...projects
@@ -26,9 +33,24 @@ function matchingTags(project: ProjectRaw, tags: Set<Tag>): Set<Tag> {
 }
 
 export default function ProjectFilterSelector() {
+  const urlParams = useSearchParams();
   const { setFilter } = useContext(ProjectFilterContext);
   const [logic, setLogic] = useState("best-match");
   const [tags, setTags] = useState<{ value: Set<Tag> }>({ value: new Set() });
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+
+  useLayoutEffect(() => {
+    setTags({
+      value: new Set<Tag>(
+        (urlParams.getAll("tags") as Tag[]).filter((tag) =>
+          allTags.includes(tag)
+        )
+      ),
+    });
+
+    if (detailsRef.current == null) console.error("detailsRef is null.");
+    else if (urlParams.get("tags") != null) detailsRef.current.open = true;
+  }, [urlParams]);
 
   useEffect(() => {
     setFilter((projects: ProjectRaw[]) => {
@@ -51,7 +73,7 @@ export default function ProjectFilterSelector() {
 
   return (
     <div id="filters-accordion" className={styles.container}>
-      <details>
+      <details ref={detailsRef}>
         <summary>Filtros</summary>
         <div className="raiar flex-row flex-wrap gap justify-content-center">
           <fieldset
@@ -72,7 +94,15 @@ export default function ProjectFilterSelector() {
             <legend>Selecione tags</legend>
             {allTags.map((tag) => (
               <label key={tag}>
-                {tag} <input type="checkbox" value={tag} />
+                {tag}{" "}
+                <input
+                  type="checkbox"
+                  value={tag}
+                  checked={tags.value.has(tag)}
+                  onChange={() => {
+                    /* Shut up error, there's already an onChange on the fieldset */
+                  }}
+                />
               </label>
             ))}
           </fieldset>

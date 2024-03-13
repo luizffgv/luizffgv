@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import {
+  Suspense,
+  useCallback,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import ProjectFilterSelector from "./project-filter-selector";
 import {
   ProjectFilterCallback,
@@ -51,7 +57,9 @@ export default function ProjectsSection() {
           className="raiar flex-row gap flex-wrap justify-content-center"
         >
           <h2 id="heading-projects">Meus projetos</h2>
-          <ProjectFilterSelector></ProjectFilterSelector>
+          <Suspense>
+            <ProjectFilterSelector></ProjectFilterSelector>
+          </Suspense>
         </div>
         <div ref={projectsListRef}>
           <ProjectsList></ProjectsList>
