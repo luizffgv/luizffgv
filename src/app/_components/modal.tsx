@@ -25,7 +25,11 @@ export default function Modal({
       className={`${styles["modal-container"]} raiar flex-col align-items-center justify-content-safe-center gap`}
     >
       {onDismiss ? (
-        <button type="button" onClick={() => onDismiss()}>
+        <button
+          type="button"
+          className={styles.dismiss}
+          onClick={() => onDismiss()}
+        >
           <span className="material-symbols-outlined">close</span>
         </button>
       ) : (
