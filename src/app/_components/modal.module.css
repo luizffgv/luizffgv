@@ -1,0 +1,12 @@
+.modal-container {
+    backdrop-filter: blur(5px);
+    background-color: rgb(127 127 127 / 0.25);
+    border: none;
+    color: inherit;
+    height: 100dvh;
+    max-height: none;
+    max-width: none;
+    overflow: auto;
+    position: fixed;
+    width: 100dvw;
+}

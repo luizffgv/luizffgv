@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import styles from "./theme-switcher.module.css";
+import Modal from "./modal";
 
 export default function ThemeSwitcher() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div className="raiar flex-col gap align-center raiar-card text-center width-fit">
       <h2>Mudar tema</h2>
@@ -22,13 +26,52 @@ export default function ThemeSwitcher() {
         <button
           id="button-primary-choose"
           aria-label="Escolher cor primária"
-          disabled
+          onClick={() => setModalOpen(true)}
         >
           <span className="material-symbols-outlined" aria-hidden="true">
             brush
           </span>
         </button>
       </div>
+      {modalOpen ? (
+        <Modal onDismiss={() => setModalOpen(false)}>
+          <div className="raiar flex-col gap align-items-center">
+            <h2>Escolher cor primária</h2>
+            <input
+              type="color"
+              onInput={(e) => {
+                localStorage.setItem(
+                  "theme-color-primary",
+                  e.currentTarget.value
+                );
+
+                document.documentElement.style.setProperty(
+                  "--raiar-color-primary",
+                  e.currentTarget.value
+                );
+              }}
+            />
+            <button
+              type="button"
+              onClick={() => {
+                localStorage.removeItem("theme-color-primary");
+
+                document.documentElement.style.setProperty(
+                  "--raiar-color-primary",
+                  null
+                );
+              }}
+            >
+              <span className="material-symbols-outlined" aria-hidden>
+                history
+              </span>{" "}
+              Redefinir
+            </button>
+          </div>
+        </Modal>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
