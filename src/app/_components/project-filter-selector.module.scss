@@ -19,12 +19,12 @@
 .container {
   animation: 250ms ease-in fade-in-2;
 
+  &:has([open]) {
+    animation: 250ms ease-in fade-in;
+    width: 100%;
+  }
+
   .tags {
     max-width: 768px;
   }
-}
-
-.container:has([open]) {
-  animation: 250ms ease-in fade-in;
-  width: 100%;
 }

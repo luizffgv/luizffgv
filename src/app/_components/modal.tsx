@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import styles from "./modal.module.css";
+import styles from "./modal.module.scss";
 
 export default function Modal({
   children,

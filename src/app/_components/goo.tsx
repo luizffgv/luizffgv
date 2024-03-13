@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
-import styles from "./goo.module.css";
+import styles from "./goo.module.scss";
 
 /**
  * A simulated bubble.

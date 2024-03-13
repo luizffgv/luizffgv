@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import MyAge from "../_components/my-age";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   robots: "noindex",

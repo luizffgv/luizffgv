@@ -3,7 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ProjectFilterContext } from "../_contexts/project-filters";
 import projects, { ProjectRaw, Tag } from "projects-list";
-import styles from "./project-filter-selector.module.css";
+import styles from "./project-filter-selector.module.scss";
 
 const allTags = [
   ...projects

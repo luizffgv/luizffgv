@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import projects, { ProjectRaw } from "projects-list";
-import styles from "./page.module.css";
-import "./page.global.css";
+import styles from "./page.module.scss";
+import "./page.global.scss";
 
 export function generateStaticParams() {
   return projects.map((project) => ({

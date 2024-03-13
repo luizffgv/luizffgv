@@ -2,7 +2,7 @@ import { useContext, useMemo } from "react";
 import { ProjectFilterContext } from "../_contexts/project-filters";
 import projects from "projects-list";
 import ProjectPreview from "./project-preview";
-import styles from "./projects-list.module.css";
+import styles from "./projects-list.module.scss";
 
 export default function ProjectsList() {
   const { filter } = useContext(ProjectFilterContext);

@@ -1,5 +1,5 @@
 import { ProjectRaw } from "projects-list";
-import styles from "./project-preview.module.css";
+import styles from "./project-preview.module.scss";
 import Link from "next/link";
 
 export default function ProjectPreview({ project }: { project: ProjectRaw }) {

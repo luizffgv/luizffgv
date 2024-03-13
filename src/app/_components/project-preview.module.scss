@@ -57,6 +57,10 @@
 
   transition: box-shadow 250ms ease;
 
+  .project:is(:hover, :has(:focus-visible)) {
+    box-shadow: var(--raiar-glow-primary);
+  }
+
   .title-container {
     /* Here we use a min-height equal to the image height so project titles stay at the same height whether or not an image is present */
     min-height: 48px;
@@ -69,32 +73,30 @@
       opacity: 0.5;
     }
   }
-}
 
-.project:is(:hover, :has(:focus-visible)) {
-  box-shadow: var(--raiar-glow-primary);
-}
+  .button-details {
+    &:is(.project:hover *) {
+      animation: 500ms ease wiggle;
+    }
 
-.project:hover .button-details {
-  animation: 500ms ease wiggle;
-}
+    span {
+      position: relative;
 
-.button-view:hover span {
-  animation: 350ms ease 150ms eye-blink;
-}
+      &:is(.button-details:hover *)::after {
+        rotate: 45deg;
+      }
 
-.button-details span {
-  position: relative;
-}
+      &::after {
+        content: "add";
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: rotate 350ms ease;
+      }
+    }
+  }
 
-.button-details span::after {
-  content: "add";
-  left: 0;
-  position: absolute;
-  top: 0;
-  transition: rotate 350ms ease;
-}
-
-.button-details:hover span::after {
-  rotate: 45deg;
+  .button-view:hover span {
+    animation: 350ms ease 150ms eye-blink;
+  }
 }

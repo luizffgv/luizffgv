@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Inter } from "next/font/google";
 import "./globals.scss";
-import styles from "./layout.module.css";
+import styles from "./layout.module.scss";
 import ThemeSwitcher from "./_components/theme-switcher";
 import Goo from "./_components/goo";
 

@@ -1,0 +1,9 @@
+.toggle-button-text {
+  &:is(:global(.raiar-dark) *)::after {
+    content: "Tema claro";
+  }
+
+  &::after {
+    content: "Tema escuro";
+  }
+}

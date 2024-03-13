@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./theme-switcher.module.css";
+import styles from "./theme-switcher.module.scss";
 import Modal from "./modal";
 
 export default function ThemeSwitcher() {

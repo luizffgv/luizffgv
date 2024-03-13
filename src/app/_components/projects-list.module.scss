@@ -1,0 +1,12 @@
+.list {
+  position: relative;
+
+  &::after {
+    /* Make sure changing project filters will not cause the viewport to scroll */
+    content: "";
+    height: 100dvh;
+    position: absolute;
+    top: 0;
+    width: 1px;
+  }
+}
