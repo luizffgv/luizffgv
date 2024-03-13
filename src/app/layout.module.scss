@@ -1,0 +1,20 @@
+.root {
+  font-family: var(--font-normal);
+
+  .body {
+    padding: min(16px, 2.5vw);
+
+    .modal-container {
+      display: none;
+
+      &:has(*) {
+        backdrop-filter: blur(5px);
+        background-color: rgb(127 127 127 / 0.5);
+        display: flex;
+        inset: 0;
+        overflow: auto;
+        position: fixed;
+      }
+    }
+  }
+}
