@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="raiar flex-col align-items-center gap-4x">
-      <h1>Projetos</h1>
+    <main className="raiar flex-col gap-4x">
+      <h1 className="text-center">Projetos</h1>
       <ProjectsSection></ProjectsSection>
     </main>
   );
