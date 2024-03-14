@@ -7,11 +7,13 @@
   backdrop-filter: blur(5px);
   background-color: rgb(127 127 127 / 0.25);
   border: none;
+  box-sizing: border-box;
   color: inherit;
   height: 100dvh;
   max-height: none;
   max-width: none;
   overflow: auto;
+  padding: 32px;
   perspective: 100dvmax;
   position: fixed;
   transition-property: backdrop-filter, opacity;
