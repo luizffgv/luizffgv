@@ -33,7 +33,9 @@ export default function Modal({
           className={styles.dismiss}
           onClick={() => onDismiss()}
         >
-          <span className="material-symbols-outlined">close</span>
+          <span className="material-symbols-outlined" aria-hidden>
+            close
+          </span>
         </button>
       ) : (
         <></>

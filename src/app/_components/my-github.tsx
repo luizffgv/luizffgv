@@ -39,12 +39,16 @@ export default function MyGitHub() {
             target="_blank"
             className="button"
           >
-            <span className="material-symbols-outlined">visibility</span>{" "}
+            <span className="material-symbols-outlined" aria-hidden>
+              visibility
+            </span>{" "}
             Visualizar
           </a>
           <button type="button" onClick={() => setModalOpen(true)}>
-            <span className="material-symbols-outlined">visibility</span> Ver
-            resumo
+            <span className="material-symbols-outlined" aria-hidden>
+              visibility
+            </span>{" "}
+            Ver resumo
           </button>
         </div>
         {modalOpen ? (

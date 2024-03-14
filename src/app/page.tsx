@@ -25,16 +25,22 @@ export default function Home() {
             href="https://www.linkedin.com/in/luizffgv/"
             target="_blank"
           >
-            <span className="material-symbols-outlined">work</span>
+            <span className="material-symbols-outlined" aria-hidden>
+              work
+            </span>
             LinkedIn
           </a>
           <address className="raiar flex-col gap">
             <a className="button" href="mailto:luizfvalle@pm.me">
-              <span className="material-symbols-outlined">mail</span>
+              <span className="material-symbols-outlined" aria-hidden>
+                mail
+              </span>
               E-mail
             </a>
             <a className="button" href="tel:+5533991262949">
-              <span className="material-symbols-outlined">call</span>
+              <span className="material-symbols-outlined" aria-hidden>
+                call
+              </span>
               WhatsApp
             </a>
           </address>
