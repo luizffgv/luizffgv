@@ -4,9 +4,11 @@ import styles from "./modal.module.scss";
 export default function Modal({
   children,
   onDismiss,
+  noCard,
 }: {
   children: React.ReactNode;
   onDismiss?: () => void;
+  noCard?: boolean;
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -35,7 +37,9 @@ export default function Modal({
       ) : (
         <></>
       )}
-      <div className={`${styles["modal"]} raiar-card`}>{children}</div>
+      <div className={`${styles["modal"]} ${noCard ? "" : "raiar-card"}`}>
+        {children}
+      </div>
     </dialog>
   );
 }
