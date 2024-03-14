@@ -49,7 +49,10 @@ abstract class Particle {
    *
    * @param seconds - Number of seconds passed.
    */
-  abstract update(seconds: number): void;
+  update(seconds: number) {
+    this.x += this.velX * seconds;
+    this.y += this.velY * seconds;
+  }
 
   /**
    * Draws the particle.
@@ -57,6 +60,45 @@ abstract class Particle {
    * @param ctx - 2D context to draw in.
    */
   abstract draw(ctx: CanvasRenderingContext2D): void;
+}
+
+/** A particle that rotates in the Z axis. */
+abstract class RotatingParticle extends Particle {
+  /** Particle rotation in radians. */
+  rotZ: number;
+
+  /** Particle angular velocity in radians/second. */
+  velAngZ: number = 0;
+
+  /**
+   * Creates a new particle.
+   *
+   * @param x - X position.
+   * @param y - Y position.
+   * @param rotZ - Z rotation.
+   * @param velX X velocity.
+   * @param velY Y velocity.
+   * @param velAngZ Z angular velocity in radians/second.
+   */
+  protected constructor(
+    x: number,
+    y: number,
+    rotZ: number = 0,
+    velX: number = 0,
+    velY: number = 0,
+    velAngZ: number = 0
+  ) {
+    super(x, y, velX, velY);
+
+    this.rotZ = rotZ;
+    this.velAngZ = velAngZ;
+  }
+
+  override update(seconds: number) {
+    super.update(seconds);
+
+    this.rotZ += this.velAngZ * seconds;
+  }
 }
 
 /**
@@ -90,15 +132,51 @@ export class CircleParticle extends Particle {
     );
   }
 
-  override update(seconds: number) {
-    this.x += this.velX * seconds;
-    this.y += this.velY * seconds;
-  }
-
   override draw(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     ctx.fill();
+  }
+}
+
+/**
+ * A square particle.
+ */
+export class SquareParticle extends RotatingParticle {
+  /** Size of a side of the square. */
+  size: number;
+
+  /**
+   * Creates a new {@link SquareParticle}.
+   *
+   * @param x - X position.
+   * @param y - Y position.
+   * @param size - Square side size.
+   * @param rotation - Rotation in radians.
+   */
+  constructor(x: number, y: number, size: number, rotZ: number = 0) {
+    super(x, y, rotZ);
+
+    this.size = size;
+  }
+
+  override isMaybeInRect(x: number, y: number, w: number, h: number) {
+    const radius = this.size * 1.41421356237; /* sqrt(2) */
+
+    return !(
+      this.y - radius > y + h ||
+      this.y + radius < y ||
+      this.x + radius < x ||
+      this.x - radius > x + w
+    );
+  }
+
+  override draw(ctx: CanvasRenderingContext2D) {
+    ctx.save();
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.rotZ);
+    ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+    ctx.restore();
   }
 }
 
@@ -166,7 +244,15 @@ export class Bubbles {
       const spawnX = Math.random() * width;
       const spawnY = fromAbove ? -radius : this.#element.clientHeight + radius;
       const initialSpeedY = Math.random() * 50 * (fromAbove ? 1 : -1);
-      const particle = new CircleParticle(spawnX, spawnY, radius);
+
+      let particle;
+      if (Math.random() < 0.5) {
+        particle = new CircleParticle(spawnX, spawnY, radius);
+      } else {
+        particle = new SquareParticle(spawnX, spawnY, radius);
+        particle.velAngZ = (Math.random() - 0.5) * 2;
+      }
+
       particle.velY = initialSpeedY;
       aliveParticles.push(particle);
     }
