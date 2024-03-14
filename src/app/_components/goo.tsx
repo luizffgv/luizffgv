@@ -116,17 +116,22 @@ export class CircleParticle extends Particle {
    */
   radius: number;
 
+  /** Whether the circle is filled or only a stroke. */
+  solid: boolean;
+
   /**
    * Creates a new {@link CircleParticle}.
    *
    * @param x - X position.
    * @param y - Y position.
    * @param radius - Circle radius.
+   * @param solid - Whether the circle is filled or only a stroke.
    */
-  constructor(x: number, y: number, radius: number) {
+  constructor(x: number, y: number, radius: number, solid: boolean) {
     super(x, y);
 
     this.radius = radius;
+    this.solid = solid;
   }
 
   override isMaybeInRect(x: number, y: number, w: number, h: number) {
@@ -139,9 +144,13 @@ export class CircleParticle extends Particle {
   }
 
   override draw(ctx: CanvasRenderingContext2D) {
+    ctx.save();
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-    ctx.fill();
+    ctx.lineWidth = Math.max(1, this.radius / 10);
+    if (this.solid) ctx.fill();
+    else ctx.stroke();
+    ctx.restore();
   }
 }
 
@@ -225,6 +234,7 @@ export class Bubbles {
     const aliveParticles: Particle[] = [];
 
     this.#context.fillStyle = this.#colorGenerator();
+    this.#context.strokeStyle = this.#context.fillStyle;
     this.#context.shadowColor = this.#context.fillStyle;
     this.#context.shadowBlur = 25;
 
@@ -253,7 +263,12 @@ export class Bubbles {
 
       let particle;
       if (Math.random() < 0.5) {
-        particle = new CircleParticle(spawnX, spawnY, radius);
+        particle = new CircleParticle(
+          spawnX,
+          spawnY,
+          radius,
+          radius > maxRadius / 3
+        );
       } else {
         particle = new SquareParticle(spawnX, spawnY, radius);
         particle.velAngZ = (Math.random() - 0.5) * 2;
