@@ -14,7 +14,7 @@ export default function Home() {
       >
         <div className="raiar flex-row wrap-reverse justify-content-between gap-2x">
           <div className="raiar flex-col gap">
-            <h1 id="header-aboutme">Sobre mim</h1>
+            <h1>Sobre mim</h1>
             <p>Olá, meu nome é Luiz Fernando.</p>
             <p>
               Eu tenho <MyAge></MyAge> anos e moro em Minas Gerais.

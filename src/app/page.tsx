@@ -21,15 +21,11 @@ export default function Home() {
           <h2>Contato</h2>
           <address className="raiar flex-col gap">
             <a className="button" href="mailto:luizfvalle@pm.me">
-              <span id="email" className="material-symbols-outlined">
-                mail
-              </span>
+              <span className="material-symbols-outlined">mail</span>
               E-mail
             </a>
             <a className="button" href="tel:+5533991262949">
-              <span id="whatsapp" className="material-symbols-outlined">
-                call
-              </span>
+              <span className="material-symbols-outlined">call</span>
               WhatsApp
             </a>
           </address>

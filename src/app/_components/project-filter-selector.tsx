@@ -72,12 +72,11 @@ export default function ProjectFilterSelector() {
   }, [logic, tags, setFilter]);
 
   return (
-    <div id="filters-accordion" className={styles.container}>
+    <div className={styles.container}>
       <details ref={detailsRef}>
         <summary>Filtros</summary>
         <div className="raiar flex-row flex-wrap gap justify-content-center">
           <fieldset
-            id="tags"
             className={`${styles.tags} raiar flex-row flex-wrap gap`}
             onChange={(e) => {
               if (!(e.target instanceof HTMLInputElement)) {
@@ -107,7 +106,6 @@ export default function ProjectFilterSelector() {
             ))}
           </fieldset>
           <fieldset
-            id="project-filter-modes"
             onChange={(e) => {
               if (!(e.target instanceof HTMLInputElement)) {
                 console.error("event.target is not an HTMLInputElement");

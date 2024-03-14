@@ -52,11 +52,8 @@ export default function ProjectsSection() {
           setFilter: contextSetFilter,
         }}
       >
-        <div
-          id="projects-title-bar"
-          className="raiar flex-row gap flex-wrap justify-content-center"
-        >
-          <h2 id="heading-projects">Meus projetos</h2>
+        <div className="raiar flex-row gap flex-wrap justify-content-center">
+          <h2>Meus projetos</h2>
           <Suspense>
             <ProjectFilterSelector></ProjectFilterSelector>
           </Suspense>

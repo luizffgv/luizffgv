@@ -12,7 +12,6 @@ export default function ThemeSwitcher() {
       <h2>Mudar tema</h2>
       <div className="raiar flex-row justify-center gap flex-wrap">
         <button
-          id="button-theme-toggle"
           aria-label="Mudar tema"
           onClick={() => {
             localStorage.setItem(
@@ -24,7 +23,6 @@ export default function ThemeSwitcher() {
           <span className={styles["toggle-button-text"]}></span>
         </button>
         <button
-          id="button-primary-choose"
           aria-label="Escolher cor primária"
           onClick={() => setModalOpen(true)}
         >
