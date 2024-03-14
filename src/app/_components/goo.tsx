@@ -56,7 +56,6 @@ export class Bubbles {
   #bubbles: Bubble[] = [];
   #speed: number;
   #colorGenerator: () => string;
-  #stop: boolean = false;
   #animationId: number | null = null;
 
   /**
