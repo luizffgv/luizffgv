@@ -16,18 +16,6 @@
   }
 }
 
-@keyframes eye-blink {
-  0% {
-  }
-
-  50% {
-    transform: scaleY(0.25);
-  }
-
-  100% {
-  }
-}
-
 @keyframes wiggle {
   0% {
     rotate: z 0deg;
@@ -94,9 +82,5 @@
         transition: rotate 350ms ease;
       }
     }
-  }
-
-  .button-view:hover span {
-    animation: 350ms ease 150ms eye-blink;
   }
 }

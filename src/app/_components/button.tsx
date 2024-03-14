@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HTMLAttributeAnchorTarget } from "react";
 import styles from "./button.module.scss";
 
-type Props = {
+export type Props = {
   children: React.ReactNode;
   "aria-label"?: string;
   className?: string;

@@ -5,6 +5,7 @@ import { useState } from "react";
 import Modal from "./modal";
 import Project from "./project";
 import Button from "./button";
+import ViewButton from "./buttons/view-button";
 
 export default function ProjectPreview({ project }: { project: ProjectRaw }) {
   const [expanded, setExpanded] = useState(false);
@@ -41,16 +42,9 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
           {project.url == null ? (
             <></>
           ) : (
-            <Button
-              href={project.url}
-              target="_blank"
-              className={styles["button-view"]}
-            >
-              <span className="material-symbols-outlined" aria-hidden="true">
-                visibility
-              </span>
+            <ViewButton href={project.url} target="_blank">
               Visualizar
-            </Button>
+            </ViewButton>
           )}
           {project.repository == null ? (
             <></>
