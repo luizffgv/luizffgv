@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./theme-switcher.module.scss";
 import Modal from "./modal";
+import Button from "./button";
 
 export default function ThemeSwitcher() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function ThemeSwitcher() {
     <div className="raiar flex-col gap align-center raiar-card text-center width-fit">
       <h2>Mudar tema</h2>
       <div className="raiar flex-row justify-center gap flex-wrap">
-        <button
+        <Button
           aria-label="Mudar tema"
           onClick={() => {
             localStorage.setItem(
@@ -21,15 +22,15 @@ export default function ThemeSwitcher() {
           }}
         >
           <span className={styles["toggle-button-text"]}></span>
-        </button>
-        <button
+        </Button>
+        <Button
           aria-label="Escolher cor primária"
           onClick={() => setModalOpen(true)}
         >
           <span className="material-symbols-outlined" aria-hidden="true">
             brush
           </span>
-        </button>
+        </Button>
       </div>
       {modalOpen ? (
         <Modal onDismiss={() => setModalOpen(false)}>
@@ -49,8 +50,7 @@ export default function ThemeSwitcher() {
                 );
               }}
             />
-            <button
-              type="button"
+            <Button
               onClick={() => {
                 localStorage.removeItem("theme-color-primary");
 
@@ -64,7 +64,7 @@ export default function ThemeSwitcher() {
                 history
               </span>{" "}
               Redefinir
-            </button>
+            </Button>
           </div>
         </Modal>
       ) : (

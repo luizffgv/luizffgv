@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import styles from "./modal.module.scss";
+import Button from "./button";
 
 export default function Modal({
   children,
@@ -28,16 +29,13 @@ export default function Modal({
       onClose={() => onDismiss?.()}
     >
       {onDismiss ? (
-        <button
-          type="button"
-          className={styles.dismiss}
-          onClick={() => onDismiss()}
-          aria-label="Fechar modal"
-        >
-          <span className="material-symbols-outlined" aria-hidden>
-            close
-          </span>
-        </button>
+        <div className={styles.dismiss}>
+          <Button onClick={onDismiss} aria-label="Fechar modal">
+            <span className="material-symbols-outlined" aria-hidden>
+              close
+            </span>
+          </Button>
+        </div>
       ) : (
         <></>
       )}

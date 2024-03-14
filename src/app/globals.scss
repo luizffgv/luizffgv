@@ -8,19 +8,6 @@
   $fieldset-padding: 8px
 );
 
-button {
-  // To support icons alongside text, as Raiar doesn't yet support that as of
-  // writing this.
-  align-items: center;
-  display: flex;
-  gap: 8px;
-
-  // Raiar default buttons lack contrast with raiar-card in light mode.
-  &:is(html:not(.raiar-dark) &):not(:hover) {
-    outline: 1px solid var(--raiar-color-element-border);
-  }
-}
-
 h1,
 h2,
 h3,
@@ -29,10 +16,6 @@ h5,
 h6 {
   font-family: var(--font-title);
   font-weight: inherit;
-}
-
-.button {
-  @extend button;
 }
 
 .text-center {

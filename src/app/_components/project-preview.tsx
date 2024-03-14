@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Modal from "./modal";
 import Project from "./project";
+import Button from "./button";
 
 export default function ProjectPreview({ project }: { project: ProjectRaw }) {
   const [expanded, setExpanded] = useState(false);
@@ -40,22 +41,21 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
           {project.url == null ? (
             <></>
           ) : (
-            <a
-              className={`${styles["button-view"]} button`}
+            <Button
               href={project.url}
               target="_blank"
+              className={styles["button-view"]}
             >
               <span className="material-symbols-outlined" aria-hidden="true">
                 visibility
               </span>
               Visualizar
-            </a>
+            </Button>
           )}
           {project.repository == null ? (
             <></>
           ) : (
-            <a
-              className="button"
+            <Button
               href={project.repository}
               target="_blank"
               aria-label="Repositório"
@@ -64,13 +64,12 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
                 code
               </span>
               Repositório
-            </a>
+            </Button>
           )}
           {project.details == null ? (
             <></>
           ) : (
-            <button
-              type="button"
+            <Button
               className={styles["button-details"]}
               onClick={() => setExpanded(true)}
             >
@@ -78,7 +77,7 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
                 add
               </span>
               Detalhes
-            </button>
+            </Button>
           )}
         </div>
       </div>

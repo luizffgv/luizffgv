@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Modal from "./modal";
+import Button from "./button";
 
 export default function MyGitHub() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -31,22 +32,18 @@ export default function MyGitHub() {
         <li>Bots para Discord.</li>
       </ul>
       <div className="raiar flex-row justify-content-center flex-wrap gap">
-        <a
-          href="https://github.com/luizffgv"
-          target="_blank"
-          className="button"
-        >
+        <Button href="https://github.com/luizffgv" target="_blank">
           <span className="material-symbols-outlined" aria-hidden>
             visibility
           </span>{" "}
           Visualizar
-        </a>
-        <button type="button" onClick={() => setModalOpen(true)}>
+        </Button>
+        <Button onClick={() => setModalOpen(true)}>
           <span className="material-symbols-outlined" aria-hidden>
             visibility
           </span>{" "}
           Ver resumo
-        </button>
+        </Button>
       </div>
       {modalOpen ? (
         <Modal onDismiss={() => setModalOpen(false)}>

@@ -1,3 +1,4 @@
+import Button from "./_components/button";
 import MyAge from "./_components/my-age";
 import MyGitHub from "./_components/my-github";
 import ProjectsSection from "./_components/projects-section";
@@ -20,29 +21,25 @@ export default function Home() {
         </section>
         <section className="raiar raiar-card flex-col gap card-transparent">
           <h2>Contato</h2>
-          <a
-            className="button"
-            href="https://www.linkedin.com/in/luizffgv/"
-            target="_blank"
-          >
+          <Button href="https://www.linkedin.com/in/luizffgv/" target="_blank">
             <span className="material-symbols-outlined" aria-hidden>
               work
             </span>
             LinkedIn
-          </a>
+          </Button>
           <address className="raiar flex-col gap">
-            <a className="button" href="mailto:luizfvalle@pm.me">
+            <Button href="mailto:luizfvalle@pm.me">
               <span className="material-symbols-outlined" aria-hidden>
                 mail
               </span>
               E-mail
-            </a>
-            <a className="button" href="tel:+5533991262949">
+            </Button>
+            <Button className="button" href="tel:+5533991262949">
               <span className="material-symbols-outlined" aria-hidden>
                 call
               </span>
               WhatsApp
-            </a>
+            </Button>
           </address>
         </section>
       </div>
