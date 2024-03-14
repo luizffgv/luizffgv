@@ -3,46 +3,102 @@
 import { useEffect, useId, useRef } from "react";
 import styles from "./goo.module.scss";
 
-/**
- * A simulated bubble.
- */
-export class Bubble {
-  /**
-   * X position.
-   */
+/** A particle. */
+abstract class Particle {
+  /** Particle X position. */
   x: number;
-
-  /**
-   * Y position.
-   */
+  /** Particle Y position. */
   y: number;
+  /** Particle X velocity . */
+  velX: number;
+  /** Particle Y velocity. */
+  velY: number;
 
   /**
-   * X velocity.
+   * Creates a new particle.
+   *
+   * @param x - X position.
+   * @param y - Y position.
+   * @param velX X velocity.
+   * @param velY Y velocity.
    */
-  velX: number = 0;
+  protected constructor(
+    x: number,
+    y: number,
+    velX: number = 0,
+    velY: number = 0
+  ) {
+    this.x = x;
+    this.y = y;
+    this.velX = velX;
+    this.velY = velY;
+  }
 
   /**
-   * Y velocity.
+   * Whether the particle is possibly in the specified rectangle.
+   *
+   * @param x - Rectangle X coordinate.
+   * @param y - Rectangle Y coordinate.
+   * @param w - Rectangle width.
+   * @param h - Rectangle height.
    */
-  velY: number = 0;
+  abstract isMaybeInRect(x: number, y: number, w: number, h: number): boolean;
 
   /**
-   * Bubble radius.
+   * Forwards the particle simulation.
+   *
+   * @param seconds - Number of seconds passed.
+   */
+  abstract update(seconds: number): void;
+
+  /**
+   * Draws the particle.
+   *
+   * @param ctx - 2D context to draw in.
+   */
+  abstract draw(ctx: CanvasRenderingContext2D): void;
+}
+
+/**
+ * A circle particle.
+ */
+export class CircleParticle extends Particle {
+  /**
+   * Circle radius.
    */
   radius: number;
 
   /**
-   * Creates a new {@link Bubble}.
+   * Creates a new {@link CircleParticle}.
    *
    * @param x - X position.
    * @param y - Y position.
-   * @param radius - Bubble radius.
+   * @param radius - Circle radius.
    */
   constructor(x: number, y: number, radius: number) {
-    this.x = x;
-    this.y = y;
+    super(x, y);
+
     this.radius = radius;
+  }
+
+  override isMaybeInRect(x: number, y: number, w: number, h: number) {
+    return !(
+      this.y - this.radius > y + h ||
+      this.y + this.radius < y ||
+      this.x + this.radius < x ||
+      this.x - this.radius > x + w
+    );
+  }
+
+  override update(seconds: number) {
+    this.x += this.velX * seconds;
+    this.y += this.velY * seconds;
+  }
+
+  override draw(ctx: CanvasRenderingContext2D) {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+    ctx.fill();
   }
 }
 
@@ -53,8 +109,7 @@ export class Bubbles {
   #element: HTMLCanvasElement;
   #context: CanvasRenderingContext2D;
   #prevTimestamp?: DOMHighResTimeStamp;
-  #bubbles: Bubble[] = [];
-  #speed: number;
+  #particles: Particle[] = [];
   #colorGenerator: () => string;
   #animationId: number | null = null;
 
@@ -62,16 +117,10 @@ export class Bubbles {
    * Creates a new {@link Bubbles}.
    *
    * @param element - Canvas element to use.
-   * @param speed - Simulation speed.
    * @param color - Color of the bubbles, or function that returns a color.
    */
-  constructor(
-    element: HTMLCanvasElement,
-    speed: number,
-    color: string | (() => string)
-  ) {
+  constructor(element: HTMLCanvasElement, color: string | (() => string)) {
     this.#element = element;
-    this.#speed = speed;
 
     this.#colorGenerator = typeof color == "string" ? () => color : color;
 
@@ -86,60 +135,43 @@ export class Bubbles {
     this.#element.width = width;
     this.#element.height = height;
 
-    const maxDimension = Math.max(width, height);
-
     if (this.#prevTimestamp == null) this.#prevTimestamp = timestamp;
     const deltaSeconds = (timestamp - this.#prevTimestamp) / 1000;
 
-    const aliveBubbles: Bubble[] = [];
+    const aliveParticles: Particle[] = [];
 
     this.#context.fillStyle = this.#colorGenerator();
     this.#context.shadowColor = this.#context.fillStyle;
     this.#context.shadowBlur = 25;
 
-    for (const bubble of this.#bubbles) {
-      if (
-        bubble.y - bubble.radius > this.#element.clientHeight ||
-        bubble.y + bubble.radius < -5 ||
-        bubble.x + bubble.radius < 0 ||
-        bubble.x - bubble.radius > this.#element.clientWidth
-      )
-        continue;
+    for (const particle of this.#particles) {
+      if (!particle.isMaybeInRect(0, 0, width, height)) continue;
 
-      bubble.velX += (Math.random() - 0.5) * 2 * deltaSeconds;
-      bubble.velY += (Math.random() - 0.5) * 2 * deltaSeconds;
+      particle.velX += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
+      particle.velY += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
 
-      bubble.x += bubble.velX * this.#speed * maxDimension * deltaSeconds;
-      bubble.y += bubble.velY * this.#speed * maxDimension * deltaSeconds;
+      particle.update(deltaSeconds);
 
-      this.#context.beginPath();
-      this.#context.arc(
-        bubble.x,
-        height - bubble.y,
-        bubble.radius,
-        0,
-        2 * Math.PI
-      );
-      this.#context.fill();
+      particle.draw(this.#context);
 
-      aliveBubbles.push(bubble);
+      aliveParticles.push(particle);
     }
 
     const maxRadius = width / 10;
     const DESIRED_COUNT = 15;
 
-    while (aliveBubbles.length < DESIRED_COUNT) {
+    while (aliveParticles.length < DESIRED_COUNT) {
       const radius = maxRadius * (Math.random() * 0.9 + 0.1);
-      const fromBelow = Math.random() < 0.5;
+      const fromAbove = Math.random() < 0.5;
       const spawnX = Math.random() * width;
-      const spawnY = fromBelow ? -radius : this.#element.clientHeight + radius;
-      const initialSpeedY = Math.random() * 0.5 * (fromBelow ? 1 : -1);
-      const bubble = new Bubble(spawnX, spawnY, radius);
-      bubble.velY = initialSpeedY;
-      aliveBubbles.push(bubble);
+      const spawnY = fromAbove ? -radius : this.#element.clientHeight + radius;
+      const initialSpeedY = Math.random() * 50 * (fromAbove ? 1 : -1);
+      const particle = new CircleParticle(spawnX, spawnY, radius);
+      particle.velY = initialSpeedY;
+      aliveParticles.push(particle);
     }
 
-    this.#bubbles = aliveBubbles;
+    this.#particles = aliveParticles;
 
     this.#prevTimestamp = timestamp;
 
@@ -154,7 +186,7 @@ export class Bubbles {
     if (this.#animationId != null) cancelAnimationFrame(this.#animationId);
     this.#animationId = null;
 
-    this.#bubbles = [];
+    this.#particles = [];
   }
 }
 
@@ -176,7 +208,7 @@ export default function Goo() {
       return;
     }
 
-    const bubbles = new Bubbles(canvasRef.current, 1 / 5, () =>
+    const bubbles = new Bubbles(canvasRef.current, () =>
       getComputedStyle(document.body).getPropertyValue("--raiar-color-primary")
     );
     bubbles.start();
