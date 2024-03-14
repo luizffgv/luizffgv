@@ -5,7 +5,7 @@ import ProjectsSection from "./_components/projects-section";
 export default function Home() {
   return (
     <main className="raiar flex-col gap-4x align-center">
-      <div className="raiar flex-row flex-wrap gap-4x align-center justify-content-center">
+      <div className="raiar flex-row flex-wrap gap-4x align-items-center justify-content-center">
         <section className="raiar raiar-card flex-col gap card-transparent">
           <h1>Quem sou eu?</h1>
           <p>
@@ -20,6 +20,14 @@ export default function Home() {
         </section>
         <section className="raiar raiar-card flex-col gap card-transparent">
           <h2>Contato</h2>
+          <a
+            className="button"
+            href="https://www.linkedin.com/in/luizffgv/"
+            target="_blank"
+          >
+            <span className="material-symbols-outlined">work</span>
+            LinkedIn
+          </a>
           <address className="raiar flex-col gap">
             <a className="button" href="mailto:luizfvalle@pm.me">
               <span className="material-symbols-outlined">mail</span>
