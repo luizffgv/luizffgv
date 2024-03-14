@@ -30,12 +30,15 @@
 
   .modal {
     @starting-style {
-      rotate: x -100deg;
+      // We start with 0 opacity because the perspective makes the modal visible
+      // before it begins the "swing-in" animation.
+      opacity: 0;
+      rotate: x -90deg;
     }
 
-    backface-visibility: hidden;
     rotate: x 0deg;
     transform-origin: top;
-    transition: rotate 500ms cubic-bezier(0.34, 1.56, 0.64, 1.2) 300ms;
+    transition: opacity 0ms 300ms,
+      rotate 500ms cubic-bezier(0.34, 1.56, 0.64, 1.2) 300ms;
   }
 }
