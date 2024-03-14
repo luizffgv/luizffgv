@@ -1,4 +1,14 @@
+@keyframes show {
+  from {
+    scale: 0.5;
+  }
+}
+
 .button {
+  animation: show ease, show ease reverse;
+  animation-timeline: view(block), view(block);
+  animation-range: entry, exit;
+
   // To support icons alongside text, as Raiar doesn't yet support that as of
   // writing this.
   align-items: center;
