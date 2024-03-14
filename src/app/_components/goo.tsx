@@ -318,7 +318,9 @@ export default function Goo() {
       <canvas
         className={styles.canvas}
         ref={canvasRef}
-        style={{ filter: `url(#${filterId})` }}
+        style={{
+          filter: `url(#${filterId}) drop-shadow(0 0 15px var(--raiar-color-primary))`,
+        }}
       ></canvas>
     </>
   );
