@@ -10,6 +10,7 @@
 
 .canvas {
   animation: fade-in 5000ms ease-in 500ms forwards;
+  filter: var(--filter-url);
   height: 100vh;
   left: 0;
   opacity: 0;
@@ -17,6 +18,10 @@
   top: 0;
   width: 100%;
   z-index: -1;
+
+  :global(.raiar-dark) & {
+    filter: var(--filter-url) drop-shadow(0 0 15px var(--raiar-color-primary));
+  }
 }
 
 .filter {

@@ -3,6 +3,12 @@
 import { useEffect, useId, useRef } from "react";
 import styles from "./goo.module.scss";
 
+declare module "react" {
+  interface CSSProperties {
+    "--filter-url"?: string;
+  }
+}
+
 /** A particle. */
 abstract class Particle {
   /** Particle X position. */
@@ -319,7 +325,7 @@ export default function Goo() {
         className={styles.canvas}
         ref={canvasRef}
         style={{
-          filter: `url(#${filterId}) drop-shadow(0 0 15px var(--raiar-color-primary))`,
+          "--filter-url": `url(#${filterId})`,
         }}
       ></canvas>
     </>
