@@ -95,6 +95,8 @@ export class Bubbles {
     const aliveBubbles: Bubble[] = [];
 
     this.#context.fillStyle = this.#colorGenerator();
+    this.#context.shadowColor = this.#context.fillStyle;
+    this.#context.shadowBlur = 25;
 
     for (const bubble of this.#bubbles) {
       if (
@@ -188,7 +190,6 @@ export default function Goo() {
       <svg className={styles.filter} xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id={filterId}>
-            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
             <feColorMatrix
               in="goo"
               type="matrix"
