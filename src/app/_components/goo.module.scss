@@ -4,16 +4,25 @@
   }
 
   to {
+  }
+}
+
+@keyframes fade-out {
+  from {
     opacity: 1;
+  }
+  to {
+    opacity: 0.5;
   }
 }
 
 .canvas {
-  animation: fade-in 5000ms ease-in 500ms forwards;
+  animation: fade-out, fade-in 5000ms ease-in;
+  animation-timeline: scroll(root block), auto;
+
   filter: var(--filter-url);
   height: 100vh;
   left: 0;
-  opacity: 0;
   position: fixed;
   top: 0;
   width: 100%;
