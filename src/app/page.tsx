@@ -1,4 +1,5 @@
 import MyAge from "./_components/my-age";
+import MyGitHub from "./_components/my-github";
 import ProjectsSection from "./_components/projects-section";
 
 export default function Home() {
@@ -30,6 +31,9 @@ export default function Home() {
             </a>
           </address>
         </section>
+      </div>
+      <div className="raiar flex-row justify-content-center">
+        <MyGitHub></MyGitHub>
       </div>
       <ProjectsSection></ProjectsSection>
     </main>
