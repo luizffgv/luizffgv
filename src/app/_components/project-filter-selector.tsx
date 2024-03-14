@@ -72,66 +72,68 @@ export default function ProjectFilterSelector() {
   }, [logic, tags, setFilter]);
 
   return (
-    <div className={styles.container}>
-      <details ref={detailsRef}>
-        <summary>Filtros</summary>
-        <div className="raiar flex-row flex-wrap gap justify-content-center">
-          <fieldset
-            className={`${styles.tags} raiar flex-row flex-wrap gap`}
-            onChange={(e) => {
-              if (!(e.target instanceof HTMLInputElement)) {
-                console.error("event.target is not an HTMLInputElement");
-                return;
-              }
+    <div className={`${styles.container} raiar flex-col align-items-center`}>
+      <div className="width-fit">
+        <details ref={detailsRef}>
+          <summary>Filtros</summary>
+          <div className="raiar flex-row flex-wrap gap">
+            <fieldset
+              className={`${styles.tags} raiar flex-row flex-wrap gap`}
+              onChange={(e) => {
+                if (!(e.target instanceof HTMLInputElement)) {
+                  console.error("event.target is not an HTMLInputElement");
+                  return;
+                }
 
-              if (e.target.checked) tags.value.add(e.target.value as Tag);
-              else tags.value.delete(e.target.value as Tag);
+                if (e.target.checked) tags.value.add(e.target.value as Tag);
+                else tags.value.delete(e.target.value as Tag);
 
-              setTags({ value: tags.value });
-            }}
-          >
-            <legend>Selecione tags</legend>
-            {allTags.map((tag) => (
-              <label key={tag}>
-                {tag}{" "}
+                setTags({ value: tags.value });
+              }}
+            >
+              <legend>Selecione tags</legend>
+              {allTags.map((tag) => (
+                <label key={tag}>
+                  {tag}{" "}
+                  <input
+                    type="checkbox"
+                    value={tag}
+                    checked={tags.value.has(tag)}
+                    onChange={() => {
+                      /* Shut up error, there's already an onChange on the fieldset */
+                    }}
+                  />
+                </label>
+              ))}
+            </fieldset>
+            <fieldset
+              onChange={(e) => {
+                if (!(e.target instanceof HTMLInputElement)) {
+                  console.error("event.target is not an HTMLInputElement");
+                  return;
+                }
+
+                setLogic(e.target.value);
+              }}
+            >
+              <legend>Lógica de filtragem</legend>
+              <label>
                 <input
-                  type="checkbox"
-                  value={tag}
-                  checked={tags.value.has(tag)}
-                  onChange={() => {
-                    /* Shut up error, there's already an onChange on the fieldset */
-                  }}
+                  type="radio"
+                  name="project-filter-mode"
+                  value="best-match"
+                  defaultChecked
                 />
+                Melhor correspondência
               </label>
-            ))}
-          </fieldset>
-          <fieldset
-            onChange={(e) => {
-              if (!(e.target instanceof HTMLInputElement)) {
-                console.error("event.target is not an HTMLInputElement");
-                return;
-              }
-
-              setLogic(e.target.value);
-            }}
-          >
-            <legend>Lógica de filtragem</legend>
-            <label>
-              <input
-                type="radio"
-                name="project-filter-mode"
-                value="best-match"
-                defaultChecked
-              />
-              Melhor correspondência
-            </label>
-            <label>
-              <input type="radio" name="project-filter-mode" value="every" />
-              Possui todas categorias selecionadas
-            </label>
-          </fieldset>
-        </div>
-      </details>
+              <label>
+                <input type="radio" name="project-filter-mode" value="every" />
+                Possui todas categorias selecionadas
+              </label>
+            </fieldset>
+          </div>
+        </details>
+      </div>
     </div>
   );
 }
