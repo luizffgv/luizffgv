@@ -25,6 +25,7 @@ export default function Modal({
     <dialog
       ref={dialogRef}
       className={`${styles["modal-container"]} raiar flex-col align-items-center justify-content-safe-center gap`}
+      onClose={() => onDismiss?.()}
     >
       {onDismiss ? (
         <button
