@@ -40,7 +40,11 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
           {project.url == null ? (
             <></>
           ) : (
-            <a className={`${styles["button-view"]} button`} href={project.url}>
+            <a
+              className={`${styles["button-view"]} button`}
+              href={project.url}
+              target="_blank"
+            >
               <span className="material-symbols-outlined" aria-hidden="true">
                 visibility
               </span>
@@ -53,6 +57,7 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
             <a
               className="button"
               href={project.repository}
+              target="_blank"
               aria-label="Repositório"
             >
               <span className="material-symbols-outlined" aria-hidden="true">
