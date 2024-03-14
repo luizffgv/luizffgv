@@ -32,6 +32,7 @@ export default function Modal({
           type="button"
           className={styles.dismiss}
           onClick={() => onDismiss()}
+          aria-label="Fechar modal"
         >
           <span className="material-symbols-outlined" aria-hidden>
             close
