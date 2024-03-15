@@ -1,13 +1,6 @@
-"use client";
-
-import { useState } from "react";
-import Modal from "./modal";
-import Button from "./button";
 import ViewButton from "./buttons/view-button";
 
 export default function MyGitHub() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <section className="raiar-card raiar flex-col gap">
       <h2 className="text-center">Meu GitHub</h2>
@@ -36,18 +29,17 @@ export default function MyGitHub() {
         <ViewButton href="https://github.com/luizffgv" target="_blank">
           Visualizar
         </ViewButton>
-        <ViewButton onClick={() => setModalOpen(true)}>Ver resumo</ViewButton>
+        <ViewButton
+          modalContent={
+            <img
+              src="https://github.com/luizffgv/luizffgv/raw/main/github-metrics.svg"
+              className="width-full"
+            ></img>
+          }
+        >
+          Ver resumo
+        </ViewButton>
       </div>
-      {modalOpen ? (
-        <Modal onDismiss={() => setModalOpen(false)}>
-          <img
-            src="https://github.com/luizffgv/luizffgv/raw/main/github-metrics.svg"
-            className="width-full"
-          ></img>
-        </Modal>
-      ) : (
-        <></>
-      )}
     </section>
   );
 }
