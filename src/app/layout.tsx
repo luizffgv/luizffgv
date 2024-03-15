@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Inter } from "next/font/google";
+import { Archivo_Black, Inter, Space_Mono } from "next/font/google";
 import "./globals.scss";
 import styles from "./layout.module.scss";
 import ThemeSwitcher from "./_components/theme-switcher";
@@ -10,6 +10,11 @@ const archivoBlack = Archivo_Black({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-title",
+});
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-code",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +30,12 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={[styles.root, inter.variable, archivoBlack.variable].join(" ")}
+      className={[
+        styles.root,
+        inter.variable,
+        archivoBlack.variable,
+        spaceMono.variable,
+      ].join(" ")}
       suppressHydrationWarning
     >
       <head>
