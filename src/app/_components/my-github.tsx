@@ -9,8 +9,8 @@ export default function MyGitHub() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section className="raiar-card raiar flex-col gap align-items-center">
-      <h2>Meu GitHub</h2>
+    <section className="raiar-card raiar flex-col gap">
+      <h2 className="text-center">Meu GitHub</h2>
       Aqui você pode encontrar:
       <ul className="raiar-list-text" style={{ maxWidth: "640px" }}>
         <li>Projetos pessoais em C, C++, Node.js, Lua e outras linguagens.</li>
