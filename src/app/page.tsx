@@ -1,6 +1,7 @@
 import Button from "./_components/button";
 import MyAge from "./_components/my-age";
 import MyGitHub from "./_components/my-github";
+import MySkills from "./_components/my-skills";
 import ProjectsSection from "./_components/projects-section";
 
 export default function Home() {
@@ -42,6 +43,9 @@ export default function Home() {
             </Button>
           </address>
         </section>
+      </div>
+      <div className="raiar flex-row justify-content-center">
+        <MySkills></MySkills>
       </div>
       <div className="raiar flex-row justify-content-center">
         <MyGitHub></MyGitHub>
