@@ -8,7 +8,7 @@ export default function Home() {
     <main className="raiar flex-col gap-4x align-center">
       <div className="raiar flex-row flex-wrap gap-4x align-items-center justify-content-center">
         <section className="raiar raiar-card flex-col gap card-transparent">
-          <h1>Quem sou eu?</h1>
+          <h1 className="text-center">Quem sou eu?</h1>
           <p>
             Meu nome é Luiz Fernando Valle, tenho <MyAge></MyAge> anos e moro em
             Raul Soares (MG).
@@ -20,7 +20,7 @@ export default function Home() {
           <p>Eu tenho autismo (CID-10 F84.9).</p>
         </section>
         <section className="raiar raiar-card flex-col gap card-transparent">
-          <h2>Contato</h2>
+          <h2 className="text-center">Contato</h2>
           <Button href="https://www.linkedin.com/in/luizffgv/" target="_blank">
             <span className="material-symbols-outlined" aria-hidden>
               work
