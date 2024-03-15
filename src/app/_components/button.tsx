@@ -10,11 +10,8 @@ export type Props = {
   | {
       /** Handler for clicks on the button. */
       onClick: React.MouseEventHandler;
-      href?: undefined;
-      target?: undefined;
     }
   | {
-      onClick?: never;
       /** Link the button will send you to. */
       href: string;
       /** Same as <a>'s target. */
@@ -25,7 +22,7 @@ export type Props = {
 export default function Button(props: Props) {
   return (
     <>
-      {props.onClick ? (
+      {"onClick" in props ? (
         <button
           {...props}
           className={`${props.className ?? ""} ${styles.button} button`}
