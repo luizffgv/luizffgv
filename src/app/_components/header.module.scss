@@ -1,0 +1,26 @@
+.header {
+  left: 0;
+  position: sticky;
+  top: 0;
+
+  background-color: var(--raiar-color-bg-close);
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 16px;
+  z-index: 1;
+
+  @media screen and (max-width: 384px) {
+    .entries {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 385px) {
+    .menu-button {
+      display: none;
+    }
+
+    .entries {
+      flex-grow: 1;
+    }
+  }
+}

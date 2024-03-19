@@ -4,6 +4,7 @@ import "./globals.scss";
 import styles from "./layout.module.scss";
 import ThemeSwitcher from "./_components/theme-switcher";
 import Goo from "./_components/goo";
+import Header from "./_components/header";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-normal" });
 const archivoBlack = Archivo_Black({
@@ -47,12 +48,15 @@ export default function RootLayout({
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="/initial-theme-applier.js"></script>
       </head>
-      <body className={`${styles.body} raiar flex-col gap-4x`}>
+      <body>
         <Goo></Goo>
-        <header className="fullwidth raiar justify-content-center">
-          <ThemeSwitcher></ThemeSwitcher>
-        </header>
-        {children}
+        <Header></Header>
+        <div className={`${styles.content} raiar flex-col gap-4x`}>
+          <div className="fullwidth raiar justify-content-center">
+            <ThemeSwitcher></ThemeSwitcher>
+          </div>
+          {children}
+        </div>
       </body>
     </html>
   );
