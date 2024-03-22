@@ -1,8 +1,4 @@
-const isDark = localStorage.getItem("theme-dark") == "true";
+const isDark = localStorage.getItem("theme-dark");
 const deviceIsDark = matchMedia("(prefers-color-scheme: dark)").matches;
-if (isDark || (isDark == undefined && deviceIsDark))
-  document.documentElement.classList.add("raiar-dark");
-
-const primary = localStorage.getItem("theme-color-primary");
-if (primary != null)
-  document.documentElement.style.setProperty("--raiar-color-primary", primary);
+if (isDark === "true" || (isDark == undefined && deviceIsDark))
+  document.documentElement.classList.add("dark");
