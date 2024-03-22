@@ -2,7 +2,7 @@ import Button from "./button";
 
 export default function Footer() {
   return (
-    <footer className="color-in flex flex-col items-center gap-2 bg-primary p-4 text-fg-on-primary">
+    <footer className="color-in flex flex-col items-center gap-2 bg-primary p-4 text-center text-fg-on-primary">
       <p>
         Feito por <strong>Luiz Fernando F. G. Valle</strong> utilizando{" "}
         <strong>Next.js</strong> e <strong>Tailwind CSS</strong>.
