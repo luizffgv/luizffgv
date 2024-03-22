@@ -205,6 +205,8 @@ export class Bubbles {
   #particles: Particle[] = [];
   #colorGenerator: () => string;
   #animationId: number | null = null;
+  #observer?: IntersectionObserver;
+  #paused: boolean = false;
 
   /**
    * Creates a new {@link Bubbles}.
@@ -223,6 +225,10 @@ export class Bubbles {
   }
 
   #step(timestamp: DOMHighResTimeStamp): void {
+    this.#animationId = requestAnimationFrame(this.#step.bind(this));
+
+    if (this.#paused) return;
+
     const width = this.#element.clientWidth;
     const height = this.#element.clientHeight;
     this.#element.width = width;
@@ -284,15 +290,24 @@ export class Bubbles {
     this.#particles = aliveParticles;
 
     this.#prevTimestamp = timestamp;
-
-    this.#animationId = requestAnimationFrame(this.#step.bind(this));
   }
 
   start(): void {
+    this.#observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        this.#paused = false;
+      } else {
+        this.#paused = true;
+      }
+    });
+    this.#observer.observe(this.#element);
+
     this.#animationId = requestAnimationFrame(this.#step.bind(this));
   }
 
   stop(): void {
+    this.#observer?.disconnect();
+
     if (this.#animationId != null) cancelAnimationFrame(this.#animationId);
     this.#animationId = null;
 
