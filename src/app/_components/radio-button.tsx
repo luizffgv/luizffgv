@@ -1,13 +1,13 @@
 export interface Props {
-  /// `value` attribute for the underlying input.
+  /** `value` attribute for the underlying input. */
   value: string;
-  /// Whether the radio button is checked.
+  /** Whether the radio button is checked. */
   checked: boolean;
-  /// `name` attribute for the underlying input.
+  /** `name` attribute for the underlying input. */
   name: string;
-  /// Radio button label.
+  /** Radio button label. */
   children: React.ReactNode;
-  /// Handler for the change event.
+  /** Handler for the change event. */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 

@@ -3,11 +3,11 @@
 import { useEffect, useRef } from "react";
 
 export type Props = {
-  /// Name of the tool.
+  /** Name of the tool. */
   name: string;
-  /// Details to show along with the tool.
+  /** Details to show along with the tool. */
   details?: string;
-  /// Accent color for the tool.
+  /** Accent color for the tool. */
   color?: string;
 };
 

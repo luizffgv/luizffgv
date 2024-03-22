@@ -1,9 +1,9 @@
 export interface Props {
-  /// Value of the underlying input.
+  /** Value of the underlying input. */
   value: string;
-  /// Checkbox state.
+  /** Checkbox state. */
   checked: boolean;
-  /// Handler for the change event.
+  /** Handler for the change event. */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
