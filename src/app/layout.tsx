@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${quicksand.className}`}
+      className={`${quicksand.className} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>

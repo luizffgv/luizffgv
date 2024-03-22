@@ -1,3 +1,6 @@
+"use client";
+
+import styles from "./hero.module.scss";
 import Button from "./button";
 import Goo from "./goo";
 import Photo from "./photo";
@@ -65,14 +68,25 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-1/2 translate-x-[-50%] scale-[2]">
-        <span
-          className="material-symbols-outlined animate-bounce text-primary"
-          aria-hidden
-          translate="no"
-        >
-          expand_more
-        </span>
+      <div
+        className={`${styles["down-arrow"]} absolute bottom-2 left-1/2 translate-x-[-50%]`}
+      >
+        <div className="animate-bounce">
+          <Button
+            onClick={() => {
+              document.documentElement.scrollBy(0, innerHeight);
+            }}
+            aria-label="Avançar"
+          >
+            <span
+              className="material-symbols-outlined scale-[2]"
+              aria-hidden
+              translate="no"
+            >
+              expand_more
+            </span>
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,12 @@
+@keyframes hide-arrow {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.down-arrow {
+  animation: hide-arrow both;
+  animation-range: entry 100% entry 500%;
+  animation-timeline: view();
+}
