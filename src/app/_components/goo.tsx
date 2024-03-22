@@ -32,7 +32,7 @@ abstract class Particle {
     x: number,
     y: number,
     velX: number = 0,
-    velY: number = 0
+    velY: number = 0,
   ) {
     this.x = x;
     this.y = y;
@@ -92,7 +92,7 @@ abstract class RotatingParticle extends Particle {
     rotZ: number = 0,
     velX: number = 0,
     velY: number = 0,
-    velAngZ: number = 0
+    velAngZ: number = 0,
   ) {
     super(x, y, velX, velY);
 
@@ -239,7 +239,8 @@ export class Bubbles {
     this.#context.shadowBlur = 25;
 
     for (const particle of this.#particles) {
-      if (!particle.isMaybeInRect(0, 0, width, height)) continue;
+      if (!particle.isMaybeInRect(-50, -50, width + 100, height + 100))
+        continue;
 
       particle.velX += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
       particle.velY += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
@@ -251,15 +252,17 @@ export class Bubbles {
       aliveParticles.push(particle);
     }
 
-    const maxRadius = width / 10;
+    const maxRadius = Math.min(100, width / 10);
     const DESIRED_COUNT = 15;
 
     while (aliveParticles.length < DESIRED_COUNT) {
       const radius = maxRadius * (Math.random() * 0.9 + 0.1);
       const fromAbove = Math.random() < 0.5;
       const spawnX = Math.random() * width;
-      const spawnY = fromAbove ? -radius : this.#element.clientHeight + radius;
-      const initialSpeedY = Math.random() * 50 * (fromAbove ? 1 : -1);
+      const spawnY = fromAbove
+        ? -radius - 25
+        : this.#element.clientHeight + radius + 25;
+      const initialSpeedY = Math.random() * 10 * (fromAbove ? 1 : -1);
 
       let particle;
       if (Math.random() < 0.5) {
@@ -267,7 +270,7 @@ export class Bubbles {
           spawnX,
           spawnY,
           radius,
-          radius > maxRadius / 3
+          radius > maxRadius / 3,
         );
       } else {
         particle = new SquareParticle(spawnX, spawnY, radius);
@@ -315,9 +318,11 @@ export default function Goo() {
       return;
     }
 
-    const bubbles = new Bubbles(canvasRef.current, () =>
-      getComputedStyle(document.body).getPropertyValue("--raiar-color-primary")
-    );
+    const bubbles = new Bubbles(canvasRef.current, () => {
+      if (canvasRef.current == null) return "transparent";
+
+      return getComputedStyle(canvasRef.current).color;
+    });
     bubbles.start();
 
     return () => bubbles.stop();
@@ -325,7 +330,7 @@ export default function Goo() {
 
   return (
     <>
-      <svg className={styles.filter} xmlns="http://www.w3.org/2000/svg">
+      <svg className="hidden" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id={filterId}>
             <feColorMatrix
@@ -337,7 +342,7 @@ export default function Goo() {
         </defs>
       </svg>
       <canvas
-        className={styles.canvas}
+        className={`${styles.canvas} absolute left-0 top-0 h-full w-full`}
         ref={canvasRef}
         style={{
           "--filter-url": `url(#${filterId})`,

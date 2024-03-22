@@ -17,12 +17,12 @@ import { ProjectRaw } from "projects-list";
 
 export default function ProjectsSection() {
   const [filter, setFilter] = useState(
-    () => (projects: ProjectRaw[]) => projects
+    () => (projects: ProjectRaw[]) => projects,
   );
 
   const contextSetFilter = useCallback(
     (filter: ProjectFilterCallback) => setFilter(() => filter),
-    []
+    [],
   );
 
   const projectsListRef = useRef<HTMLDivElement>(null);
@@ -37,28 +37,26 @@ export default function ProjectsSection() {
       new KeyframeEffect(projectsListRef.current, [{ opacity: 0 }, {}], {
         duration: 500,
         easing: "ease",
-      })
+      }),
     ).play();
   }, [filter]);
 
   return (
     <section
-      className="raiar flex-col gap-2x align-center"
-      aria-labelledby="heading-projects"
+      className="flex flex-col items-center gap-8"
+      aria-label="Meus projetos"
     >
+      <h1 className="text-center text-2xl">Meus projetos</h1>
       <ProjectFilterContext.Provider
         value={{
           filter,
           setFilter: contextSetFilter,
         }}
       >
-        <div className="raiar flex-row gap flex-wrap justify-content-center">
-          <h2>Meus projetos</h2>
-          <Suspense>
-            <ProjectFilterSelector></ProjectFilterSelector>
-          </Suspense>
-        </div>
-        <div ref={projectsListRef}>
+        <Suspense>
+          <ProjectFilterSelector></ProjectFilterSelector>
+        </Suspense>
+        <div ref={projectsListRef} className="max-w-screen-2xl pb-[100vh]">
           <ProjectsList></ProjectsList>
         </div>
       </ProjectFilterContext.Provider>

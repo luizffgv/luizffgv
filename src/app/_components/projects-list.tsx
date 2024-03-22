@@ -2,21 +2,26 @@ import { useContext, useMemo } from "react";
 import { ProjectFilterContext } from "../_contexts/project-filters";
 import projects from "projects-list";
 import ProjectPreview from "./project-preview";
-import styles from "./projects-list.module.scss";
 
 export default function ProjectsList() {
   const { filter } = useContext(ProjectFilterContext);
   const filteredProjects = useMemo(() => filter(projects), [filter]);
 
   return (
-    <ul
-      className={`${styles.list} no-list-style raiar flex-row flex-wrap gap-2x justify-content-center`}
-    >
+    <ul className="flex flex-row flex-wrap justify-center gap-8">
       {filteredProjects.map((project) => (
-        <li key={project.name} className="display-contents">
+        <li
+          key={project.name}
+          className="appear flex min-w-fit grow basis-0 flex-row items-stretch justify-center rounded-2xl bg-bg-close p-4 shadow-sm dark:bg-bg-close-dark"
+        >
           <ProjectPreview project={project}></ProjectPreview>
         </li>
       ))}
+      {filteredProjects.length == 0 && (
+        <li className="text-center text-xl">
+          Nenhum projeto se encaixa nos filtros.
+        </li>
+      )}
     </ul>
   );
 }

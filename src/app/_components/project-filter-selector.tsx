@@ -9,8 +9,9 @@ import {
 } from "react";
 import { ProjectFilterContext } from "../_contexts/project-filters";
 import projects, { ProjectRaw, Tag } from "projects-list";
-import styles from "./project-filter-selector.module.scss";
 import { useSearchParams } from "next/navigation";
+import Checkbox from "./checkbox";
+import RadioButton from "./radio-button";
 
 const allTags = [
   ...projects
@@ -37,26 +38,22 @@ export default function ProjectFilterSelector() {
   const { setFilter } = useContext(ProjectFilterContext);
   const [logic, setLogic] = useState("best-match");
   const [tags, setTags] = useState<{ value: Set<Tag> }>({ value: new Set() });
-  const detailsRef = useRef<HTMLDetailsElement>(null);
 
   useLayoutEffect(() => {
     setTags({
       value: new Set<Tag>(
         (urlParams.getAll("tags") as Tag[]).filter((tag) =>
-          allTags.includes(tag)
-        )
+          allTags.includes(tag),
+        ),
       ),
     });
-
-    if (detailsRef.current == null) console.error("detailsRef is null.");
-    else if (urlParams.get("tags") != null) detailsRef.current.open = true;
   }, [urlParams]);
 
   useEffect(() => {
     setFilter((projects: ProjectRaw[]) => {
       let matching = [...projects].sort(
         (p1, p2) =>
-          matchingTags(p2, tags.value).size - matchingTags(p1, tags.value).size
+          matchingTags(p2, tags.value).size - matchingTags(p1, tags.value).size,
       );
       if (tags.value.size > 0)
         matching = matching.filter((p) => matchingTags(p, tags.value).size > 0);
@@ -72,67 +69,61 @@ export default function ProjectFilterSelector() {
   }, [logic, tags, setFilter]);
 
   return (
-    <div className={`${styles.container} raiar flex-col align-items-center`}>
-      <div className="width-fit">
-        <details ref={detailsRef}>
-          <summary>Filtros</summary>
-          <div className="raiar flex-row flex-wrap gap">
-            <fieldset
-              className={`${styles.tags} raiar flex-row flex-wrap gap`}
-              onChange={(e) => {
-                if (!(e.target instanceof HTMLInputElement)) {
-                  console.error("event.target is not an HTMLInputElement");
-                  return;
-                }
+    <div className="flex flex-col items-center gap-4">
+      <h2 className="text-xl">Filtros</h2>
+      <div className="flex flex-row flex-wrap items-stretch justify-center gap-4">
+        <fieldset
+          className="flex max-h-[50vh] max-w-4xl flex-row flex-wrap gap-1 overflow-y-auto rounded-2xl bg-bg-close p-4 dark:bg-bg-close-dark"
+          onChange={(e) => {
+            if (!(e.target instanceof HTMLInputElement)) {
+              console.error("event.target is not an HTMLInputElement");
+              return;
+            }
 
-                if (e.target.checked) tags.value.add(e.target.value as Tag);
-                else tags.value.delete(e.target.value as Tag);
+            if (e.target.checked) tags.value.add(e.target.value as Tag);
+            else tags.value.delete(e.target.value as Tag);
 
-                setTags({ value: tags.value });
-              }}
-            >
-              <legend>Selecione tags</legend>
-              {allTags.map((tag) => (
-                <label key={tag}>
-                  {tag}{" "}
-                  <input
-                    type="checkbox"
-                    value={tag}
-                    checked={tags.value.has(tag)}
-                    onChange={() => {
-                      /* Shut up error, there's already an onChange on the fieldset */
-                    }}
-                  />
-                </label>
-              ))}
-            </fieldset>
-            <fieldset
-              onChange={(e) => {
-                if (!(e.target instanceof HTMLInputElement)) {
-                  console.error("event.target is not an HTMLInputElement");
-                  return;
-                }
+            setTags({ value: tags.value });
+          }}
+        >
+          <legend className="float-left mb-3 w-full text-center">
+            Selecione tags
+          </legend>
+          {allTags.map((tag) => (
+            <div key={tag} className="flex grow flex-col items-stretch">
+              <Checkbox value={tag} checked={tags.value.has(tag)}></Checkbox>
+            </div>
+          ))}
+        </fieldset>
+        <fieldset
+          className="flex flex-col items-stretch gap-4 rounded-2xl bg-bg-close p-4 dark:bg-bg-close-dark"
+          onChange={(e) => {
+            if (!(e.target instanceof HTMLInputElement)) {
+              console.error("event.target is not an HTMLInputElement");
+              return;
+            }
 
-                setLogic(e.target.value);
-              }}
-            >
-              <legend>Lógica de filtragem</legend>
-              <label>
-                <input
-                  type="radio"
-                  name="project-filter-mode"
-                  value="best-match"
-                  defaultChecked
-                />
-                Melhor correspondência
-              </label>
-              <label>
-                <input type="radio" name="project-filter-mode" value="every" />
-                Possui todas categorias selecionadas
-              </label>
-            </fieldset>
-          </div>
-        </details>
+            setLogic(e.target.value);
+          }}
+        >
+          <legend className="float-left w-full text-center">
+            Lógica de filtragem
+          </legend>
+          <RadioButton
+            name="project-filter-mode"
+            value="best-match"
+            checked={logic === "best-match"}
+          >
+            Melhor correspondência
+          </RadioButton>
+          <RadioButton
+            name="project-filter-mode"
+            value="every"
+            checked={logic === "every"}
+          >
+            Possui todas categorias selecionadas
+          </RadioButton>
+        </fieldset>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import ProjectsSection from "../_components/projects-section";
-import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   title: "Meus projetos",
@@ -9,8 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="raiar flex-col gap-4x">
-      <h1 className="text-center">Projetos</h1>
+    <main className="p-4 pt-32">
       <ProjectsSection></ProjectsSection>
     </main>
   );

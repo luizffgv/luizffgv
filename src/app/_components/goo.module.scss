@@ -7,32 +7,8 @@
   }
 }
 
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.5;
-  }
-}
-
 .canvas {
-  animation: fade-out, fade-in 5000ms ease-in;
-  animation-timeline: scroll(root block), auto;
+  animation: fade-in 5000ms ease-in;
 
   filter: var(--filter-url);
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-
-  :global(.raiar-dark) & {
-    filter: var(--filter-url) drop-shadow(0 0 15px var(--raiar-color-primary));
-  }
-}
-
-.filter {
-  display: none;
 }

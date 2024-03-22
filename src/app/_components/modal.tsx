@@ -5,11 +5,9 @@ import Button from "./button";
 export default function Modal({
   children,
   onDismiss,
-  noCard,
 }: {
   children: React.ReactNode;
   onDismiss?: () => void;
-  noCard?: boolean;
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -25,13 +23,17 @@ export default function Modal({
   return (
     <dialog
       ref={dialogRef}
-      className={`${styles["modal-container"]} raiar flex-col align-items-center justify-content-safe-center gap`}
+      className={`${styles["modal-container"]} fixed flex h-[100dvh] max-h-none w-[100dvw] max-w-none flex-col items-center justify-center gap-4 bg-transparent p-4 text-inherit`}
       onClose={() => onDismiss?.()}
     >
       {onDismiss ? (
         <div className={styles.dismiss}>
           <Button onClick={onDismiss} aria-label="Fechar modal">
-            <span className="material-symbols-outlined" aria-hidden>
+            <span
+              className="material-symbols-outlined"
+              aria-hidden
+              translate="no"
+            >
               close
             </span>
           </Button>
@@ -39,7 +41,9 @@ export default function Modal({
       ) : (
         <></>
       )}
-      <div className={`${styles["modal"]} ${noCard ? "" : "raiar-card"}`}>
+      <div
+        className={`${styles.modal} dark:bg-bg-close-dark rounded-xl bg-bg-close p-4`}
+      >
         {children}
       </div>
     </dialog>

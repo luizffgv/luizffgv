@@ -4,21 +4,14 @@
     opacity: 0;
   }
 
+  transition-property: backdrop-filter, opacity;
+  transition: 250ms ease;
   backdrop-filter: blur(5px);
   background-color: rgb(127 127 127 / 0.25);
-  border: none;
-  box-sizing: border-box;
-  color: inherit;
-  height: 100dvh;
-  max-height: none;
-  max-width: none;
-  overflow: auto;
-  padding: 32px;
-  perspective: 100dvmax;
-  position: fixed;
-  transition-property: backdrop-filter, opacity;
-  transition: 100ms ease;
-  width: 100dvw;
+
+  &::backdrop {
+    display: none;
+  }
 
   .dismiss {
     @starting-style {
@@ -27,7 +20,7 @@
       rotate: 45deg;
     }
 
-    transition: all 200ms ease 100ms;
+    transition: all 200ms ease 50ms;
   }
 
   .modal {
@@ -40,7 +33,9 @@
 
     rotate: x 0deg;
     transform-origin: top;
-    transition: opacity 0ms 300ms,
-      rotate 500ms cubic-bezier(0.34, 1.56, 0.64, 1.2) 300ms;
+    transition:
+      background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0ms 100ms,
+      rotate 500ms cubic-bezier(0.34, 1.56, 0.64, 1.2) 100ms;
   }
 }
