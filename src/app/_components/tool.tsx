@@ -39,10 +39,7 @@ export default function Tool(props: Props) {
       aria-label={props.name}
     >
       <div className="flex flex-col items-center">
-        <div
-          className="font-display relative text-center text-lg font-bold"
-          style={{ color: props.color }}
-        >
+        <div className="font-display relative text-center text-lg font-bold">
           {"color" in props && (
             <div
               ref={glowRef}
