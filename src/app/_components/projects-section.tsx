@@ -14,6 +14,7 @@ import {
 } from "../_contexts/project-filters";
 import ProjectsList from "./projects-list";
 import { ProjectRaw } from "projects-list";
+import TitledSection from "./titled-section";
 
 export default function ProjectsSection() {
   const [filter, setFilter] = useState(
@@ -42,24 +43,22 @@ export default function ProjectsSection() {
   }, [filter]);
 
   return (
-    <section
-      className="flex flex-col items-center gap-8"
-      aria-label="Meus projetos"
-    >
-      <h1 className="text-center text-2xl">Meus projetos</h1>
+    <TitledSection level={1} title={<>Meus projetos</>}>
       <ProjectFilterContext.Provider
         value={{
           filter,
           setFilter: contextSetFilter,
         }}
       >
-        <Suspense>
-          <ProjectFilterSelector></ProjectFilterSelector>
-        </Suspense>
-        <div ref={projectsListRef} className="max-w-screen-2xl pb-[100vh]">
-          <ProjectsList></ProjectsList>
+        <div className="flex flex-col items-center gap-8">
+          <Suspense>
+            <ProjectFilterSelector></ProjectFilterSelector>
+          </Suspense>
+          <div ref={projectsListRef} className="max-w-screen-2xl pb-[100vh]">
+            <ProjectsList></ProjectsList>
+          </div>
         </div>
       </ProjectFilterContext.Provider>
-    </section>
+    </TitledSection>
   );
 }

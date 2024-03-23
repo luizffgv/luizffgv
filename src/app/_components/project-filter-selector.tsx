@@ -12,6 +12,7 @@ import projects, { ProjectRaw, Tag } from "projects-list";
 import { useSearchParams } from "next/navigation";
 import Checkbox from "./checkbox";
 import RadioButton from "./radio-button";
+import TitledSection from "./titled-section";
 
 const allTags = [
   ...projects
@@ -69,8 +70,7 @@ export default function ProjectFilterSelector() {
   }, [logic, tags, setFilter]);
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <h2 className="text-xl">Filtros</h2>
+    <TitledSection level={2} title="Filtros">
       <div className="flex flex-row flex-wrap items-stretch justify-center gap-4">
         <fieldset
           className="flex max-h-[50vh] max-w-4xl flex-row flex-wrap gap-1 overflow-y-auto rounded-2xl bg-bg-close p-4 dark:bg-bg-close-dark"
@@ -125,6 +125,6 @@ export default function ProjectFilterSelector() {
           </RadioButton>
         </fieldset>
       </div>
-    </div>
+    </TitledSection>
   );
 }
