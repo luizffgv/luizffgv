@@ -1,5 +1,7 @@
 export default function Photo() {
   return (
-    <div className="dark:bg-bg-close-dark h-24 w-24 rounded-full border-4 border-primary bg-bg-close drop-shadow-[0_0_15px_theme(colors.primary)]"></div>
+    <div className="jump-in h-48 w-48 overflow-hidden rounded-full border-4 border-primary bg-bg-close drop-shadow-[0_0_15px_theme(colors.primary)] dark:bg-bg-close-dark">
+      <img src="/my-photo.webp" alt="Minha foto"></img>
+    </div>
   );
 }
