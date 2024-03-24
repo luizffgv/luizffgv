@@ -50,16 +50,19 @@ export default function Photo() {
         </Button>
       </div>
       <div className="jump-in h-48 w-48 overflow-hidden rounded-full border-4 border-primary drop-shadow-[0_0_15px_theme(colors.primary)]">
-        <div className="transition-discrete absolute hidden transition-all dark:block">
+        <div
+          className="transition-discrete absolute hidden transition-all dark:block"
+          aria-hidden // Avoid double SR reading
+        >
           <BackgroundBlur
-            background={{ src: "/my-photo-dark.webp", alt: "Minha foto" }}
-            foreground={{ src: "/my-photo-no-bg-dark.webp", alt: "Minha foto" }}
+            background={{ src: "/my-photo-dark.webp", alt: "Fundo" }}
+            foreground={{ src: "/my-photo-no-bg-dark.webp", alt: "Meu rosto" }}
           />
         </div>
         <div className="transition-discrete transition-all dark:pointer-events-none dark:opacity-0">
           <BackgroundBlur
-            background={{ src: "/my-photo.webp", alt: "Minha foto" }}
-            foreground={{ src: "/my-photo-no-bg.webp", alt: "Minha foto" }}
+            background={{ src: "/my-photo.webp", alt: "Fundo" }}
+            foreground={{ src: "/my-photo-no-bg.webp", alt: "Meu rosto" }}
           />
         </div>
       </div>
