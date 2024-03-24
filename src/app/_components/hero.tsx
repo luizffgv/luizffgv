@@ -4,6 +4,7 @@ import styles from "./hero.module.scss";
 import Button from "./button";
 import Goo from "./goo";
 import Photo from "./photo";
+import ContactButtons from "./contact-buttons";
 
 export default function Hero() {
   return (
@@ -67,6 +68,24 @@ export default function Hero() {
             </Button>
           </div>
         </div>
+        <Button
+          modalContent={
+            <div>
+              <div className="flex flex-row flex-wrap gap-4">
+                <ContactButtons></ContactButtons>
+              </div>
+            </div>
+          }
+        >
+          <span
+            className="material-symbols-outlined"
+            aria-hidden
+            translate="no"
+          >
+            chat
+          </span>
+          Vamos conversar
+        </Button>
       </div>
       <div
         className={`${styles["down-arrow"]} absolute bottom-2 left-1/2 translate-x-[-50%]`}
