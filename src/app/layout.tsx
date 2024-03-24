@@ -3,6 +3,7 @@ import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/header";
 import Footer from "./_components/footer";
+import CursorGlow from "./_components/cursor-glow";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <script src="/initial-theme-applier.js"></script>
       </head>
       <body className="flex flex-col bg-bg text-fg transition-colors dark:bg-bg-dark dark:text-fg-dark">
+        <CursorGlow></CursorGlow>
         <Header></Header>
         {children}
         <Footer></Footer>
