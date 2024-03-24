@@ -8,7 +8,7 @@ import ContactButtons from "./contact-buttons";
 
 export default function Hero() {
   return (
-    <div className="relative flex min-h-[100svh] flex-col items-center justify-center px-8 py-32">
+    <div className="relative flex min-h-[100svh] flex-col items-center justify-center px-8 pb-16 pt-24">
       <div className="z-[-1] text-primary opacity-50">
         <Goo></Goo>
       </div>
