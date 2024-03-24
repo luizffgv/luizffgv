@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="dark:bg-bg-close-dark fixed left-0 top-0 z-[1] flex w-full flex-row justify-end bg-bg-close px-4 py-2 shadow-sm transition-all"
+      className="fixed left-0 top-0 z-[1] flex w-full flex-row justify-end bg-bg-close px-4 py-2 shadow-sm transition-all dark:bg-bg-close-dark"
     >
       <div className="flex grow flex-row items-center justify-end sm:justify-between">
         <nav className="hidden flex-row gap-8 sm:flex">
@@ -50,34 +50,43 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div>
-          <Button
-            modalContent={
-              <div className="flex flex-col gap-4">
-                <ThemeSwitcher></ThemeSwitcher>
-                {ENTRIES.map(({ name, href }) => (
-                  <Link
-                    key={name}
-                    href={href}
-                    className={
-                      pathname === href ? "font-bold text-primary" : ""
-                    }
-                  >
-                    {name}
-                  </Link>
-                ))}
-              </div>
-            }
-          >
-            <span
-              className="material-symbols-outlined"
-              aria-hidden
-              translate="no"
+        <div className="flex flex-row gap-4">
+          {/* This has to be invisible instead of hidden, otherwise the open modal will disappear when the screen width changes to >sm */}
+          {/* This also means that the button must be the first element of the flex container, or there will be gaps when it's hidden */}
+          <div className="sm:invisible">
+            <Button
+              modalContent={
+                <div className="flex flex-col gap-4">
+                  <div className="sm:hidden">
+                    <ThemeSwitcher></ThemeSwitcher>
+                  </div>
+                  {ENTRIES.map(({ name, href }) => (
+                    <Link
+                      key={name}
+                      href={href}
+                      className={
+                        pathname === href ? "font-bold text-primary" : ""
+                      }
+                    >
+                      {name}
+                    </Link>
+                  ))}
+                </div>
+              }
             >
-              menu
-            </span>
-            Menu
-          </Button>
+              <span
+                className="material-symbols-outlined"
+                aria-hidden
+                translate="no"
+              >
+                menu
+              </span>
+              Menu
+            </Button>
+          </div>
+          <div className="hidden sm:block">
+            <ThemeSwitcher></ThemeSwitcher>
+          </div>
         </div>
       </div>
     </header>
