@@ -14,6 +14,7 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
             src={`/project-images/${project.image}.webp`}
             className="h-16 rounded-lg blur-2xl"
             alt={`Imagem do projeto ${project.name}`}
+            aria-hidden
           />
           <img
             src={`/project-images/${project.image}.webp`}
