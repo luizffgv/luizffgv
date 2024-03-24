@@ -23,7 +23,7 @@ export default function Modal({
   return (
     <dialog
       ref={dialogRef}
-      className={`${styles["modal-container"]} fixed flex h-[100dvh] max-h-none w-[100dvw] max-w-none flex-col items-center justify-center gap-4 bg-transparent p-4 text-inherit`}
+      className={`${styles["modal-container"]} fixed flex h-[100dvh] max-h-none w-[100dvw] max-w-none flex-col items-center gap-4 bg-transparent p-4 text-inherit [justify-content:safe_center]`}
       onClose={() => onDismiss?.()}
     >
       {onDismiss ? (
@@ -42,7 +42,7 @@ export default function Modal({
         <></>
       )}
       <div
-        className={`${styles.modal} dark:bg-bg-close-dark rounded-xl bg-bg-close p-4`}
+        className={`${styles.modal} rounded-xl bg-bg-close p-4 dark:bg-bg-close-dark`}
       >
         {children}
       </div>
