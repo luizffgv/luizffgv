@@ -315,14 +315,6 @@ export class Bubbles {
   }
 }
 
-/**
- * Adds a bubbles simulation to the page.
- *
- * @remarks
- * Should only be called once per page.
- */
-export function addToPage(): void {}
-
 export default function Goo() {
   const filterId = useId();
   const canvasRef = useRef<HTMLCanvasElement>(null);
