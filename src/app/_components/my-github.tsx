@@ -1,4 +1,5 @@
 import Button from "./button";
+import GlowingText from "./glowing-text";
 import TitledSection from "./titled-section";
 
 export default function MyGitHub() {
@@ -7,7 +8,7 @@ export default function MyGitHub() {
       level={2}
       title={
         <>
-          Dê uma olhada em meu <strong className="text-primary">GitHub</strong>
+          Dê uma olhada em meu <GlowingText>GitHub</GlowingText>
         </>
       }
     >

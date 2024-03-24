@@ -5,6 +5,7 @@ import Button from "./button";
 import Goo from "./goo";
 import Photo from "./photo";
 import ContactButtons from "./contact-buttons";
+import GlowingText from "./glowing-text";
 
 export default function Hero() {
   return (
@@ -16,12 +17,11 @@ export default function Hero() {
         <div className="flex flex-col items-center gap-4">
           <Photo></Photo>
           <p className="text-center text-2xl">
-            Olá, meu nome é{" "}
-            <strong className="text-primary">Luiz Fernando F. G. Valle</strong>
+            Olá, meu nome é <GlowingText>Luiz Fernando F. G. Valle</GlowingText>
           </p>
           <p className="text-center text-2xl">
             Eu sou um desenvolvedor front-end com foco em{" "}
-            <strong className="text-primary">React</strong>
+            <GlowingText>React</GlowingText>
           </p>
         </div>
         <div className="flex flex-row flex-wrap justify-center gap-4">

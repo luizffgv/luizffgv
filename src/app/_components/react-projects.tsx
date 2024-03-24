@@ -1,6 +1,7 @@
 import projects from "projects-list";
 import ProjectPreview from "./project-preview";
 import TitledSection from "./titled-section";
+import GlowingText from "./glowing-text";
 
 const FEATURED_PROJECTS = [
   "Phasmoo",
@@ -14,8 +15,7 @@ export default function ReactProjects() {
       level={2}
       title={
         <>
-          Veja alguns de meus projetos com{" "}
-          <strong className="text-primary">React</strong>
+          Veja alguns de meus projetos com <GlowingText>React</GlowingText>
         </>
       }
     >
