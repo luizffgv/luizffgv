@@ -1,3 +1,4 @@
+import Button from "./button";
 import ContactButtons from "./contact-buttons";
 
 export default function Career() {
@@ -18,9 +19,20 @@ export default function Career() {
           oportunidade?
         </p>
       </div>
-      <div className="flex flex-row flex-wrap justify-center gap-4 *:grow">
-        <ContactButtons></ContactButtons>
-      </div>
+      <Button
+        modalContent={
+          <div>
+            <div className="flex flex-row flex-wrap gap-4">
+              <ContactButtons></ContactButtons>
+            </div>
+          </div>
+        }
+      >
+        <span className="material-symbols-outlined" aria-hidden translate="no">
+          chat
+        </span>
+        Vamos conversar
+      </Button>
     </div>
   );
 }

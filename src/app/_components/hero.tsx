@@ -24,68 +24,39 @@ export default function Hero() {
             <strong className="text-primary">React</strong>
           </p>
         </div>
-        <div className="flex flex-row flex-wrap justify-center gap-4  *:grow">
-          <div className="appear">
-            <Button
-              href="https://drive.google.com/file/d/1ClghZuG9vrQdk8YTqev6jNpy_OOU6i_w/view?usp=sharing"
-              target="_blank"
-            >
-              <span
-                className="material-symbols-outlined"
-                aria-hidden
-                translate="no"
-              >
-                contact_page
-              </span>{" "}
-              Currículo
-            </Button>
-          </div>
-          <div className="appear">
-            <Button
-              href="https://www.linkedin.com/in/luizffgv/"
-              target="_blank"
-            >
-              <span
-                className="material-symbols-outlined"
-                aria-hidden
-                translate="no"
-              >
-                work
-              </span>{" "}
-              LinkedIn
-            </Button>
-          </div>
-          <div className="appear">
-            <Button href="https://www.github.com/luizffgv/" target="_blank">
-              <span
-                className="material-symbols-outlined"
-                aria-hidden
-                translate="no"
-              >
-                folder_data
-              </span>{" "}
-              GitHub
-            </Button>
-          </div>
-        </div>
-        <Button
-          modalContent={
-            <div>
-              <div className="flex flex-row flex-wrap gap-4">
-                <ContactButtons></ContactButtons>
-              </div>
-            </div>
-          }
-        >
-          <span
-            className="material-symbols-outlined"
-            aria-hidden
-            translate="no"
+        <div className="flex flex-row flex-wrap justify-center gap-4">
+          <Button
+            href="https://drive.google.com/file/d/1ClghZuG9vrQdk8YTqev6jNpy_OOU6i_w/view?usp=sharing"
+            target="_blank"
           >
-            chat
-          </span>
-          Vamos conversar
-        </Button>
+            <span
+              className="material-symbols-outlined"
+              aria-hidden
+              translate="no"
+            >
+              contact_page
+            </span>{" "}
+            Currículo
+          </Button>
+          <Button
+            modalContent={
+              <div>
+                <div className="flex flex-row flex-wrap gap-4">
+                  <ContactButtons></ContactButtons>
+                </div>
+              </div>
+            }
+          >
+            <span
+              className="material-symbols-outlined"
+              aria-hidden
+              translate="no"
+            >
+              chat
+            </span>
+            Vamos conversar
+          </Button>
+        </div>
       </div>
       <div
         className={`${styles["down-arrow"]} absolute bottom-2 left-1/2 translate-x-[-50%]`}
