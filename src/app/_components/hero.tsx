@@ -40,10 +40,9 @@ export default function Hero() {
           </Button>
           <Button
             modalContent={
-              <div>
-                <div className="flex flex-row flex-wrap gap-4">
-                  <ContactButtons></ContactButtons>
-                </div>
+              <div className="flex flex-col gap-4">
+                <span className="text-center">Me contate aqui</span>
+                <ContactButtons></ContactButtons>
               </div>
             }
           >
