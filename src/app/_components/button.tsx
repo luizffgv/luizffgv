@@ -17,7 +17,7 @@ function ModalButton(props: ModalButtonProps) {
   return (
     <>
       <button
-        className="inline-block flex flex-row items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 font-bold text-fg-on-primary transition-all hover:shadow-[0_0_50px_theme(colors.primary_/_25%)] hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor]"
+        className="flex flex-row items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 font-bold text-fg-on-primary transition-all hover:shadow-[0_0_50px_theme(colors.primary_/_25%)] hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor]"
         onClick={() => setModalIsOpen(true)}
         aria-label={props["aria-label"]}
       >
@@ -56,7 +56,7 @@ export type Props = {
 
 export default function Button(props: Props) {
   const className =
-    "inline-block flex flex-row items-center gap-2 rounded-lg bg-primary px-4 py-2 font-bold text-fg-on-primary justify-center transition-all hover:brightness-110 hover:shadow-[0_0_50px_theme(colors.primary_/_25%)] hover:[text-shadow:_0_0_15px_currentcolor]";
+    "flex flex-row items-center gap-2 rounded-lg bg-primary px-4 py-2 font-bold text-fg-on-primary justify-center transition-all hover:brightness-110 hover:shadow-[0_0_50px_theme(colors.primary_/_25%)] hover:[text-shadow:_0_0_15px_currentcolor]";
 
   return (
     <>
