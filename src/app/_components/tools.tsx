@@ -43,7 +43,7 @@ const TOOLS = [
 export default function Tools() {
   return (
     <ul
-      className="flex flex-row flex-wrap justify-center gap-16"
+      className="flex flex-row flex-wrap justify-center gap-8"
       role="group"
       aria-label="Tools"
     >
