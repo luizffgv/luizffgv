@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./modal.module.scss";
 import Button from "./button";
+import Card from "./card";
 
 export default function Modal({
   children,
@@ -41,10 +42,8 @@ export default function Modal({
       ) : (
         <></>
       )}
-      <div
-        className={`${styles.modal} rounded-3xl bg-bg-close p-4 dark:bg-bg-close-dark`}
-      >
-        {children}
+      <div className={styles.modal}>
+        <Card>{children}</Card>
       </div>
     </dialog>
   );

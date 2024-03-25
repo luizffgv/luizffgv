@@ -13,6 +13,7 @@ import { useSearchParams } from "next/navigation";
 import Checkbox from "./checkbox";
 import RadioButton from "./radio-button";
 import TitledSection from "./titled-section";
+import Card from "./card";
 
 const allTags = [
   ...projects
@@ -72,58 +73,62 @@ export default function ProjectFilterSelector() {
   return (
     <TitledSection level={2} title="Filtros">
       <div className="flex flex-row flex-wrap items-stretch justify-center gap-4">
-        <fieldset
-          className="flex max-h-[50vh] max-w-4xl flex-row flex-wrap gap-1 overflow-y-auto rounded-3xl bg-bg-close p-4 dark:bg-bg-close-dark"
-          onChange={(e) => {
-            if (!(e.target instanceof HTMLInputElement)) {
-              console.error("event.target is not an HTMLInputElement");
-              return;
-            }
+        <Card>
+          <fieldset
+            className="flex max-h-[50vh] max-w-4xl flex-row flex-wrap gap-1 overflow-y-auto"
+            onChange={(e) => {
+              if (!(e.target instanceof HTMLInputElement)) {
+                console.error("event.target is not an HTMLInputElement");
+                return;
+              }
 
-            if (e.target.checked) tags.value.add(e.target.value as Tag);
-            else tags.value.delete(e.target.value as Tag);
+              if (e.target.checked) tags.value.add(e.target.value as Tag);
+              else tags.value.delete(e.target.value as Tag);
 
-            setTags({ value: tags.value });
-          }}
-        >
-          <legend className="float-left mb-3 w-full text-center">
-            Selecione tags
-          </legend>
-          {allTags.map((tag) => (
-            <div key={tag} className="flex grow flex-col items-stretch">
-              <Checkbox value={tag} checked={tags.value.has(tag)}></Checkbox>
-            </div>
-          ))}
-        </fieldset>
-        <fieldset
-          className="flex flex-col items-stretch gap-4 rounded-3xl bg-bg-close p-4 dark:bg-bg-close-dark"
-          onChange={(e) => {
-            if (!(e.target instanceof HTMLInputElement)) {
-              console.error("event.target is not an HTMLInputElement");
-              return;
-            }
-
-            setLogic(e.target.value);
-          }}
-        >
-          <legend className="float-left w-full text-center">
-            Lógica de filtragem
-          </legend>
-          <RadioButton
-            name="project-filter-mode"
-            value="best-match"
-            checked={logic === "best-match"}
+              setTags({ value: tags.value });
+            }}
           >
-            Melhor correspondência
-          </RadioButton>
-          <RadioButton
-            name="project-filter-mode"
-            value="every"
-            checked={logic === "every"}
+            <legend className="float-left mb-3 w-full text-center">
+              Selecione tags
+            </legend>
+            {allTags.map((tag) => (
+              <div key={tag} className="flex grow flex-col items-stretch">
+                <Checkbox value={tag} checked={tags.value.has(tag)}></Checkbox>
+              </div>
+            ))}
+          </fieldset>
+        </Card>
+        <Card>
+          <fieldset
+            className="flex flex-col items-stretch gap-4"
+            onChange={(e) => {
+              if (!(e.target instanceof HTMLInputElement)) {
+                console.error("event.target is not an HTMLInputElement");
+                return;
+              }
+
+              setLogic(e.target.value);
+            }}
           >
-            Possui todas categorias selecionadas
-          </RadioButton>
-        </fieldset>
+            <legend className="float-left w-full text-center">
+              Lógica de filtragem
+            </legend>
+            <RadioButton
+              name="project-filter-mode"
+              value="best-match"
+              checked={logic === "best-match"}
+            >
+              Melhor correspondência
+            </RadioButton>
+            <RadioButton
+              name="project-filter-mode"
+              value="every"
+              checked={logic === "every"}
+            >
+              Possui todas categorias selecionadas
+            </RadioButton>
+          </fieldset>
+        </Card>
       </div>
     </TitledSection>
   );

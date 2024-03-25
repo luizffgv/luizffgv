@@ -2,6 +2,7 @@ import { useContext, useMemo } from "react";
 import { ProjectFilterContext } from "../_contexts/project-filters";
 import projects from "projects-list";
 import ProjectPreview from "./project-preview";
+import Card from "./card";
 
 export default function ProjectsList() {
   const { filter } = useContext(ProjectFilterContext);
@@ -12,9 +13,13 @@ export default function ProjectsList() {
       {filteredProjects.map((project) => (
         <li
           key={project.name}
-          className="appear flex min-w-fit grow basis-0 flex-row items-stretch justify-center rounded-3xl bg-bg-close p-4 shadow-sm dark:bg-bg-close-dark"
+          className="appear min-w-fit grow basis-0 *:h-full"
         >
-          <ProjectPreview project={project}></ProjectPreview>
+          <Card>
+            <div className="flex h-full flex-row items-stretch justify-center">
+              <ProjectPreview project={project}></ProjectPreview>
+            </div>
+          </Card>
         </li>
       ))}
       {filteredProjects.length == 0 && (
