@@ -38,6 +38,14 @@ const TOOLS = [
     name: "JSDoc/TSDoc",
     details: "Com amor por documentar",
   },
+  {
+    name: "Jest",
+    color: "#99425b",
+    details: "Com React",
+  },
+  {
+    name: "GitHub Actions",
+  },
 ] satisfies ToolProps[];
 
 export default function Tools() {
