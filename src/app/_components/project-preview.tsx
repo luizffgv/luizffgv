@@ -4,7 +4,7 @@ import Button from "./button";
 export default function ProjectPreview({ project }: { project: ProjectRaw }) {
   return (
     <div
-      className="flex max-w-prose flex-col items-center"
+      className="flex max-w-prose flex-col items-center gap-4"
       role="group"
       aria-label={project.name}
     >
@@ -25,7 +25,7 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
       ) : (
         <div className="h-16"></div>
       )}
-      <div className="flex grow flex-col items-center justify-between gap-4 p-4">
+      <div className="flex grow flex-col items-center justify-between gap-4">
         <div className="flex flex-col gap-2">
           <div className="text-center text-lg font-bold">{project.name}</div>
           <div>{project.description}</div>
