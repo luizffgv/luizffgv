@@ -42,7 +42,7 @@ export default function Modal({
         <></>
       )}
       <div
-        className={`${styles.modal} rounded-xl bg-bg-close p-4 dark:bg-bg-close-dark`}
+        className={`${styles.modal} rounded-3xl bg-bg-close p-4 dark:bg-bg-close-dark`}
       >
         {children}
       </div>

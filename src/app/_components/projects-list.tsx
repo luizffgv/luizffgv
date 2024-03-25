@@ -12,7 +12,7 @@ export default function ProjectsList() {
       {filteredProjects.map((project) => (
         <li
           key={project.name}
-          className="appear flex min-w-fit grow basis-0 flex-row items-stretch justify-center rounded-2xl bg-bg-close p-4 shadow-sm dark:bg-bg-close-dark"
+          className="appear flex min-w-fit grow basis-0 flex-row items-stretch justify-center rounded-3xl bg-bg-close p-4 shadow-sm dark:bg-bg-close-dark"
         >
           <ProjectPreview project={project}></ProjectPreview>
         </li>

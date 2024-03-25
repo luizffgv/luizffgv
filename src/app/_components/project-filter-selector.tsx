@@ -73,7 +73,7 @@ export default function ProjectFilterSelector() {
     <TitledSection level={2} title="Filtros">
       <div className="flex flex-row flex-wrap items-stretch justify-center gap-4">
         <fieldset
-          className="flex max-h-[50vh] max-w-4xl flex-row flex-wrap gap-1 overflow-y-auto rounded-2xl bg-bg-close p-4 dark:bg-bg-close-dark"
+          className="flex max-h-[50vh] max-w-4xl flex-row flex-wrap gap-1 overflow-y-auto rounded-3xl bg-bg-close p-4 dark:bg-bg-close-dark"
           onChange={(e) => {
             if (!(e.target instanceof HTMLInputElement)) {
               console.error("event.target is not an HTMLInputElement");
@@ -96,7 +96,7 @@ export default function ProjectFilterSelector() {
           ))}
         </fieldset>
         <fieldset
-          className="flex flex-col items-stretch gap-4 rounded-2xl bg-bg-close p-4 dark:bg-bg-close-dark"
+          className="flex flex-col items-stretch gap-4 rounded-3xl bg-bg-close p-4 dark:bg-bg-close-dark"
           onChange={(e) => {
             if (!(e.target instanceof HTMLInputElement)) {
               console.error("event.target is not an HTMLInputElement");
