@@ -1,5 +1,6 @@
 import { ProjectRaw } from "projects-list";
 import Button from "./button";
+import LazyImage from "./lazy-image";
 
 export default function ProjectPreview({ project }: { project: ProjectRaw }) {
   return (
@@ -10,17 +11,19 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
     >
       {project.image != null ? (
         <div className="relative">
-          <img
-            src={`/project-images/${project.image}.webp`}
-            className="h-16 rounded-lg blur-2xl"
-            alt={`Imagem do projeto ${project.name}`}
-            aria-hidden
-          />
-          <img
-            src={`/project-images/${project.image}.webp`}
-            className="absolute left-0 top-0 h-16 rounded-lg"
-            alt={`Imagem do projeto ${project.name}`}
-          />
+          <div className="h-16 w-16 rounded-lg blur-2xl">
+            <LazyImage
+              src={`/project-images/${project.image}.webp`}
+              alt={`Imagem do projeto ${project.name}`}
+              aria-hidden
+            />
+          </div>
+          <div className="absolute left-0 top-0 h-16 w-16 rounded-lg">
+            <LazyImage
+              src={`/project-images/${project.image}.webp`}
+              alt={`Imagem do projeto ${project.name}`}
+            />
+          </div>
         </div>
       ) : (
         <div className="h-16"></div>

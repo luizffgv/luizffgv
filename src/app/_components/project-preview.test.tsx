@@ -4,7 +4,6 @@ import ProjectPreview from "./project-preview";
 const mockProject = {
   name: "Test Project",
   description: "This is a test project",
-  image: "test-image",
   url: "https://example.com",
   repository: "https://github.com/example/test-project",
 };
@@ -17,32 +16,6 @@ describe("ProjectPreview", () => {
 
     expect(screen.getByText("Test Project")).toBeInTheDocument();
     expect(screen.getByText("This is a test project")).toBeInTheDocument();
-  });
-
-  it("Renders project image if available", () => {
-    act(() => {
-      render(<ProjectPreview project={mockProject} />);
-    });
-
-    const projectImage = screen.getAllByAltText(
-      `Imagem do projeto ${mockProject.name}`,
-    )[0];
-    expect(projectImage).toHaveAttribute(
-      "src",
-      `/project-images/${mockProject.image}.webp`,
-    );
-  });
-
-  it("Does not render project image if it was not provided", () => {
-    const projectWithoutImage = { ...mockProject, image: undefined };
-    act(() => {
-      render(<ProjectPreview project={projectWithoutImage} />);
-    });
-
-    const projectImage = screen.queryByAltText(
-      `Imagem do projeto ${mockProject.name}`,
-    );
-    expect(projectImage).not.toBeInTheDocument();
   });
 
   it("Renders visit button if project has a URL", () => {
