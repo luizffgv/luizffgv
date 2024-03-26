@@ -52,7 +52,6 @@ export default function Tools() {
   return (
     <ul
       className="flex flex-row flex-wrap justify-center gap-8"
-      role="group"
       aria-label="Tools"
     >
       {TOOLS.map((props) => (
