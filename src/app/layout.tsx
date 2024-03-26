@@ -24,8 +24,16 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="/initial-theme-applier.js"></script>
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `
+const isDark = localStorage.getItem("theme-dark");
+const deviceIsDark = matchMedia("(prefers-color-scheme: dark)").matches;
+if (isDark === "true" || (isDark == undefined && deviceIsDark))
+  document.documentElement.classList.add("dark");`,
+          }}
+        ></script>
       </head>
       <body className="flex flex-col bg-bg text-fg transition-colors dark:bg-bg-dark dark:text-fg-dark">
         <CursorGlow></CursorGlow>
