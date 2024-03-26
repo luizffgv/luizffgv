@@ -39,16 +39,18 @@ export default function Header() {
       className="fixed left-0 top-0 z-[1] flex w-full flex-row justify-end bg-bg-close px-4 py-2 shadow-sm transition-all dark:bg-bg-close-dark"
     >
       <div className="flex grow flex-row items-center justify-end sm:justify-between">
-        <nav className="hidden flex-row gap-8 sm:flex">
-          {ENTRIES.map(({ name, href }) => (
-            <Link
-              key={name}
-              href={href}
-              className={pathname === href ? "font-bold text-primary" : ""}
-            >
-              {name}
-            </Link>
-          ))}
+        <nav className="hidden flex-row gap-8 font-bold sm:flex">
+          {ENTRIES.map(({ name, href }) =>
+            pathname === href ? (
+              <span key={name} className="text-primary">
+                {name}
+              </span>
+            ) : (
+              <Link key={name} href={href}>
+                {name}
+              </Link>
+            ),
+          )}
         </nav>
         <div className="flex flex-row gap-4">
           {/* This has to be invisible instead of hidden, otherwise the open modal will disappear when the screen width changes to >sm */}
