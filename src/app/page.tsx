@@ -11,19 +11,24 @@ export default function Home() {
       <div className="color-in">
         <Hero></Hero>
       </div>
-      <div className="dark:bg-bg-close-dark flex flex-col items-center gap-64 bg-bg-close px-4 pb-[50vh] pt-8 transition-colors">
-        <ReactProjects></ReactProjects>
-        <div className="appear">
-          <NotOnlyReact></NotOnlyReact>
-        </div>
-        <div className="appear">
-          <MyGitHub></MyGitHub>
-        </div>
-        <div className="appear">
-          <Autism></Autism>
-        </div>
-        <div className="appear">
-          <Career></Career>
+      <div className="bg-bg-close transition-colors dark:bg-bg-close-dark">
+        {/* Gradient background */}
+        <div className="sticky top-0 h-screen max-h-full w-full [background:radial-gradient(circle_at_bottom,_theme(colors.primary/20%),_transparent)] dark:[background:radial-gradient(circle_at_top,_theme(colors.primary/15%),_transparent)]"></div>
+
+        <div className="flex flex-col items-center gap-64 px-4 pb-[50vh] pt-8">
+          <ReactProjects></ReactProjects>
+          <div className="appear">
+            <NotOnlyReact></NotOnlyReact>
+          </div>
+          <div className="appear">
+            <MyGitHub></MyGitHub>
+          </div>
+          <div className="appear">
+            <Autism></Autism>
+          </div>
+          <div className="appear">
+            <Career></Career>
+          </div>
         </div>
       </div>
     </main>
