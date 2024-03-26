@@ -1,11 +1,10 @@
-"use client";
-
 import styles from "./hero.module.scss";
 import Button from "./button";
 import Goo from "./goo";
 import Photo from "./photo";
 import ContactButtons from "./contact-buttons";
 import GlowingText from "./glowing-text";
+import HeroAdvanceButton from "./hero-advance-button";
 
 export default function Hero() {
   return (
@@ -61,20 +60,7 @@ export default function Hero() {
         className={`${styles["down-arrow"]} absolute bottom-2 left-1/2 translate-x-[-50%]`}
       >
         <div className="animate-bounce">
-          <Button
-            onClick={() => {
-              document.documentElement.scrollBy(0, innerHeight);
-            }}
-            aria-label="Avançar"
-          >
-            <span
-              className="material-symbols-outlined scale-[2]"
-              aria-hidden
-              translate="no"
-            >
-              expand_more
-            </span>
-          </Button>
+          <HeroAdvanceButton></HeroAdvanceButton>
         </div>
       </div>
     </div>
