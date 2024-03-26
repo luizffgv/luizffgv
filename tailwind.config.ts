@@ -6,7 +6,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#f1f5f9",
+        bg: "#e2e8f0",
         "bg-dark": "#0f172a",
         "bg-close": "#f8fafc",
         "bg-close-dark": "#1e293b",
