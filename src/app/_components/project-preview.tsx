@@ -11,14 +11,14 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
     >
       {project.image != null ? (
         <div className="relative">
-          <div className="h-16 w-16 rounded-lg blur-2xl">
+          <div className="h-16 w-16 overflow-hidden rounded-lg blur-2xl">
             <LazyImage
               src={`/project-images/${project.image}.webp`}
               alt={`Imagem do projeto ${project.name}`}
               aria-hidden
             />
           </div>
-          <div className="absolute left-0 top-0 h-16 w-16 rounded-lg">
+          <div className="absolute left-0 top-0 h-16 w-16 overflow-hidden rounded-lg">
             <LazyImage
               src={`/project-images/${project.image}.webp`}
               alt={`Imagem do projeto ${project.name}`}
