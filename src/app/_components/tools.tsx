@@ -3,27 +3,27 @@ import Tool, { Props as ToolProps } from "./tool";
 const TOOLS = [
   {
     name: "Next.js",
-    color: "rgb(127 127 127)",
+    image: "https://cdn.simpleicons.org/nextdotjs",
     details: "Para static exports",
   },
   {
     name: "Node.js",
-    color: "#5fa04e",
+    image: "https://cdn.simpleicons.org/nodedotjs",
     details: "E execução async",
   },
   {
     name: "TypeScript",
-    color: "#2d79c7",
+    image: "https://cdn.simpleicons.org/typescript",
     details: "Com type safety e sem any",
   },
   {
     name: "JavaScript puro",
-    color: "#f0dc4e",
+    image: "https://cdn.simpleicons.org/javascript",
     details: "E componentes com shadow DOM",
   },
   {
     name: "Tailwind CSS",
-    color: "#37bff8",
+    image: "https://cdn.simpleicons.org/tailwindcss",
     details: "Esse site usa Tailwind",
   },
   {
@@ -40,11 +40,12 @@ const TOOLS = [
   },
   {
     name: "Jest",
-    color: "#99425b",
+    image: "https://cdn.simpleicons.org/jest",
     details: "Com React",
   },
   {
     name: "GitHub Actions",
+    image: "https://cdn.simpleicons.org/githubactions",
   },
 ] satisfies ToolProps[];
 
