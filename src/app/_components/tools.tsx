@@ -32,6 +32,12 @@ const TOOLS = [
     details: "E componentes com shadow DOM",
   },
   {
+    kind: "language",
+    name: "C++",
+    image: "https://cdn.simpleicons.org/cplusplus",
+    details: "Especialmente C++20",
+  },
+  {
     kind: "framework",
     name: "Tailwind CSS",
     image: "https://cdn.simpleicons.org/tailwindcss",
