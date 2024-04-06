@@ -10,6 +10,10 @@ const quicksand = Quicksand({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "luizf.dev",
   description: "Veja sobre mim aqui em meu site pessoal.",
+  openGraph: {
+    type: "website",
+    images: ["https://luizf.dev/banner.png"],
+  },
 };
 
 export default function RootLayout({
@@ -24,6 +28,27 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3b82f6" />
+        <meta name="msapplication-TileColor" content="#f8fafc" />
+        <meta name="theme-color" content="#f8fafc"></meta>
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
