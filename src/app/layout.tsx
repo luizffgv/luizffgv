@@ -8,7 +8,7 @@ import CursorGlow from "./_components/cursor-glow";
 const quicksand = Quicksand({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "luizf.dev",
+  title: "Sobre mim",
   description: "Veja sobre mim aqui em meu site pessoal.",
   openGraph: {
     type: "website",
