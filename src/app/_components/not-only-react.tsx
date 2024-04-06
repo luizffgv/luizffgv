@@ -1,3 +1,4 @@
+import { EyeIcon } from "lucide-react";
 import Button from "./button";
 import GlowingText from "./glowing-text";
 import TitledSection from "./titled-section";
@@ -39,13 +40,7 @@ export default function NotOnlyReact() {
             <Tools kind="tool"></Tools>
           </TitledSection>
           <Button href="/projetos">
-            <span
-              className="material-symbols-outlined"
-              aria-hidden
-              translate="no"
-            >
-              visibility
-            </span>
+            <EyeIcon />
             Veja meus outros projetos
           </Button>
         </div>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import styles from "./modal.module.scss";
 import Button from "./button";
 import Card from "./card";
+import { XIcon } from "lucide-react";
 
 export default function Modal({
   children,
@@ -30,13 +31,7 @@ export default function Modal({
       {onDismiss ? (
         <div className={styles.dismiss}>
           <Button onClick={onDismiss} aria-label="Fechar modal">
-            <span
-              className="material-symbols-outlined"
-              aria-hidden
-              translate="no"
-            >
-              close
-            </span>
+            <XIcon />
           </Button>
         </div>
       ) : (

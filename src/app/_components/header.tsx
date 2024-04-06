@@ -5,6 +5,7 @@ import ThemeSwitcher from "./theme-switcher";
 import Button from "./button";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { MenuIcon } from "lucide-react";
 
 const ENTRIES = [
   { name: "Início", href: "/" },
@@ -76,13 +77,7 @@ export default function Header() {
                 </div>
               }
             >
-              <span
-                className="material-symbols-outlined"
-                aria-hidden
-                translate="no"
-              >
-                menu
-              </span>
+              <MenuIcon />
               Menu
             </Button>
           </div>

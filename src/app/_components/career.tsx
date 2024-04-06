@@ -1,3 +1,4 @@
+import { MessageCircleIcon } from "lucide-react";
 import Button from "./button";
 import ContactButtons from "./contact-buttons";
 import GlowingText from "./glowing-text";
@@ -27,9 +28,7 @@ export default function Career() {
           </div>
         }
       >
-        <span className="material-symbols-outlined" aria-hidden translate="no">
-          chat
-        </span>
+        <MessageCircleIcon />
         Vamos conversar
       </Button>
     </div>

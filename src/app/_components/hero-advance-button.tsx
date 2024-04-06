@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowDownIcon } from "lucide-react";
 import Button from "./button";
 
 export default function HeroAdvanceButton() {
@@ -10,13 +11,7 @@ export default function HeroAdvanceButton() {
       }}
       aria-label="Avançar"
     >
-      <span
-        className="material-symbols-outlined scale-[2]"
-        aria-hidden
-        translate="no"
-      >
-        expand_more
-      </span>
+      <ArrowDownIcon />
     </Button>
   );
 }

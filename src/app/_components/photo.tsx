@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Button from "./button";
 import LazyImage from "./lazy-image";
+import { FlashlightIcon } from "lucide-react";
 
 interface BackgroundBlurProps {
   /** The background image to use. */
@@ -40,13 +41,7 @@ export default function Photo() {
           }}
           aria-label="Clarear foto"
         >
-          <span
-            className="material-symbols-outlined rotate-180 animate-pulse sm:-rotate-90"
-            aria-hidden
-            translate="no"
-          >
-            flashlight_on
-          </span>
+          <FlashlightIcon className="rotate-180 animate-pulse sm:-rotate-90" />
         </Button>
       </div>
       <div className="jump-in h-48 w-48 overflow-hidden rounded-full border-4 border-primary drop-shadow-[0_0_15px_theme(colors.primary)]">

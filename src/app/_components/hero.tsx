@@ -5,6 +5,7 @@ import Photo from "./photo";
 import ContactButtons from "./contact-buttons";
 import GlowingText from "./glowing-text";
 import HeroAdvanceButton from "./hero-advance-button";
+import { FileTextIcon, MessageCircleIcon } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -28,13 +29,7 @@ export default function Hero() {
             href="https://drive.google.com/file/d/1ClghZuG9vrQdk8YTqev6jNpy_OOU6i_w/view?usp=sharing"
             target="_blank"
           >
-            <span
-              className="material-symbols-outlined"
-              aria-hidden
-              translate="no"
-            >
-              contact_page
-            </span>{" "}
+            <FileTextIcon />
             Currículo
           </Button>
           <Button
@@ -45,13 +40,7 @@ export default function Hero() {
               </div>
             }
           >
-            <span
-              className="material-symbols-outlined"
-              aria-hidden
-              translate="no"
-            >
-              chat
-            </span>
+            <MessageCircleIcon />
             Vamos conversar
           </Button>
         </div>

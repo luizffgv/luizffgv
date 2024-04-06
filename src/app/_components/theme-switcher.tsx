@@ -1,5 +1,6 @@
 "use client";
 
+import { SunMoonIcon } from "lucide-react";
 import Button from "./button";
 
 export default function ThemeSwitcher() {
@@ -13,9 +14,7 @@ export default function ThemeSwitcher() {
         );
       }}
     >
-      <span className="material-symbols-outlined" aria-hidden translate="no">
-        contrast
-      </span>
+      <SunMoonIcon />
       Mudar tema
     </Button>
   );

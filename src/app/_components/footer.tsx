@@ -1,3 +1,4 @@
+import { EyeIcon } from "lucide-react";
 import Button from "./button";
 
 export default function Footer() {
@@ -11,9 +12,7 @@ export default function Footer() {
         Hospedado com <strong>GitHub Pages</strong>.
       </p>
       <Button href="https://github.com/luizffgv/luizffgv/tree/website">
-        <span className="material-symbols-outlined" aria-hidden translate="no">
-          visibility
-        </span>
+        <EyeIcon />
         Veja o código-fonte
       </Button>
     </footer>

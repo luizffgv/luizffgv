@@ -1,6 +1,7 @@
 import { ProjectRaw } from "projects-list";
 import Button from "./button";
 import LazyImage from "./lazy-image";
+import { EyeIcon, FolderGit2Icon } from "lucide-react";
 
 export default function ProjectPreview({ project }: { project: ProjectRaw }) {
   return (
@@ -37,13 +38,7 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
           {project.url ? (
             <div>
               <Button href={project.url} target="_blank">
-                <span
-                  className="material-symbols-outlined"
-                  aria-hidden
-                  translate="no"
-                >
-                  visibility
-                </span>
+                <EyeIcon />
                 Visitar
               </Button>
             </div>
@@ -53,13 +48,7 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
           {project.repository ? (
             <div>
               <Button href={project.repository} target="_blank">
-                <span
-                  className="material-symbols-outlined"
-                  aria-hidden
-                  translate="no"
-                >
-                  folder_data
-                </span>
+                <FolderGit2Icon />
                 Repositório
               </Button>
             </div>

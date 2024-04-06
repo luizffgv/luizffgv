@@ -1,3 +1,4 @@
+import { FolderGit2Icon } from "lucide-react";
 import Button from "./button";
 import GlowingText from "./glowing-text";
 import TitledSection from "./titled-section";
@@ -16,13 +17,7 @@ export default function MyGitHub() {
         <p>Eu tenho vários projetos open source!</p>
         <div>
           <Button href="https://www.github.com/luizffgv/" target="_blank">
-            <span
-              className="material-symbols-outlined"
-              aria-hidden
-              translate="no"
-            >
-              folder_data
-            </span>{" "}
+            <FolderGit2Icon />
             Ver meu GitHub
           </Button>
         </div>
