@@ -13,7 +13,8 @@ export default function NotOnlyReact() {
             level={3}
             title={
               <span>
-                Tenho conhecimento nestes <GlowingText>frameworks</GlowingText>
+                Eu tenho conhecimento nestes{" "}
+                <GlowingText>frameworks</GlowingText>,
               </span>
             }
           >
@@ -23,7 +24,7 @@ export default function NotOnlyReact() {
             level={3}
             title={
               <span>
-                Tenho conhecimento nestas <GlowingText>linguagens</GlowingText>
+                nestas <GlowingText>linguagens</GlowingText>,
               </span>
             }
           >
@@ -33,7 +34,7 @@ export default function NotOnlyReact() {
             level={3}
             title={
               <span>
-                Tenho conhecimento nestas <GlowingText>ferramentas</GlowingText>
+                e nestas <GlowingText>ferramentas</GlowingText>.
               </span>
             }
           >
