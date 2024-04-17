@@ -22,7 +22,7 @@ export default function MyGitHub() {
             </Button>
           </div>
         </TitledSection>
-        <TitledSection level={3} title="E alguns pacotes NPM">
+        <TitledSection level={3} title="e alguns pacotes NPM.">
           <div className="flex flex-col items-center">
             <Button href="/projetos?tags=Pacote%20NPM" target="_blank">
               <PackageIcon />
