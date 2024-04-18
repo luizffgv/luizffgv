@@ -1,7 +1,7 @@
 import styles from "./hero.module.scss";
 import Button from "./button";
 import Goo from "./goo";
-import Photo from "./photo";
+import Logo from "./logo";
 import ContactButtons from "./contact-buttons";
 import GlowingText from "./glowing-text";
 import HeroAdvanceButton from "./hero-advance-button";
@@ -15,7 +15,7 @@ export default function Hero() {
       </div>
       <div className="appear relative flex flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-4">
-          <Photo></Photo>
+          <Logo></Logo>
           <p className="text-center text-2xl">
             Olá, meu nome é <GlowingText>Luiz Fernando F. G. Valle</GlowingText>
           </p>
