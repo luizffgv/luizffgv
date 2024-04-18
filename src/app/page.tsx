@@ -24,10 +24,10 @@ export default function Home() {
             <MyGitHub></MyGitHub>
           </div>
           <div className="appear">
-            <Autism></Autism>
+            <Career></Career>
           </div>
           <div className="appear">
-            <Career></Career>
+            <Autism></Autism>
           </div>
         </div>
       </div>

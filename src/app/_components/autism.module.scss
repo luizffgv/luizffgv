@@ -1,0 +1,26 @@
+@keyframes to-right {
+  from {
+    left: 0;
+  }
+
+  to {
+    translate: -100%;
+    left: 100%;
+  }
+}
+
+.sparkle1 {
+  position: absolute;
+  top: 0;
+
+  animation: to-right both;
+  animation-timeline: view();
+}
+
+.sparkle2 {
+  bottom: 0;
+  position: absolute;
+
+  animation: to-right reverse both;
+  animation-timeline: view();
+}
