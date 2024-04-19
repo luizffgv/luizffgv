@@ -29,23 +29,33 @@ export default function LazyImage({ src, alt }: Props) {
   useEffect(() => {
     setLoaded(false);
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      if (entries[0].isIntersecting) {
-        if (temporaryImage.current == null) {
-          console.error("image.current is null");
-          return;
+    // Enable lazy loading if IntersectionObserver is available
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, observer) => {
+        if (entries[0].isIntersecting) {
+          if (temporaryImage.current == null) {
+            console.error("image.current is null");
+            return;
+          }
+
+          temporaryImage.current.src = src;
+
+          observer.disconnect();
         }
+      });
 
-        temporaryImage.current.src = src;
+      if (container.current == null) console.error("ref.current is null");
+      else observer.observe(container.current);
 
-        observer.disconnect();
+      return () => observer.disconnect();
+    } else {
+      if (temporaryImage.current == null) {
+        console.error("image.current is null");
+        return;
       }
-    });
 
-    if (container.current == null) console.error("ref.current is null");
-    else observer.observe(container.current);
-
-    return () => observer.disconnect();
+      temporaryImage.current.src = src;
+    }
   }, [src]);
 
   return (
