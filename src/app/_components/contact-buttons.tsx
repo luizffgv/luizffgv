@@ -21,7 +21,7 @@ export default function ContactButtons() {
         <div>
           <Button href="mailto:luizffgv10@gmail.com" target="_blank">
             <AtSignIcon />
-            E-mail
+            luizffgv10@gmail.com
           </Button>
         </div>
       </address>
