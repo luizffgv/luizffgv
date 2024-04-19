@@ -1,4 +1,4 @@
-import { MessageCircleIcon } from "lucide-react";
+import { HeartIcon, MessageCircleIcon } from "lucide-react";
 import Button from "./button";
 import ContactButtons from "./contact-buttons";
 import GlowingText from "./glowing-text";
@@ -8,17 +8,20 @@ export default function Career() {
     <div className="flex flex-col items-center gap-8">
       <div className="flex flex-col gap-4">
         <p>Agora chega aqui pertinho...</p>
-        <p className="text-center text-2xl">
-          Eu estou procurando um <GlowingText>emprego</GlowingText> ou um{" "}
-          <GlowingText>estágio</GlowingText>
+        <p
+          className="text-center text-2xl"
+          aria-label="Eu adoraria um emprego ou um estágio"
+        >
+          Eu ad
+          <HeartIcon
+            className="inline animate-pulse [fill:currentcolor]"
+            width={16}
+            height={16}
+          />
+          raria um <GlowingText>emprego</GlowingText> ou um{" "}
+          <GlowingText>estágio</GlowingText>.
         </p>
-        <p className="text-end">
-          Quer ser a minha{" "}
-          <strong className="drop-shadow-primary text-primary [filter:drop-shadow(0_0_1em_currentcolor)]">
-            primeira
-          </strong>{" "}
-          oportunidade?
-        </p>
+        <p className="text-end">Que tal me garantir enquanto pode?</p>
       </div>
       <Button
         modalContent={
