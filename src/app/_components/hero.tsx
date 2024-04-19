@@ -6,6 +6,7 @@ import ContactButtons from "./contact-buttons";
 import GlowingText from "./glowing-text";
 import HeroAdvanceButton from "./hero-advance-button";
 import { FileTextIcon, MessageCircleIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -21,7 +22,9 @@ export default function Hero() {
           </p>
           <p className="text-center text-2xl">
             Eu sou um desenvolvedor front-end com foco em{" "}
-            <GlowingText>React</GlowingText>
+            <Link href="/projetos?tags=React">
+              <GlowingText>React</GlowingText>
+            </Link>
           </p>
         </div>
         <div className="flex flex-row flex-wrap justify-center gap-4">
