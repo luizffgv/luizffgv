@@ -23,9 +23,9 @@ export default function Home() {
           <div className="appear">
             <MyGitHub></MyGitHub>
           </div>
-          <div className="appear">
+          {/* <div className="appear">
             <Career></Career>
-          </div>
+          </div> */}
           <div className="appear">
             <Autism></Autism>
           </div>
