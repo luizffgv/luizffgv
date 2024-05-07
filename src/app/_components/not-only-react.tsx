@@ -7,6 +7,7 @@ import ProjectPreview from "./project-preview";
 import projects from "projects-list";
 
 const PROJECTS_WITHOUT_REACT = [
+  "Goo",
   "Globe",
   "Viewport-Based Scaling",
   "HTilesML",
