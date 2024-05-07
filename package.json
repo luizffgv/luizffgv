@@ -12,7 +12,7 @@
   "dependencies": {
     "lucide-react": "^0.365.0",
     "next": "14.1.3",
-    "projects-list": "github:luizffgv/projects-list#924f393",
+    "projects-list": "github:luizffgv/projects-list#0551bcd",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.71.1"
