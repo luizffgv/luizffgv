@@ -4,7 +4,7 @@ export interface Props {
   /** Checkbox state. */
   checked: boolean;
   /** Handler for the change event. */
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function Checkbox({ value, checked, onChange }: Props) {

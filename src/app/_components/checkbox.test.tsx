@@ -44,7 +44,7 @@ describe("Checkbox", () => {
     const checkbox = screen.getByRole("checkbox");
 
     act(() => {
-      for (let i = 0; i < 3; i++) {
+      for (let click = 0; click < 3; click++) {
         checkbox.click();
       }
     });

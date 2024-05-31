@@ -76,14 +76,15 @@ export default function ProjectFilterSelector() {
         <Card>
           <fieldset
             className="flex max-h-[50vh] max-w-4xl flex-row flex-wrap gap-1 overflow-y-auto"
-            onChange={(e) => {
-              if (!(e.target instanceof HTMLInputElement)) {
+            onChange={(event) => {
+              if (!(event.target instanceof HTMLInputElement)) {
                 console.error("event.target is not an HTMLInputElement");
                 return;
               }
 
-              if (e.target.checked) tags.value.add(e.target.value as Tag);
-              else tags.value.delete(e.target.value as Tag);
+              if (event.target.checked)
+                tags.value.add(event.target.value as Tag);
+              else tags.value.delete(event.target.value as Tag);
 
               setTags({ value: tags.value });
             }}
@@ -101,13 +102,13 @@ export default function ProjectFilterSelector() {
         <Card>
           <fieldset
             className="flex flex-col items-stretch gap-4"
-            onChange={(e) => {
-              if (!(e.target instanceof HTMLInputElement)) {
+            onChange={(event) => {
+              if (!(event.target instanceof HTMLInputElement)) {
                 console.error("event.target is not an HTMLInputElement");
                 return;
               }
 
-              setLogic(e.target.value);
+              setLogic(event.target.value);
             }}
           >
             <legend className="float-left w-full text-center">

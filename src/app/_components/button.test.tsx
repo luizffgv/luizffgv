@@ -10,7 +10,7 @@ describe("Button", () => {
     });
 
     act(() => {
-      for (let i = 0; i < 3; i++) {
+      for (let click = 0; click < 3; click++) {
         screen.getByRole("button").click();
       }
     });
