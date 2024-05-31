@@ -22,7 +22,7 @@ export default function ProjectsList() {
           </Card>
         </li>
       ))}
-      {filteredProjects.length == 0 && (
+      {filteredProjects.length === 0 && (
         <li className="text-center text-xl">
           Nenhum projeto se encaixa nos filtros.
         </li>
