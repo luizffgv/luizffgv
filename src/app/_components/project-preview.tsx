@@ -10,7 +10,9 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
       role="group"
       aria-label={project.name}
     >
-      {project.image != null ? (
+      {project.image == null ? (
+        <div className="h-16"></div>
+      ) : (
         <div className="relative">
           <div className="h-16 w-16 overflow-hidden rounded-lg blur-2xl">
             <LazyImage
@@ -26,8 +28,6 @@ export default function ProjectPreview({ project }: { project: ProjectRaw }) {
             />
           </div>
         </div>
-      ) : (
-        <div className="h-16"></div>
       )}
       <div className="flex grow flex-col items-center justify-between gap-4">
         <div className="flex flex-col gap-2">
