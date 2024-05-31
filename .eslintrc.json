@@ -1,6 +1,39 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": ["next/core-web-vitals", "plugin:unicorn/recommended"],
   "rules": {
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    // Unsure if this should cause an error
+    "unicorn/no-array-reduce": "warn",
+    // I believe null should be allowed as it has different meaning vs undefined
+    "unicorn/no-null": "off",
+    // Prettier takes care of ternaries
+    "unicorn/no-nested-ternary": "off",
+    "unicorn/numeric-separators-style": [
+      "error",
+      {
+        "onlyIfContainsSeparator": true
+      }
+    ],
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "replacements": {
+          // Unambiguous
+          "ctx": {
+            "context": false
+          },
+          "params": {
+            "parameters": false
+          },
+          // Idiomatic React abbreviations
+          "props": {
+            "properties": false
+          },
+          "ref": {
+            "reference": false
+          }
+        }
+      }
+    ]
   }
 }
