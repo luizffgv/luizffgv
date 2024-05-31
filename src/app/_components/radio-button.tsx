@@ -8,7 +8,7 @@ export interface Props {
   /** Radio button label. */
   children: React.ReactNode;
   /** Handler for the change event. */
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function RadioButton({
