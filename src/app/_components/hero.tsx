@@ -7,6 +7,7 @@ import GlowingText from "./glowing-text";
 import HeroAdvanceButton from "./hero-advance-button";
 import { FileTextIcon, MessageCircleIcon } from "lucide-react";
 import Link from "next/link";
+import LookingAtCursor from "./looking-at-cursor";
 
 export default function Hero() {
   return (
@@ -16,7 +17,9 @@ export default function Hero() {
       </div>
       <div className="appear relative flex flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-4">
-          <Logo></Logo>
+          <LookingAtCursor>
+            <Logo></Logo>
+          </LookingAtCursor>
           <p className="text-center text-2xl">
             Olá, meu nome é <GlowingText>Luiz Fernando F. G. Valle</GlowingText>
           </p>
