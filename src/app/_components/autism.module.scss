@@ -131,7 +131,8 @@
 
     scale: calc(1 - var(--infinity-shadow-index) / 10);
 
-    translate: -50% calc(-50% - 1px * var(--infinity-shadow-index));
+    translate: -50% calc(-50% - 1px * var(--infinity-shadow-index))
+      calc(var(--infinity-shadow-index) * -10px);
 
     &.infinity1 {
       --infinity-shadow-index: 1;

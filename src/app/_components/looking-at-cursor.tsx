@@ -52,7 +52,10 @@ export default function LookingAtCursor({ children }: Props) {
 
   return (
     <div className="[perspective:100vmax]">
-      <div ref={ref} className="transition-all ease-linear">
+      <div
+        ref={ref}
+        className="transition-all ease-linear [transform-style:preserve-3d]"
+      >
         {children}
       </div>
     </div>
