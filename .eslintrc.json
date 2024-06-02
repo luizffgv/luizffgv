@@ -1,11 +1,22 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:unicorn/recommended"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:unicorn/all",
+    "plugin:@typescript-eslint/strict-type-checked"
+  ],
   "plugins": ["react-compiler"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "rules": {
     "@next/next/no-img-element": "off",
+    "react/hook-use-state": "warn",
+    "react/jsx-handler-names": "warn",
     "react-compiler/react-compiler": "error",
     // Unsure if this should cause an error
     "unicorn/no-array-reduce": "warn",
+    "unicorn/no-keyword-prefix": "off",
     // I believe null should be allowed as it has different meaning vs undefined
     "unicorn/no-null": "off",
     // Prettier takes care of ternaries
@@ -37,5 +48,14 @@
         }
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.tsx"],
+      "rules": {
+        // Tests have a ton of promises because of describe() and it()
+        "@typescript-eslint/no-floating-promises": "off"
+      }
+    }
+  ]
 }
