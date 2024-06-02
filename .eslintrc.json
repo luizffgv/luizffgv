@@ -12,6 +12,8 @@
   "rules": {
     "curly": "warn",
     "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "sort-imports": "warn",
     "@next/next/no-img-element": "off",
     "@typescript-eslint/no-invalid-void-type": [
       "error",
