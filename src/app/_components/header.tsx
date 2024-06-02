@@ -21,7 +21,7 @@ export default function Header() {
 
     const scrollListener = () => {
       const scrollPosition = scrollY;
-      if (scrollPosition > lastPosition && scrollY != 0) {
+      if (scrollPosition > lastPosition && scrollY !== 0) {
         headerRef.current?.classList.add("translate-y-[-100%]");
       } else {
         headerRef.current?.classList.remove("translate-y-[-100%]");

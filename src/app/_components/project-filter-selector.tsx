@@ -56,7 +56,7 @@ export default function ProjectFilterSelector() {
       if (tags.value.size > 0) {
         matching = matching.filter((p) => matchingTags(p, tags.value).size > 0);
       }
-      if (logic == "every") {
+      if (logic === "every") {
         matching = matching.filter((p) => {
           for (const tag of tags.value) {
             if (!p.tags?.includes(tag)) {

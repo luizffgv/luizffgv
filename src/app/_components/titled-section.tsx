@@ -6,15 +6,15 @@ interface HeadingProps {
 
 /// A standard styled heading with a specified level.
 function Heading({ level, children }: HeadingProps) {
-  return level == 1 ? (
+  return level === 1 ? (
     <h1 className="mb-8 text-center text-3xl">{children}</h1>
-  ) : level == 2 ? (
+  ) : level === 2 ? (
     <h2 className="mb-6 text-center text-2xl">{children}</h2>
-  ) : level == 3 ? (
+  ) : level === 3 ? (
     <h3 className="mb-4 text-center text-xl">{children}</h3>
-  ) : level == 4 ? (
+  ) : level === 4 ? (
     <h4 className="mb-2 text-center text-lg">{children}</h4>
-  ) : level == 5 ? (
+  ) : level === 5 ? (
     <h5 className="mb-2 text-center text-lg">{children}</h5>
   ) : (
     <h6 className="mb-2 text-center text-lg">{children}</h6>
