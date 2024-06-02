@@ -11,6 +11,12 @@
   },
   "rules": {
     "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-invalid-void-type": [
+      "error",
+      {
+        "allowAsThisParameter": true
+      }
+    ],
     "react/hook-use-state": "warn",
     "react/jsx-handler-names": "warn",
     "react-compiler/react-compiler": "error",
