@@ -18,13 +18,19 @@ function ModalButton(props: ModalButtonProps) {
     <>
       <button
         className="flex flex-row items-center justify-center gap-2 rounded-3xl bg-primary px-4 py-2 font-bold text-fg-on-primary transition-all hover:shadow-[0_0_50px_theme(colors.primary_/_25%)] hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor]"
-        onClick={() => setModalIsOpen(true)}
+        onClick={() => {
+          setModalIsOpen(true);
+        }}
         aria-label={props["aria-label"]}
       >
         {props.children}
       </button>
       {modalIsOpen ? (
-        <Modal onDismiss={() => setModalIsOpen(false)}>
+        <Modal
+          onDismiss={() => {
+            setModalIsOpen(false);
+          }}
+        >
           {props.modalContent}
         </Modal>
       ) : (

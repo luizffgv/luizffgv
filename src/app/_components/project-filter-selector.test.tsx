@@ -62,10 +62,14 @@ describe("ProjectFilterSelector", () => {
 
     for (const tag of ["tag 1", "tag 2", "tag 3"]) {
       setFilter.mockClear();
-      act(() => screen.getByDisplayValue(tag).click());
+      act(() => {
+        screen.getByDisplayValue(tag).click();
+      });
       expect(setFilter).toHaveBeenCalledTimes(1);
       setFilter.mockClear();
-      act(() => screen.getByDisplayValue(tag).click());
+      act(() => {
+        screen.getByDisplayValue(tag).click();
+      });
       expect(setFilter).toHaveBeenCalledTimes(1);
     }
   });
@@ -88,10 +92,14 @@ describe("ProjectFilterSelector", () => {
     });
     setFilter.mockClear();
 
-    act(() => screen.getByDisplayValue("best-match").click());
+    act(() => {
+      screen.getByDisplayValue("best-match").click();
+    });
     expect(setFilter).toHaveBeenCalledTimes(1);
     setFilter.mockClear();
-    act(() => screen.getByDisplayValue("every").click());
+    act(() => {
+      screen.getByDisplayValue("every").click();
+    });
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 });

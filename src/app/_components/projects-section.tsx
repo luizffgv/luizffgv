@@ -21,10 +21,9 @@ export default function ProjectsSection() {
     () => (projects: ProjectRaw[]) => projects,
   );
 
-  const contextSetFilter = useCallback(
-    (filter: ProjectFilterCallback) => setFilter(() => filter),
-    [],
-  );
+  const contextSetFilter = useCallback((filter: ProjectFilterCallback) => {
+    setFilter(() => filter);
+  }, []);
 
   const projectsListRef = useRef<HTMLDivElement>(null);
 

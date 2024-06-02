@@ -31,7 +31,9 @@ export default function Header() {
 
     addEventListener("scroll", scrollListener);
 
-    return () => document.body.removeEventListener("scroll", scrollListener);
+    return () => {
+      document.body.removeEventListener("scroll", scrollListener);
+    };
   });
 
   return (

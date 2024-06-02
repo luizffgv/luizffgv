@@ -328,7 +328,9 @@ export default function Goo() {
     });
     bubbles.start();
 
-    return () => bubbles.stop();
+    return () => {
+      bubbles.stop();
+    };
   }, []);
 
   return (
