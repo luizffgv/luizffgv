@@ -28,8 +28,8 @@ export default function ProjectsSection() {
   const projectsListRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    if (projectsListRef == null) {
-      console.error("projectsListRef is null");
+    if (projectsListRef.current == null) {
+      console.error("projectsListRef.current is null");
       return;
     }
 
