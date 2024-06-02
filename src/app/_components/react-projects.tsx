@@ -11,7 +11,7 @@ const FEATURED_PROJECTS = [
   "codinStruct Next",
 ] satisfies (typeof projects)[number]["name"][];
 
-export default function ReactProjects() {
+export default function ReactProjects(): JSX.Element {
   return (
     <TitledSection
       level={2}

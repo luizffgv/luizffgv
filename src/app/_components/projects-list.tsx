@@ -4,7 +4,7 @@ import { ProjectFilterContext } from "../_contexts/project-filters";
 import ProjectPreview from "./project-preview";
 import projects from "projects-list";
 
-export default function ProjectsList() {
+export default function ProjectsList(): JSX.Element {
   const { filter } = useContext(ProjectFilterContext);
   const filteredProjects = useMemo(() => filter(projects), [filter]);
 

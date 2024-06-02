@@ -3,7 +3,7 @@
 import { ArrowDownIcon } from "lucide-react";
 import Button from "./button";
 
-export default function HeroAdvanceButton() {
+export default function HeroAdvanceButton(): JSX.Element {
   return (
     <Button
       onClick={() => {

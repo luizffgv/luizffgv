@@ -3,7 +3,7 @@
 import Button from "./button";
 import { SunMoonIcon } from "lucide-react";
 
-export default function ThemeSwitcher() {
+export default function ThemeSwitcher(): JSX.Element {
   return (
     <Button
       aria-label="Mudar tema"

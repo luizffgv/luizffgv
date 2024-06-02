@@ -10,7 +10,7 @@ export default function Modal({
 }: {
   children: React.ReactNode;
   onDismiss?: () => void;
-}) {
+}): JSX.Element {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {

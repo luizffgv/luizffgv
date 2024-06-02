@@ -16,7 +16,7 @@ import { ProjectRaw } from "projects-list";
 import ProjectsList from "./projects-list";
 import TitledSection from "./titled-section";
 
-export default function ProjectsSection() {
+export default function ProjectsSection(): JSX.Element {
   const [filter, setFilter] = useState(
     () => (projects: ProjectRaw[]) => projects,
   );

@@ -12,14 +12,14 @@ const ENTRIES = [
   { name: "Projetos", href: "/projetos" },
 ];
 
-export default function Header() {
+export default function Header(): JSX.Element {
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     let lastPosition = scrollY;
 
-    const scrollListener = () => {
+    const scrollListener = (): void => {
       const scrollPosition = scrollY;
       if (scrollPosition > lastPosition && scrollY !== 0) {
         headerRef.current?.classList.add("translate-y-[-100%]");

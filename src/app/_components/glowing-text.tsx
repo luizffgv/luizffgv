@@ -3,7 +3,7 @@ export interface Props {
 }
 
 /** A strong text with a glow effect. */
-export default function GlowingText({ children }: Props) {
+export default function GlowingText({ children }: Props): JSX.Element {
   return (
     <strong className="text-primary [text-shadow:_0_0_2em_theme(colors.primary)]">
       {children}

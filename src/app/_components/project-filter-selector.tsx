@@ -31,7 +31,7 @@ function matchingTags(project: ProjectRaw, tags: Set<Tag>): Set<Tag> {
   return new Set((project.tags ?? []).filter((tag) => tags.has(tag)));
 }
 
-export default function ProjectFilterSelector() {
+export default function ProjectFilterSelector(): JSX.Element {
   const urlParams = useSearchParams();
   const { setFilter } = useContext(ProjectFilterContext);
   const [logic, setLogic] = useState("best-match");

@@ -7,7 +7,7 @@ export interface Props {
 }
 
 /** Makes the children rotate towards the cursor. */
-export default function LookingAtCursor({ children }: Props) {
+export default function LookingAtCursor({ children }: Props): JSX.Element {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function LookingAtCursor({ children }: Props) {
     });
     observer.observe(currentRef);
 
-    const handleMouseMove = (event: MouseEvent) => {
+    const handleMouseMove = (event: MouseEvent): void => {
       if (!visible) {
         return;
       }

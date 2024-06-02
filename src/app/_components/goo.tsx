@@ -55,7 +55,7 @@ abstract class Particle {
    *
    * @param seconds - Number of seconds passed.
    */
-  update(seconds: number) {
+  update(seconds: number): void {
     this.x += this.velX * seconds;
     this.y += this.velY * seconds;
   }
@@ -100,7 +100,7 @@ abstract class RotatingParticle extends Particle {
     this.velAngZ = velAngZ;
   }
 
-  override update(seconds: number) {
+  override update(seconds: number): void {
     super.update(seconds);
 
     this.rotZ += this.velAngZ * seconds;
@@ -134,7 +134,7 @@ export class CircleParticle extends Particle {
     this.solid = solid;
   }
 
-  override isMaybeInRect(x: number, y: number, w: number, h: number) {
+  override isMaybeInRect(x: number, y: number, w: number, h: number): boolean {
     return !(
       this.y - this.radius > y + h ||
       this.y + this.radius < y ||
@@ -143,7 +143,7 @@ export class CircleParticle extends Particle {
     );
   }
 
-  override draw(ctx: CanvasRenderingContext2D) {
+  override draw(ctx: CanvasRenderingContext2D): void {
     ctx.save();
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
@@ -178,7 +178,7 @@ export class SquareParticle extends RotatingParticle {
     this.size = size;
   }
 
-  override isMaybeInRect(x: number, y: number, w: number, h: number) {
+  override isMaybeInRect(x: number, y: number, w: number, h: number): boolean {
     const radius = this.size * 1.41421356237; /* sqrt(2) */
 
     return !(
@@ -189,7 +189,7 @@ export class SquareParticle extends RotatingParticle {
     );
   }
 
-  override draw(ctx: CanvasRenderingContext2D) {
+  override draw(ctx: CanvasRenderingContext2D): void {
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.rotate(this.rotZ);
@@ -323,7 +323,7 @@ export class Bubbles {
   }
 }
 
-export default function Goo() {
+export default function Goo(): JSX.Element {
   const filterId = useId();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 

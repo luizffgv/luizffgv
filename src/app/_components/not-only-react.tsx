@@ -15,7 +15,7 @@ const PROJECTS_WITHOUT_REACT = [
   "Shader Site",
 ] satisfies (typeof projects)[number]["name"][];
 
-export default function NotOnlyReact() {
+export default function NotOnlyReact(): JSX.Element {
   return (
     <>
       <TitledSection level={2} title="Mas eu não sei apenas React">

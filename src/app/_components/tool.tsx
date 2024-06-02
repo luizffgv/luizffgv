@@ -27,7 +27,7 @@ export type Props = {
     }
 );
 
-export default function Tool(props: Props) {
+export default function Tool(props: Props): JSX.Element {
   const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

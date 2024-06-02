@@ -1,7 +1,7 @@
 import Button from "./button";
 import { EyeIcon } from "lucide-react";
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <footer className="color-in flex flex-col items-center gap-2 bg-primary p-4 text-center text-fg-on-primary">
       <p>

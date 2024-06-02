@@ -11,7 +11,7 @@ type ModalButtonProps = {
   modalContent: ReactNode;
 };
 
-function ModalButton(props: ModalButtonProps) {
+function ModalButton(props: ModalButtonProps): JSX.Element {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
@@ -60,7 +60,7 @@ export type Props = {
     }
 );
 
-export default function Button(props: Props) {
+export default function Button(props: Props): JSX.Element {
   const className =
     "flex flex-row items-center gap-2 rounded-3xl bg-primary px-4 py-2 font-bold text-fg-on-primary justify-center transition-all hover:brightness-110 hover:shadow-[0_0_50px_theme(colors.primary_/_25%)] hover:[text-shadow:_0_0_15px_currentcolor]";
 

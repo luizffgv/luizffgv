@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /** A glow effect that follows the cursor. */
-export default function CursorGlow() {
+export default function CursorGlow(): JSX.Element {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function CursorGlow() {
 
     const glow = ref.current;
 
-    const onMouseMove = ({ clientX, clientY }: MouseEvent) => {
+    const onMouseMove = ({ clientX, clientY }: MouseEvent): void => {
       glow.style.opacity = "1";
       glow.style.left = `${clientX}px`;
       glow.style.top = `${clientY}px`;

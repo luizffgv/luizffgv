@@ -4,7 +4,7 @@ import GlowingText from "./glowing-text";
 import Link from "next/link";
 import TitledSection from "./titled-section";
 
-export default function MyGitHub() {
+export default function MyGitHub(): JSX.Element {
   return (
     <TitledSection
       level={2}

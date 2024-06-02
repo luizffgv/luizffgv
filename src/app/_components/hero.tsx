@@ -9,7 +9,7 @@ import Logo from "./logo";
 import LookingAtCursor from "./looking-at-cursor";
 import styles from "./hero.module.scss";
 
-export default function Hero() {
+export default function Hero(): JSX.Element {
   return (
     <div className="relative flex min-h-[100svh] flex-col items-center justify-center px-8 pb-16 pt-24">
       <div className="z-[-1] text-primary opacity-50">

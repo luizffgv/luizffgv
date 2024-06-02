@@ -5,7 +5,7 @@ interface HeadingProps {
 }
 
 /// A standard styled heading with a specified level.
-function Heading({ level, children }: HeadingProps) {
+function Heading({ level, children }: HeadingProps): JSX.Element {
   return level === 1 ? (
     <h1 className="mb-8 text-center text-3xl">{children}</h1>
   ) : level === 2 ? (
@@ -30,7 +30,11 @@ export interface Props {
 }
 
 /// A standard section with a title and contents.
-export default function TitledSection({ title, children, level }: Props) {
+export default function TitledSection({
+  title,
+  children,
+  level,
+}: Props): JSX.Element {
   return (
     <section>
       <Heading level={level}>{title}</Heading>
