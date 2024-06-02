@@ -10,6 +10,8 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "curly": "warn",
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
     "@next/next/no-img-element": "off",
     "@typescript-eslint/no-invalid-void-type": [
       "error",
