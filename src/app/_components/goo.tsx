@@ -148,8 +148,11 @@ export class CircleParticle extends Particle {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     ctx.lineWidth = Math.max(1, this.radius / 10);
-    if (this.solid) ctx.fill();
-    else ctx.stroke();
+    if (this.solid) {
+      ctx.fill();
+    } else {
+      ctx.stroke();
+    }
     ctx.restore();
   }
 }
@@ -217,24 +220,30 @@ export class Bubbles {
   constructor(element: HTMLCanvasElement, color: string | (() => string)) {
     this.#element = element;
 
-    this.#colorGenerator = typeof color == "string" ? () => color : color;
+    this.#colorGenerator = typeof color === "string" ? () => color : color;
 
     const ctx = this.#element.getContext("2d");
-    if (ctx == null) throw new TypeError("Couldn't get 2D canvas context.");
+    if (ctx == null) {
+      throw new TypeError("Couldn't get 2D canvas context.");
+    }
     this.#context = ctx;
   }
 
   #step(timestamp: DOMHighResTimeStamp): void {
     this.#animationId = requestAnimationFrame(this.#step.bind(this));
 
-    if (this.#paused) return;
+    if (this.#paused) {
+      return;
+    }
 
     const width = this.#element.clientWidth;
     const height = this.#element.clientHeight;
     this.#element.width = width;
     this.#element.height = height;
 
-    if (this.#prevTimestamp == null) this.#prevTimestamp = timestamp;
+    if (this.#prevTimestamp == null) {
+      this.#prevTimestamp = timestamp;
+    }
     const deltaSeconds = (timestamp - this.#prevTimestamp) / 1000;
 
     const aliveParticles: Particle[] = [];
@@ -245,8 +254,9 @@ export class Bubbles {
     this.#context.shadowBlur = 25;
 
     for (const particle of this.#particles) {
-      if (!particle.isMaybeInRect(-50, -50, width + 100, height + 100))
+      if (!particle.isMaybeInRect(-50, -50, width + 100, height + 100)) {
         continue;
+      }
 
       particle.velX += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
       particle.velY += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
@@ -304,7 +314,9 @@ export class Bubbles {
   stop(): void {
     this.#observer?.disconnect();
 
-    if (this.#animationId != null) cancelAnimationFrame(this.#animationId);
+    if (this.#animationId != null) {
+      cancelAnimationFrame(this.#animationId);
+    }
     this.#animationId = null;
 
     this.#particles = [];
@@ -322,7 +334,9 @@ export default function Goo() {
     }
 
     const bubbles = new Bubbles(canvasRef.current, () => {
-      if (canvasRef.current == null) return "transparent";
+      if (canvasRef.current == null) {
+        return "transparent";
+      }
 
       return getComputedStyle(canvasRef.current).color;
     });

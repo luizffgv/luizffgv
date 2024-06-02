@@ -24,7 +24,9 @@ export default function LookingAtCursor({ children }: Props) {
     observer.observe(currentRef);
 
     const handleMouseMove = (event: MouseEvent) => {
-      if (!visible) return;
+      if (!visible) {
+        return;
+      }
 
       const { top, left, width, height } = currentRef.getBoundingClientRect();
       const center = { x: left + width / 2, y: top + height / 2 };

@@ -44,8 +44,11 @@ export default function LazyImage({ src, alt }: Props) {
         }
       });
 
-      if (container.current == null) console.error("ref.current is null");
-      else observer.observe(container.current);
+      if (container.current == null) {
+        console.error("ref.current is null");
+      } else {
+        observer.observe(container.current);
+      }
 
       return () => {
         observer.disconnect();

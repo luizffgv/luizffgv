@@ -31,7 +31,9 @@ export default function Tool(props: Props) {
   const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (props.color == null) return;
+    if (props.color == null) {
+      return;
+    }
 
     if (glowRef.current == null) {
       console.error("glowRef is null");

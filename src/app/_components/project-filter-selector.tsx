@@ -13,7 +13,9 @@ const allTags = [
   ...projects
     .map((p) => p.tags)
     .reduce((allTags, projectTags) => {
-      for (const tag of projectTags) allTags.add(tag);
+      for (const tag of projectTags) {
+        allTags.add(tag);
+      }
       return allTags;
     }, new Set<Tag>()),
 ].sort();
@@ -51,15 +53,19 @@ export default function ProjectFilterSelector() {
         (p1, p2) =>
           matchingTags(p2, tags.value).size - matchingTags(p1, tags.value).size,
       );
-      if (tags.value.size > 0)
+      if (tags.value.size > 0) {
         matching = matching.filter((p) => matchingTags(p, tags.value).size > 0);
-      if (logic == "every")
+      }
+      if (logic == "every") {
         matching = matching.filter((p) => {
           for (const tag of tags.value) {
-            if (!p.tags?.includes(tag)) return false;
+            if (!p.tags?.includes(tag)) {
+              return false;
+            }
           }
           return true;
         });
+      }
       return matching;
     });
   }, [logic, tags, setFilter]);
@@ -76,9 +82,11 @@ export default function ProjectFilterSelector() {
                 return;
               }
 
-              if (event.target.checked)
+              if (event.target.checked) {
                 tags.value.add(event.target.value as Tag);
-              else tags.value.delete(event.target.value as Tag);
+              } else {
+                tags.value.delete(event.target.value as Tag);
+              }
 
               setTags({ value: tags.value });
             }}
