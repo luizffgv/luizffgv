@@ -5,6 +5,8 @@ import { ProjectFilterContext } from "../_contexts/project-filters";
 
 jest.mock("next/navigation", () => {
   const params = new URLSearchParams("");
+  // Dealing with mocks seems to be inherently type-unsafe
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     ...jest.requireActual("next/navigation"),
     useSearchParams: () => params,
