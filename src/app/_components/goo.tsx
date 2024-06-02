@@ -219,7 +219,7 @@ export class Bubbles {
 
     this.#colorGenerator = typeof color == "string" ? () => color : color;
 
-    let ctx = this.#element.getContext("2d");
+    const ctx = this.#element.getContext("2d");
     if (ctx == null) throw new TypeError("Couldn't get 2D canvas context.");
     this.#context = ctx;
   }
