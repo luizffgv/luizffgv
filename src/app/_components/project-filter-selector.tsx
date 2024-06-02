@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { ProjectFilterContext } from "../_contexts/project-filters";
 import projects, { ProjectRaw, Tag } from "projects-list";
 import { useSearchParams } from "next/navigation";
