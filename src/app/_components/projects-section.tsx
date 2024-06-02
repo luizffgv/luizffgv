@@ -21,16 +21,15 @@ export default function ProjectsSection() {
     () => (projects: ProjectRaw[]) => projects,
   );
 
-  const contextSetFilter = useCallback(
-    (filter: ProjectFilterCallback) => setFilter(() => filter),
-    [],
-  );
+  const contextSetFilter = useCallback((filter: ProjectFilterCallback) => {
+    setFilter(() => filter);
+  }, []);
 
   const projectsListRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    if (projectsListRef == null) {
-      console.error("projectsListRef is null");
+    if (projectsListRef.current == null) {
+      console.error("projectsListRef.current is null");
       return;
     }
 

@@ -5,6 +5,8 @@ import { ProjectFilterContext } from "../_contexts/project-filters";
 
 jest.mock("next/navigation", () => {
   const params = new URLSearchParams("");
+  // Dealing with mocks seems to be inherently type-unsafe
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     ...jest.requireActual("next/navigation"),
     useSearchParams: () => params,
@@ -62,10 +64,14 @@ describe("ProjectFilterSelector", () => {
 
     for (const tag of ["tag 1", "tag 2", "tag 3"]) {
       setFilter.mockClear();
-      act(() => screen.getByDisplayValue(tag).click());
+      act(() => {
+        screen.getByDisplayValue(tag).click();
+      });
       expect(setFilter).toHaveBeenCalledTimes(1);
       setFilter.mockClear();
-      act(() => screen.getByDisplayValue(tag).click());
+      act(() => {
+        screen.getByDisplayValue(tag).click();
+      });
       expect(setFilter).toHaveBeenCalledTimes(1);
     }
   });
@@ -88,10 +94,14 @@ describe("ProjectFilterSelector", () => {
     });
     setFilter.mockClear();
 
-    act(() => screen.getByDisplayValue("best-match").click());
+    act(() => {
+      screen.getByDisplayValue("best-match").click();
+    });
     expect(setFilter).toHaveBeenCalledTimes(1);
     setFilter.mockClear();
-    act(() => screen.getByDisplayValue("every").click());
+    act(() => {
+      screen.getByDisplayValue("every").click();
+    });
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 });

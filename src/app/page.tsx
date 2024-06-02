@@ -1,5 +1,4 @@
 import Autism from "./_components/autism";
-import Career from "./_components/career";
 import Hero from "./_components/hero";
 import MyGitHub from "./_components/my-github";
 import NotOnlyReact from "./_components/not-only-react";
@@ -23,9 +22,6 @@ export default function Home() {
           <div className="appear">
             <MyGitHub></MyGitHub>
           </div>
-          {/* <div className="appear">
-            <Career></Career>
-          </div> */}
           <div className="appear">
             <Autism></Autism>
           </div>

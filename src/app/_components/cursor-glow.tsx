@@ -22,7 +22,9 @@ export default function CursorGlow() {
 
     document.addEventListener("mousemove", onMouseMove);
 
-    return () => document.removeEventListener("mousemove", onMouseMove);
+    return () => {
+      document.removeEventListener("mousemove", onMouseMove);
+    };
   }, []);
 
   return (

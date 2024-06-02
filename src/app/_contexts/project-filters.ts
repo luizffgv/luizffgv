@@ -10,7 +10,7 @@ export interface ProjectFilterContextType {
    */
   filter: ProjectFilterCallback;
   /** Sets {@link filter} at the provider. */
-  setFilter(filter: ProjectFilterCallback): void;
+  setFilter(this: void, filter: ProjectFilterCallback): void;
 }
 
 export const ProjectFilterContext = createContext<ProjectFilterContextType>({
