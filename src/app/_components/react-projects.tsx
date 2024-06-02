@@ -3,6 +3,7 @@ import ProjectPreview from "./project-preview";
 import TitledSection from "./titled-section";
 import GlowingText from "./glowing-text";
 import Link from "next/link";
+import { throwIfNull } from "@luizffgv/ekranoplan/conversions";
 
 const FEATURED_PROJECTS = [
   "Phasmoo",
@@ -31,7 +32,7 @@ export default function ReactProjects() {
               className="appear flex max-w-sm flex-row items-stretch"
             >
               <ProjectPreview
-                project={projects.find((p) => p.name === name)!}
+                project={throwIfNull(projects.find((p) => p.name === name))}
               />
             </li>
           ))}

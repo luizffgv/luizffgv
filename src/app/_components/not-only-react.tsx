@@ -5,6 +5,7 @@ import TitledSection from "./titled-section";
 import Tools from "./tools";
 import ProjectPreview from "./project-preview";
 import projects from "projects-list";
+import { throwIfNull } from "@luizffgv/ekranoplan/conversions";
 
 const PROJECTS_WITHOUT_REACT = [
   "Goo",
@@ -31,7 +32,7 @@ export default function NotOnlyReact() {
               {PROJECTS_WITHOUT_REACT.map((name) => (
                 <li key={name}>
                   <ProjectPreview
-                    project={projects.find((p) => p.name === name)!}
+                    project={throwIfNull(projects.find((p) => p.name === name))}
                   />
                 </li>
               ))}
