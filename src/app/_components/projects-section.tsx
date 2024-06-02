@@ -1,6 +1,10 @@
 "use client";
 
 import {
+  ProjectFilterCallback,
+  ProjectFilterContext,
+} from "../_contexts/project-filters";
+import {
   Suspense,
   useCallback,
   useLayoutEffect,
@@ -8,12 +12,8 @@ import {
   useState,
 } from "react";
 import ProjectFilterSelector from "./project-filter-selector";
-import {
-  ProjectFilterCallback,
-  ProjectFilterContext,
-} from "../_contexts/project-filters";
-import ProjectsList from "./projects-list";
 import { ProjectRaw } from "projects-list";
+import ProjectsList from "./projects-list";
 import TitledSection from "./titled-section";
 
 export default function ProjectsSection() {

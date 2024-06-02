@@ -1,13 +1,13 @@
 "use client";
 
-import { useContext, useEffect, useLayoutEffect, useState } from "react";
-import { ProjectFilterContext } from "../_contexts/project-filters";
 import projects, { ProjectRaw, Tag } from "projects-list";
-import { useSearchParams } from "next/navigation";
+import { useContext, useEffect, useLayoutEffect, useState } from "react";
+import Card from "./card";
 import Checkbox from "./checkbox";
+import { ProjectFilterContext } from "../_contexts/project-filters";
 import RadioButton from "./radio-button";
 import TitledSection from "./titled-section";
-import Card from "./card";
+import { useSearchParams } from "next/navigation";
 
 const allTags = [
   ...projects

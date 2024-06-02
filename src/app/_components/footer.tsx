@@ -1,5 +1,5 @@
-import { EyeIcon } from "lucide-react";
 import Button from "./button";
+import { EyeIcon } from "lucide-react";
 
 export default function Footer() {
   return (

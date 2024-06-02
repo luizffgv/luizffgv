@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { HTMLAttributeAnchorTarget, ReactNode, useState } from "react";
+import Link from "next/link";
 import Modal from "./modal";
 
 type ModalButtonProps = {

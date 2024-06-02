@@ -1,13 +1,13 @@
-import styles from "./hero.module.scss";
+import { FileTextIcon, MessageCircleIcon } from "lucide-react";
 import Button from "./button";
-import Goo from "./goo";
-import Logo from "./logo";
 import ContactButtons from "./contact-buttons";
 import GlowingText from "./glowing-text";
+import Goo from "./goo";
 import HeroAdvanceButton from "./hero-advance-button";
-import { FileTextIcon, MessageCircleIcon } from "lucide-react";
 import Link from "next/link";
+import Logo from "./logo";
 import LookingAtCursor from "./looking-at-cursor";
+import styles from "./hero.module.scss";
 
 export default function Hero() {
   return (

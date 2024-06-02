@@ -1,7 +1,7 @@
 "use client";
 
-import { SunMoonIcon } from "lucide-react";
 import Button from "./button";
+import { SunMoonIcon } from "lucide-react";
 
 export default function ThemeSwitcher() {
   return (

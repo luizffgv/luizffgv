@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
-import styles from "./modal.module.scss";
 import Button from "./button";
 import Card from "./card";
 import { XIcon } from "lucide-react";
+import styles from "./modal.module.scss";
 
 export default function Modal({
   children,

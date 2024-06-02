@@ -1,9 +1,9 @@
-import { EyeIcon } from "lucide-react";
 import Button from "./button";
+import { EyeIcon } from "lucide-react";
 import GlowingText from "./glowing-text";
+import ProjectPreview from "./project-preview";
 import TitledSection from "./titled-section";
 import Tools from "./tools";
-import ProjectPreview from "./project-preview";
 import projects from "projects-list";
 import { throwIfNull } from "@luizffgv/ekranoplan/conversions";
 

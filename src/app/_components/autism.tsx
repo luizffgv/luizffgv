@@ -1,6 +1,6 @@
-import styles from "./autism.module.scss";
 import { InfinityIcon, SparkleIcon } from "lucide-react";
 import LookingAtCursor from "./looking-at-cursor";
+import styles from "./autism.module.scss";
 
 export default function Autism() {
   return (

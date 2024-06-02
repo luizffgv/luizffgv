@@ -1,5 +1,5 @@
-import TitledSection from "@/app/_components/titled-section";
 import { act, render, screen } from "@testing-library/react";
+import TitledSection from "@/app/_components/titled-section";
 
 describe("TitledSection", () => {
   it("Renders the title correctly", () => {

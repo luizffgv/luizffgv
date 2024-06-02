@@ -1,8 +1,8 @@
-import projects from "projects-list";
-import ProjectPreview from "./project-preview";
-import TitledSection from "./titled-section";
 import GlowingText from "./glowing-text";
 import Link from "next/link";
+import ProjectPreview from "./project-preview";
+import TitledSection from "./titled-section";
+import projects from "projects-list";
 import { throwIfNull } from "@luizffgv/ekranoplan/conversions";
 
 const FEATURED_PROJECTS = [

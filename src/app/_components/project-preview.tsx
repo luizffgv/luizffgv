@@ -1,7 +1,7 @@
-import { ProjectRaw } from "projects-list";
+import { EyeIcon, FolderGit2Icon } from "lucide-react";
 import Button from "./button";
 import LazyImage from "./lazy-image";
-import { EyeIcon, FolderGit2Icon } from "lucide-react";
+import { ProjectRaw } from "projects-list";
 
 export default function ProjectPreview({ project }: { project: ProjectRaw }) {
   return (

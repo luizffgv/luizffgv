@@ -1,8 +1,8 @@
 import { useContext, useMemo } from "react";
-import { ProjectFilterContext } from "../_contexts/project-filters";
-import projects from "projects-list";
-import ProjectPreview from "./project-preview";
 import Card from "./card";
+import { ProjectFilterContext } from "../_contexts/project-filters";
+import ProjectPreview from "./project-preview";
+import projects from "projects-list";
 
 export default function ProjectsList() {
   const { filter } = useContext(ProjectFilterContext);

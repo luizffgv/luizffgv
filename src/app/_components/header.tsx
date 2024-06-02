@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import ThemeSwitcher from "./theme-switcher";
-import Button from "./button";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
+import Button from "./button";
+import Link from "next/link";
 import { MenuIcon } from "lucide-react";
+import ThemeSwitcher from "./theme-switcher";
+import { usePathname } from "next/navigation";
 
 const ENTRIES = [
   { name: "Início", href: "/" },
