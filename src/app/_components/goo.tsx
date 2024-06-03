@@ -55,7 +55,7 @@ abstract class Particle {
    *
    * @param seconds - Number of seconds passed.
    */
-  update(seconds: number) {
+  update(seconds: number): void {
     this.x += this.velX * seconds;
     this.y += this.velY * seconds;
   }
@@ -100,7 +100,7 @@ abstract class RotatingParticle extends Particle {
     this.velAngZ = velAngZ;
   }
 
-  override update(seconds: number) {
+  override update(seconds: number): void {
     super.update(seconds);
 
     this.rotZ += this.velAngZ * seconds;
@@ -134,7 +134,7 @@ export class CircleParticle extends Particle {
     this.solid = solid;
   }
 
-  override isMaybeInRect(x: number, y: number, w: number, h: number) {
+  override isMaybeInRect(x: number, y: number, w: number, h: number): boolean {
     return !(
       this.y - this.radius > y + h ||
       this.y + this.radius < y ||
@@ -143,13 +143,16 @@ export class CircleParticle extends Particle {
     );
   }
 
-  override draw(ctx: CanvasRenderingContext2D) {
+  override draw(ctx: CanvasRenderingContext2D): void {
     ctx.save();
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     ctx.lineWidth = Math.max(1, this.radius / 10);
-    if (this.solid) ctx.fill();
-    else ctx.stroke();
+    if (this.solid) {
+      ctx.fill();
+    } else {
+      ctx.stroke();
+    }
     ctx.restore();
   }
 }
@@ -175,7 +178,7 @@ export class SquareParticle extends RotatingParticle {
     this.size = size;
   }
 
-  override isMaybeInRect(x: number, y: number, w: number, h: number) {
+  override isMaybeInRect(x: number, y: number, w: number, h: number): boolean {
     const radius = this.size * 1.41421356237; /* sqrt(2) */
 
     return !(
@@ -186,7 +189,7 @@ export class SquareParticle extends RotatingParticle {
     );
   }
 
-  override draw(ctx: CanvasRenderingContext2D) {
+  override draw(ctx: CanvasRenderingContext2D): void {
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.rotate(this.rotZ);
@@ -217,24 +220,30 @@ export class Bubbles {
   constructor(element: HTMLCanvasElement, color: string | (() => string)) {
     this.#element = element;
 
-    this.#colorGenerator = typeof color == "string" ? () => color : color;
+    this.#colorGenerator = typeof color === "string" ? () => color : color;
 
     const ctx = this.#element.getContext("2d");
-    if (ctx == null) throw new TypeError("Couldn't get 2D canvas context.");
+    if (ctx == null) {
+      throw new TypeError("Couldn't get 2D canvas context.");
+    }
     this.#context = ctx;
   }
 
   #step(timestamp: DOMHighResTimeStamp): void {
     this.#animationId = requestAnimationFrame(this.#step.bind(this));
 
-    if (this.#paused) return;
+    if (this.#paused) {
+      return;
+    }
 
     const width = this.#element.clientWidth;
     const height = this.#element.clientHeight;
     this.#element.width = width;
     this.#element.height = height;
 
-    if (this.#prevTimestamp == null) this.#prevTimestamp = timestamp;
+    if (this.#prevTimestamp == null) {
+      this.#prevTimestamp = timestamp;
+    }
     const deltaSeconds = (timestamp - this.#prevTimestamp) / 1000;
 
     const aliveParticles: Particle[] = [];
@@ -245,8 +254,9 @@ export class Bubbles {
     this.#context.shadowBlur = 25;
 
     for (const particle of this.#particles) {
-      if (!particle.isMaybeInRect(-50, -50, width + 100, height + 100))
+      if (!particle.isMaybeInRect(-50, -50, width + 100, height + 100)) {
         continue;
+      }
 
       particle.velX += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
       particle.velY += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
@@ -304,14 +314,16 @@ export class Bubbles {
   stop(): void {
     this.#observer?.disconnect();
 
-    if (this.#animationId != null) cancelAnimationFrame(this.#animationId);
+    if (this.#animationId != null) {
+      cancelAnimationFrame(this.#animationId);
+    }
     this.#animationId = null;
 
     this.#particles = [];
   }
 }
 
-export default function Goo() {
+export default function Goo(): JSX.Element {
   const filterId = useId();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -322,7 +334,9 @@ export default function Goo() {
     }
 
     const bubbles = new Bubbles(canvasRef.current, () => {
-      if (canvasRef.current == null) return "transparent";
+      if (canvasRef.current == null) {
+        return "transparent";
+      }
 
       return getComputedStyle(canvasRef.current).color;
     });

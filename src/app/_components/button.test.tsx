@@ -1,5 +1,5 @@
-import Button from "@/app/_components/button";
 import { act, render, screen } from "@testing-library/react";
+import Button from "@/app/_components/button";
 
 describe("Button", () => {
   it("Fires onClick when clicked", () => {

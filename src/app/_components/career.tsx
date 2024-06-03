@@ -3,7 +3,7 @@ import Button from "./button";
 import ContactButtons from "./contact-buttons";
 import GlowingText from "./glowing-text";
 
-export default function Career() {
+export default function Career(): JSX.Element {
   return (
     <div className="flex flex-col items-center gap-8">
       <div className="flex flex-col gap-4">

@@ -1,10 +1,10 @@
 import { FolderGit2Icon, PackageIcon } from "lucide-react";
 import Button from "./button";
 import GlowingText from "./glowing-text";
-import TitledSection from "./titled-section";
 import Link from "next/link";
+import TitledSection from "./titled-section";
 
-export default function MyGitHub() {
+export default function MyGitHub(): JSX.Element {
   return (
     <TitledSection
       level={2}

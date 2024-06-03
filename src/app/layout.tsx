@@ -1,9 +1,9 @@
+import "./globals.css";
+import CursorGlow from "./_components/cursor-glow";
+import Footer from "./_components/footer";
+import Header from "./_components/header";
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
-import "./globals.css";
-import Header from "./_components/header";
-import Footer from "./_components/footer";
-import CursorGlow from "./_components/cursor-glow";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): JSX.Element {
   return (
     <html
       lang="pt-BR"

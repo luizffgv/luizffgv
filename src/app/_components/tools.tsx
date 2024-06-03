@@ -77,7 +77,7 @@ export interface ToolsProps {
   kind?: ToolKind;
 }
 
-export default function Tools({ kind }: ToolsProps) {
+export default function Tools({ kind }: ToolsProps): JSX.Element {
   return (
     <ul
       className="flex flex-row flex-wrap justify-center gap-8"

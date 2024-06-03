@@ -1,5 +1,5 @@
-import Checkbox from "@/app/_components/checkbox";
 import { act, render, screen } from "@testing-library/react";
+import Checkbox from "@/app/_components/checkbox";
 
 describe("Checkbox", () => {
   it("Displays a label correctly", () => {

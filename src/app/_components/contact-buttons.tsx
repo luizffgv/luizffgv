@@ -2,7 +2,7 @@ import { AtSignIcon, LinkedinIcon, PhoneIcon } from "lucide-react";
 import Button from "./button";
 
 /** Buttons to contact me, without a container. */
-export default function ContactButtons() {
+export default function ContactButtons(): JSX.Element {
   return (
     <>
       <div className="grow">

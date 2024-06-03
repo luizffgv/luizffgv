@@ -13,7 +13,7 @@ export interface Props {
  * A lazy-loaded image that loads when it enters the viewport.
  * It has `h-full` and `w-full`.
  */
-export default function LazyImage({ src, alt }: Props) {
+export default function LazyImage({ src, alt }: Props): JSX.Element {
   const [loaded, setLoaded] = useState(false);
   const container = useRef<HTMLDivElement>(null);
   // Internal image element used to load the image
@@ -44,8 +44,11 @@ export default function LazyImage({ src, alt }: Props) {
         }
       });
 
-      if (container.current == null) console.error("ref.current is null");
-      else observer.observe(container.current);
+      if (container.current == null) {
+        console.error("ref.current is null");
+      } else {
+        observer.observe(container.current);
+      }
 
       return () => {
         observer.disconnect();

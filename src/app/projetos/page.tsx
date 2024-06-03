@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Veja meus projetos aqui.",
 };
 
-export default function Page() {
+export default function Page(): JSX.Element {
   return (
     <main className="p-4 pt-24">
       <ProjectsSection></ProjectsSection>

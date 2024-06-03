@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
-import ProjectFilterSelector from "./project-filter-selector";
 import { ProjectFilterContext } from "../_contexts/project-filters";
+import ProjectFilterSelector from "./project-filter-selector";
+import { act } from "react-dom/test-utils";
 
 jest.mock("next/navigation", () => {
   const params = new URLSearchParams("");

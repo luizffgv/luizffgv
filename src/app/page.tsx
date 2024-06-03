@@ -4,7 +4,7 @@ import MyGitHub from "./_components/my-github";
 import NotOnlyReact from "./_components/not-only-react";
 import ReactProjects from "./_components/react-projects";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <main>
       <div className="color-in">

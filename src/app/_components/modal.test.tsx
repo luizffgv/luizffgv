@@ -1,5 +1,5 @@
-import Modal from "@/app/_components/modal";
 import { act, render, screen } from "@testing-library/react";
+import Modal from "@/app/_components/modal";
 
 describe("Modal", () => {
   it("Opens on first render", () => {

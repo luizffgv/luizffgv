@@ -1,9 +1,13 @@
-import { ProjectRaw } from "projects-list";
+import { EyeIcon, FolderGit2Icon } from "lucide-react";
 import Button from "./button";
 import LazyImage from "./lazy-image";
-import { EyeIcon, FolderGit2Icon } from "lucide-react";
+import { ProjectRaw } from "projects-list";
 
-export default function ProjectPreview({ project }: { project: ProjectRaw }) {
+export default function ProjectPreview({
+  project,
+}: {
+  project: ProjectRaw;
+}): JSX.Element {
   return (
     <div
       className="flex max-w-prose flex-col items-center gap-4"
