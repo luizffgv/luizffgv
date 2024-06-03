@@ -9,6 +9,21 @@ import RadioButton from "./radio-button";
 import TitledSection from "./titled-section";
 import { useSearchParams } from "next/navigation";
 
+/** A set of tags to not display, because they are not as relevant. */
+const hiddenTags: Set<Tag> = new Set([
+  "Bash",
+  "C++17",
+  "C++20",
+  "C18",
+  "Doxygen",
+  "GitHub",
+  "HTML",
+  "Livro",
+  "Markdown",
+  "mdBook",
+  "Organização",
+]);
+
 const allTags = [
   ...projects
     .map((p) => p.tags)
@@ -18,7 +33,9 @@ const allTags = [
       }
       return allTags;
     }, new Set<Tag>()),
-].sort();
+]
+  .filter((tag) => !hiddenTags.has(tag))
+  .sort();
 
 /**
  * Returns a set of matches between the project's tags and the provided tags.
