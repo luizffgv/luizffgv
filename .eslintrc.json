@@ -4,6 +4,7 @@
     "plugin:unicorn/all",
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:jsx-a11y/strict",
+    "plugin:react/recommended",
     "plugin:sonarjs/recommended-legacy"
   ],
   "plugins": ["react-compiler"],
@@ -30,6 +31,9 @@
     ],
     "react/hook-use-state": "warn",
     "react/jsx-handler-names": "warn",
+    // False positives
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
     "react-compiler/react-compiler": "error",
     "sonarjs/no-duplicate-string": ["error", { "ignoreStrings": "aria-label" }],
     // Unsure if this should cause an error
