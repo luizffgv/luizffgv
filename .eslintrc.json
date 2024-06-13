@@ -2,7 +2,8 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:unicorn/all",
-    "plugin:@typescript-eslint/strict-type-checked"
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:jsx-a11y/strict"
   ],
   "plugins": ["react-compiler"],
   "parser": "@typescript-eslint/parser",
