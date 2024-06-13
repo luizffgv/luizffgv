@@ -5,6 +5,7 @@
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:jsx-a11y/strict",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:sonarjs/recommended-legacy"
   ],
   "plugins": ["react-compiler"],
