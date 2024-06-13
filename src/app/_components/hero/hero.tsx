@@ -3,7 +3,7 @@ import Button from "@components/button";
 import ContactButtons from "@components/contact-buttons";
 import GlowingText from "@components/glowing-text";
 import Goo from "@components/goo";
-import HeroAdvanceButton from "@components/hero-advance-button";
+import HeroAdvanceButton from "./components/hero-advance-button";
 import Link from "next/link";
 import Logo from "@components/logo";
 import LookingAtCursor from "@components/looking-at-cursor";
