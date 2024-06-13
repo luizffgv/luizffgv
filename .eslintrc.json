@@ -3,7 +3,8 @@
     "next/core-web-vitals",
     "plugin:unicorn/all",
     "plugin:@typescript-eslint/strict-type-checked",
-    "plugin:jsx-a11y/strict"
+    "plugin:jsx-a11y/strict",
+    "plugin:sonarjs/recommended-legacy"
   ],
   "plugins": ["react-compiler"],
   "parser": "@typescript-eslint/parser",
@@ -30,6 +31,7 @@
     "react/hook-use-state": "warn",
     "react/jsx-handler-names": "warn",
     "react-compiler/react-compiler": "error",
+    "sonarjs/no-duplicate-string": ["error", { "ignoreStrings": "aria-label" }],
     // Unsure if this should cause an error
     "unicorn/no-array-reduce": "warn",
     "unicorn/no-keyword-prefix": "off",
