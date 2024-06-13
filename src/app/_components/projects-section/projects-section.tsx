@@ -11,7 +11,7 @@ import {
   useRef,
   useState,
 } from "react";
-import ProjectFilterSelector from "@components/project-filter-selector";
+import ProjectFilterSelector from "./components/project-filter-selector";
 import { ProjectRaw } from "projects-list";
 import ProjectsList from "@components/projects-list";
 import TitledSection from "@components/titled-section";
