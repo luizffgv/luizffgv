@@ -67,7 +67,7 @@ export default function Hero(): JSX.Element {
       <div
         className={`${styles["down-arrow"]} absolute bottom-2 left-1/2 translate-x-[-50%]`}
       >
-        <div className="animate-bounce">
+        <div className="animate-bounce [animation-duration:2s]">
           <HeroAdvanceButton></HeroAdvanceButton>
         </div>
       </div>

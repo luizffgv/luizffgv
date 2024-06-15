@@ -10,6 +10,8 @@ const config: Config = {
         "bg-dark": "#0f172a",
         "bg-close": "#f8fafc",
         "bg-close-dark": "#1e293b",
+        "bg-closer": "#ffffff",
+        "bg-closer-dark": "#1c2027",
         primary: "#3b82f6",
         fg: "#0f172a",
         "fg-dark": "#f1f5f9",

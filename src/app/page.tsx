@@ -3,6 +3,7 @@ import Hero from "./_components/hero";
 import MyGitHub from "./_components/my-github";
 import NotOnlyReact from "./_components/not-only-react";
 import ReactProjects from "./_components/react-projects";
+import ToolsSection from "./_components/tools-section";
 
 export default function Home(): JSX.Element {
   return (
@@ -15,10 +16,9 @@ export default function Home(): JSX.Element {
         <div className="pointer-events-none sticky top-0 h-screen max-h-full w-full [background:radial-gradient(circle_at_bottom,_theme(colors.primary/20%),_transparent)] [grid-area:stack] dark:[background:radial-gradient(circle_at_top,_theme(colors.primary/15%),_transparent)]"></div>
 
         <div className="flex flex-col items-center gap-64 px-4 pb-[50vh] pt-8 [grid-area:stack]">
+          <ToolsSection></ToolsSection>
           <ReactProjects></ReactProjects>
-          <div className="appear">
-            <NotOnlyReact></NotOnlyReact>
-          </div>
+          <NotOnlyReact></NotOnlyReact>
           <div className="appear">
             <MyGitHub></MyGitHub>
           </div>

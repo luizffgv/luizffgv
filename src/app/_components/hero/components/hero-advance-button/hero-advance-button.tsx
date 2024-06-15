@@ -12,6 +12,7 @@ export default function HeroAdvanceButton(): JSX.Element {
       aria-label="Avançar"
     >
       <ArrowDownIcon />
+      Veja se sou mais do mesmo
     </Button>
   );
 }

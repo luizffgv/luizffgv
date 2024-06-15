@@ -1,9 +1,6 @@
-import Button from "@components/button";
-import { EyeIcon } from "lucide-react";
 import GlowingText from "@components/glowing-text";
 import ProjectPreview from "@components/project-preview";
 import TitledSection from "@components/titled-section";
-import Tools from "@components/tools";
 import projects from "projects-list";
 import { throwIfNull } from "@luizffgv/ekranoplan/conversions";
 
@@ -18,7 +15,10 @@ const PROJECTS_WITHOUT_REACT = [
 export default function NotOnlyReact(): JSX.Element {
   return (
     <>
-      <TitledSection level={2} title="Mas eu não sei apenas React">
+      <TitledSection
+        level={2}
+        title="E o que eu faço sem React? As mesmas coisas."
+      >
         <div className="flex flex-col items-center gap-32">
           <TitledSection
             level={3}
@@ -38,43 +38,6 @@ export default function NotOnlyReact(): JSX.Element {
               ))}
             </ul>
           </TitledSection>
-          <div className="flex flex-col items-center gap-16">
-            <TitledSection
-              level={3}
-              title={
-                <span>
-                  E tenho conhecimento nestes{" "}
-                  <GlowingText>frameworks</GlowingText>,
-                </span>
-              }
-            >
-              <Tools kind="framework"></Tools>
-            </TitledSection>
-            <TitledSection
-              level={3}
-              title={
-                <span>
-                  nestas <GlowingText>linguagens</GlowingText>,
-                </span>
-              }
-            >
-              <Tools kind="language"></Tools>
-            </TitledSection>
-            <TitledSection
-              level={3}
-              title={
-                <span>
-                  e nestas <GlowingText>ferramentas</GlowingText>.
-                </span>
-              }
-            >
-              <Tools kind="tool"></Tools>
-            </TitledSection>
-            <Button href="/projetos">
-              <EyeIcon />
-              Veja meus outros projetos
-            </Button>
-          </div>
         </div>
       </TitledSection>
     </>
