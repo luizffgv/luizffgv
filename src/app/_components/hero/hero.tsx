@@ -7,13 +7,26 @@ import HeroAdvanceButton from "./components/hero-advance-button";
 import Link from "next/link";
 import Logo from "@components/logo";
 import LookingAtCursor from "@components/looking-at-cursor";
+import RotatingColors from "../rotating-colors";
 import styles from "./hero.module.scss";
+
+const GRADIENT_COLORS = [
+  "#08f",
+  "#00d9ff",
+  "#a1ffec",
+  "#4c00ff",
+  "#4326ab",
+  "#09f",
+];
 
 export default function Hero(): JSX.Element {
   return (
     <div className="relative flex min-h-[100svh] flex-col items-center justify-center px-8 pb-16 pt-24">
       <div className="z-[-1] text-primary opacity-50">
         <Goo></Goo>
+      </div>
+      <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 opacity-25 dark:opacity-15">
+        <RotatingColors colors={GRADIENT_COLORS}></RotatingColors>
       </div>
       <div className="appear relative flex flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-4">
