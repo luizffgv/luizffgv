@@ -21,7 +21,7 @@ export default function ToolsSection(): JSX.Element {
         </>
       }
     >
-      <div className="flex flex-wrap items-start justify-center gap-8">
+      <div className="flex flex-wrap justify-center gap-8">
         <ToolDetails
           name="Node.js"
           icon={
@@ -53,6 +53,13 @@ export default function ToolsSection(): JSX.Element {
               alt="Logotipo TypeScript"
             />
           }
+          footer={
+            <div className="flex justify-center">
+              <Button href="https://ekranoplan.luizf.dev" target="_blank">
+                <PlaneTakeoffIcon /> Ekranoplan
+              </Button>
+            </div>
+          }
         >
           <p>
             Quando eu digo TypeScript, não digo JavaScript com tipos salpicados
@@ -64,11 +71,6 @@ export default function ToolsSection(): JSX.Element {
             Ekranoplan é um pacote NPM meu que modela comportamentos complexos
             com tipos.
           </p>
-          <div className="flex justify-center">
-            <Button href="https://ekranoplan.luizf.dev" target="_blank">
-              <PlaneTakeoffIcon /> Ekranoplan
-            </Button>
-          </div>
         </ToolDetails>
         <ToolDetails
           name="React"
@@ -92,6 +94,16 @@ export default function ToolsSection(): JSX.Element {
           icon={
             <img src="https://cdn.simpleicons.org/css3" alt="Logotipo CSS" />
           }
+          footer={
+            <div className="flex justify-center">
+              <Button
+                href="https://www.linkedin.com/pulse/o-seletor-css-vs-sass-luiz-fernando-frade-guerra-valle-noutf/"
+                target="_blank"
+              >
+                <NewspaperIcon /> Ver post
+              </Button>
+            </div>
+          }
         >
           <p>
             Curto CSS, CSS-in-JS, Tailwind CSS, Class Variance Authority, CSS
@@ -101,19 +113,18 @@ export default function ToolsSection(): JSX.Element {
           <p>
             Quer aprender algo que eu aposto que não sabe? Veja meu post abaixo.
           </p>
-          <div className="flex justify-center">
-            <Button
-              href="https://www.linkedin.com/pulse/o-seletor-css-vs-sass-luiz-fernando-frade-guerra-valle-noutf/"
-              target="_blank"
-            >
-              <NewspaperIcon /> Ver post
-            </Button>
-          </div>
         </ToolDetails>
         <ToolDetails
           name="Git"
           icon={
             <img src="https://cdn.simpleicons.org/git" alt="Logotipo Git" />
+          }
+          footer={
+            <div className="flex justify-center">
+              <Button href="https://github.com/luizffgv" target="_blank">
+                <FolderGit2 /> Meu GitHub
+              </Button>
+            </div>
           }
         >
           <p>
@@ -123,11 +134,6 @@ export default function ToolsSection(): JSX.Element {
           <p>
             “Eu nem sei o que é git flog, e já tenho que aprender git reflog?”
           </p>
-          <div className="flex justify-center">
-            <Button href="https://github.com/luizffgv" target="_blank">
-              <FolderGit2 /> Meu GitHub
-            </Button>
-          </div>
         </ToolDetails>
         <ToolDetails
           name="C++"
@@ -136,6 +142,16 @@ export default function ToolsSection(): JSX.Element {
               src="https://cdn.simpleicons.org/cplusplus"
               alt="Logotipo C++"
             />
+          }
+          footer={
+            <div className="flex justify-center">
+              <Button
+                href="https://github.com/luizffgv/constexpr-Change/blob/main/constexpr_change.hpp"
+                target="_blank"
+              >
+                <FlameIcon /> Dar uma olhada
+              </Button>
+            </div>
           }
         >
           <p>
@@ -148,14 +164,6 @@ export default function ToolsSection(): JSX.Element {
             Pessoalmente, hoje eu abomino C++, mas o que já gostei um dia posso
             aprender a gostar denovo.
           </p>
-          <div className="flex justify-center">
-            <Button
-              href="https://github.com/luizffgv/constexpr-Change/blob/main/constexpr_change.hpp"
-              target="_blank"
-            >
-              <FlameIcon /> Dar uma olhada
-            </Button>
-          </div>
         </ToolDetails>
       </div>
     </TitledSection>

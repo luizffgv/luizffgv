@@ -1,5 +1,4 @@
 import { useContext, useMemo } from "react";
-import Card from "@components/card";
 import { ProjectFilterContext } from "@/app/_contexts/project-filters";
 import ProjectPreview from "@components/project-preview";
 import projects from "projects-list";
@@ -15,11 +14,7 @@ export default function ProjectsList(): JSX.Element {
           key={project.name}
           className="appear min-w-fit grow basis-0 *:h-full"
         >
-          <Card>
-            <div className="flex h-full flex-row items-stretch justify-center">
-              <ProjectPreview project={project}></ProjectPreview>
-            </div>
-          </Card>
+          <ProjectPreview project={project}></ProjectPreview>
         </li>
       ))}
       {filteredProjects.length === 0 && (

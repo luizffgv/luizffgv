@@ -32,6 +32,7 @@ export default function NotOnlyReact(): JSX.Element {
               {PROJECTS_WITHOUT_REACT.map((name) => (
                 <li key={name}>
                   <ProjectPreview
+                    level="closer"
                     project={throwIfNull(projects.find((p) => p.name === name))}
                   />
                 </li>

@@ -6,11 +6,12 @@ export interface Props {
   name: string;
   icon: React.ReactNode;
   children: React.ReactNode;
+  footer?: React.ReactNode | undefined;
 }
 
 export default function ToolDetails(props: Props): JSX.Element {
   return (
-    <Card level="closer">
+    <Card level="closer" footer={props.footer}>
       <TitledSection
         level={3}
         title={
