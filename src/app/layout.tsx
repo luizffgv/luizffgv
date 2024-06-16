@@ -1,9 +1,20 @@
 import "./globals.css";
 import CursorGlow from "./_components/cursor-glow";
 import Footer from "./_components/footer";
+import Goo from "./_components/goo";
 import Header from "./_components/header";
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
+import RotatingColors from "./_components/rotating-colors";
+
+const GRADIENT_COLORS = [
+  "#08f",
+  "#00d9ff",
+  "#a1ffec",
+  "#4c00ff",
+  "#4326ab",
+  "#09f",
+];
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -66,10 +77,18 @@ if (primary)
         ></script>
       </head>
       <body className="flex flex-col bg-bg text-fg transition-colors dark:bg-bg-dark dark:text-fg-dark">
+        <div className="fixed top-0 h-screen w-full text-primary opacity-50">
+          <Goo></Goo>
+        </div>
+        <div className="fixed left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 opacity-15 dark:opacity-5">
+          <RotatingColors colors={GRADIENT_COLORS}></RotatingColors>
+        </div>
         <CursorGlow></CursorGlow>
-        <Header></Header>
-        {children}
-        <Footer></Footer>
+        <div className="isolate z-[1]">
+          <Header></Header>
+          {children}
+          <Footer></Footer>
+        </div>
       </body>
     </html>
   );

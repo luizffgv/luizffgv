@@ -40,7 +40,7 @@ export default function Header(): JSX.Element {
   return (
     <header
       ref={headerRef}
-      className="fixed left-0 top-0 z-[1] flex w-full flex-row justify-end bg-bg-close px-4 py-2 shadow-sm transition-all dark:bg-bg-close-dark"
+      className="fixed left-0 top-0 z-[1] flex w-full flex-row justify-end bg-bg-close px-4 py-2 shadow-sm backdrop-blur-lg transition-all dark:bg-bg-close-dark"
     >
       <div className="flex grow flex-row items-center justify-end sm:justify-between">
         <nav className="hidden flex-row gap-8 font-bold sm:flex">

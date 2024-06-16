@@ -27,10 +27,7 @@ export default function ReactProjects(): JSX.Element {
       <div className="flex flex-col gap-8">
         <ul className="flex flex-row flex-wrap items-stretch justify-center gap-16 px-8">
           {FEATURED_PROJECTS.map((name) => (
-            <li
-              key={name}
-              className="appear flex max-w-sm flex-row items-stretch"
-            >
+            <li key={name} className="flex max-w-sm flex-row items-stretch">
               <ProjectPreview
                 project={throwIfNull(projects.find((p) => p.name === name))}
               />
