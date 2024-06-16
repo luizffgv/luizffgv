@@ -4,6 +4,11 @@ import { HTMLAttributeAnchorTarget, ReactNode, useState } from "react";
 import Link from "next/link";
 import Modal from "@components/modal";
 
+const HOVER_CLASSNAME =
+  "hover:dark:bg-primary hover:bg-primary hover:text-fg-on-primary hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor]";
+
+const CLASSNAME = `flex flex-row text-primary items-center gap-2 rounded-3xl bg-primary/15 px-4 py-2 font-bold justify-center transition-all ${HOVER_CLASSNAME}`;
+
 type ModalButtonProps = {
   children: React.ReactNode;
   "aria-label"?: string;
@@ -17,7 +22,7 @@ function ModalButton(props: ModalButtonProps): JSX.Element {
   return (
     <>
       <button
-        className="flex flex-row items-center justify-center gap-2 rounded-3xl bg-primary px-4 py-2 font-bold text-fg-on-primary transition-all hover:shadow-[0_0_50px_theme(colors.primary_/_25%)] hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor]"
+        className={CLASSNAME}
         onClick={() => {
           setModalIsOpen(true);
         }}
@@ -61,17 +66,14 @@ export type Props = {
 );
 
 export default function Button(props: Props): JSX.Element {
-  const className =
-    "flex flex-row items-center gap-2 rounded-3xl bg-primary px-4 py-2 font-bold text-fg-on-primary justify-center transition-all hover:brightness-110 hover:shadow-[0_0_50px_theme(colors.primary_/_25%)] hover:[text-shadow:_0_0_15px_currentcolor]";
-
   return (
     <>
       {"onClick" in props ? (
-        <button {...props} type="button" className={className}></button>
+        <button {...props} type="button" className={CLASSNAME}></button>
       ) : "href" in props ? (
-        <Link {...props} className={className}></Link>
+        <Link {...props} className={CLASSNAME}></Link>
       ) : (
-        <ModalButton {...props} className={className}></ModalButton>
+        <ModalButton {...props} className={CLASSNAME}></ModalButton>
       )}
     </>
   );
