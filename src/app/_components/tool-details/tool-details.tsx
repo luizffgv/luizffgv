@@ -11,7 +11,7 @@ export interface Props {
 
 export default function ToolDetails(props: Props): JSX.Element {
   return (
-    <Card level="closer" footer={props.footer}>
+    <Card footer={props.footer}>
       <TitledSection
         level={3}
         title={

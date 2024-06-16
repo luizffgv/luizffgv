@@ -32,7 +32,6 @@ export default function ReactProjects(): JSX.Element {
               className="appear flex max-w-sm flex-row items-stretch"
             >
               <ProjectPreview
-                level={"closer"}
                 project={throwIfNull(projects.find((p) => p.name === name))}
               />
             </li>

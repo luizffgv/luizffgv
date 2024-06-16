@@ -1,19 +1,16 @@
 import { EyeIcon, FolderGit2Icon } from "lucide-react";
 import Button from "@components/button";
 import Card from "../card";
-import { Props as CardProps } from "../card/card";
 import LazyImage from "@components/lazy-image";
 import { ProjectRaw } from "projects-list";
 
 export interface Props {
   project: ProjectRaw;
-  level?: CardProps["level"];
 }
 
-export default function ProjectPreview({ project, level }: Props): JSX.Element {
+export default function ProjectPreview({ project }: Props): JSX.Element {
   return (
     <Card
-      level={level}
       footer={
         <div className="flex flex-row flex-wrap items-stretch justify-center gap-4">
           {project.url ? (
