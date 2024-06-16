@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Button from "@components/button";
+import ColorChanger from "./components/color-changer";
 import Link from "next/link";
 import { MenuIcon } from "lucide-react";
 import ThemeSwitcher from "@components/theme-switcher";
@@ -62,9 +63,8 @@ export default function Header(): JSX.Element {
             <Button
               modalContent={
                 <div className="flex flex-col gap-4">
-                  <div className="sm:hidden">
-                    <ThemeSwitcher></ThemeSwitcher>
-                  </div>
+                  <ThemeSwitcher></ThemeSwitcher>
+                  <ColorChanger></ColorChanger>
                   {ENTRIES.map(({ name, href }) => (
                     <Link
                       key={name}
@@ -82,6 +82,9 @@ export default function Header(): JSX.Element {
               <MenuIcon />
               Menu
             </Button>
+          </div>
+          <div className="hidden sm:block">
+            <ColorChanger></ColorChanger>
           </div>
           <div className="hidden sm:block">
             <ThemeSwitcher></ThemeSwitcher>

@@ -54,6 +54,12 @@
   transition: scale 500ms cubic-bezier(0.18, 0.89, 0.32, 1.27);
 }
 
+@layer base {
+  :root {
+    --color-primary: 59, 130, 246;
+  }
+}
+
 @layer utilities {
   .transition-discrete {
     transition-behavior: allow-discrete;

@@ -6,11 +6,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        primary: "rgba(var(--color-primary), <alpha-value>)",
         bg: "#e3f0fa",
         "bg-dark": "#1e293b",
         "bg-close": "#f1f6ff",
         "bg-close-dark": "#1c242f",
-        primary: "#3b82f6",
         fg: "#0f172a",
         "fg-dark": "#f1f5f9",
         "fg-on-primary": "#f8fafc",
