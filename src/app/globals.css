@@ -2,50 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes slide-in {
-  from {
-    opacity: 0;
-    scale: 0.95;
-  }
-}
-
-@keyframes slide-out {
-  to {
-    opacity: 0;
-    scale: 0.95;
-  }
-}
-
-@keyframes color-in {
-  0% {
-    filter: grayscale(1);
-  }
-
-  20%,
-  80% {
-    filter: none;
-  }
-
-  100% {
-    filter: grayscale(1);
-  }
-}
-
-@supports (animation-timeline: view()) {
-  .appear {
-    animation: slide-in, slide-out;
-    animation-timeline: view();
-    animation-range: entry, exit;
-    animation-fill-mode: both;
-  }
-
-  .color-in {
-    animation: color-in;
-    animation-timeline: view();
-    animation-fill-mode: both;
-  }
-}
-
 .jump-in {
   @starting-style {
     scale: 0.5;

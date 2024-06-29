@@ -1,11 +1,20 @@
 "use client";
 
+import {
+  motion,
+  MotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+  useVelocity,
+} from "framer-motion";
 import { useEffect, useId, useRef } from "react";
 import styles from "./goo.module.scss";
 
 declare module "react" {
   interface CSSProperties {
     "--filter-url"?: string;
+    "--filter-blur"?: string;
   }
 }
 
@@ -210,14 +219,20 @@ export class Bubbles {
   #animationId: number | null = null;
   #observer?: IntersectionObserver;
   #paused: boolean = false;
+  #scrollVelocity: MotionValue<number>;
 
   /**
    * Creates a new {@link Bubbles}.
    *
    * @param element - Canvas element to use.
    * @param color - Color of the bubbles, or function that returns a color.
+   * @param velocity - Motion value defining the current scrollY velocity.
    */
-  constructor(element: HTMLCanvasElement, color: string | (() => string)) {
+  constructor(
+    element: HTMLCanvasElement,
+    color: string | (() => string),
+    velocity: MotionValue<number>,
+  ) {
     this.#element = element;
 
     this.#colorGenerator = typeof color === "string" ? () => color : color;
@@ -227,6 +242,8 @@ export class Bubbles {
       throw new TypeError("Couldn't get 2D canvas context.");
     }
     this.#context = ctx;
+
+    this.#scrollVelocity = velocity;
   }
 
   #step(timestamp: DOMHighResTimeStamp): void {
@@ -253,13 +270,20 @@ export class Bubbles {
     this.#context.shadowColor = this.#context.fillStyle;
     this.#context.shadowBlur = 25;
 
+    let currentVelocity = this.#scrollVelocity.get();
+    if (Number.isNaN(currentVelocity)) {
+      currentVelocity = 1;
+    }
+
     for (const particle of this.#particles) {
       if (!particle.isMaybeInRect(-50, -50, width + 100, height + 100)) {
         continue;
       }
 
-      particle.velX += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
-      particle.velY += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
+      particle.velX +=
+        (Math.random() - 0.5) * 2 * deltaSeconds * 250 - currentVelocity / 5;
+      particle.velY +=
+        (Math.random() - 0.5) * 2 * deltaSeconds * 250 - currentVelocity;
 
       particle.update(deltaSeconds);
 
@@ -326,6 +350,15 @@ export class Bubbles {
 export default function Goo(): JSX.Element {
   const filterId = useId();
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, { bounce: 0 });
+  const simulationVelocity = useTransform(smoothVelocity, (v) =>
+    Math.min(10, v / 50),
+  );
+  const blur = useTransform(smoothVelocity, (v) =>
+    Number.isNaN(v) ? "0" : `${Math.min(5, Math.abs(v as number) / 500)}px`,
+  );
 
   useEffect(() => {
     if (canvasRef.current == null) {
@@ -333,19 +366,23 @@ export default function Goo(): JSX.Element {
       return;
     }
 
-    const bubbles = new Bubbles(canvasRef.current, () => {
-      if (canvasRef.current == null) {
-        return "transparent";
-      }
+    const bubbles = new Bubbles(
+      canvasRef.current,
+      () => {
+        if (canvasRef.current == null) {
+          return "transparent";
+        }
 
-      return getComputedStyle(canvasRef.current).color;
-    });
+        return getComputedStyle(canvasRef.current).color;
+      },
+      simulationVelocity,
+    );
     bubbles.start();
 
     return () => {
       bubbles.stop();
     };
-  }, []);
+  }, [simulationVelocity]);
 
   return (
     <>
@@ -360,13 +397,14 @@ export default function Goo(): JSX.Element {
           </filter>
         </defs>
       </svg>
-      <canvas
+      <motion.canvas
         className={`${styles.canvas} absolute left-0 top-0 h-full w-full`}
         ref={canvasRef}
         style={{
+          "--filter-blur": blur,
           "--filter-url": `url(#${filterId})`,
         }}
-      ></canvas>
+      ></motion.canvas>
     </>
   );
 }

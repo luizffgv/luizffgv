@@ -8,19 +8,13 @@ import ToolsSection from "./_components/tools-section";
 export default function Home(): JSX.Element {
   return (
     <main>
-      <div className="color-in">
-        <Hero></Hero>
-      </div>
+      <Hero></Hero>
       <div className="flex flex-col items-center gap-64 px-4 pb-[50vh] pt-8 [grid-area:stack]">
         <ToolsSection></ToolsSection>
         <ReactProjects></ReactProjects>
         <NotOnlyReact></NotOnlyReact>
-        <div className="appear">
-          <MyGitHub></MyGitHub>
-        </div>
-        <div className="appear">
-          <Autism></Autism>
-        </div>
+        <MyGitHub></MyGitHub>
+        <Autism></Autism>
       </div>
     </main>
   );

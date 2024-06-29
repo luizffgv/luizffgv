@@ -10,5 +10,6 @@
 .canvas {
   animation: fade-in 5000ms ease-in;
 
-  filter: var(--filter-url) drop-shadow(0 0 25px currentcolor);
+  filter: var(--filter-url) drop-shadow(0 0 25px currentcolor)
+    blur(var(--filter-blur));
 }
