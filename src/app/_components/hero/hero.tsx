@@ -11,7 +11,7 @@ import styles from "./hero.module.scss";
 export default function Hero(): JSX.Element {
   return (
     <div className="relative flex min-h-[100svh] flex-col items-center justify-center px-8 pb-16 pt-24">
-      <div className="appear relative flex flex-col items-center gap-8">
+      <div className="relative flex flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-4">
           <LookingAtCursor>
             <Logo></Logo>
