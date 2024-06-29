@@ -16,9 +16,10 @@ export default function RotatingColors({
   blur = "100px",
   colors,
 }: Props): JSX.Element {
-  const background = useMemo(() => {
-    return `conic-gradient(from 0deg, ${colors.join(", ")})`;
-  }, [colors]);
+  const background = useMemo(
+    () => `conic-gradient(from 0deg, ${colors.join(", ")})`,
+    [colors],
+  );
 
   return (
     <div
