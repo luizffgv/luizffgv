@@ -10,7 +10,7 @@ export default function ProjectsList(): JSX.Element {
   return (
     <ul className="flex flex-row flex-wrap justify-center gap-8">
       {filteredProjects.map((project) => (
-        <li key={project.name} className="min-w-fit grow basis-0 *:h-full">
+        <li key={project.name} className="flex max-w-md items-stretch">
           <ProjectPreview project={project}></ProjectPreview>
         </li>
       ))}

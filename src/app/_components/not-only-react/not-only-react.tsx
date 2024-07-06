@@ -30,7 +30,7 @@ export default function NotOnlyReact(): JSX.Element {
           >
             <ul className="flex flex-row flex-wrap items-stretch justify-center gap-16 px-8">
               {PROJECTS_WITHOUT_REACT.map((name) => (
-                <li key={name}>
+                <li key={name} className="flex max-w-sm flex-row items-stretch">
                   <ProjectPreview
                     project={throwIfNull(projects.find((p) => p.name === name))}
                   />

@@ -21,7 +21,7 @@ export default function ToolsSection(): JSX.Element {
         </>
       }
     >
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="flex flex-wrap justify-center gap-8 *:max-w-sm">
         <ToolDetails
           name="Node.js"
           icon={
