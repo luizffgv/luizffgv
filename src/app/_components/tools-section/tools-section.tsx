@@ -1,6 +1,5 @@
 import {
   DrillIcon,
-  FlameIcon,
   FolderGit2,
   HeartIcon,
   NewspaperIcon,
@@ -30,6 +29,26 @@ export default function ToolsSection(): JSX.Element {
               alt="Logotipo Node.js"
             />
           }
+          childTools={[
+            {
+              name: "Jest",
+              icon: (
+                <img
+                  src="https://cdn.simpleicons.org/jest"
+                  alt="Logotipo Jest"
+                />
+              ),
+            },
+            {
+              name: "ESLint",
+              icon: (
+                <img
+                  src="https://cdn.simpleicons.org/eslint"
+                  alt="Logotipo ESLint"
+                />
+              ),
+            },
+          ]}
         >
           <p>Eu trabalho com Node. É meu ecossistema favorito.</p>
           <p>Já publiquei vários pacotes no NPM e eu adoro isso.</p>
@@ -60,6 +79,14 @@ export default function ToolsSection(): JSX.Element {
               </Button>
             </div>
           }
+          childTools={[
+            {
+              name: "Zod",
+              icon: (
+                <img src="https://cdn.simpleicons.org/zod" alt="Logotipo Zod" />
+              ),
+            },
+          ]}
         >
           <p>
             Quando eu digo TypeScript, não digo JavaScript com tipos salpicados
@@ -77,6 +104,44 @@ export default function ToolsSection(): JSX.Element {
           icon={
             <img src="https://cdn.simpleicons.org/react" alt="Logotipo React" />
           }
+          childTools={[
+            {
+              name: "React Query",
+              icon: (
+                <img
+                  src="https://cdn.simpleicons.org/reactquery"
+                  alt="Logotipo React Query"
+                />
+              ),
+            },
+            {
+              name: "React Hook Form",
+              icon: (
+                <img
+                  src="https://cdn.simpleicons.org/reacthookform"
+                  alt="Logotipo React Hook Form"
+                />
+              ),
+            },
+            {
+              name: "Redux-Saga",
+              icon: (
+                <img
+                  src="https://cdn.simpleicons.org/reduxsaga"
+                  alt="Logotipo Redux-Saga"
+                />
+              ),
+            },
+            {
+              name: "Framer Motion",
+              icon: (
+                <img
+                  src="https://cdn.simpleicons.org/framer"
+                  alt="Logotipo Framer"
+                />
+              ),
+            },
+          ]}
         >
           <p>
             Suspense? Sim. Hooks? Sim. Modo concorrente do React 18? Também.
@@ -104,6 +169,26 @@ export default function ToolsSection(): JSX.Element {
               </Button>
             </div>
           }
+          childTools={[
+            {
+              name: "Tailwind CSS",
+              icon: (
+                <img
+                  src="https://cdn.simpleicons.org/tailwindcss"
+                  alt="Logotipo Tailwind CSS"
+                />
+              ),
+            },
+            {
+              name: "Styled Components",
+              icon: (
+                <img
+                  src="https://cdn.simpleicons.org/styledcomponents"
+                  alt="Logotipo Styled Components"
+                />
+              ),
+            },
+          ]}
         >
           <p>
             Curto CSS, CSS-in-JS, Tailwind CSS, Class Variance Authority, CSS
@@ -133,36 +218,6 @@ export default function ToolsSection(): JSX.Element {
           </p>
           <p>
             “Eu nem sei o que é git flog, e já tenho que aprender git reflog?”
-          </p>
-        </ToolDetails>
-        <ToolDetails
-          name="C++"
-          icon={
-            <img
-              src="https://cdn.simpleicons.org/cplusplus"
-              alt="Logotipo C++"
-            />
-          }
-          footer={
-            <div className="flex justify-center">
-              <Button
-                href="https://github.com/luizffgv/constexpr-Change/blob/main/constexpr_change.hpp"
-                target="_blank"
-              >
-                <FlameIcon /> Dar uma olhada
-              </Button>
-            </div>
-          }
-        >
-          <p>
-            Eu era apaixonado por C++ antes de começar a usar Node. Para um
-            trabalho de faculdade, eu já fiz um algoritmo que resolve o problema
-            do troco com programação dinâmica, rodando{" "}
-            <strong>durante a compilação</strong>.
-          </p>
-          <p>
-            Pessoalmente, hoje eu abomino C++, mas o que já gostei um dia posso
-            aprender a gostar denovo.
           </p>
         </ToolDetails>
       </div>
