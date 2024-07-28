@@ -8,7 +8,6 @@ import GlowingText from "@components/glowing-text";
 import HeroAdvanceButton from "./components/hero-advance-button";
 import Link from "next/link";
 import Logo from "@components/logo";
-import LookingAtCursor from "@components/looking-at-cursor";
 import styles from "./hero.module.scss";
 import { useRef } from "react";
 
@@ -27,9 +26,7 @@ export default function Hero(): JSX.Element {
       >
         <div className="relative flex flex-col items-center gap-8">
           <div className="flex flex-col items-center gap-4">
-            <LookingAtCursor>
-              <Logo></Logo>
-            </LookingAtCursor>
+            <Logo></Logo>
             <p className="text-center text-2xl">
               Olá, meu nome é{" "}
               <GlowingText>Luiz Fernando F. G. Valle</GlowingText>

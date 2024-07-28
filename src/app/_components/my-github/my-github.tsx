@@ -1,4 +1,8 @@
-import { FolderGit2Icon, PackageIcon } from "lucide-react";
+import {
+  FolderGit2Icon,
+  GitPullRequestArrowIcon,
+  PackageIcon,
+} from "lucide-react";
 import Button from "@components/button";
 import GlowingText from "@components/glowing-text";
 import Link from "next/link";
@@ -17,20 +21,29 @@ export default function MyGitHub(): JSX.Element {
         </>
       }
     >
-      <div className="flex flex-row flex-wrap justify-center gap-8">
-        <TitledSection level={3} title="Eu tenho vários projetos open source">
-          <div className="flex flex-col items-center">
+      <div className="relative isolate flex flex-col flex-wrap justify-center gap-8">
+        <div className="absolute left-1/2 top-1/2 -z-10 hidden -translate-x-1/2 -translate-y-1/2 rotate-45 sm:block">
+          <GlowingText>
+            <div className="-rotate-45">
+              <GitPullRequestArrowIcon className="h-48 w-48 rotate-12 text-primary opacity-5 md:h-64 md:w-64" />
+            </div>
+            <div className="-rotate-45">
+              <PackageIcon className="h-48 w-48 -rotate-12 text-primary opacity-5 md:h-64 md:w-64" />
+            </div>
+          </GlowingText>
+        </div>
+        <TitledSection
+          level={3}
+          title="Eu tenho vários projetos open source e alguns pacotes NPM"
+        >
+          <div className="flex flex-wrap items-center gap-4 *:grow">
             <Button href="https://www.github.com/luizffgv/" target="_blank">
               <FolderGit2Icon />
-              Ver meu GitHub
+              Meu GitHub
             </Button>
-          </div>
-        </TitledSection>
-        <TitledSection level={3} title="e alguns pacotes NPM.">
-          <div className="flex flex-col items-center">
             <Button href="/projetos?tags=Pacote%20NPM" target="_blank">
               <PackageIcon />
-              Ver meus pacotes
+              Meus pacotes NPM
             </Button>
           </div>
         </TitledSection>

@@ -1,5 +1,6 @@
 import Autism from "./_components/autism";
 import Hero from "./_components/hero";
+import Highlights from "./_components/highlights/highlights";
 import MyGitHub from "./_components/my-github";
 import NotOnlyReact from "./_components/not-only-react";
 import ReactProjects from "./_components/react-projects";
@@ -9,7 +10,8 @@ export default function Home(): JSX.Element {
   return (
     <main>
       <Hero></Hero>
-      <div className="flex flex-col items-center gap-64 px-4 pb-[50vh] pt-8 [grid-area:stack]">
+      <div className="flex flex-col items-center gap-96 bg-bg-close px-4 pb-[50vh] pt-32 [grid-area:stack] dark:bg-bg-close-dark">
+        <Highlights></Highlights>
         <ToolsSection></ToolsSection>
         <ReactProjects></ReactProjects>
         <NotOnlyReact></NotOnlyReact>

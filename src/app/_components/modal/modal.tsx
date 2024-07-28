@@ -30,7 +30,11 @@ export default function Modal({
     >
       {onDismiss ? (
         <div className={styles.dismiss}>
-          <Button onClick={onDismiss} aria-label="Fechar modal">
+          <Button
+            variant="danger"
+            onClick={onDismiss}
+            aria-label="Fechar modal"
+          >
             <XIcon />
           </Button>
         </div>

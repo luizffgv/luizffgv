@@ -1,5 +1,4 @@
 import {
-  DrillIcon,
   FolderGit2,
   HeartIcon,
   NewspaperIcon,
@@ -12,15 +11,8 @@ import ToolDetails from "../tool-details";
 
 export default function ToolsSection(): JSX.Element {
   return (
-    <TitledSection
-      level={2}
-      title={
-        <>
-          <DrillIcon className="inline" /> Meu arsenal principal
-        </>
-      }
-    >
-      <div className="flex flex-wrap justify-center gap-8 *:max-w-sm">
+    <TitledSection level={2} title="Meu arsenal principal">
+      <div className="flex flex-wrap justify-center gap-16 *:max-w-sm ">
         <ToolDetails
           name="Node.js"
           icon={
@@ -73,11 +65,9 @@ export default function ToolsSection(): JSX.Element {
             />
           }
           footer={
-            <div className="flex justify-center">
-              <Button href="https://ekranoplan.luizf.dev" target="_blank">
-                <PlaneTakeoffIcon /> Ekranoplan
-              </Button>
-            </div>
+            <Button href="https://ekranoplan.luizf.dev" target="_blank">
+              <PlaneTakeoffIcon /> Ekranoplan
+            </Button>
           }
           childTools={[
             {
@@ -144,10 +134,6 @@ export default function ToolsSection(): JSX.Element {
           ]}
         >
           <p>
-            Suspense? Sim. Hooks? Sim. Modo concorrente do React 18? Também.
-            Ansioso pelo React 19? Mais ainda.
-          </p>
-          <p>
             Como alguém que usou HTML e JS puros por um bom tempo, React é
             apaixonante. Entre tantas outras possibilidades que explorei, como
             C, C++, Lua, Python, Java e Rust, React com TypeScript foram o
@@ -160,14 +146,12 @@ export default function ToolsSection(): JSX.Element {
             <img src="https://cdn.simpleicons.org/css3" alt="Logotipo CSS" />
           }
           footer={
-            <div className="flex justify-center">
-              <Button
-                href="https://www.linkedin.com/pulse/o-seletor-css-vs-sass-luiz-fernando-frade-guerra-valle-noutf/"
-                target="_blank"
-              >
-                <NewspaperIcon /> Ver post
-              </Button>
-            </div>
+            <Button
+              href="https://www.linkedin.com/pulse/o-seletor-css-vs-sass-luiz-fernando-frade-guerra-valle-noutf/"
+              target="_blank"
+            >
+              <NewspaperIcon /> Ver post
+            </Button>
           }
           childTools={[
             {
@@ -205,11 +189,9 @@ export default function ToolsSection(): JSX.Element {
             <img src="https://cdn.simpleicons.org/git" alt="Logotipo Git" />
           }
           footer={
-            <div className="flex justify-center">
-              <Button href="https://github.com/luizffgv" target="_blank">
-                <FolderGit2 /> Meu GitHub
-              </Button>
-            </div>
+            <Button href="https://github.com/luizffgv" target="_blank">
+              <FolderGit2 /> Meu GitHub
+            </Button>
           }
         >
           <p>

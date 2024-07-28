@@ -57,6 +57,8 @@
     ],
     "react/hook-use-state": "warn",
     "react/jsx-handler-names": "warn",
+    // False positives for Three elements
+    "react/no-unknown-property": "off",
     // False positives
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",

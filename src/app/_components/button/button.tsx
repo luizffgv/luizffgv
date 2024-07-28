@@ -3,11 +3,20 @@
 import { HTMLAttributeAnchorTarget, ReactNode, useState } from "react";
 import Link from "next/link";
 import Modal from "@components/modal";
+import { Variant } from "./types";
+import { cva } from "class-variance-authority";
 
-const HOVER_CLASSNAME =
-  "hover:dark:bg-primary hover:bg-primary hover:text-fg-on-primary hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor]";
-
-const CLASSNAME = `flex flex-row text-primary items-center gap-2 rounded-3xl bg-primary/15 px-4 py-2 font-bold justify-center transition-all ${HOVER_CLASSNAME}`;
+const buttonCva = cva(
+  `flex flex-row items-center gap-2 rounded-md px-4 py-2 font-bold justify-center transition-all hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor]`,
+  {
+    variants: {
+      variant: {
+        primary: "text-fg-on-primary bg-primary",
+        danger: "text-fg-on-primary bg-danger",
+      } satisfies Record<Variant, string>,
+    },
+  },
+);
 
 type ModalButtonProps = {
   children: React.ReactNode;
@@ -22,7 +31,7 @@ function ModalButton(props: ModalButtonProps): JSX.Element {
   return (
     <>
       <button
-        className={CLASSNAME}
+        className={props.className}
         onClick={() => {
           setModalIsOpen(true);
         }}
@@ -48,6 +57,7 @@ function ModalButton(props: ModalButtonProps): JSX.Element {
 export type Props = {
   children: React.ReactNode;
   "aria-label"?: string;
+  variant?: Variant | undefined;
 } & (
   | {
       /** Handler for clicks on the button. */
@@ -65,15 +75,20 @@ export type Props = {
     }
 );
 
-export default function Button(props: Props): JSX.Element {
+export default function Button({
+  variant = "primary",
+  ...rest
+}: Props): JSX.Element {
+  const className = buttonCva({ variant });
+
   return (
     <>
-      {"onClick" in props ? (
-        <button {...props} type="button" className={CLASSNAME}></button>
-      ) : "href" in props ? (
-        <Link {...props} className={CLASSNAME}></Link>
+      {"onClick" in rest ? (
+        <button {...rest} type="button" className={className}></button>
+      ) : "href" in rest ? (
+        <Link {...rest} className={className}></Link>
       ) : (
-        <ModalButton {...props} className={CLASSNAME}></ModalButton>
+        <ModalButton {...rest} className={className}></ModalButton>
       )}
     </>
   );

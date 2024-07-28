@@ -1,57 +1,51 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { HomeIcon, MenuIcon, WrenchIcon } from "lucide-react";
 import Button from "@components/button";
-import ColorChanger from "./components/color-changer";
 import Link from "next/link";
-import { MenuIcon } from "lucide-react";
 import ThemeSwitcher from "@components/theme-switcher";
+import { cva } from "class-variance-authority";
+import { useHeadroom } from "@mantine/hooks";
 import { usePathname } from "next/navigation";
 
+const headerCva = cva(
+  "fixed left-0 top-0 z-[1] flex w-full flex-row justify-end bg-bg-closer px-4 py-2 shadow-sm backdrop-blur-lg transition-all dark:bg-bg-closer-dark",
+  {
+    variants: {
+      pinned: {
+        false: "translate-y-[-100%]",
+      },
+    },
+  },
+);
+
 const ENTRIES = [
-  { name: "Início", href: "/" },
-  { name: "Projetos", href: "/projetos" },
+  { name: "Início", icon: <HomeIcon />, href: "/" },
+  { name: "Projetos", icon: <WrenchIcon />, href: "/projetos" },
 ];
 
 export default function Header(): JSX.Element {
   const pathname = usePathname();
-  const headerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    let lastPosition = scrollY;
-
-    const scrollListener = (): void => {
-      const scrollPosition = scrollY;
-      if (scrollPosition > lastPosition && scrollY !== 0) {
-        headerRef.current?.classList.add("translate-y-[-100%]");
-      } else {
-        headerRef.current?.classList.remove("translate-y-[-100%]");
-      }
-      lastPosition = scrollPosition;
-    };
-
-    addEventListener("scroll", scrollListener);
-
-    return () => {
-      document.body.removeEventListener("scroll", scrollListener);
-    };
-  });
+  const pinned = useHeadroom();
 
   return (
-    <header
-      ref={headerRef}
-      className="fixed left-0 top-0 z-[1] flex w-full flex-row justify-end bg-bg-close px-4 py-2 shadow-sm backdrop-blur-lg transition-all dark:bg-bg-close-dark"
-    >
+    <header className={headerCva({ pinned })}>
       <div className="flex grow flex-row items-center justify-end sm:justify-between">
         <nav className="hidden flex-row gap-8 font-bold sm:flex">
-          {ENTRIES.map(({ name, href }) =>
+          {ENTRIES.map(({ name, icon, href }) =>
             pathname === href ? (
               <span key={name} className="text-primary">
-                {name}
+                <div className="flex gap-2">
+                  {icon}
+                  {name}
+                </div>
               </span>
             ) : (
               <Link key={name} href={href}>
-                {name}
+                <span className="flex gap-2">
+                  {icon}
+                  {name}
+                </span>
               </Link>
             ),
           )}
@@ -64,7 +58,6 @@ export default function Header(): JSX.Element {
               modalContent={
                 <div className="flex flex-col gap-4">
                   <ThemeSwitcher></ThemeSwitcher>
-                  <ColorChanger></ColorChanger>
                   {ENTRIES.map(({ name, href }) => (
                     <Link
                       key={name}
@@ -82,9 +75,6 @@ export default function Header(): JSX.Element {
               <MenuIcon />
               Menu
             </Button>
-          </div>
-          <div className="hidden sm:block">
-            <ColorChanger></ColorChanger>
           </div>
           <div className="hidden sm:block">
             <ThemeSwitcher></ThemeSwitcher>

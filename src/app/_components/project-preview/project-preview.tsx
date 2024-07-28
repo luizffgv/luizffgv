@@ -12,24 +12,20 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
   return (
     <Card
       footer={
-        <div className="flex flex-row flex-wrap items-stretch justify-center gap-4">
+        <div className="flex w-full flex-row flex-wrap gap-4 *:grow">
           {project.url ? (
-            <div>
-              <Button href={project.url} target="_blank">
-                <EyeIcon />
-                Visitar
-              </Button>
-            </div>
+            <Button href={project.url} target="_blank">
+              <EyeIcon />
+              Visitar
+            </Button>
           ) : (
             <></>
           )}
           {project.repository ? (
-            <div>
-              <Button href={project.repository} target="_blank">
-                <FolderGit2Icon />
-                Repositório
-              </Button>
-            </div>
+            <Button href={project.repository} target="_blank">
+              <FolderGit2Icon />
+              Repositório
+            </Button>
           ) : (
             <></>
           )}
@@ -42,7 +38,7 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
         aria-label={project.name}
       >
         {project.image == null ? (
-          <div className="h-16"></div>
+          <div className="h-16 w-16 rounded-md bg-primary/15"></div>
         ) : (
           <div className="relative">
             <div className="h-16 w-16 overflow-hidden rounded-lg blur-2xl">

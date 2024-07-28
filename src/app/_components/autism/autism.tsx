@@ -1,26 +1,20 @@
 import { InfinityIcon, SparkleIcon } from "lucide-react";
-import LookingAtCursor from "@components/looking-at-cursor";
-import styles from "./autism.module.scss";
+import GlowingText from "../glowing-text/glowing-text";
 
 export default function Autism(): JSX.Element {
   return (
     <section className="relative text-primary">
       <div
-        className={styles.container}
+        className="relative"
         aria-label="Símbolo de infinito, representando o autismo"
       >
-        <LookingAtCursor>
-          <InfinityIcon className={styles.infinity5} height={120} width={120} />
-          <InfinityIcon className={styles.infinity4} height={120} width={120} />
-          <InfinityIcon className={styles.infinity3} height={120} width={120} />
-          <InfinityIcon className={styles.infinity2} height={120} width={120} />
-          <InfinityIcon className={styles.infinity1} height={120} width={120} />
-          <InfinityIcon className={styles.infinity} height={120} width={120} />
-        </LookingAtCursor>
-        <div className={styles.sparkles}>
-          <SparkleIcon className={styles.sparkle1} />
-          <SparkleIcon className={styles.sparkle2} />
-        </div>
+        <GlowingText>
+          <InfinityIcon height={120} width={120} />
+          <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 rotate-45 gap-24">
+            <SparkleIcon className="-rotate-45" />
+            <SparkleIcon className="-rotate-45" />
+          </div>
+        </GlowingText>
       </div>
     </section>
   );

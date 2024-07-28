@@ -1,14 +1,7 @@
 "use client";
 
-import {
-  motion,
-  MotionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-  useVelocity,
-} from "framer-motion";
 import { useEffect, useId, useRef } from "react";
+import { motion } from "framer-motion";
 import styles from "./goo.module.scss";
 
 declare module "react" {
@@ -77,45 +70,6 @@ abstract class Particle {
   abstract draw(ctx: CanvasRenderingContext2D): void;
 }
 
-/** A particle that rotates in the Z axis. */
-abstract class RotatingParticle extends Particle {
-  /** Particle rotation in radians. */
-  rotZ: number;
-
-  /** Particle angular velocity in radians/second. */
-  velAngZ: number = 0;
-
-  /**
-   * Creates a new particle.
-   *
-   * @param x - X position.
-   * @param y - Y position.
-   * @param rotZ - Z rotation.
-   * @param velX X velocity.
-   * @param velY Y velocity.
-   * @param velAngZ Z angular velocity in radians/second.
-   */
-  protected constructor(
-    x: number,
-    y: number,
-    rotZ: number = 0,
-    velX: number = 0,
-    velY: number = 0,
-    velAngZ: number = 0,
-  ) {
-    super(x, y, velX, velY);
-
-    this.rotZ = rotZ;
-    this.velAngZ = velAngZ;
-  }
-
-  override update(seconds: number): void {
-    super.update(seconds);
-
-    this.rotZ += this.velAngZ * seconds;
-  }
-}
-
 /**
  * A circle particle.
  */
@@ -167,47 +121,6 @@ export class CircleParticle extends Particle {
 }
 
 /**
- * A square particle.
- */
-export class SquareParticle extends RotatingParticle {
-  /** Size of a side of the square. */
-  size: number;
-
-  /**
-   * Creates a new {@link SquareParticle}.
-   *
-   * @param x - X position.
-   * @param y - Y position.
-   * @param size - Square side size.
-   * @param rotation - Rotation in radians.
-   */
-  constructor(x: number, y: number, size: number, rotZ: number = 0) {
-    super(x, y, rotZ);
-
-    this.size = size;
-  }
-
-  override isMaybeInRect(x: number, y: number, w: number, h: number): boolean {
-    const radius = this.size * 1.41421356237; /* sqrt(2) */
-
-    return !(
-      this.y - radius > y + h ||
-      this.y + radius < y ||
-      this.x + radius < x ||
-      this.x - radius > x + w
-    );
-  }
-
-  override draw(ctx: CanvasRenderingContext2D): void {
-    ctx.save();
-    ctx.translate(this.x, this.y);
-    ctx.rotate(this.rotZ);
-    ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
-    ctx.restore();
-  }
-}
-
-/**
  * Bubbles simulation.
  */
 export class Bubbles {
@@ -219,20 +132,14 @@ export class Bubbles {
   #animationId: number | null = null;
   #observer?: IntersectionObserver;
   #paused: boolean = false;
-  #scrollVelocity: MotionValue<number>;
 
   /**
    * Creates a new {@link Bubbles}.
    *
    * @param element - Canvas element to use.
    * @param color - Color of the bubbles, or function that returns a color.
-   * @param velocity - Motion value defining the current scrollY velocity.
    */
-  constructor(
-    element: HTMLCanvasElement,
-    color: string | (() => string),
-    velocity: MotionValue<number>,
-  ) {
+  constructor(element: HTMLCanvasElement, color: string | (() => string)) {
     this.#element = element;
 
     this.#colorGenerator = typeof color === "string" ? () => color : color;
@@ -242,8 +149,6 @@ export class Bubbles {
       throw new TypeError("Couldn't get 2D canvas context.");
     }
     this.#context = ctx;
-
-    this.#scrollVelocity = velocity;
   }
 
   #step(timestamp: DOMHighResTimeStamp): void {
@@ -270,20 +175,13 @@ export class Bubbles {
     this.#context.shadowColor = this.#context.fillStyle;
     this.#context.shadowBlur = 25;
 
-    let currentVelocity = this.#scrollVelocity.get();
-    if (Number.isNaN(currentVelocity)) {
-      currentVelocity = 1;
-    }
-
     for (const particle of this.#particles) {
       if (!particle.isMaybeInRect(-50, -50, width + 100, height + 100)) {
         continue;
       }
 
-      particle.velX +=
-        (Math.random() - 0.5) * 2 * deltaSeconds * 250 - currentVelocity / 5;
-      particle.velY +=
-        (Math.random() - 0.5) * 2 * deltaSeconds * 250 - currentVelocity;
+      particle.velX += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
+      particle.velY += (Math.random() - 0.5) * 2 * deltaSeconds * 250;
 
       particle.update(deltaSeconds);
 
@@ -292,30 +190,25 @@ export class Bubbles {
       aliveParticles.push(particle);
     }
 
-    const maxRadius = Math.min(100, width / 10);
+    const minRadius = 8;
+    const maxRadius = 32;
     const DESIRED_COUNT = 15;
 
     while (aliveParticles.length < DESIRED_COUNT) {
-      const radius = maxRadius * (Math.random() * 0.9 + 0.1);
+      const radius = minRadius + Math.random() * (maxRadius - minRadius);
       const fromAbove = Math.random() < 0.5;
       const spawnX = Math.random() * width;
       const spawnY = fromAbove
         ? -radius - 25
         : this.#element.clientHeight + radius + 25;
-      const initialSpeedY = Math.random() * 10 * (fromAbove ? 1 : -1);
+      const initialSpeedY = Math.random() * 30 * (fromAbove ? 1 : -1);
 
-      let particle;
-      if (Math.random() < 0.5) {
-        particle = new CircleParticle(
-          spawnX,
-          spawnY,
-          radius,
-          radius > maxRadius / 3,
-        );
-      } else {
-        particle = new SquareParticle(spawnX, spawnY, radius);
-        particle.velAngZ = (Math.random() - 0.5) * 2;
-      }
+      const particle = new CircleParticle(
+        spawnX,
+        spawnY,
+        radius,
+        radius > maxRadius / 3,
+      );
 
       particle.velY = initialSpeedY;
       aliveParticles.push(particle);
@@ -350,15 +243,6 @@ export class Bubbles {
 export default function Goo(): JSX.Element {
   const filterId = useId();
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, { bounce: 0 });
-  const simulationVelocity = useTransform(smoothVelocity, (v) =>
-    Math.min(10, v / 50),
-  );
-  const blur = useTransform(smoothVelocity, (v) =>
-    Number.isNaN(v) ? "0" : `${Math.min(5, Math.abs(v as number) / 500)}px`,
-  );
 
   useEffect(() => {
     if (canvasRef.current == null) {
@@ -366,23 +250,19 @@ export default function Goo(): JSX.Element {
       return;
     }
 
-    const bubbles = new Bubbles(
-      canvasRef.current,
-      () => {
-        if (canvasRef.current == null) {
-          return "transparent";
-        }
+    const bubbles = new Bubbles(canvasRef.current, () => {
+      if (canvasRef.current == null) {
+        return "transparent";
+      }
 
-        return getComputedStyle(canvasRef.current).color;
-      },
-      simulationVelocity,
-    );
+      return getComputedStyle(canvasRef.current).color;
+    });
     bubbles.start();
 
     return () => {
       bubbles.stop();
     };
-  }, [simulationVelocity]);
+  }, []);
 
   return (
     <>
@@ -393,6 +273,7 @@ export default function Goo(): JSX.Element {
               in="goo"
               type="matrix"
               values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -10"
+              result="goo-out"
             />
           </filter>
         </defs>
@@ -401,7 +282,6 @@ export default function Goo(): JSX.Element {
         className={`${styles.canvas} absolute left-0 top-0 h-full w-full`}
         ref={canvasRef}
         style={{
-          "--filter-blur": blur,
           "--filter-url": `url(#${filterId})`,
         }}
       ></motion.canvas>

@@ -17,8 +17,8 @@ export interface Props {
 
 export default function ToolDetails(props: Props): JSX.Element {
   return (
-    <article className="flex flex-col gap-2 *:grow">
-      <Card footer={props.footer}>
+    <article>
+      <Card>
         <TitledSection
           level={3}
           title={
@@ -28,23 +28,29 @@ export default function ToolDetails(props: Props): JSX.Element {
             </div>
           }
         >
-          <TextBody>{props.children}</TextBody>
+          <div className="flex flex-col gap-8">
+            <TextBody>{props.children}</TextBody>
+            {props.footer && <div>{props.footer}</div>}
+            {props.childTools && (
+              <TitledSection
+                level={4}
+                title={
+                  <div className="text-start">Ferramentas relacionadas</div>
+                }
+              >
+                <div className="flex flex-col gap-2">
+                  {props.childTools.map((tool) => (
+                    <div key={tool.name} className="flex items-center gap-2">
+                      <div className="h-6 w-6">{tool.icon}</div>
+                      {tool.name}
+                    </div>
+                  ))}
+                </div>
+              </TitledSection>
+            )}
+          </div>
         </TitledSection>
       </Card>
-      {props.childTools && (
-        <Card>
-          <TitledSection level={4} title={"Ferramentas relacionadas"}>
-            <div className="flex flex-col gap-2">
-              {props.childTools.map((tool) => (
-                <div key={tool.name} className="flex items-center gap-2">
-                  <div className="h-8 w-8">{tool.icon}</div>
-                  {tool.name}
-                </div>
-              ))}
-            </div>
-          </TitledSection>
-        </Card>
-      )}
     </article>
   );
 }
