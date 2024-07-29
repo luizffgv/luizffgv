@@ -11,16 +11,6 @@ export default function React(): JSX.Element {
         em <GlowingText>fibers</GlowingText>. Por isso, tenho facilidade em
         encontrar e evitar várias categorias de bugs.
       </p>
-      <p>
-        Tenho menos familiaridade com o{" "}
-        <GlowingText>renderer concorrente</GlowingText>, mas ele não é nada de
-        outro mundo.
-      </p>
-      <p>
-        Tenho menos familiaridade com o{" "}
-        <GlowingText>renderer concorrente</GlowingText>, mas ele não é nada de
-        outro mundo.
-      </p>
     </Highlight>
   );
 }
