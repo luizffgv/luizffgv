@@ -19,9 +19,9 @@ export default function ContactButtons(): JSX.Element {
           </Button>
         </div>
         <div>
-          <Button href="mailto:luizffgv10@gmail.com" target="_blank">
+          <Button href="mailto:hireme@luizf.dev" target="_blank">
             <AtSignIcon />
-            luizffgv10@gmail.com
+            hireme@luizf.dev
           </Button>
         </div>
       </address>

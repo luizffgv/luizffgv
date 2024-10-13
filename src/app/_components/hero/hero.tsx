@@ -40,7 +40,7 @@ export default function Hero(): JSX.Element {
           </div>
           <div className="flex flex-row flex-wrap justify-center gap-4">
             <Button
-              href="https://drive.google.com/file/d/1ClghZuG9vrQdk8YTqev6jNpy_OOU6i_w/view?usp=sharing"
+              href="https://drive.proton.me/urls/Q84XZHZPB0#UaNx9svTyKL4"
               target="_blank"
             >
               <FileTextIcon />
