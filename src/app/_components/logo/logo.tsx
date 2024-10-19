@@ -1,14 +1,22 @@
-import LazyImage from "@components/lazy-image";
+import { useViewportSize, useWindowScroll } from "@mantine/hooks";
+import PixelatedImage from "../pixelated-image";
 
 /** The logo for the website. */
 export default function Logo(): JSX.Element {
+  const { height } = useViewportSize();
+  const [scrollPosition] = useWindowScroll();
+
+  const resolution =
+    Math.max(0.1, Math.min(1, 1 - scrollPosition.y / height)) / 5;
+
   return (
-    // rounded-full so the lazy image loading is also rounded like the logo
-    <div className="jump-in h-48 w-48 overflow-hidden rounded-full">
-      <LazyImage
+    <div className="jump-in h-48 w-48">
+      <PixelatedImage
+        resolution={resolution}
+        paddingPercentage={0.25}
         src="/android-chrome-192x192.png"
-        alt="Logo do site"
-      ></LazyImage>
+        width={192}
+      />
     </div>
   );
 }
