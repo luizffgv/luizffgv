@@ -1,6 +1,11 @@
-import Card from "../card";
+"use client";
+
+import Card from "@components/card";
 import TextBody from "../text-body";
 import TitledSection from "../titled-section/titled-section";
+import { motion } from "framer-motion";
+import stringHash from "string-hash";
+import { useMemo } from "react";
 
 type ChildTool = {
   name: string;
@@ -16,8 +21,20 @@ export interface Props {
 }
 
 export default function ToolDetails(props: Props): JSX.Element {
+  const rotation = useMemo(
+    () => (stringHash(props.name) % 5) - 2.5,
+    [props.name],
+  );
+
   return (
-    <article>
+    <motion.article
+      initial={{
+        rotate: -rotation,
+      }}
+      whileInView={{
+        rotate: rotation,
+      }}
+    >
       <Card>
         <TitledSection
           level={3}
@@ -51,6 +68,6 @@ export default function ToolDetails(props: Props): JSX.Element {
           </div>
         </TitledSection>
       </Card>
-    </article>
+    </motion.article>
   );
 }

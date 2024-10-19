@@ -6,7 +6,7 @@ import TypeSafety from "./components/type-safety";
 
 export default function Highlights(): JSX.Element {
   return (
-    <div className="flex max-w-screen-2xl flex-wrap justify-center gap-64">
+    <div className="flex max-w-screen-2xl flex-col gap-96">
       <React></React>
       <DesignSystems></DesignSystems>
       <TypeSafety></TypeSafety>
