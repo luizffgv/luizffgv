@@ -10,7 +10,9 @@ function flickerLoop(
   element: HTMLDivElement,
   context: { timeout: number | null },
 ): void {
-  element.style.opacity = Math.random().toString();
+  element.style.opacity = document.documentElement.classList.contains("dark")
+    ? Math.random().toString()
+    : "1";
 
   context.timeout = window.setTimeout(() => {
     flickerLoop(element, context);
