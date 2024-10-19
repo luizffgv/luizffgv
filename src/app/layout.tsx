@@ -65,10 +65,6 @@ const isDark = localStorage.getItem("theme-dark");
 const deviceIsDark = matchMedia("(prefers-color-scheme: dark)").matches;
 if (isDark === "true" || (isDark == undefined && deviceIsDark))
   document.documentElement.classList.add("dark");
-
-const primary = localStorage.getItem("theme-primary");
-if (primary)
-  document.documentElement.style.setProperty("--color-primary", primary);
 `,
           }}
         ></script>
