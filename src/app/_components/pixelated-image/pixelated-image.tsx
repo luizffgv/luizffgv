@@ -1,10 +1,11 @@
 "use client";
 
+import { Color, draw } from "./draw";
 import { useEffect, useRef, useState } from "react";
-import { draw } from "./draw";
 import { useResizeObserver } from "@mantine/hooks";
 
 type Props = {
+  colorOverride?: Color | undefined;
   height?: number | undefined;
   /**
    * How much padding there will be around each pixel. This doesn't change the
@@ -25,6 +26,7 @@ type Props = {
 };
 
 export default function PixelatedImage({
+  colorOverride,
   height,
   paddingPercentage: padding = 0,
   resolution,
@@ -52,8 +54,23 @@ export default function PixelatedImage({
       );
     }
 
-    draw({ canvas: canvas.current, image: image.current, padding, resolution });
-  }, [canvas, image, isImageLoaded, padding, rect, resolution, src]);
+    draw({
+      canvas: canvas.current,
+      colorOverride,
+      image: image.current,
+      padding,
+      resolution,
+    });
+  }, [
+    canvas,
+    colorOverride,
+    image,
+    isImageLoaded,
+    padding,
+    rect,
+    resolution,
+    src,
+  ]);
 
   return (
     <div className="relative w-fit">

@@ -1,5 +1,9 @@
+/** A color in RBA format, 0-255. */
+export type Color = [number, number, number, number];
+
 type DrawProps = {
   canvas: HTMLCanvasElement;
+  colorOverride?: Color | undefined;
   image: HTMLImageElement;
   padding: number;
   resolution: number;
@@ -7,7 +11,13 @@ type DrawProps = {
 
 const NUM_CHANNELS = 4;
 
-export function draw({ canvas, image, padding, resolution }: DrawProps): void {
+export function draw({
+  canvas,
+  colorOverride,
+  image,
+  padding,
+  resolution,
+}: DrawProps): void {
   if (canvas.width === 0 || canvas.height === 0) {
     return;
   }
@@ -53,7 +63,9 @@ export function draw({ canvas, image, padding, resolution }: DrawProps): void {
         .slice(underlyingPixelIndex, underlyingPixelIndex + NUM_CHANNELS)
         .map((channel) => Math.round(channel));
 
-      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
+      ctx.fillStyle = colorOverride
+        ? `rgba(${colorOverride[0]}, ${colorOverride[1]}, ${colorOverride[2]}, ${(colorOverride[3] * (a / 255)) / 255})`
+        : `rgba(${r}, ${g}, ${b}, ${a})`;
       ctx.beginPath();
       ctx.arc(
         samplingStartX + pixelX * PIXEL_SIZE + PIXEL_SIZE / 2,

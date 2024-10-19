@@ -2,6 +2,7 @@
 
 import React, { useMemo } from "react";
 import GlowingText from "@components/glowing-text";
+import PixelatedImage from "../pixelated-image";
 import TextBody from "@components/text-body";
 import TitledSection from "@components/titled-section";
 import { motion } from "framer-motion";
@@ -10,7 +11,7 @@ import { useMediaQuery } from "@mantine/hooks";
 
 type Props = {
   children: React.ReactNode;
-  icon: React.ReactNode;
+  iconUrl: string;
   title: string;
 };
 
@@ -44,7 +45,13 @@ export default function Highlight(props: Props): JSX.Element {
           >
             <GlowingText>
               <div className="*:h-24 *:w-24 *:md:h-48 *:md:w-48">
-                {props.icon}
+                <PixelatedImage
+                  colorOverride={[59, 130, 246, 255]}
+                  paddingPercentage={0.25}
+                  resolution={md ? 0.1 : 0.15}
+                  width={192}
+                  src={props.iconUrl}
+                />
               </div>
             </GlowingText>
           </motion.div>
