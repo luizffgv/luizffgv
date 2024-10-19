@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Nunito, Share_Tech_Mono } from "next/font/google";
 import Footer from "./_components/footer";
-import Goo from "./_components/goo";
 import Header from "./_components/header";
 import type { Metadata } from "next";
 
@@ -75,9 +74,6 @@ if (primary)
         ></script>
       </head>
       <body className="flex flex-col bg-bg text-fg transition-colors dark:bg-bg-dark dark:text-fg-dark">
-        <div className="fixed top-0 h-screen w-full text-primary opacity-50">
-          <Goo></Goo>
-        </div>
         <div className="isolate z-[1]">
           <Header></Header>
           {children}
