@@ -14,7 +14,7 @@ export default function Logo(): JSX.Element {
   return (
     <div className="jump-in h-48 w-48">
       <GlowingText>
-        <Flicker>
+        <Flicker minOpacity={0.5}>
           <PixelatedImage
             resolution={resolution}
             paddingPercentage={0.25}
