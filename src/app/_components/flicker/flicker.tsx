@@ -6,6 +6,7 @@ type Props = {
   children: React.ReactNode;
   maxOpacity?: number | undefined;
   minOpacity?: number | undefined;
+  when?: boolean | undefined;
 };
 
 type FlickerLoopProps = {
@@ -34,10 +35,19 @@ export default function Flicker({
   children,
   maxOpacity = 1,
   minOpacity = 0,
+  when = true,
 }: Props): JSX.Element {
   const element = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!when) {
+      if (element.current != null) {
+        element.current.style.opacity = String(maxOpacity);
+      }
+
+      return;
+    }
+
     if (element.current == null) {
       throw new TypeError(
         "element ref should never be null in flicker effect call",
@@ -52,7 +62,7 @@ export default function Flicker({
         window.clearTimeout(context.timeout);
       }
     };
-  }, [maxOpacity, minOpacity]);
+  }, [maxOpacity, minOpacity, when]);
 
   return <div ref={element}>{children}</div>;
 }

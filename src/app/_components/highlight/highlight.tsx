@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useMemo } from "react";
+import Flicker from "../flicker";
 import GlowingText from "@components/glowing-text";
 import PixelatedImage from "../pixelated-image";
 import TextBody from "@components/text-body";
 import TitledSection from "@components/titled-section";
+import { getIconPosition } from "./get-icon-position";
 import { motion } from "framer-motion";
-import stringHash from "string-hash";
 import { useMediaQuery } from "@mantine/hooks";
 
 type Props = {
@@ -17,32 +18,33 @@ type Props = {
 
 export default function Highlight(props: Props): JSX.Element {
   const md = useMediaQuery("screen and (min-width: 768px)");
+  const xl = useMediaQuery("screen and (min-width: 1280px)");
 
-  const { left, rotate } = useMemo(() => {
-    const left = (stringHash(props.title) % 5) * 20;
-    const rotate = -20 + (left / 100) * 40;
-
-    return {
-      left: md ? `${left}%` : `50%`,
-      rotate: `${rotate}deg`,
-    };
-  }, [md, props.title]);
+  const { left, rotate, translate } = useMemo(
+    () => getIconPosition({ aside: xl ?? false, seed: props.title }),
+    [xl, props.title],
+  );
 
   return (
     <TitledSection level={2} title={props.title}>
       <div className="relative">
-        <div
-          style={{ left }}
-          className="absolute -top-8 h-24 w-24 -translate-x-1/2 opacity-15 md:h-48 md:w-48"
+        <motion.div
+          className="absolute -top-8 h-24 w-24 -translate-x-1/2 md:h-48 md:w-48 "
+          initial={{
+            left: "50%",
+            opacity: 0,
+            scale: 0.75,
+          }}
+          whileInView={{
+            left,
+            opacity: xl ? 1 : 0.15,
+            scale: 1,
+            rotate,
+            transition: { duration: 0.25 },
+            translate,
+          }}
         >
-          <motion.div
-            initial={{ scale: 0.75 }}
-            whileInView={{
-              scale: 1,
-              rotate,
-              transition: { duration: 0.25 },
-            }}
-          >
+          <Flicker when={xl}>
             <GlowingText>
               <div className="*:h-24 *:w-24 *:md:h-48 *:md:w-48">
                 <PixelatedImage
@@ -54,8 +56,8 @@ export default function Highlight(props: Props): JSX.Element {
                 />
               </div>
             </GlowingText>
-          </motion.div>
-        </div>
+          </Flicker>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, translateY: "-2em" }}
           whileInView={{
