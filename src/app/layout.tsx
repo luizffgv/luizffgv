@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Nunito, Share_Tech_Mono } from "next/font/google";
+import { Oxanium, Share_Tech_Mono } from "next/font/google";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
 import type { Metadata } from "next";
@@ -10,7 +10,7 @@ const shareTechMono = Share_Tech_Mono({
   variable: "--font-share-tech-mono",
 });
 
-const nunito = Nunito({
+const oxanium = Oxanium({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${nunito.className} ${shareTechMono.variable} scroll-smooth`}
+      className={`${oxanium.className} ${shareTechMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
