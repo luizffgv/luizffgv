@@ -7,7 +7,7 @@ import { Variant } from "./types";
 import { cva } from "class-variance-authority";
 
 const buttonCva = cva(
-  `flex flex-row items-center gap-2 rounded-md px-4 py-2 font-bold justify-center transition-all hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor]`,
+  `flex flex-row items-center gap-2 rounded-md px-4 py-2 font-bold justify-center transition-all hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor] rounded-tr-none rounded-bl-none`,
   {
     variants: {
       variant: {
