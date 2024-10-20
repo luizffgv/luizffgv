@@ -28,7 +28,7 @@ export default function MyGitHub(): JSX.Element {
         <div className="absolute left-1/2 top-1/2 -z-10 hidden -translate-x-1/2 -translate-y-1/2 rotate-45 sm:block">
           <GlowingText>
             <div className="-rotate-45 opacity-50">
-              <Flicker>
+              <Flicker minOpacity={0.75}>
                 <PixelatedImage
                   colorOverride={[59, 130, 246, 255]}
                   paddingPercentage={0.25}
@@ -39,7 +39,7 @@ export default function MyGitHub(): JSX.Element {
               </Flicker>
             </div>
             <div className="-rotate-45 opacity-50">
-              <Flicker>
+              <Flicker minOpacity={0.75}>
                 <PixelatedImage
                   colorOverride={[59, 130, 246, 255]}
                   paddingPercentage={0.25}

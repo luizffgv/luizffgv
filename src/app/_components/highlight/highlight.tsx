@@ -44,7 +44,7 @@ export default function Highlight(props: Props): JSX.Element {
             translate,
           }}
         >
-          <Flicker when={xl}>
+          <Flicker minOpacity={0.75} when={xl}>
             <GlowingText>
               <div className="*:h-24 *:w-24 *:md:h-48 *:md:w-48">
                 <PixelatedImage
