@@ -105,8 +105,8 @@ export default function ChangingWord({ words }: Props): JSX.Element {
     scrollAnimation.addEventListener("finish", () => {
       setTimeout(() => {
         setStep((s) => s + 1);
-        setCurrentWordIndex((i) => (i + 1) % words.length);
-      }, 1_000);
+        setCurrentWordIndex((cwi) => (cwi + 1) % words.length);
+      }, 1e3);
     });
 
     return () => {
@@ -116,14 +116,15 @@ export default function ChangingWord({ words }: Props): JSX.Element {
     };
   }, [step]);
 
-  const visibleWords = useMemo(() => {
-    return [
+  const visibleWords = useMemo(
+    () => [
       words.at(currentWordIndex - 1),
       words.at(currentWordIndex),
       words.at((currentWordIndex + 1) % words.length),
       words.at((currentWordIndex + 2) % words.length),
-    ];
-  }, [currentWordIndex]);
+    ],
+    [currentWordIndex, words],
+  );
 
   return (
     <span className="relative inline-grid text-nowrap [grid-template-areas:stack] [line-height:1em]">
