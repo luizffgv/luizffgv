@@ -10,6 +10,7 @@ import Link from "next/link";
 import Logo from "@components/logo";
 import styles from "./hero.module.scss";
 import { useRef } from "react";
+import ChangingWord from "../changing-word";
 
 export default function Hero(): JSX.Element {
   const ref = useRef<HTMLDivElement>(null);
@@ -35,7 +36,21 @@ export default function Hero(): JSX.Element {
               Eu sou um desenvolvedor front-end com foco em{" "}
               <Link href="/projetos?tags=React">
                 <GlowingText>React</GlowingText>
-              </Link>
+              </Link>{" "}
+              e{" "}
+              <GlowingText>
+                <ChangingWord
+                  words={[
+                    "TypeScript",
+                    "single-spa",
+                    "styled-components",
+                    "React Query",
+                    "contexts",
+                    "Tailwind CSS",
+                    "JSDoc",
+                  ]}
+                />
+              </GlowingText>
             </p>
           </div>
           <div className="flex flex-row flex-wrap justify-center gap-4">
