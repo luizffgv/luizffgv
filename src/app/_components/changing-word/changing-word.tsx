@@ -140,7 +140,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
           <span
             key={index}
             style={{
-              opacity: index === 2 ? 1 : 1,
+              opacity: index === 0 ? 1 : 0,
             }}
           >
             {word}
