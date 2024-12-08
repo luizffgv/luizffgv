@@ -35,7 +35,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
         scrollerRef.current.children[0],
         {
           opacity: [1 / 3, 0],
-          rotate: ["-5deg", "-10deg"],
+          scale: [0.8, 0.6],
           translate: ["-2.5px", "-5px"],
         },
         {
@@ -50,7 +50,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
         scrollerRef.current.children[3],
         {
           opacity: [0, 1 / 3],
-          rotate: ["10deg", "5deg"],
+          scale: [0.6, 0.8],
           translate: ["-5px", "-2.5px"],
         },
         {
@@ -65,7 +65,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
         scrollerRef.current.children[1],
         {
           opacity: [1, 1 / 3],
-          rotate: ["0deg", "-5deg"],
+          scale: [1, 0.8],
           translate: ["0", "-2.5px"],
         },
         {
@@ -80,7 +80,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
         scrollerRef.current.children[2],
         {
           opacity: [1 / 3, 1],
-          rotate: ["5deg", "0deg"],
+          scale: [0.8, 1],
           translate: ["-2.5px", "0px"],
         },
         {
@@ -140,6 +140,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
         {visibleWords.map((word, index) => (
           <span
             key={index}
+            className="origin-left"
             style={{
               opacity: index === 0 ? 1 : 0,
             }}
