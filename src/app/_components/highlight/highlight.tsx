@@ -13,7 +13,7 @@ import { useMediaQuery } from "@mantine/hooks";
 type Props = {
   children: React.ReactNode;
   iconUrl: string;
-  title: string;
+  title: React.ReactNode;
 };
 
 export default function Highlight(props: Props): JSX.Element {
@@ -21,8 +21,8 @@ export default function Highlight(props: Props): JSX.Element {
   const xl = useMediaQuery("screen and (min-width: 1280px)");
 
   const { left, rotate, translate } = useMemo(
-    () => getIconPosition({ aside: xl ?? false, seed: props.title }),
-    [xl, props.title],
+    () => getIconPosition({ aside: xl ?? false, seed: props.iconUrl }),
+    [xl, props.title, props.iconUrl],
   );
 
   return (

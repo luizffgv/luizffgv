@@ -40,6 +40,7 @@ export default function Hero(): JSX.Element {
               e{" "}
               <GlowingText>
                 <ChangingWord
+                  noSurroundingWords
                   words={[
                     "TypeScript",
                     "single-spa",

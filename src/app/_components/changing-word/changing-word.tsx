@@ -1,12 +1,21 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import clsx from "clsx";
 
 type Props = {
+  align?: "left" | "center" | "right";
+  duration?: number | undefined;
+  noSurroundingWords?: boolean | undefined;
   words: string[];
 };
 
-export default function ChangingWord({ words }: Props): JSX.Element {
+export default function ChangingWord({
+  align = "left",
+  duration = 1e3,
+  noSurroundingWords,
+  words,
+}: Props): JSX.Element {
   const [step, setStep] = useState(0);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
@@ -34,7 +43,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
       new KeyframeEffect(
         scrollerRef.current.children[0],
         {
-          opacity: [1 / 3, 0],
+          opacity: noSurroundingWords ? [0, 0] : [1 / 3, 0],
           scale: [0.8, 0.6],
           translate: ["-2.5px", "-5px"],
         },
@@ -49,7 +58,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
       new KeyframeEffect(
         scrollerRef.current.children[3],
         {
-          opacity: [0, 1 / 3],
+          opacity: noSurroundingWords ? [0, 0] : [0, 1 / 3],
           scale: [0.6, 0.8],
           translate: ["-5px", "-2.5px"],
         },
@@ -64,7 +73,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
       new KeyframeEffect(
         scrollerRef.current.children[1],
         {
-          opacity: [1, 1 / 3],
+          opacity: [1, noSurroundingWords ? 0 : 1 / 3],
           scale: [1, 0.8],
           translate: ["0", "-2.5px"],
         },
@@ -79,7 +88,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
       new KeyframeEffect(
         scrollerRef.current.children[2],
         {
-          opacity: [1 / 3, 1],
+          opacity: [noSurroundingWords ? 0 : 1 / 3, 1],
           scale: [0.8, 1],
           translate: ["-2.5px", "0px"],
         },
@@ -106,7 +115,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
       setTimeout(() => {
         setStep((s) => s + 1);
         setCurrentWordIndex((cwi) => (cwi + 1) % words.length);
-      }, 1e3);
+      }, duration);
     });
 
     return () => {
@@ -114,7 +123,7 @@ export default function ChangingWord({ words }: Props): JSX.Element {
         animation.cancel();
       }
     };
-  }, [step]);
+  }, [duration, noSurroundingWords, step, words.length]);
 
   const visibleWords = useMemo(
     () => [
@@ -135,7 +144,14 @@ export default function ChangingWord({ words }: Props): JSX.Element {
       ))}
       <span
         ref={scrollerRef}
-        className="top- absolute left-0 flex flex-col items-start gap-2 [grid-area:stack]"
+        className={clsx(
+          "absolute left-0 flex w-full flex-col items-start gap-2 [grid-area:stack]",
+          {
+            "items-center": align === "center",
+            "items-start": align === "left",
+            "items-end": align === "right",
+          },
+        )}
       >
         {visibleWords.map((word, index) => (
           <span
