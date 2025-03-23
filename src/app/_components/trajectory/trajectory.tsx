@@ -18,9 +18,9 @@ export default function Trajectory(): JSX.Element {
           <Timeline.Entry
             auxiliaryText="Você decide"
             // eslint-disable-next-line no-template-curly-in-string
-            subtitle="${meuCargo}"
+            subtitle="${suaEquipe}"
             // eslint-disable-next-line no-template-curly-in-string
-            title="${suaEquipe}"
+            title="${meuCargo}"
           ></Timeline.Entry>
           <Timeline.Entry
             auxiliaryText="Março 2025"
