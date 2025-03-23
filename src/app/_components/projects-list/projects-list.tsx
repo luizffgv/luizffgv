@@ -9,14 +9,10 @@ export default function ProjectsList(): JSX.Element {
   const filteredProjects = useMemo(() => filter(projects), [filter]);
 
   return (
-    <ul className="flex flex-row flex-wrap justify-center gap-8">
+    <ul className="flex flex-row flex-wrap justify-center gap-16">
       <AnimatePresence>
         {filteredProjects.map((project) => (
-          <motion.li
-            key={project.name}
-            className="min-w-fit grow basis-0 *:h-full"
-            layout
-          >
+          <motion.li key={project.name} className="contents" layout>
             <ProjectPreview project={project}></ProjectPreview>
           </motion.li>
         ))}

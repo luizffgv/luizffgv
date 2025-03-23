@@ -9,7 +9,7 @@ import { useHeadroom } from "@mantine/hooks";
 import { usePathname } from "next/navigation";
 
 const headerCva = cva(
-  "fixed left-0 top-0 z-[1] flex w-full flex-row justify-end bg-bg-closer px-4 py-2 shadow-sm backdrop-blur-lg transition-all dark:bg-bg-closer-dark",
+  "fixed left-0 top-0 z-[1] flex w-full flex-row justify-end bg-bg-close px-4 py-2 shadow-sm backdrop-blur-lg transition-all dark:bg-bg-close-dark",
   {
     variants: {
       pinned: {

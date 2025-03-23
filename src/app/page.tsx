@@ -1,22 +1,18 @@
-import Autism from "./_components/autism";
+import HardSkills from "./_components/hard-skills";
 import Hero from "./_components/hero";
-import Highlights from "./_components/highlights/highlights";
 import MyGitHub from "./_components/my-github";
-import NotOnlyReact from "./_components/not-only-react";
-import ReactProjects from "./_components/react-projects";
-import ToolsSection from "./_components/tools-section";
+import Trajectory from "./_components/trajectory";
 
 export default function Home(): JSX.Element {
   return (
     <main>
       <Hero></Hero>
-      <div className="flex flex-col items-center gap-[480px] bg-bg-close px-4 pb-[50vh] pt-64 [grid-area:stack] dark:bg-bg-close-dark">
-        <Highlights></Highlights>
-        <ToolsSection></ToolsSection>
-        <ReactProjects></ReactProjects>
-        <NotOnlyReact></NotOnlyReact>
+      <div className="flex flex-col items-center gap-[480px] bg-bg px-4 pb-[50vh] pt-64 transition-colors [grid-area:stack] dark:bg-bg-dark">
+        <div className="flex flex-wrap-reverse justify-center gap-x-64 gap-y-[480px]">
+          <HardSkills></HardSkills>
+          <Trajectory></Trajectory>
+        </div>
         <MyGitHub></MyGitHub>
-        <Autism></Autism>
       </div>
     </main>
   );

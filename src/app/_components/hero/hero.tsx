@@ -1,88 +1,22 @@
 "use client";
 
-import { FileTextIcon, MessageCircleIcon } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Button from "@components/button";
-import ContactButtons from "@components/contact-buttons";
-import GlowingText from "@components/glowing-text";
-import HeroAdvanceButton from "./components/hero-advance-button";
-import Link from "next/link";
-import Logo from "@components/logo";
-import styles from "./hero.module.scss";
-import { useRef } from "react";
-import ChangingWord from "../changing-word";
+import { CodeXmlIcon } from "lucide-react";
 
 export default function Hero(): JSX.Element {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({ target: ref });
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.75]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-
   return (
-    <div ref={ref} className="relative h-[200svh]">
-      <motion.div
-        style={{ scale, opacity }}
-        className="sticky top-0 flex min-h-[100svh] flex-col items-center justify-center px-8 pb-16 pt-24"
-      >
-        <div className="relative flex flex-col items-center gap-8">
-          <div className="flex flex-col items-center gap-4">
-            <Logo></Logo>
-            <p className="text-center text-2xl">
-              Olá, meu nome é{" "}
-              <GlowingText>Luiz Fernando F. G. Valle</GlowingText>
-            </p>
-            <p className="text-center text-2xl">
-              Eu sou um desenvolvedor front-end com foco em{" "}
-              <Link href="/projetos?tags=React">
-                <GlowingText>React</GlowingText>
-              </Link>{" "}
-              e{" "}
-              <GlowingText>
-                <ChangingWord
-                  noSurroundingWords
-                  words={[
-                    "TypeScript",
-                    "single-spa",
-                    "styled-components",
-                    "React Query",
-                    "contexts",
-                    "Tailwind CSS",
-                    "JSDoc",
-                  ]}
-                />
-              </GlowingText>
-            </p>
-          </div>
-          <div className="flex flex-row flex-wrap justify-center gap-4">
-            <Button
-              href="https://drive.proton.me/urls/Q84XZHZPB0#UaNx9svTyKL4"
-              target="_blank"
-            >
-              <FileTextIcon />
-              Currículo
-            </Button>
-            <Button
-              modalContent={
-                <div className="flex flex-col gap-4">
-                  <span className="text-center">Me contate aqui</span>
-                  <ContactButtons></ContactButtons>
-                </div>
-              }
-            >
-              <MessageCircleIcon />
-              Vamos conversar
-            </Button>
-          </div>
-        </div>
-        <div
-          className={`${styles["down-arrow"]} absolute bottom-2 left-1/2 translate-x-[-50%]`}
-        >
-          <div className="animate-bounce [animation-duration:2s]">
-            <HeroAdvanceButton></HeroAdvanceButton>
-          </div>
-        </div>
-      </motion.div>
+    <div className="sm:min-h-auto relative flex min-h-screen flex-col items-center justify-center gap-32 overflow-x-hidden bg-primary py-64 text-fg-on-primary transition-colors dark:text-fg">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <CodeXmlIcon className="opacity-25" size={400} />
+        <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-t from-primary from-20% to-transparent"></div>
+      </div>
+      <div className="z-[1] flex flex-col gap-2 px-8">
+        <h1 className="text-center text-3xl font-bold sm:text-5xl">
+          Olá, meu nome é Luiz
+        </h1>
+        <p className="text-center text-xl font-medium">
+          Eu sou um desenvolvedor focado em Node.js e React
+        </p>
+      </div>
     </div>
   );
 }

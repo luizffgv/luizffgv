@@ -1,18 +1,17 @@
 import "./globals.css";
-import { Oxanium, Share_Tech_Mono } from "next/font/google";
+import { Lexend, Share_Tech_Mono } from "next/font/google";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
 import type { Metadata } from "next";
+
+const lexend = Lexend({
+  subsets: ["latin"],
+});
 
 const shareTechMono = Share_Tech_Mono({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--font-share-tech-mono",
-});
-
-const oxanium = Oxanium({
-  weight: ["400", "700"],
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -32,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${oxanium.className} ${shareTechMono.variable} scroll-smooth`}
+      className={`${lexend.className} ${shareTechMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>

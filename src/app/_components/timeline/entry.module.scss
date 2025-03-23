@@ -1,0 +1,13 @@
+.line-end {
+  max-height: 16px;
+
+  .entry:first-child & {
+    visibility: hidden;
+  }
+}
+
+.line-start {
+  .entry:last-child & {
+    visibility: hidden;
+  }
+}

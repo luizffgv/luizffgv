@@ -7,12 +7,16 @@ import { Variant } from "./types";
 import { cva } from "class-variance-authority";
 
 const buttonCva = cva(
-  `flex flex-row items-center gap-2 rounded-md px-4 py-2 font-bold justify-center transition-all hover:brightness-110 hover:[text-shadow:_0_0_15px_currentcolor] rounded-tr-none rounded-bl-none`,
+  `flex flex-row items-center gap-2 rounded-lg justify-center transition-all`,
   {
     variants: {
+      icon: {
+        true: "p-2",
+        false: "px-4 py-2",
+      },
       variant: {
         primary:
-          "text-fg-on-primary bg-primary dark:text-primary dark:bg-primary/5 backdrop-blur-md dark:hover:bg-primary/10 dark:hover:border-primary/50",
+          "text-primary bg-bg-button dark:bg-primary/5 backdrop-blur-md dark:hover:bg-primary hover:bg-primary hover:text-fg-on-primary",
         danger: "text-fg-on-primary bg-danger",
       } satisfies Record<Variant, string>,
     },
@@ -58,6 +62,7 @@ function ModalButton(props: ModalButtonProps): JSX.Element {
 export type Props = {
   children: React.ReactNode;
   "aria-label"?: string;
+  isIcon?: boolean;
   variant?: Variant | undefined;
 } & (
   | {
@@ -77,10 +82,11 @@ export type Props = {
 );
 
 export default function Button({
+  isIcon = false,
   variant = "primary",
   ...rest
 }: Props): JSX.Element {
-  const className = buttonCva({ variant });
+  const className = buttonCva({ icon: isIcon, variant });
 
   return (
     <>
