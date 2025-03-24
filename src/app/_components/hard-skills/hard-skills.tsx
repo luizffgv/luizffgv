@@ -32,7 +32,7 @@ export default function HardSkills(): JSX.Element {
         </Skill>
         <Skill icon={<LayoutIcon />} title="React">
           <p>
-            Eu sei como funciona a <strong>renderização</strong> e
+            Eu sei como funciona a <strong>renderização</strong> e{" "}
             <strong>reconciliação</strong>, crio componentes reutilizáveis e
             eficientes, reduzindo a quantidade de renderizações necessárias.
           </p>
