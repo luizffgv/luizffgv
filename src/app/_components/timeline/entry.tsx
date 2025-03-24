@@ -30,14 +30,14 @@ export default function Entry({
       <div className="flex flex-col items-center gap-2">
         <div
           className={clsx(
-            "bg-timeline-line dark:bg-timeline-line-dark w-2 grow rounded-b-full transition-colors",
+            "w-2 grow rounded-b-full bg-timeline-line transition-colors dark:bg-timeline-line-dark",
             styles["line-end"],
           )}
         ></div>
         <div className="h-6 w-6 rounded-full bg-primary"></div>
         <div
           className={clsx(
-            "bg-timeline-line dark:bg-timeline-line-dark w-2 grow rounded-t-full transition-colors",
+            "w-2 grow rounded-t-full bg-timeline-line transition-colors dark:bg-timeline-line-dark",
             styles["line-start"],
           )}
         ></div>
@@ -45,7 +45,7 @@ export default function Entry({
       <div className="flex flex-col py-6">
         <h3 className="text-xl font-bold text-primary">{title}</h3>
         <p className="font-bold">{subtitle}</p>
-        <div className="text-fg-weak hidden max-w-prose text-sm sm:block">
+        <div className="hidden max-w-prose text-sm text-fg-weak">
           {children}
         </div>
       </div>

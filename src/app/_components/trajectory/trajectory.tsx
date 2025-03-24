@@ -46,8 +46,7 @@ export default function Trajectory(): JSX.Element {
             </p>
             <br />
             <p>
-              Fui o maior contribuidor de uma biblioteca UI type-safe e Realizei
-              manutenção de aplicações Next.js, Vite, single-spa e NestJS
+              Fui o maior contribuidor de uma biblioteca UI type-safe e
               tree-shakable, baseada em um design system, com
               class-variance-authority e styled-components
             </p>
