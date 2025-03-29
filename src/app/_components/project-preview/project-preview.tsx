@@ -1,9 +1,9 @@
 "use client";
 
-import { ProjectRaw } from "projects-list";
-import { motion } from "framer-motion";
 import Button from "../button";
 import { ExternalLinkIcon } from "lucide-react";
+import { ProjectRaw } from "projects-list";
+import { motion } from "framer-motion";
 
 export interface Props {
   project: ProjectRaw;
@@ -13,13 +13,13 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
   return (
     <motion.div
       aria-label={project.name}
-      className="flex w-[400px] flex-col gap-4"
+      className="flex w-[400px] shrink flex-col gap-4"
       role="group"
     >
       {project.image == null ? (
-        <div className="aspect-[400/225] rounded-2xl"></div>
+        <div className="aspect-[400/225] rounded-2xl bg-primary/15"></div>
       ) : (
-        <div className="relative aspect-[400/225]  rounded-2xl">
+        <div className="relative aspect-[400/225] rounded-2xl">
           <img
             className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2 blur-2xl"
             src={`/project-images/${project.image}.webp`}
@@ -34,7 +34,7 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
           />
         </div>
       )}
-      <div className="flex justify-between">
+      <div className="flex justify-between gap-4">
         <div className="text-2xl font-bold">{project.name}</div>
         <div>
           {project.repository ? (

@@ -53,7 +53,10 @@ export default function ProjectsSection(): JSX.Element {
           <Suspense>
             <ProjectFilterSelector></ProjectFilterSelector>
           </Suspense>
-          <div ref={projectsListRef} className="max-w-screen-2xl pb-[100vh]">
+          <div
+            ref={projectsListRef}
+            className="w-full max-w-screen-2xl px-4 pb-[100vh]"
+          >
             <ProjectsList></ProjectsList>
           </div>
         </div>
