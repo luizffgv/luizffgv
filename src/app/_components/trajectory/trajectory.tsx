@@ -1,7 +1,6 @@
-import { PencilIcon } from "lucide-react";
+import GlowingText from "../glowing-text";
 import Timeline from "../timeline";
 import TitledSection from "../titled-section";
-import GlowingText from "../glowing-text";
 
 export default function Trajectory(): JSX.Element {
   return (
@@ -22,14 +21,14 @@ export default function Trajectory(): JSX.Element {
             // eslint-disable-next-line no-template-curly-in-string
             title="${meuCargo}"
           ></Timeline.Entry>
-          <Timeline.Entry
+          {/* <Timeline.Entry
             auxiliaryText="Março 2025"
             subtitle="Zenvia"
             title="Desenvolvedor júnior"
           >
             <PencilIcon className="mr-2 inline h-4 w-4" />
             Ainda escrevendo essa história
-          </Timeline.Entry>
+          </Timeline.Entry> */}
           <Timeline.Entry
             auxiliaryText="Maio 2024"
             subtitle="Zenvia"
