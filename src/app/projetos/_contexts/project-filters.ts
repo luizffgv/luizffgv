@@ -1,5 +1,6 @@
-import { ProjectRaw } from "projects-list";
 import { createContext } from "react";
+
+import { ProjectRaw } from "@projects/_projects";
 
 export type ProjectFilterCallback = (projects: ProjectRaw[]) => ProjectRaw[];
 

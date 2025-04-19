@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 export interface Props {
@@ -12,9 +13,9 @@ export default function Card({ children, footer }: Props): JSX.Element {
     <motion.div
       initial={{ scale: 0.75 }}
       whileInView={{ scale: 1 }}
-      className={`rounded-lg border-2 border-primary/15 bg-bg-close shadow-sm transition-colors dark:border-transparent dark:bg-bg-close-dark`}
+      className={`rounded-lg bg-bg-close shadow-sm transition-colors dark:border-transparent dark:bg-bg-close-dark`}
     >
-      <div className="flex h-full w-full flex-col justify-between rounded-lg p-4">
+      <div className="flex h-full w-full flex-col justify-between rounded-lg p-6">
         <div className="flex justify-center">{children}</div>
         {footer && <div className="mt-4 flex justify-center">{footer}</div>}
       </div>

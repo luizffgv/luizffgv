@@ -1,4 +1,5 @@
 import { useViewportSize, useWindowScroll } from "@mantine/hooks";
+
 import Flicker from "../flicker";
 import GlowingText from "../glowing-text";
 import PixelatedImage from "../pixelated-image";

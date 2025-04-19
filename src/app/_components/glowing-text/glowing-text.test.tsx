@@ -1,4 +1,5 @@
 import { act, render, screen } from "@testing-library/react";
+
 import GlowingText from "@components/glowing-text";
 
 describe("GlowingText", () => {

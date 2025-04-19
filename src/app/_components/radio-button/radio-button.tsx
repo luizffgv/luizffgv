@@ -19,7 +19,7 @@ export default function RadioButton({
   onChange,
 }: Props): JSX.Element {
   return (
-    <label className="bg-bg-checkbox-unchecked relative inline-block rounded-3xl border-2 border-primary px-2 py-1 text-center text-primary transition-all has-[:checked]:bg-primary has-[:checked]:text-fg-on-primary dark:bg-bg-close-dark dark:has-[:checked]:bg-primary">
+    <label className="relative inline-block rounded-3xl bg-bg-checkbox-unchecked px-3 py-2 text-center text-primary transition-all has-[:checked]:bg-primary has-[:checked]:text-fg-on-primary dark:bg-primary/5 dark:hover:bg-primary/10 dark:has-[:checked]:bg-primary">
       <input
         className="absolute inset-0 cursor-pointer appearance-none rounded-3xl checked:cursor-default"
         type="radio"

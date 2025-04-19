@@ -1,15 +1,17 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useContext, useMemo } from "react";
-import { ProjectFilterContext } from "@/app/_contexts/project-filters";
-import ProjectPreview from "@components/project-preview";
-import projects from "projects-list";
+
+import ProjectPreview from "@/app/projetos/_components/project-preview";
+import { ProjectFilterContext } from "@/app/projetos/_contexts/project-filters";
+
+import projects from "@projects/_projects";
 
 export default function ProjectsList(): JSX.Element {
   const { filter } = useContext(ProjectFilterContext);
   const filteredProjects = useMemo(() => filter(projects), [filter]);
 
   return (
-    <ul className="flex flex-row flex-wrap justify-center gap-16">
+    <ul className="flex flex-row flex-wrap justify-center gap-8">
       <AnimatePresence>
         {filteredProjects.map((project) => (
           <motion.li key={project.name} className="contents" layout>

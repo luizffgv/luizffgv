@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Props = {
   align?: "left" | "center" | "right";

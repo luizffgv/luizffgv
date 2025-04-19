@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowDownIcon } from "lucide-react";
+
 import Button from "@components/button";
 
 export default function HeroAdvanceButton(): JSX.Element {

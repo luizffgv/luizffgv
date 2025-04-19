@@ -1,5 +1,6 @@
-import styles from "./rotating-colors.module.scss";
 import { useMemo } from "react";
+
+import styles from "./rotating-colors.module.scss";
 
 export interface Props {
   /**

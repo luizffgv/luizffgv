@@ -1,20 +1,22 @@
 "use client";
 
 import {
-  ProjectFilterCallback,
-  ProjectFilterContext,
-} from "@/app/_contexts/project-filters";
-import {
   Suspense,
   useCallback,
   useLayoutEffect,
   useRef,
   useState,
 } from "react";
+
+import ProjectsList from "@/app/projetos/_components/projects-list";
+import {
+  ProjectFilterCallback,
+  ProjectFilterContext,
+} from "@/app/projetos/_contexts/project-filters";
+
+import { ProjectRaw } from "@projects/_projects";
+
 import ProjectFilterSelector from "./components/project-filter-selector";
-import { ProjectRaw } from "projects-list";
-import ProjectsList from "@components/projects-list";
-import TitledSection from "@components/titled-section";
 
 export default function ProjectsSection(): JSX.Element {
   const [filter, setFilter] = useState(
@@ -42,14 +44,14 @@ export default function ProjectsSection(): JSX.Element {
   }, [filter]);
 
   return (
-    <TitledSection level={1} title={<>Meus projetos</>}>
+    <div className="pt-[10vh]">
       <ProjectFilterContext.Provider
         value={{
           filter,
           setFilter: contextSetFilter,
         }}
       >
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-32">
           <Suspense>
             <ProjectFilterSelector></ProjectFilterSelector>
           </Suspense>
@@ -61,6 +63,6 @@ export default function ProjectsSection(): JSX.Element {
           </div>
         </div>
       </ProjectFilterContext.Provider>
-    </TitledSection>
+    </div>
   );
 }

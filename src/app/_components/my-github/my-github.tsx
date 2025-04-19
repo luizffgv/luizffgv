@@ -1,7 +1,8 @@
 import { FolderGit2Icon, PackageIcon } from "lucide-react";
+import Link from "next/link";
+
 import Button from "@components/button";
 import GlowingText from "@components/glowing-text";
-import Link from "next/link";
 import TitledSection from "@components/titled-section";
 
 export default function MyGitHub(): JSX.Element {

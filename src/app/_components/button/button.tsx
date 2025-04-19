@@ -1,10 +1,12 @@
 "use client";
 
-import { HTMLAttributeAnchorTarget, ReactNode, useState } from "react";
-import Link from "next/link";
-import Modal from "@components/modal";
-import { Variant } from "./types";
 import { cva } from "class-variance-authority";
+import Link from "next/link";
+import { HTMLAttributeAnchorTarget, ReactNode, useState } from "react";
+
+import Modal from "@components/modal";
+
+import { Variant } from "./types";
 
 const buttonCva = cva(
   `flex flex-row items-center gap-2 rounded-lg justify-center transition-all`,
@@ -41,6 +43,7 @@ function ModalButton(props: ModalButtonProps): JSX.Element {
           setModalIsOpen(true);
         }}
         aria-label={props["aria-label"]}
+        title={props["aria-label"]}
       >
         {props.children}
       </button>
@@ -91,9 +94,14 @@ export default function Button({
   return (
     <>
       {"onClick" in rest ? (
-        <button {...rest} type="button" className={className}></button>
+        <button
+          {...rest}
+          title={rest["aria-label"]}
+          type="button"
+          className={className}
+        ></button>
       ) : "href" in rest ? (
-        <Link {...rest} className={className}></Link>
+        <Link {...rest} title={rest["aria-label"]} className={className}></Link>
       ) : (
         <ModalButton {...rest} className={className}></ModalButton>
       )}

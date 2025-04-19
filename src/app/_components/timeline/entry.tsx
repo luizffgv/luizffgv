@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+
 import { useTimelineContext } from "./_contexts/timeline";
 import styles from "./entry.module.scss";
 

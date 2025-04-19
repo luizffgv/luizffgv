@@ -1,4 +1,5 @@
 import { AtSignIcon, LinkedinIcon, PhoneIcon } from "lucide-react";
+
 import Button from "@components/button";
 
 /** Buttons to contact me, without a container. */

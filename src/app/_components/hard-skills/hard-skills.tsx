@@ -1,7 +1,8 @@
 import { LayoutIcon } from "lucide-react";
+
+import GlowingText from "../glowing-text";
 import TitledSection from "../titled-section";
 import Skill from "./components/skill/skill";
-import GlowingText from "../glowing-text";
 
 export default function HardSkills(): JSX.Element {
   return (

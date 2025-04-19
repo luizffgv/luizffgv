@@ -1,8 +1,9 @@
 "use client";
 
-import { Color, draw } from "./draw";
-import { useEffect, useRef, useState } from "react";
 import { useResizeObserver } from "@mantine/hooks";
+import { useEffect, useRef, useState } from "react";
+
+import { Color, draw } from "./draw";
 
 type Props = {
   colorOverride?: Color | undefined;

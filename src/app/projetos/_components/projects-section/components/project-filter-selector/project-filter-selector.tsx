@@ -1,0 +1,110 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
+import { useContext, useEffect, useLayoutEffect, useState } from "react";
+
+import { ProjectFilterContext } from "@/app/projetos/_contexts/project-filters";
+
+import Card from "@components/card";
+import Checkbox from "@components/checkbox";
+
+import projects, { ProjectRaw, Tag } from "@projects/_projects";
+
+/** A set of tags to not display, because they are not as relevant. */
+const hiddenTags: Set<Tag> = new Set([
+  "Bash",
+  "C++17",
+  "C++20",
+  "C18",
+  "Doxygen",
+  "GitHub",
+  "HTML",
+  "Livro",
+  "Markdown",
+  "mdBook",
+  "Organização",
+]);
+
+const allTags = [
+  ...projects
+    .map((p) => p.tags)
+    .reduce((allTags, projectTags) => {
+      for (const tag of projectTags) {
+        allTags.add(tag);
+      }
+      return allTags;
+    }, new Set<Tag>()),
+]
+  .filter((tag) => !hiddenTags.has(tag))
+  .sort();
+
+/**
+ * Returns a set of matches between the project's tags and the provided tags.
+ *
+ * @param project - Project to check.
+ * @param tags - Tags to check the project against.
+ * @returns - Set of matched tags.
+ */
+function matchingTags(project: ProjectRaw, tags: Set<Tag>): Set<Tag> {
+  return new Set((project.tags ?? []).filter((tag) => tags.has(tag)));
+}
+
+export default function ProjectFilterSelector(): JSX.Element {
+  const urlParams = useSearchParams();
+  const { setFilter } = useContext(ProjectFilterContext);
+  const [tags, setTags] = useState<{ value: Set<Tag> }>({ value: new Set() });
+
+  useLayoutEffect(() => {
+    setTags({
+      value: new Set<Tag>(
+        (urlParams.getAll("tags") as Tag[]).filter((tag) =>
+          allTags.includes(tag),
+        ),
+      ),
+    });
+  }, [urlParams]);
+
+  useEffect(() => {
+    setFilter((projects: ProjectRaw[]) => {
+      let matching = [...projects].sort(
+        (p1, p2) =>
+          matchingTags(p2, tags.value).size - matchingTags(p1, tags.value).size,
+      );
+      if (tags.value.size > 0) {
+        matching = matching.filter((p) => matchingTags(p, tags.value).size > 0);
+      }
+      return matching;
+    });
+  }, [tags, setFilter]);
+
+  return (
+    <Card>
+      <fieldset
+        className="flex max-h-[50vh] max-w-4xl flex-row flex-wrap gap-2 overflow-y-auto"
+        onChange={(event) => {
+          if (!(event.target instanceof HTMLInputElement)) {
+            console.error("event.target is not an HTMLInputElement");
+            return;
+          }
+
+          if (event.target.checked) {
+            tags.value.add(event.target.value as Tag);
+          } else {
+            tags.value.delete(event.target.value as Tag);
+          }
+
+          setTags({ value: tags.value });
+        }}
+      >
+        <legend className="float-left mb-3 w-full text-center">
+          Selecione tags
+        </legend>
+        {allTags.map((tag) => (
+          <div key={tag} className="flex grow flex-col items-stretch">
+            <Checkbox value={tag} checked={tags.value.has(tag)}></Checkbox>
+          </div>
+        ))}
+      </fieldset>
+    </Card>
+  );
+}

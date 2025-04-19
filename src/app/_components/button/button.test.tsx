@@ -1,4 +1,5 @@
 import { act, render, screen } from "@testing-library/react";
+
 import Button from "@components/button";
 
 describe("Button", () => {
