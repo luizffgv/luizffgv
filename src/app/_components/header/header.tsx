@@ -68,7 +68,7 @@ export default function Header(): JSX.Element {
         <div className="flex flex-row gap-4">
           {/* This has to be invisible instead of hidden, otherwise the open modal will disappear when the screen width changes to >sm */}
           {/* This also means that the button must be the first element of the flex container, or there will be gaps when it's hidden */}
-          <div className="sm:invisible">
+          <div className="sm:invisible py-2">
             <Button
               modalContent={
                 <div className="flex flex-col gap-4">
