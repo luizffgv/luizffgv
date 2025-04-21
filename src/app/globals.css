@@ -12,8 +12,7 @@
 
 @layer base {
   :root {
-    --color-primary: 59, 130, 246;
-    --color-danger: 239, 68, 68;
+    --color-primary: 220deg, 70%, 40%;
   }
 
   code {

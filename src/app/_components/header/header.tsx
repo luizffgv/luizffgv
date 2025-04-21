@@ -10,7 +10,7 @@ import Button from "@components/button";
 import ThemeSwitcher from "@components/theme-switcher";
 
 const headerCva = cva(
-  "fixed left-0 top-0 z-[1] flex w-full flex-row justify-center bg-bg-close px-4 shadow-sm backdrop-blur-lg transition-all dark:bg-bg-close-dark",
+  "fixed left-0 top-0 z-[1] flex w-full flex-row justify-center bg-bg-close px-4 shadow-sm backdrop-blur-lg dark:bg-bg-close-dark transition-all",
   {
     variants: {
       pinned: {
@@ -20,17 +20,14 @@ const headerCva = cva(
   },
 );
 
-const entryCva = cva(
-  "flex flex-row items-center px-4 py-2 border-b-2 transition-colors",
-  {
-    variants: {
-      active: {
-        false: "border-b-transparent",
-        true: "border-b-primary",
-      },
+const entryCva = cva("flex flex-row items-center px-4 py-2 border-b-2", {
+  variants: {
+    active: {
+      false: "border-b-transparent",
+      true: "border-b-primary text-primary",
     },
   },
-);
+});
 
 const ENTRIES = [
   { name: "Início", icon: <HomeIcon />, href: "/" },
@@ -45,25 +42,27 @@ export default function Header(): JSX.Element {
     <header className={headerCva({ pinned })}>
       <div className="flex max-w-screen-2xl grow flex-row items-stretch justify-end sm:justify-between">
         <nav className="hidden flex-row font-bold sm:flex">
-          {ENTRIES.map(({ name, icon, href }) => (
-            <div key={name} className={entryCva({ active: pathname === href })}>
-              {pathname === href ? (
-                <span className="text-primary">
-                  <div className="flex gap-2">
-                    {icon}
-                    {name}
-                  </div>
+          {ENTRIES.map(({ name, icon, href }) =>
+            pathname === href ? (
+              <span key={name} className={entryCva({ active: true })}>
+                <div className="flex gap-2">
+                  {icon}
+                  {name}
+                </div>
+              </span>
+            ) : (
+              <Link
+                key={name}
+                className={entryCva({ active: false })}
+                href={href}
+              >
+                <span className="flex gap-2">
+                  {icon}
+                  {name}
                 </span>
-              ) : (
-                <Link href={href}>
-                  <span className="flex gap-2">
-                    {icon}
-                    {name}
-                  </span>
-                </Link>
-              )}
-            </div>
-          ))}
+              </Link>
+            ),
+          )}
         </nav>
         <div className="flex flex-row gap-4">
           {/* This has to be invisible instead of hidden, otherwise the open modal will disappear when the screen width changes to >sm */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lexend, Share_Tech_Mono } from "next/font/google";
 
+import ColorCycler from "./_components/color-cycler";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
 import "./globals.css";
@@ -69,12 +70,14 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
           }}
         ></script>
       </head>
-      <body className="flex flex-col bg-bg text-fg transition-colors dark:bg-bg-dark dark:text-fg-dark">
-        <div className="isolate z-[1]">
-          <Header></Header>
-          {children}
-          <Footer></Footer>
-        </div>
+      <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
+        <ColorCycler>
+          <div className="isolate z-[1]">
+            <Header></Header>
+            {children}
+            <Footer></Footer>
+          </div>
+        </ColorCycler>
       </body>
     </html>
   );

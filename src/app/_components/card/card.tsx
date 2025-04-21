@@ -13,7 +13,7 @@ export default function Card({ children, footer }: Props): JSX.Element {
     <motion.div
       initial={{ scale: 0.75 }}
       whileInView={{ scale: 1 }}
-      className={`rounded-lg bg-bg-close shadow-sm transition-colors dark:border-transparent dark:bg-bg-close-dark`}
+      className={`rounded-lg bg-bg-close shadow-lg dark:shadow-sm transition-colors dark:border-transparent dark:bg-bg-close-dark`}
     >
       <div className="flex h-full w-full flex-col justify-between rounded-lg p-6">
         <div className="flex justify-center">{children}</div>

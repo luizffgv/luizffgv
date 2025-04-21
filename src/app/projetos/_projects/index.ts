@@ -221,6 +221,7 @@ const projects = [
     license: "Unlicense",
     url: "https://figment.luizf.dev",
     repository: "https://github.com/luizffgv/Figment",
+    image: "Figment.webp",
   },
   {
     name: "Glimmer",
@@ -305,6 +306,7 @@ const projects = [
     license: "MIT License",
     url: "https://htilesml.luizf.dev",
     repository: "https://github.com/luizffgv/htilesml",
+    image: "HTilesML.webp",
   },
   {
     name: "Modern C Sorting Algorithms",
@@ -331,6 +333,7 @@ const projects = [
     tags: ["Biblioteca", "C", "C18", "GitHub"],
     license: "GNU General Public License v3.0",
     repository: "https://github.com/luizffgv/modern-c-sorting-algorithms",
+    image: "Modern C Sorting Algorithms.webp",
   },
   {
     name: "Phasmoo",
@@ -454,6 +457,7 @@ const projects = [
     license: "MIT License",
     url: "https://www.npmjs.com/package/swapem",
     repository: "https://github.com/luizffgv/swapem",
+    image: "Swapem.webp",
   },
   {
     name: "TS Conversions",
@@ -489,6 +493,7 @@ const projects = [
     license: "MIT License",
     url: "https://vbs.luizf.dev",
     repository: "https://github.com/luizffgv/viewport-based-rescaling",
+    image: "VBS.gif",
   },
 ] as const satisfies ProjectRaw[];
 
