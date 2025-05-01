@@ -1,6 +1,5 @@
-import { LayoutIcon } from "lucide-react";
-
 import GlowingText from "../glowing-text";
+import Sparkles from "../sparkles";
 import TitledSection from "../titled-section";
 import Skill from "./components/skill/skill";
 
@@ -10,12 +9,17 @@ export default function HardSkills(): JSX.Element {
       level={2}
       title={
         <>
-          Minhas <GlowingText>hard skills</GlowingText>
+          <Sparkles classForColor="text-primary" isInline>
+            Minhas
+          </Sparkles>{" "}
+          <Sparkles classForColor="text-fg dark:text-fg-dark" isInline>
+            <GlowingText>hard skills</GlowingText>
+          </Sparkles>
         </>
       }
     >
       <div className="flex flex-col gap-16">
-        <Skill icon={<LayoutIcon />} title="TypeScript">
+        <Skill title="TypeScript">
           <p>
             Tenho experiência com TypeScript nos âmbitos de{" "}
             <strong>segurança</strong> e <strong>ergonomia</strong>,
@@ -31,7 +35,7 @@ export default function HardSkills(): JSX.Element {
             <strong>inferência de tipos</strong>.
           </p>
         </Skill>
-        <Skill icon={<LayoutIcon />} title="React">
+        <Skill title="React">
           <p>
             Eu sei como funciona a <strong>renderização</strong> e{" "}
             <strong>reconciliação</strong>, crio componentes reutilizáveis e
@@ -43,13 +47,13 @@ export default function HardSkills(): JSX.Element {
             <strong>TanStack Query</strong> e <strong>React Hook Form</strong>.
           </p>
         </Skill>
-        <Skill icon={<LayoutIcon />} title="single-spa">
+        <Skill title="single-spa">
           <p>
             Tenho experiência com <strong>single-spa</strong> e criação de{" "}
             <strong>applications</strong> e <strong>parcels</strong>.
           </p>
         </Skill>
-        <Skill icon={<LayoutIcon />} title="Publicação NPM">
+        <Skill title="Publicação NPM">
           <p>
             Tenho experiência profissional com <strong>criação</strong>,
             <strong>publicação</strong> e <strong>manutenção</strong> de pacotes
@@ -59,7 +63,7 @@ export default function HardSkills(): JSX.Element {
             <strong>tree-shaking</strong>.
           </p>
         </Skill>
-        <Skill icon={<LayoutIcon />} title="Git">
+        <Skill title="Git">
           <p>
             Tenho experiência com Git, em <strong>minimizar diffs</strong> e
             <strong>reescrever histórico</strong>, trabalhando confortavelmente

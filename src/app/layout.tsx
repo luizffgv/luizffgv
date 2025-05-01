@@ -4,6 +4,7 @@ import { Lexend, Share_Tech_Mono } from "next/font/google";
 import ColorCycler from "./_components/color-cycler";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
+import ReactScan from "./_components/react-scan";
 import "./globals.css";
 
 const lexend = Lexend({
@@ -71,6 +72,7 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
         ></script>
       </head>
       <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
+        <ReactScan />
         <ColorCycler>
           <div className="isolate z-[1]">
             <Header></Header>

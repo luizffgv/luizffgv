@@ -24,6 +24,8 @@ const config: Config = {
           "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
         "timeline-line-dark":
           "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
+        hr: "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
+        "hr-dark": "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
       },
     },
   },

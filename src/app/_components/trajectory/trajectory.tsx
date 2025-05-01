@@ -1,3 +1,5 @@
+import { BriefcaseBusinessIcon, CircleHelpIcon, HeartIcon } from "lucide-react";
+
 import GlowingText from "../glowing-text";
 import Timeline from "../timeline";
 import TitledSection from "../titled-section";
@@ -16,48 +18,81 @@ export default function Trajectory(): JSX.Element {
         <Timeline.Root>
           <Timeline.Entry
             auxiliaryText="Você decide"
+            customDot={
+              <CircleHelpIcon className="text-primary" strokeWidth={2.5} />
+            }
             // eslint-disable-next-line no-template-curly-in-string
-            subtitle="${suaEquipe}"
+            subtitle={
+              <>
+                <span className="text-gray-400 dark:text-gray-800 transition-colors">
+                  {"${"}
+                </span>
+                suaEquipe
+                <span className="text-gray-400 dark:text-gray-800 transition-colors">
+                  {"}"}
+                </span>
+              </>
+            }
             // eslint-disable-next-line no-template-curly-in-string
-            title="${meuCargo}"
+            title={
+              <>
+                <span className="text-gray-400 dark:text-gray-800 transition-colors">
+                  {"${"}
+                </span>
+                meuCargo
+                <span className="text-gray-400 dark:text-gray-800 transition-colors">
+                  {"}"}
+                </span>
+              </>
+            }
           ></Timeline.Entry>
           {/* <Timeline.Entry
-            auxiliaryText="Março 2025"
+            auxiliaryText="Maio 2025"
+            customDot={
+              <BriefcaseBusinessIcon
+                className="text-primary"
+                fill="currentColor"
+              />
+            }
             subtitle="Zenvia"
             title="Desenvolvedor júnior"
           >
-            <PencilIcon className="mr-2 inline h-4 w-4" />
-            Ainda escrevendo essa história
+            <div className="text-primary">
+              <PencilIcon className="mr-2 inline h-4 w-4" fill="currentColor" />{" "}
+              <span className="font-bold">Escrevendo...</span>
+            </div>
           </Timeline.Entry> */}
           <Timeline.Entry
             auxiliaryText="Maio 2024"
+            customDot={
+              <BriefcaseBusinessIcon
+                className="text-primary"
+                fill="currentColor"
+              />
+            }
             subtitle="Zenvia"
             title="Assistente de desenvolvimento"
           >
             <p>
-              Desenvolvi vários microfrontends single-spa utilizando React,
-              TypeScript, Styled Components, React Query e outras bibliotecas
+              Desenvolvi um pacote de componentes React ESM e CJS com Class
+              Variance Authority, Jest e CSS Modules, seguindo um design system,
+              com suporte a tree-shaking e declarações de tipos
             </p>
             <br />
             <p>
-              Realizei manutenção de aplicações Next.js, Vite, single-spa e
-              NestJS
+              Implementei internacionalização em uma aplicação de microfrontends
             </p>
             <br />
             <p>
-              Fui o maior contribuidor de uma biblioteca UI type-safe e
-              tree-shakable, baseada em um design system, com
-              class-variance-authority e styled-components
-            </p>
-            <br />
-            <p>
-              Fiz a implementação de i18n em uma aplicação de microfrontends
-              single-spa Auxiliei o time a resolver diversos bugs de back-end,
-              tendo um olhar inquisitivo para entender como tudo funciona
+              Realizei manutenção de aplicações web com ASP.NET, Next.js,
+              single-spa e Vite
             </p>
           </Timeline.Entry>
           <Timeline.Entry
             auxiliaryText="2020"
+            customDot={
+              <HeartIcon className="text-primary" fill="currentColor" />
+            }
             title="Meu primeiro Hello World"
           ></Timeline.Entry>
         </Timeline.Root>
