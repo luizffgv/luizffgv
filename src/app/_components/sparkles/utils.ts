@@ -30,11 +30,12 @@ function ensureClipPathExists({
       document.createElementNS("http://www.w3.org/2000/svg", "svg"),
     );
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  if (!(svg instanceof SVGElement)) {
+    throw new TypeError("Expected SVGElement");
+  }
+
   svg.style.position = "absolute";
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   svg.style.width = "0";
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   svg.style.height = "0";
 
   svg.innerHTML = `
