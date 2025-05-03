@@ -30,7 +30,7 @@ export default function ColorCycler({ children }: Props): JSX.Element {
 
       const degrees = (Math.floor(dt / 100) + 220) % 360;
 
-      current.style.setProperty("--color-primary", `${degrees}deg, 70%, 40%`);
+      current.style.setProperty("--color-primary", `${degrees}, 70%, 40%`);
 
       requestAnimationFrame(callback);
     };
