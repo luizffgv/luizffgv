@@ -1,4 +1,9 @@
-import { BriefcaseBusinessIcon, CircleHelpIcon, HeartIcon } from "lucide-react";
+import {
+  BriefcaseBusinessIcon,
+  CircleHelpIcon,
+  HeartIcon,
+  PencilIcon,
+} from "lucide-react";
 
 import GlowingText from "../glowing-text";
 import Timeline from "../timeline";
@@ -46,7 +51,7 @@ export default function Trajectory(): JSX.Element {
               </>
             }
           ></Timeline.Entry>
-          {/* <Timeline.Entry
+          <Timeline.Entry
             auxiliaryText="Maio 2025"
             customDot={
               <BriefcaseBusinessIcon
@@ -61,7 +66,7 @@ export default function Trajectory(): JSX.Element {
               <PencilIcon className="mr-2 inline h-4 w-4" fill="currentColor" />{" "}
               <span className="font-bold">Escrevendo...</span>
             </div>
-          </Timeline.Entry> */}
+          </Timeline.Entry>
           <Timeline.Entry
             auxiliaryText="Maio 2024"
             customDot={
