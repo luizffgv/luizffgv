@@ -65,7 +65,7 @@ export default function HardSkills(): JSX.Element {
         </Skill>
         <Skill title="Git">
           <p>
-            Tenho experiência com Git, em <strong>minimizar diffs</strong> e
+            Tenho experiência com Git, em <strong>minimizar diffs</strong> e{" "}
             <strong>reescrever histórico</strong>, trabalhando confortavelmente
             tanto em fluxos que priorizam <strong>rebases</strong>,{" "}
             <strong>merge commits</strong>, e/ou <strong>squashes</strong>.
