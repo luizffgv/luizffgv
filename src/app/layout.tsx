@@ -82,7 +82,7 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
         <ColorCycler>
           <div className="isolate z-[1]">
             <Header></Header>
-            {children}
+            <div className="min-h-screen">{children}</div>
             <Footer></Footer>
           </div>
         </ColorCycler>
