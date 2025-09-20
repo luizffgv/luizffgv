@@ -56,28 +56,33 @@ export function spawnSparkle({
   uniqueId,
 }: SpawnSparkleProps): void {
   ensureClipPathExists({ relativeContainer, uniqueId });
-  const sparkle = document.createElement("div");
 
-  sparkle.style.backgroundColor = "#ffffff";
-  sparkle.style.clipPath = `url(#${uniqueId})`;
-  sparkle.style.backgroundColor = "currentColor";
-  sparkle.style.position = "absolute";
-
-  sparkle.style.opacity = String(Math.min(1, Math.random() + 0.5));
+  const sparkleContainer = document.createElement("div");
 
   const size = Math.random() * 24 + 12;
+
+  sparkleContainer.style.position = "absolute";
+  sparkleContainer.style.filter = `drop-shadow(0 0 ${size / 2}px color-mix(in srgb, currentColor, white))`;
+
+  const { x, y } = getRandomPositionInElement(relativeContainer);
+  sparkleContainer.style.top = `${y}px`;
+  sparkleContainer.style.left = `${x}px`;
+
+  // eslint-disable-next-line unicorn/prefer-dom-node-append
+  const sparkle = sparkleContainer.appendChild(document.createElement("div"));
+
+  sparkle.style.clipPath = `url(#${uniqueId})`;
+  sparkle.style.backgroundColor = "currentColor";
+
   sparkle.style.height = `${size}px`;
   sparkle.style.width = `${size}px`;
 
-  const { x, y } = getRandomPositionInElement(relativeContainer);
-  sparkle.style.top = `${y}px`;
-  sparkle.style.left = `${x}px`;
 
   const duration = Math.random() * 700 + 500;
 
   const appearAnimation = new Animation(
     new KeyframeEffect(
-      sparkle,
+      sparkleContainer,
       {
         scale: [0, 1, 1, 0.75, 0.5, 0.25, 0],
         translate: [
@@ -92,12 +97,12 @@ export function spawnSparkle({
   );
   appearAnimation.play();
   appearAnimation.addEventListener("finish", () => {
-    sparkle.remove();
+    sparkleContainer.remove();
   });
 
   const rotationAnimation = new Animation(
     new KeyframeEffect(
-      sparkle,
+      sparkleContainer,
       {
         rotate: [
           `${Math.random() / 4 - 0.125}turn`,
@@ -111,5 +116,5 @@ export function spawnSparkle({
   );
   rotationAnimation.play();
 
-  relativeContainer.append(sparkle);
+  relativeContainer.append(sparkleContainer);
 }

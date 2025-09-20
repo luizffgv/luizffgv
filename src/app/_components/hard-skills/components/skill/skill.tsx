@@ -3,14 +3,17 @@
 import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
 
-const lineCva = cva("h-2 grow sshrink rounded-full", {
-  variants: {
-    isShort: {
-      true: "bg-primary",
-      false: "bg-hr dark:bg-hr-dark",
+const lineCva = cva(
+  "h-2 grow shrink rounded-full [filter:drop-shadow(0_0_15px_hsl(var(--color-primary)))]",
+  {
+    variants: {
+      isShort: {
+        true: "bg-primary",
+        false: "bg-hr dark:bg-hr-dark",
+      },
     },
   },
-});
+);
 
 type Props = {
   children: React.ReactNode;

@@ -1,0 +1,53 @@
+@keyframes tilt {
+  from {
+    rotate: x 7.5deg;
+  }
+
+  to {
+    rotate: x -7.5deg;
+  }
+}
+
+@keyframes twist {
+  from {
+    rotate: z calc(var(--progress) * 7.5deg);
+  }
+
+  to {
+    rotate: z calc(var(--progress) * -7.5deg);
+  }
+}
+
+.parent {
+  animation: 3s 1.5s tilt infinite ease-in-out alternate;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+
+  .first-layer {
+    color: transparent;
+    text-shadow: 0 0 10px black;
+  }
+
+  .layer {
+    --offset-per-layer: calc(var(--depth) / var(--layers));
+
+    animation: 3s twist infinite ease-in-out alternate;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    translate: 0 0 calc((var(--index) + 1) * var(--offset-per-layer));
+
+    color: color-mix(
+      in hsl,
+      hsl(var(--color-primary)),
+      white calc(100% * pow(var(--progress), 3))
+    );
+    opacity: var(--progress);
+
+    user-select: none;
+    pointer-events: none;
+
+    &:last-child {
+      filter: drop-shadow(0 0 5px rgb(255 255 255 / 0.5));
+    }
+  }
+}

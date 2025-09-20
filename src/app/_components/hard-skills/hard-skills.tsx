@@ -1,5 +1,4 @@
-import GlowingText from "../glowing-text";
-import Sparkles from "../sparkles";
+import LayeredText from "../layered-text";
 import TitledSection from "../titled-section";
 import Skill from "./components/skill/skill";
 
@@ -9,12 +8,10 @@ export default function HardSkills(): JSX.Element {
       level={2}
       title={
         <>
-          <Sparkles classForColor="text-primary" isInline>
-            Minhas
-          </Sparkles>{" "}
-          <Sparkles classForColor="text-fg dark:text-fg-dark" isInline>
-            <GlowingText>hard skills</GlowingText>
-          </Sparkles>
+          Minhas{" "}
+          <LayeredText depth="32px" layers={8} perspective="800px">
+            hard skills
+          </LayeredText>
         </>
       }
     >

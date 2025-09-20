@@ -5,7 +5,8 @@ import {
   PencilIcon,
 } from "lucide-react";
 
-import GlowingText from "../glowing-text";
+import LayeredText from "../layered-text";
+import Sparkles from "../sparkles";
 import Timeline from "../timeline";
 import TitledSection from "../titled-section";
 
@@ -15,11 +16,14 @@ export default function Trajectory(): JSX.Element {
       level={2}
       title={
         <>
-          Minha <GlowingText>trajetória</GlowingText>
+          Minha{" "}
+          <LayeredText depth="32px" layers={8} perspective="800px">
+            trajetória
+          </LayeredText>
         </>
       }
     >
-      <div className="max-w-[90vw] overflow-x-auto">
+      <div className="max-w-[90vw]">
         <Timeline.Root>
           <Timeline.Entry
             auxiliaryText="Você decide"
@@ -29,11 +33,11 @@ export default function Trajectory(): JSX.Element {
             // eslint-disable-next-line no-template-curly-in-string
             subtitle={
               <>
-                <span className="text-gray-400 dark:text-gray-800 transition-colors">
+                <span className="text-gray-400 transition-colors dark:text-gray-800">
                   {"${"}
                 </span>
                 suaEquipe
-                <span className="text-gray-400 dark:text-gray-800 transition-colors">
+                <span className="text-gray-400 transition-colors dark:text-gray-800">
                   {"}"}
                 </span>
               </>
@@ -41,11 +45,11 @@ export default function Trajectory(): JSX.Element {
             // eslint-disable-next-line no-template-curly-in-string
             title={
               <>
-                <span className="text-gray-400 dark:text-gray-800 transition-colors">
+                <span className="text-gray-400 transition-colors dark:text-gray-800">
                   {"${"}
                 </span>
                 meuCargo
-                <span className="text-gray-400 dark:text-gray-800 transition-colors">
+                <span className="text-gray-400 transition-colors dark:text-gray-800">
                   {"}"}
                 </span>
               </>
@@ -98,7 +102,14 @@ export default function Trajectory(): JSX.Element {
             customDot={
               <HeartIcon className="text-primary" fill="currentColor" />
             }
-            title="Meu primeiro Hello World"
+            title={
+              <Sparkles
+                classForColor="text-primary dark:text-fg-on-primary"
+                isInline
+              >
+                Meu primeiro Hello World
+              </Sparkles>
+            }
           ></Timeline.Entry>
         </Timeline.Root>
       </div>

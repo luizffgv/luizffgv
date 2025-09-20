@@ -37,11 +37,13 @@ export default function Entry({
             styles["line-end"],
           )}
         ></div>
-        {customDot == null ? (
-          <div className="h-6 w-6 rounded-full bg-primary" />
-        ) : (
-          customDot
-        )}
+        <div className={styles.dot}>
+          {customDot == null ? (
+            <div className="h-6 w-6 rounded-full bg-primary" />
+          ) : (
+            customDot
+          )}
+        </div>
         <div
           className={clsx(
             "w-2 grow rounded-t-full bg-timeline-line transition-colors dark:bg-timeline-line-dark",
