@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Lexend, Share_Tech_Mono } from "next/font/google";
+import { Fugaz_One, Lexend, Share_Tech_Mono } from "next/font/google";
 
 import ColorCycler from "./_components/color-cycler";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
 import ReactScan from "./_components/react-scan";
+import SvgFilters from "./_components/svg-filters";
 import "./globals.css";
 
 const lexend = Lexend({
   subsets: ["latin"],
+});
+
+const fugazOne = Fugaz_One({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-fugaz-one",
 });
 
 const shareTechMono = Share_Tech_Mono({
@@ -34,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${lexend.className} ${shareTechMono.variable} scroll-smooth`}
+      className={`${lexend.className} ${fugazOne.variable} ${shareTechMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
@@ -72,6 +79,7 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
         ></script>
       </head>
       <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
+        <SvgFilters />
         <ReactScan />
         <ColorCycler>
           <div className="isolate z-[1]">

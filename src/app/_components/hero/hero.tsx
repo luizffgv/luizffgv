@@ -17,7 +17,7 @@ export default function Hero(): JSX.Element {
         <h1 className="gap-5 text-center text-3xl font-bold sm:text-5xl">
           Olá, meu nome é{" "}
           <LayeredText depth="32px" layers={8} perspective="800px">
-            Luiz
+            <span className="font-display">Luiz</span>
           </LayeredText>
         </h1>
         <p className="text-center text-xl font-medium">

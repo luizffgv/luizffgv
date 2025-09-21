@@ -5,6 +5,7 @@ import {
   PencilIcon,
 } from "lucide-react";
 
+import Flicker from "../flicker";
 import LayeredText from "../layered-text";
 import Sparkles from "../sparkles";
 import Timeline from "../timeline";
@@ -74,10 +75,12 @@ export default function Trajectory(): JSX.Element {
           <Timeline.Entry
             auxiliaryText="Maio 2024"
             customDot={
-              <BriefcaseBusinessIcon
-                className="text-primary"
-                fill="currentColor"
-              />
+              <Flicker>
+                <BriefcaseBusinessIcon
+                  className="text-primary"
+                  fill="currentColor"
+                />
+              </Flicker>
             }
             subtitle="Zenvia"
             title="Assistente de desenvolvimento"
@@ -103,10 +106,7 @@ export default function Trajectory(): JSX.Element {
               <HeartIcon className="text-primary" fill="currentColor" />
             }
             title={
-              <Sparkles
-                classForColor="text-primary dark:text-fg-on-primary"
-                isInline
-              >
+              <Sparkles classForColor="text-primary" isInline>
                 Meu primeiro Hello World
               </Sparkles>
             }

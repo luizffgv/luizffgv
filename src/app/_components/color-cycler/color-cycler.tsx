@@ -18,9 +18,15 @@ export default function ColorCycler({ children }: Props): JSX.Element {
     const startTimestamp = Date.now();
 
     let shouldDiscard = false;
+    let animationFrameId = 0;
 
     const callback = (): void => {
       if (shouldDiscard) {
+        return;
+      }
+
+      if (animationFrameId++ % 15 !== 0) {
+        requestAnimationFrame(callback);
         return;
       }
 

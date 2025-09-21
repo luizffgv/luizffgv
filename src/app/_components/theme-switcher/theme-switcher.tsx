@@ -16,7 +16,7 @@ export default function ThemeSwitcher(): JSX.Element {
       }}
     >
       <SunMoonIcon />
-      Mudar tema
+      <span className="hidden sm:inline">Mudar tema</span>
     </Button>
   );
 }

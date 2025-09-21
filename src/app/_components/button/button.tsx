@@ -9,7 +9,7 @@ import Modal from "@components/modal";
 import { Variant } from "./types";
 
 const buttonCva = cva(
-  `flex flex-row items-center gap-2 rounded-lg justify-center transition-all`,
+  "flex flex-row items-center gap-2 rounded-lg justify-center transition-all button-inset",
   {
     variants: {
       icon: {
@@ -18,7 +18,7 @@ const buttonCva = cva(
       },
       variant: {
         primary:
-          "text-primary bg-bg-button dark:bg-primary/5 backdrop-blur-md dark:hover:bg-primary hover:bg-primary hover:text-fg-on-primary",
+          "bg-bg-button dark:bg-primary/5 backdrop-blur-md hover:text-fg-on-primary dark:hover:text-primary",
         danger: "text-fg-on-primary bg-danger",
       } satisfies Record<Variant, string>,
     },

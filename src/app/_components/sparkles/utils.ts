@@ -70,6 +70,8 @@ export function spawnSparkle({
 
   // eslint-disable-next-line unicorn/prefer-dom-node-append
   const sparkle = sparkleContainer.appendChild(document.createElement("div"));
+  
+  sparkle.classList.add("neon-primary")
 
   sparkle.style.clipPath = `url(#${uniqueId})`;
   sparkle.style.backgroundColor = "currentColor";

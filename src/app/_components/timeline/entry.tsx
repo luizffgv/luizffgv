@@ -37,7 +37,7 @@ export default function Entry({
             styles["line-end"],
           )}
         ></div>
-        <div className={styles.dot}>
+        <div className="neon-primary">
           {customDot == null ? (
             <div className="h-6 w-6 rounded-full bg-primary" />
           ) : (
