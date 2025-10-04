@@ -80,7 +80,7 @@ export default function ProjectFilterSelector(): JSX.Element {
   return (
     <Card>
       <fieldset
-        className="flex max-h-[50vh] max-w-4xl flex-row flex-wrap gap-2"
+        className="flex max-w-4xl flex-row flex-wrap gap-2"
         onChange={(event) => {
           if (!(event.target instanceof HTMLInputElement)) {
             console.error("event.target is not an HTMLInputElement");
