@@ -5,7 +5,6 @@ import ColorCycler from "./_components/color-cycler";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
 import ReactScan from "./_components/react-scan";
-import SvgFilters from "./_components/svg-filters";
 import "./globals.css";
 
 const lexend = Lexend({
@@ -79,7 +78,6 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
         ></script>
       </head>
       <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
-        <SvgFilters />
         <ReactScan />
         <ColorCycler>
           <div className="isolate z-[1]">

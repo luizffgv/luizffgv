@@ -17,7 +17,7 @@ export default function Checkbox({
   return (
     <label
       className={clsx(
-        "has-[:checked]:neon-primary button-inset relative inline-block rounded-lg bg-bg-checkbox-unchecked px-3 py-2 text-center text-base transition-all hover:brightness-110 has-[:checked]:border-transparent has-[:checked]:bg-primary has-[:checked]:text-fg-on-primary dark:bg-primary/5 dark:hover:bg-primary/10",
+        "button-inset relative inline-block rounded-lg bg-bg-checkbox-unchecked px-3 py-2 text-center text-base transition-all hover:brightness-110 has-[:checked]:border-transparent has-[:checked]:bg-primary has-[:checked]:text-fg-on-primary dark:bg-primary/5 dark:hover:bg-primary/10",
         checked && "active",
       )}
     >

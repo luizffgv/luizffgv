@@ -60,7 +60,10 @@
       "^[./]"
     ],
     "importOrderSeparation": true,
-    "importOrderSortSpecifiers": true
+
+    "importOrderSortSpecifiers": true,
+    "tailwindFunctions": ["clsx", "cva"]
+
   },
   "private": true,
   "scripts": {

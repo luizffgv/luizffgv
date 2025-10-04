@@ -31,8 +31,24 @@
 
   @scope (.dark) to (.light) {
     .neon-primary {
-      filter: url("#filter-neon") drop-shadow(0 0 10px hsl(var(--color-primary), 0.7));
+      filter: drop-shadow(0 0 10px hsl(var(--color-primary)));
+     }
+  }
+
+  @scope (.dark) to (.light) {
+    .inset {
+      box-shadow: inset 0 0 16px #0008;
+
     }
+  }
+
+  .neon-border {
+      box-shadow: inset 0 0 16px color-mix(in srgb, hsl(var(--color-primary)), transparent), 0 0 8px hsl(var(--color-primary));
+      text-shadow: 0 0 15px #fffa;
+  }
+
+  .neon-border-text {
+      text-shadow: 0 0 15px #fffa;
   }
 
   .button-inset {
