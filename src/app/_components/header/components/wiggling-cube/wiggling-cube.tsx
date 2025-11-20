@@ -1,7 +1,7 @@
 import { useToggle } from "@mantine/hooks";
 import { MeshDistortMaterial, MeshWobbleMaterial } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { memo, useEffect, useRef } from "react";
+import { JSX, memo, useEffect, useRef } from "react";
 import { AmbientLight, Color, Euler, Mesh } from "three";
 import { degToRad } from "three/src/math/MathUtils.js";
 
@@ -74,7 +74,7 @@ const WigglingCube = memo(function WigglingCube(): JSX.Element {
     // Non essential
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
-      className="w-16 h-16"
+      className="h-16 w-16"
       onClick={() => {
         toggleShape();
       }}

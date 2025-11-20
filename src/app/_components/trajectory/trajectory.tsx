@@ -4,8 +4,8 @@ import {
   HeartIcon,
   PencilIcon,
 } from "lucide-react";
+import { JSX } from "react";
 
-import Flicker from "../flicker";
 import GlowingText from "../glowing-text";
 import Sparkles from "../sparkles";
 import Timeline from "../timeline";
@@ -28,7 +28,6 @@ export default function Trajectory(): JSX.Element {
             customDot={
               <CircleHelpIcon className="text-primary" strokeWidth={2.5} />
             }
-            // eslint-disable-next-line no-template-curly-in-string
             subtitle={
               <>
                 <span className="text-gray-400 transition-colors dark:text-gray-800">
@@ -40,7 +39,6 @@ export default function Trajectory(): JSX.Element {
                 </span>
               </>
             }
-            // eslint-disable-next-line no-template-curly-in-string
             title={
               <>
                 <span className="text-gray-400 transition-colors dark:text-gray-800">
@@ -72,12 +70,10 @@ export default function Trajectory(): JSX.Element {
           <Timeline.Entry
             auxiliaryText="Maio 2024"
             customDot={
-              <Flicker>
-                <BriefcaseBusinessIcon
-                  className="text-primary"
-                  fill="currentColor"
-                />
-              </Flicker>
+              <BriefcaseBusinessIcon
+                className="text-primary"
+                fill="currentColor"
+              />
             }
             subtitle="Zenvia"
             title="Assistente de desenvolvimento"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useHeadroom } from "@mantine/hooks";
+import { JSX } from "react";
 
 import HeaderImpl from "./header-impl";
 

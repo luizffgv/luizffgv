@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 import GlowingText from "../glowing-text";
 import TitledSection from "../titled-section";
 import Skill from "./components/skill/skill";

@@ -1,4 +1,5 @@
 import { AtSignIcon, LinkedinIcon, PhoneIcon } from "lucide-react";
+import { JSX } from "react";
 
 import Button from "@components/button";
 
@@ -8,6 +9,7 @@ export default function ContactButtons(): JSX.Element {
     <>
       <div className="grow">
         <Button href="https://www.linkedin.com/in/luizffgv/" target="_blank">
+          {/* eslint-disable-next-line @typescript-eslint/no-deprecated */}
           <LinkedinIcon />
           LinkedIn
         </Button>

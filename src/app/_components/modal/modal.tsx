@@ -1,5 +1,5 @@
 import { XIcon } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { JSX, useEffect, useRef } from "react";
 
 import Button from "@components/button";
 import Card from "@components/card";

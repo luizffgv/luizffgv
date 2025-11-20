@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 import styles from "./text-body.module.scss";
 
 export interface Props {

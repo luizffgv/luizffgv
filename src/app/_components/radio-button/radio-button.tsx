@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 export interface Props {
   /** `value` attribute for the underlying input. */
   value: string;

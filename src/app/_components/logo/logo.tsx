@@ -1,4 +1,5 @@
 import { useViewportSize, useWindowScroll } from "@mantine/hooks";
+import { JSX } from "react";
 
 import Flicker from "../flicker";
 import GlowingText from "../glowing-text";

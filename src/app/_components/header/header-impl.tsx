@@ -4,7 +4,7 @@ import { useMediaQuery } from "@mantine/hooks";
 import { cva } from "class-variance-authority";
 import { HomeIcon, WrenchIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { memo, useMemo } from "react";
+import { JSX, memo, useMemo } from "react";
 
 import ThemeSwitcher from "@components/theme-switcher";
 

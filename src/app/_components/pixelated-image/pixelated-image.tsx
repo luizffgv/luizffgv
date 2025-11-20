@@ -1,7 +1,7 @@
 "use client";
 
 import { useResizeObserver } from "@mantine/hooks";
-import { useEffect, useRef, useState } from "react";
+import { JSX, useEffect, useRef, useState } from "react";
 
 import { Color, draw } from "./draw";
 

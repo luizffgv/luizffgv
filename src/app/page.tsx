@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 import HardSkills from "./_components/hard-skills";
 import Hero from "./_components/hero";
 import MyGitHub from "./_components/my-github";

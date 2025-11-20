@@ -2,7 +2,7 @@
 
 import { cva } from "class-variance-authority";
 import { motion, useSpring, useTransform } from "framer-motion";
-import { ReactNode, useEffect, useId, useRef, useState } from "react";
+import { JSX, ReactNode, useEffect, useId, useRef, useState } from "react";
 
 const segmentedControlOptionCva = cva(
   "flex select-none items-center justify-center rounded-full px-3 py-2 text-base font-medium transition-all",

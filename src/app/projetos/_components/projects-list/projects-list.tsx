@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useContext, useMemo } from "react";
+import { JSX, useContext, useMemo } from "react";
 
 import ProjectPreview from "@/app/projetos/_components/project-preview";
 import { ProjectFilterContext } from "@/app/projetos/_contexts/project-filters";

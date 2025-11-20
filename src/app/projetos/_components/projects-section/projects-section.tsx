@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  JSX,
   Suspense,
   useCallback,
   useLayoutEffect,

@@ -1,4 +1,5 @@
 import { HeartIcon, MessageCircleIcon } from "lucide-react";
+import { JSX } from "react";
 
 import Button from "@components/button";
 import ContactButtons from "@components/contact-buttons";

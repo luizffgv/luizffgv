@@ -3,7 +3,7 @@
 import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { HTMLAttributeAnchorTarget, ReactNode, useState } from "react";
+import { HTMLAttributeAnchorTarget, JSX, ReactNode, useState } from "react";
 
 import Modal from "@components/modal";
 

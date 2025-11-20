@@ -2,9 +2,7 @@
 
 import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
-import { useMemo } from "react";
-
-import Flicker from "@/app/_components/flicker";
+import { JSX } from "react";
 
 const lineCva = cva("h-2 rounded-full", {
   variants: {
@@ -23,7 +21,6 @@ type Props = {
 
 export default function Skill({ children, icon, title }: Props): JSX.Element {
   const isLeftAligned = (title.codePointAt(0) || 0) % 2 === 0;
-  const shouldFlicker = useMemo(() => Math.random() < 1 / 3, []);
 
   return (
     <div className="flex max-w-prose flex-col gap-4">
@@ -34,9 +31,7 @@ export default function Skill({ children, icon, title }: Props): JSX.Element {
           whileInView={{ maxWidth: isLeftAligned ? 80 : undefined }}
           viewport={{ margin: "-20% 0px -20% 0px" }}
         >
-          <Flicker when={shouldFlicker && isLeftAligned}>
-            <div className={lineCva({ isShort: isLeftAligned })} />
-          </Flicker>
+          <div className={lineCva({ isShort: isLeftAligned })} />
         </motion.div>
         {icon == null ? null : <div>{icon}</div>}
         <div className="text-2xl font-bold">{title}</div>
@@ -46,9 +41,7 @@ export default function Skill({ children, icon, title }: Props): JSX.Element {
           whileInView={{ maxWidth: isLeftAligned ? undefined : 80 }}
           viewport={{ margin: "-20% 0px -20% 0px" }}
         >
-          <Flicker when={shouldFlicker && !isLeftAligned}>
-            <div className={lineCva({ isShort: !isLeftAligned })} />
-          </Flicker>
+          <div className={lineCva({ isShort: !isLeftAligned })} />
         </motion.div>
       </div>
       {children}

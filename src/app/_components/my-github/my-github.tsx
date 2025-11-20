@@ -1,5 +1,6 @@
 import { FolderGit2Icon, PackageIcon } from "lucide-react";
 import Link from "next/link";
+import { JSX } from "react";
 
 import Button from "@components/button";
 import GlowingText from "@components/glowing-text";

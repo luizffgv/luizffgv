@@ -1,6 +1,6 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { JSX, PropsWithChildren } from "react";
 
 import styles from "./layered-text.module.scss";
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { JSX } from "react";
 
 import GlowingText from "../_components/glowing-text";
 import TitledSection from "../_components/titled-section";

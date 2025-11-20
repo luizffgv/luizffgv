@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fugaz_One, Lexend, Share_Tech_Mono } from "next/font/google";
+import { JSX } from "react";
 
+import ClickSpark from "./_components/click-spark";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
 import ReactScan from "./_components/react-scan";
@@ -77,12 +79,14 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
         ></script>
       </head>
       <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
-        <ReactScan />
-        <div className="isolate z-[1]">
-          <Header></Header>
-          <div className="min-h-screen">{children}</div>
-          <Footer></Footer>
-        </div>
+        <ClickSpark sparkColor="hsl(var(--color-primary), 1)">
+          <ReactScan />
+          <div className="isolate z-[1]">
+            <Header></Header>
+            <div className="min-h-screen">{children}</div>
+            <Footer></Footer>
+          </div>
+        </ClickSpark>
       </body>
     </html>
   );

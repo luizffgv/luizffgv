@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 interface HeadingProps {
   /// The level of the heading.
   level: 1 | 2 | 3 | 4 | 5 | 6;

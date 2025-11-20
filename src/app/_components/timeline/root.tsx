@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { JSX, useMemo } from "react";
 
 import { TimelineContext } from "./_contexts/timeline";
 

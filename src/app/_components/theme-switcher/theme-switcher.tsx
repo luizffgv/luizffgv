@@ -1,6 +1,7 @@
 "use client";
 
 import { SunMoonIcon } from "lucide-react";
+import { JSX } from "react";
 
 import Button from "@components/button";
 

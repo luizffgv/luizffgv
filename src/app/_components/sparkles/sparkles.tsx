@@ -1,7 +1,7 @@
 "use client";
 
 import { cva } from "class-variance-authority";
-import React, { useEffect, useId, useRef } from "react";
+import React, { JSX, useEffect, useId, useRef } from "react";
 
 import { spawnSparkle } from "./utils";
 
@@ -48,7 +48,7 @@ export default function Sparkles({
     <div className={containerCva({ isInline })}>
       <div className="contents">{children}</div>
       <div
-        className={`absolute inset-0 pointer-events-none ${classForColor}`}
+        className={`pointer-events-none absolute inset-0 ${classForColor}`}
         ref={containerRef}
       />
     </div>

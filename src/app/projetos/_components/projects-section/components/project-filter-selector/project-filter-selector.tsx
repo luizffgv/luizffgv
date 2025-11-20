@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PanelBottomIcon } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import {
+  JSX,
   useCallback,
   useContext,
   useEffect,
-  useLayoutEffect,
   useMemo,
   useState,
 } from "react";
@@ -46,7 +46,7 @@ const allTags = [
     }, new Set<Tag>()),
 ]
   .filter((tag) => !hiddenTags.has(tag))
-  .sort();
+  .toSorted();
 
 const categorizedTags = new Set(Object.values(tagCategories).flat());
 
@@ -68,7 +68,13 @@ function matchingTags(project: ProjectRaw, tags: Set<Tag>): Set<Tag> {
 export default function ProjectFilterSelector(): JSX.Element {
   const urlParams = useSearchParams();
   const { setFilter } = useContext(ProjectFilterContext);
-  const [tags, setTags] = useState<{ value: Set<Tag> }>({ value: new Set() });
+  const [tags, setTags] = useState<{ value: Set<Tag> }>({
+    value: new Set<Tag>(
+      (urlParams.getAll("tags") as Tag[]).filter((tag) =>
+        allTags.includes(tag),
+      ),
+    ),
+  });
   const [isExpanded, setIsExpanded] = useState(true);
 
   const virtualCategories = useMemo(
@@ -79,19 +85,9 @@ export default function ProjectFilterSelector(): JSX.Element {
     [],
   );
 
-  useLayoutEffect(() => {
-    setTags({
-      value: new Set<Tag>(
-        (urlParams.getAll("tags") as Tag[]).filter((tag) =>
-          allTags.includes(tag),
-        ),
-      ),
-    });
-  }, [urlParams]);
-
   useEffect(() => {
     setFilter((projects: ProjectRaw[]) => {
-      let matching = [...projects].sort(
+      let matching = projects.toSorted(
         (p1, p2) =>
           matchingTags(p2, tags.value).size - matchingTags(p1, tags.value).size,
       );
@@ -128,8 +124,8 @@ export default function ProjectFilterSelector(): JSX.Element {
 
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2">
-      <Card layout>
-        <div className="flex flex-col items-center gap-4">
+      <Card layout padding={isExpanded ? undefined : 0}>
+        <div className="flex flex-col items-center gap-8">
           {isExpanded && (
             <motion.fieldset
               className="flex w-[80vw] flex-col gap-4 sm:w-auto"
@@ -144,6 +140,11 @@ export default function ProjectFilterSelector(): JSX.Element {
                   console.error("event.target is not an HTMLInputElement");
                   return;
                 }
+
+                window.scrollTo({
+                  top: 0,
+                  behavior: "instant",
+                });
 
                 if (event.target.checked) {
                   tags.value.add(event.target.value as Tag);
@@ -168,15 +169,15 @@ export default function ProjectFilterSelector(): JSX.Element {
           )}
           <motion.div layout>
             <Button onClick={handleClickExpand}>
-              {isExpanded ? (
-                <>
-                  <PanelBottomIcon /> Ocultar filtros
-                </>
-              ) : (
-                <>
-                  <PanelBottomIcon /> Exibir filtros
-                </>
-              )}
+              <motion.span
+                animate={{
+                  rotate: `${isExpanded ? 0 : 180}deg`,
+                }}
+                layout
+              >
+                <ChevronDownIcon />{" "}
+              </motion.span>
+              {isExpanded ? <>Ocultar filtros</> : <>Expandir filtros</>}
             </Button>
           </motion.div>
         </div>
