@@ -1,6 +1,7 @@
 "use client";
 
 import { cva } from "class-variance-authority";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { HTMLAttributeAnchorTarget, ReactNode, useState } from "react";
 
@@ -9,7 +10,7 @@ import Modal from "@components/modal";
 import { Variant } from "./types";
 
 const buttonCva = cva(
-  "flex flex-row items-center gap-2 rounded-lg justify-center transition-all button-inset",
+  "flex flex-row items-center justify-center gap-2 rounded-lg transition-all",
   {
     variants: {
       icon: {
@@ -18,8 +19,8 @@ const buttonCva = cva(
       },
       variant: {
         primary:
-          "bg-bg-button dark:bg-primary/5 backdrop-blur-md hover:text-fg-on-primary dark:hover:text-primary",
-        danger: "text-fg-on-primary bg-danger",
+          "bg-bg-button text-primary backdrop-blur-md hover:bg-primary hover:text-fg-on-primary",
+        danger: "bg-danger text-fg-on-primary",
       } satisfies Record<Variant, string>,
     },
   },
@@ -94,12 +95,12 @@ export default function Button({
   return (
     <>
       {"onClick" in rest ? (
-        <button
+        <motion.button
           {...rest}
           title={rest["aria-label"]}
           type="button"
           className={className}
-        ></button>
+        />
       ) : "href" in rest ? (
         <Link {...rest} title={rest["aria-label"]} className={className}></Link>
       ) : (

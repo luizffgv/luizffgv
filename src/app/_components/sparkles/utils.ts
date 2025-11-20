@@ -70,15 +70,12 @@ export function spawnSparkle({
 
   // eslint-disable-next-line unicorn/prefer-dom-node-append
   const sparkle = sparkleContainer.appendChild(document.createElement("div"));
-  
-  sparkle.classList.add("neon-primary")
 
   sparkle.style.clipPath = `url(#${uniqueId})`;
   sparkle.style.backgroundColor = "currentColor";
 
   sparkle.style.height = `${size}px`;
   sparkle.style.width = `${size}px`;
-
 
   const duration = Math.random() * 700 + 500;
 

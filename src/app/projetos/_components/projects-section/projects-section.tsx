@@ -52,16 +52,16 @@ export default function ProjectsSection(): JSX.Element {
         }}
       >
         <div className="flex flex-col items-center gap-32">
-          <Suspense>
-            <ProjectFilterSelector></ProjectFilterSelector>
-          </Suspense>
           <div
             ref={projectsListRef}
             className="w-full max-w-screen-2xl px-4 pb-[100vh]"
           >
-            <ProjectsList></ProjectsList>
+            <ProjectsList />
           </div>
         </div>
+        <Suspense>
+          <ProjectFilterSelector />
+        </Suspense>
       </ProjectFilterContext.Provider>
     </div>
   );

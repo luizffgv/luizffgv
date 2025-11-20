@@ -9,7 +9,7 @@ import Flicker from "@/app/_components/flicker";
 const lineCva = cva("h-2 rounded-full", {
   variants: {
     isShort: {
-      true: "bg-primary neon-primary",
+      true: "bg-primary",
       false: "bg-hr dark:bg-hr-dark",
     },
   },

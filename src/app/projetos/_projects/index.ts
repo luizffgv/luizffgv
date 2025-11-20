@@ -38,6 +38,8 @@ export type Tag =
   | "TypeScript"
   | "Webpack";
 
+export type TagCategory = "category" | "language" | "library";
+
 /** Project license. */
 export type License =
   | "MIT License"
@@ -56,6 +58,19 @@ export type ProjectRaw = {
   repository?: string;
   wip?: boolean;
   image?: string;
+};
+
+export const tagCategories: Record<TagCategory, Tag[]> = {
+  category: [
+    "Discord App",
+    "Biblioteca",
+    "Framework",
+    "Mod",
+    "Pacote NPM",
+    "Site",
+  ],
+  language: ["C", "C++", "JavaScript", "Lua", "Python", "TypeScript"],
+  library: ["Express.js", "React", "Tailwind CSS", "Three.js"],
 };
 
 const projects = [
@@ -83,7 +98,7 @@ const projects = [
   {
     name: "Blink: Ultimate Teleportation",
     description:
-      "Instalado por mais de 32 mil usuários diferentes, Blink é um mod feito em Lua para o jogo Teardown.",
+      "Instalado por mais de 32 mil usuários diferentes, Blink é um mod feito em Lua para Teardown incluso no modpack oficial para Xbox e PlayStation.",
     details: html`
       <p>
         Blink: Ultimate Teleportation é um mod para

@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 import Flicker from "../flicker";
-import LayeredText from "../layered-text";
+import GlowingText from "../glowing-text";
 import Sparkles from "../sparkles";
 import Timeline from "../timeline";
 import TitledSection from "../titled-section";
@@ -17,10 +17,7 @@ export default function Trajectory(): JSX.Element {
       level={2}
       title={
         <>
-          Minha{" "}
-          <LayeredText depth="32px" layers={8} perspective="800px">
-            trajetória
-          </LayeredText>
+          Minha <GlowingText>trajetória</GlowingText>
         </>
       }
     >

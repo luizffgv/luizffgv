@@ -9,6 +9,7 @@ import { memo, useMemo } from "react";
 import ThemeSwitcher from "@components/theme-switcher";
 
 import SegmentedControl from "../segmented-control";
+import { SegmentedControlOption } from "../segmented-control/segmented-control";
 
 const headerCva = cva(
   "fixed left-0 top-0 z-[1] flex w-full flex-row justify-center bg-bg-close px-4 py-2 shadow-sm backdrop-blur-lg transition-all dark:bg-bg-close-dark",
@@ -22,8 +23,20 @@ const headerCva = cva(
 );
 
 const ENTRIES = [
-  { name: "Início", icon: <HomeIcon size={20} />, href: "/" },
-  { name: "Projetos", icon: <WrenchIcon size={20} />, href: "/projetos" },
+  {
+    name: "Início",
+    icon: ({ isActive }: { isActive: boolean }) => (
+      <HomeIcon fill={isActive ? "currentColor" : "transparent"} size={20} />
+    ),
+    href: "/",
+  },
+  {
+    name: "Projetos",
+    icon: ({ isActive }: { isActive: boolean }) => (
+      <WrenchIcon fill={isActive ? "currentColor" : "transparent"} size={20} />
+    ),
+    href: "/projetos",
+  },
 ];
 
 export interface HeaderImplProps {
@@ -38,12 +51,12 @@ const HeaderImpl = memo(function HeaderImpl({
 
   const isMobile = useMediaQuery("(max-width: 512px)");
 
-  const options = useMemo(
+  const options = useMemo<SegmentedControlOption[]>(
     () =>
       ENTRIES.map((entry) => ({
-        label: (
+        label: ({ isActive }) => (
           <>
-            {entry.icon} {isMobile ? null : entry.name}
+            {entry.icon({ isActive })} {isMobile ? null : entry.name}
           </>
         ),
         value: entry.href,

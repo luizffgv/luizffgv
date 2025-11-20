@@ -9,15 +9,15 @@ const segmentedControlOptionCva = cva(
   {
     variants: {
       active: {
-        true: "neon-border-text text-fg-on-primary dark:text-inherit",
-        false: "cursor-pointer",
+        true: "text-fg-on-primary dark:text-inherit",
+        false: "cursor-pointer text-primary",
       },
     },
   },
 );
 
 const segmentedControlCva = cva(
-  "inset relative inline-flex items-center gap-4 rounded-full bg-bg-button px-1 text-sm transition-all dark:bg-transparent",
+  "relative inline-flex items-center gap-4 rounded-full bg-bg-button px-1 text-sm transition-all",
 );
 
 const segmentedControlBackgroundContainerCva = cva(
@@ -25,12 +25,20 @@ const segmentedControlBackgroundContainerCva = cva(
 );
 
 const segmentedControlBackgroundCva = cva(
-  "neon-border h-full w-full rounded-full bg-primary dark:bg-transparent",
+  "h-full w-full rounded-full bg-primary",
 );
+
+interface SegmentedControlLabelRendererProps {
+  isActive: boolean;
+}
+
+export type SegmentedControlLabelRenderer = (
+  props: SegmentedControlLabelRendererProps,
+) => JSX.Element;
 
 export interface SegmentedControlOption {
   value: string;
-  label: ReactNode;
+  label: ReactNode | SegmentedControlLabelRenderer;
 }
 
 export interface SegmentedControlProps {
@@ -52,12 +60,14 @@ export default function SegmentedControl({
   const groupName = name ?? `segmented-control-${fallbackName}`;
   const [targetWidth, setTargetWidth] = useState(0);
 
-  const x = useSpring(0);
+  const x = useSpring(0, {
+    bounce: 1 / 3,
+  });
   const xWithUnit = useTransform(x, (latest) => `${latest}px`);
-  const scale = useTransform(x, () => 1 - Math.abs(x.getVelocity()) / 2000);
-  const filter = useTransform(
+  const scale = useTransform(
     x,
-    () => `blur(${Math.abs(x.getVelocity()) / 100}px)`,
+    () =>
+      `${1 + Math.abs(x.getVelocity() / 2000)}, ${1 + Math.abs(x.getVelocity()) / 4000}`,
   );
 
   useEffect(() => {
@@ -86,7 +96,6 @@ export default function SegmentedControl({
         className={segmentedControlBackgroundContainerCva()}
         ref={backgroundRef}
         style={{
-          filter,
           left: xWithUnit,
           scale,
         }}
@@ -116,7 +125,9 @@ export default function SegmentedControl({
                 onChange?.(optionValue);
               }}
             />
-            <div className="flex items-center gap-2">{label}</div>
+            <div className="flex items-center gap-2">
+              {typeof label === "function" ? label({ isActive }) : label}
+            </div>
           </label>
         );
       })}

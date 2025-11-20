@@ -1,4 +1,4 @@
-import LayeredText from "../layered-text";
+import GlowingText from "../glowing-text";
 import TitledSection from "../titled-section";
 import Skill from "./components/skill/skill";
 
@@ -8,10 +8,7 @@ export default function HardSkills(): JSX.Element {
       level={2}
       title={
         <>
-          Minhas{" "}
-          <LayeredText depth="32px" layers={8} perspective="800px">
-            hard skills
-          </LayeredText>
+          Minhas <GlowingText>hard skills</GlowingText>
         </>
       }
     >

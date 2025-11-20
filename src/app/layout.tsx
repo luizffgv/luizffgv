@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fugaz_One, Lexend, Share_Tech_Mono } from "next/font/google";
 
-import ColorCycler from "./_components/color-cycler";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
 import ReactScan from "./_components/react-scan";
@@ -79,13 +78,11 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
       </head>
       <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
         <ReactScan />
-        <ColorCycler>
-          <div className="isolate z-[1]">
-            <Header></Header>
-            <div className="min-h-screen">{children}</div>
-            <Footer></Footer>
-          </div>
-        </ColorCycler>
+        <div className="isolate z-[1]">
+          <Header></Header>
+          <div className="min-h-screen">{children}</div>
+          <Footer></Footer>
+        </div>
       </body>
     </html>
   );
