@@ -10,16 +10,16 @@ const config: Config = {
         primary: "hsl(var(--color-primary), <alpha-value>)",
         danger: "rgba(var(--color-danger), <alpha-value>)",
         bg: "#fafafa",
-        "bg-dark": "#0c0d14",
+        "bg-dark": "#0a0a0a",
         "bg-close": "#ffffff",
-        "bg-close-dark": "#131825",
+        "bg-close-dark": "#0e0e0e",
         "bg-button": "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
         "bg-checkbox-unchecked":
           "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
         fg: "#1f273a",
         "fg-weak": "#949494",
-        "fg-dark": "#e1e5ff",
-        "fg-on-primary": "#f8fafc",
+        "fg-dark": "#ddd",
+        "fg-on-primary": "white",
         "timeline-line":
           "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
         "timeline-line-dark":

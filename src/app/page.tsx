@@ -8,8 +8,8 @@ import Trajectory from "./_components/trajectory";
 export default function Home(): JSX.Element {
   return (
     <main>
-      <Hero></Hero>
-      <div className="flex flex-col items-center gap-[480px] bg-bg px-4 pb-[50vh] pt-64 transition-colors [grid-area:stack] dark:bg-bg-dark">
+      <Hero />
+      <div className="z-10 flex flex-col items-center gap-[480px] bg-bg px-4 pb-[50vh] pt-64 transition-colors [grid-area:stack] dark:bg-bg-dark">
         <div className="flex flex-wrap-reverse justify-center gap-x-64 gap-y-[480px]">
           <HardSkills></HardSkills>
           <Trajectory></Trajectory>

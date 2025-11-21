@@ -37,17 +37,13 @@
     translate: 0 0 calc((var(--index) + 1) * var(--offset-per-layer));
 
     color: color-mix(
-      in hsl,
-      hsl(var(--color-primary)),
-      white calc(100% * pow(var(--progress), 3))
+      in srgb,
+      transparent,
+      currentcolor calc(100% * pow(var(--progress), 3))
     );
-    opacity: var(--progress);
+    // opacity: var(--progress);
 
     user-select: none;
     pointer-events: none;
-
-    &:last-child {
-      filter: drop-shadow(0 0 5px rgb(255 255 255 / 0.5));
-    }
   }
 }
