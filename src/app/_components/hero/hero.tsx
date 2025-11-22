@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { JSX, useEffect, useRef } from "react";
 
+import ColorCycler from "../color-cycler";
 import LayeredText from "../layered-text";
 import RotatingColors from "../rotating-colors";
 import RotatingText from "../rotating-text";
@@ -114,13 +115,12 @@ export default function Hero(): JSX.Element {
         </AnimatePresence>
       </div>
       <div className="z-[1] flex flex-col gap-2 px-8">
-        <h1 className="gap-5 text-center text-3xl font-bold sm:text-5xl">
-          Olá, meu nome é{" "}
-          <span className="text-fg-on-primary">
-            <LayeredText depth="32px" layers={8} perspective="800px">
-              <span className="font-display">Luiz</span>
+        <h1 className="gap-5 text-center text-3xl font-bold text-fg-on-primary sm:text-5xl">
+          <ColorCycler>
+            <LayeredText depth="16px" layers={16} perspective="800px">
+              Olá, meu nome é Luiz
             </LayeredText>
-          </span>
+          </ColorCycler>
         </h1>
         <LayoutGroup>
           <p

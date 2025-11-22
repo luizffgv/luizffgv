@@ -1,20 +1,20 @@
 @keyframes tilt {
   from {
-    rotate: x 7.5deg;
+    rotate: x 25deg;
   }
 
   to {
-    rotate: x -7.5deg;
+    rotate: x 0deg;
   }
 }
 
 @keyframes twist {
   from {
-    rotate: z calc(var(--progress) * 7.5deg);
+    rotate: z calc(var(--progress) * 3.75deg);
   }
 
   to {
-    rotate: z calc(var(--progress) * -7.5deg);
+    rotate: z calc(var(--progress) * -3.75deg);
   }
 }
 
@@ -24,8 +24,7 @@
   transform-style: preserve-3d;
 
   .first-layer {
-    color: transparent;
-    text-shadow: 0 0 10px black;
+    color: hsl(var(--color-primary), 0%);
   }
 
   .layer {
@@ -38,10 +37,10 @@
 
     color: color-mix(
       in srgb,
-      transparent,
-      currentcolor calc(100% * pow(var(--progress), 3))
+      grey,
+      currentcolor calc(100% * pow(var(--progress), 2))
     );
-    // opacity: var(--progress);
+    opacity: var(--progress);
 
     user-select: none;
     pointer-events: none;
