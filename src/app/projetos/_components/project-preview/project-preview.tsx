@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { CodeXmlIcon, EyeIcon } from "lucide-react";
 import { JSX } from "react";
 
@@ -15,33 +16,33 @@ export interface Props {
 export default function ProjectPreview({ project }: Props): JSX.Element {
   return (
     <div className="group flex w-[400px] shrink items-stretch">
-      <Card>
+      <Card transition={{ duration: 0.1 }}>
         <div
           aria-label={project.name}
           className="flex flex-col gap-6"
           role="group"
         >
           {project.image == null ? (
-            <div className="aspect-[400/225] rounded-md bg-primary/15"></div>
+            <motion.div className="aspect-[400/225] bg-primary/15" layout />
           ) : (
-            <div className="relative aspect-[400/225] rounded-lg">
+            <motion.div className="relative aspect-[400/225]" layout>
               <div className="absolute h-full w-full transition-transform group-hover:-translate-y-4">
                 <img
-                  className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2 rounded-lg opacity-25 blur-xl transition-all group-hover:opacity-50 group-hover:blur-2xl"
+                  className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2 opacity-25 blur-xl transition-all group-hover:opacity-50 group-hover:blur-2xl"
                   src={`/project-images/${project.image}`}
                   alt={`Imagem do projeto ${project.name}`}
                   aria-hidden
                 />
                 <img
-                  className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2 rounded-lg"
+                  className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2"
                   src={`/project-images/${project.image}`}
                   alt={`Imagem do projeto ${project.name}`}
                   aria-hidden
                 />
               </div>
-            </div>
+            </motion.div>
           )}
-          <div className="flex justify-between gap-4">
+          <motion.div className="flex justify-between gap-4" layout>
             <div className="text-2xl font-bold">{project.name}</div>
             <div className="flex flex-row flex-wrap items-center justify-end gap-2">
               {project.url ? (
@@ -66,8 +67,8 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
                 </Button>
               ) : null}
             </div>
-          </div>
-          <div>{project.description}</div>
+          </motion.div>
+          <motion.div layout>{project.description}</motion.div>
         </div>
       </Card>
     </div>

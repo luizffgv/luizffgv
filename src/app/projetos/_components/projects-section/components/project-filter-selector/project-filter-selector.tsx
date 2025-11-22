@@ -1,5 +1,6 @@
 "use client";
 
+import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
 import { ChevronDownIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
@@ -13,12 +14,21 @@ import {
 } from "react";
 
 import Button from "@/app/_components/button";
+import ColorCycler from "@/app/_components/color-cycler";
 import { ProjectFilterContext } from "@/app/projetos/_contexts/project-filters";
 
 import Card from "@components/card";
 import Checkbox from "@components/checkbox";
 
 import projects, { ProjectRaw, Tag, tagCategories } from "@projects/_projects";
+
+const innerCva = cva("flex flex-col items-center gap-8", {
+  variants: {
+    isExpanded: {
+      true: "h-[calc(100vh-32px)] w-[calc(100vw-32px)] p-6 sm:h-auto sm:w-auto",
+    },
+  },
+});
 
 /** A set of tags to not display, because they are not as relevant. */
 const hiddenTags: Set<Tag> = new Set([
@@ -123,16 +133,17 @@ export default function ProjectFilterSelector(): JSX.Element {
   }, []);
 
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2">
-      <Card layout padding={isExpanded ? undefined : 0}>
-        <div className="flex flex-col items-center gap-8">
+    <div className="fixed bottom-4 left-1/2 z-10 max-h-[calc(100vh-32px)] -translate-x-1/2 ">
+      <Card layout padding={0}>
+        <div className={innerCva({ isExpanded })}>
           {isExpanded && (
             <motion.fieldset
-              className="flex w-[80vw] flex-col gap-4 sm:w-auto"
+              className="flex grow basis-0 flex-col gap-4 overflow-y-auto sm:basis-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               layout
               transition={{
+                duration: 0.5,
                 delay: 0.25,
               }}
               onChange={(event) => {
@@ -155,15 +166,20 @@ export default function ProjectFilterSelector(): JSX.Element {
                 setTags({ value: tags.value });
               }}
             >
-              {virtualCategories.map(([category, tags]) => (
-                <div className="flex flex-col gap-1" key={category}>
-                  <div className="text-lg font-bold">
-                    {getCategoryName(category)}
+              {virtualCategories.map(([category, tags], index) => (
+                <ColorCycler key={category} offset={index * 90}>
+                  <div className="flex flex-col gap-1">
+                    <div className="text-lg font-bold">
+                      {getCategoryName(category)}
+                    </div>
+                    <div
+                      className="flex flex-row flex-wrap gap-2"
+                      key={category}
+                    >
+                      {tags.map((tag) => renderTag(tag))}
+                    </div>
                   </div>
-                  <div className="flex flex-row flex-wrap gap-2" key={category}>
-                    {tags.map((tag) => renderTag(tag))}
-                  </div>
-                </div>
+                </ColorCycler>
               ))}
             </motion.fieldset>
           )}

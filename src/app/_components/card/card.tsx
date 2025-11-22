@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Transition, motion } from "framer-motion";
 import { JSX } from "react";
 
 export interface Props {
@@ -8,6 +8,7 @@ export interface Props {
   footer?: React.ReactNode | undefined;
   layout?: boolean;
   padding?: string | number;
+  transition?: Transition;
 }
 
 /** A card that can wrap other components. */
@@ -16,17 +17,19 @@ export default function Card({
   footer,
   layout,
   padding = 24,
+  transition,
 }: Props): JSX.Element {
   return (
     <motion.div
-      initial={{ scale: 0.75 }}
-      whileInView={{ scale: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={transition}
       layout={layout}
       style={{
-        borderRadius: 8,
         padding,
       }}
-      className={`rounded-lg bg-bg-close shadow-lg backdrop-blur-xl transition-colors dark:bg-bg-close-dark dark:shadow-sm`}
+      className={`bg-bg-close shadow-lg backdrop-blur-xl transition-colors dark:bg-bg-close-dark dark:shadow-sm`}
     >
       <div className="flex h-full w-full flex-col justify-between">
         <div className="flex justify-center">{children}</div>

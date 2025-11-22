@@ -14,7 +14,7 @@ export default function ProjectsList(): JSX.Element {
     <ul className="flex flex-row flex-wrap justify-center gap-8">
       <AnimatePresence>
         {filteredProjects.map((project) => (
-          <motion.li key={project.name} className="contents" layout>
+          <motion.li className="flex" key={project.name} layout>
             <ProjectPreview project={project}></ProjectPreview>
           </motion.li>
         ))}

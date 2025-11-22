@@ -4,9 +4,13 @@ import { JSX, useEffect, useRef } from "react";
 
 export interface Props {
   children: React.ReactNode;
+  offset?: number;
 }
 
-export default function ColorCycler({ children }: Props): JSX.Element {
+export default function ColorCycler({
+  children,
+  offset = 0,
+}: Props): JSX.Element {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,7 +38,7 @@ export default function ColorCycler({ children }: Props): JSX.Element {
 
       const dt = now - startTimestamp;
 
-      const degrees = (Math.floor(dt / 100) + 220) % 360;
+      const degrees = (Math.floor(dt / 50) + offset) % 360;
 
       current.style.setProperty("--color-primary", `${degrees}, 70%, 40%`);
 
@@ -46,7 +50,7 @@ export default function ColorCycler({ children }: Props): JSX.Element {
     return () => {
       shouldDiscard = true;
     };
-  }, []);
+  }, [offset]);
 
   return (
     <div className="contents" ref={ref}>

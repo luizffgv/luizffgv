@@ -12,7 +12,8 @@
 
 @layer base {
   :root {
-    --color-primary: 220deg, 0%, 40%;
+    --color-primary: 270deg, 0%, 40%;
+    font-family: var(--font-bree-serif);
   }
 
   code {
@@ -22,7 +23,7 @@
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-fugaz-one);
+    font-family: var(--font-bree-serif);
   }
 
   .transition-discrete {

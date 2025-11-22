@@ -2,6 +2,8 @@
 
 import React, { JSX, useCallback, useEffect, useRef } from "react";
 
+import ColorCycler from "../color-cycler";
+
 interface ClickSparkProps {
   sparkColor?: string;
   sparkSize?: number;
@@ -22,7 +24,7 @@ interface Spark {
 
 /** @see {@link https://www.reactbits.dev/animations/click-spark} */
 export default function ClickSpark({
-  sparkColor = "white",
+  sparkColor = "currentColor",
   sparkSize = 10,
   sparkRadius = 15,
   sparkCount = 8,
@@ -32,6 +34,7 @@ export default function ClickSpark({
   children,
 }: ClickSparkProps): JSX.Element {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const parentRef = useRef<HTMLDivElement>(null);
   const sparksRef = useRef<Spark[]>([]);
   const startTimeRef = useRef<number | null>(null);
 
@@ -41,7 +44,7 @@ export default function ClickSpark({
       return;
     }
 
-    const parent = canvas.parentElement;
+    const parent = parentRef.current;
     if (!parent) {
       return;
     }
@@ -180,15 +183,21 @@ export default function ClickSpark({
 
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-    <div className="relative" onClick={handleClick}>
+    <div className="relative" onClick={handleClick} ref={parentRef}>
       {children}
-      <canvas
-        ref={canvasRef}
-        className="pointer-events-none absolute inset-0"
-        style={{
-          color: sparkColor,
-        }}
-      />
+      <ColorCycler>
+        <div
+          className="contents"
+          style={{
+            color: sparkColor,
+          }}
+        >
+          <canvas
+            ref={canvasRef}
+            className="pointer-events-none absolute inset-0 text-primary"
+          />
+        </div>
+      </ColorCycler>
     </div>
   );
 }

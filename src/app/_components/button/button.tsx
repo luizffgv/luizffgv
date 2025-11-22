@@ -10,7 +10,7 @@ import Modal from "@components/modal";
 import { Variant } from "./types";
 
 const buttonCva = cva(
-  "flex flex-row items-center justify-center gap-2 rounded-lg transition-all",
+  "flex flex-row items-center justify-center gap-2 font-bold transition-all",
   {
     variants: {
       icon: {
@@ -19,7 +19,7 @@ const buttonCva = cva(
       },
       variant: {
         primary:
-          "bg-bg-button text-primary backdrop-blur-md hover:bg-primary hover:text-fg-on-primary",
+          "border-border-button border-2 bg-bg-button text-primary backdrop-blur-md hover:bg-primary/15",
         danger: "bg-danger text-fg-on-primary",
       } satisfies Record<Variant, string>,
     },

@@ -1,21 +1,18 @@
 import type { Metadata } from "next";
-import { Fugaz_One, Lexend, Share_Tech_Mono } from "next/font/google";
+import { Bree_Serif, Share_Tech_Mono } from "next/font/google";
 import { JSX } from "react";
 
 import ClickSpark from "./_components/click-spark";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
+import { ReactBitsNoise } from "./_components/react-bits-noise";
 import ReactScan from "./_components/react-scan";
 import "./globals.css";
 
-const lexend = Lexend({
-  subsets: ["latin"],
-});
-
-const fugazOne = Fugaz_One({
+const breeSerif = Bree_Serif({
   subsets: ["latin"],
   weight: ["400"],
-  variable: "--font-fugaz-one",
+  variable: "--font-bree-serif",
 });
 
 const shareTechMono = Share_Tech_Mono({
@@ -41,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${lexend.className} ${fugazOne.variable} ${shareTechMono.variable} scroll-smooth`}
+      className={`${breeSerif.variable} ${shareTechMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
@@ -79,12 +76,15 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
         ></script>
       </head>
       <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
-        <ClickSpark sparkColor="hsl(var(--color-primary), 1)">
+        <ClickSpark>
           <ReactScan />
           <div className="isolate z-[1]">
             <Header></Header>
             <div className="min-h-screen">{children}</div>
             <Footer></Footer>
+          </div>
+          <div className="pointer-events-none fixed inset-0 opacity-50 dark:opacity-25">
+            <ReactBitsNoise />
           </div>
         </ClickSpark>
       </body>

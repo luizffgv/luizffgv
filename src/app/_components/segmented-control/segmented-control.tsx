@@ -1,11 +1,11 @@
 "use client";
 
 import { cva } from "class-variance-authority";
-import { motion, useSpring, useTransform } from "framer-motion";
-import { JSX, ReactNode, useEffect, useId, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { JSX, ReactNode, useId, useRef } from "react";
 
 const segmentedControlOptionCva = cva(
-  "flex select-none items-center justify-center rounded-full px-3 py-2 text-base font-medium transition-all",
+  "relative flex select-none items-center justify-center rounded-full px-3 py-2 text-base font-bold transition-all",
   {
     variants: {
       active: {
@@ -17,16 +17,10 @@ const segmentedControlOptionCva = cva(
 );
 
 const segmentedControlCva = cva(
-  "relative inline-flex items-center gap-4 rounded-full bg-bg-button px-1 text-sm transition-all",
+  "relative inline-flex items-center gap-4 bg-bg-button text-sm transition-all",
 );
 
-const segmentedControlBackgroundContainerCva = cva(
-  "pointer-events-none absolute z-[-1] h-[calc(100%_-_8px)]",
-);
-
-const segmentedControlBackgroundCva = cva(
-  "h-full w-full rounded-full bg-primary",
-);
+const segmentedControlBackgroundCva = cva("absolute inset-0 z-[-1] bg-primary");
 
 interface SegmentedControlLabelRendererProps {
   isActive: boolean;
@@ -55,56 +49,11 @@ export default function SegmentedControl({
   name,
 }: SegmentedControlProps): JSX.Element {
   const groupRef = useRef<HTMLDivElement>(null);
-  const backgroundRef = useRef<HTMLDivElement>(null);
-  const fallbackName = useId();
-  const groupName = name ?? `segmented-control-${fallbackName}`;
-  const [targetWidth, setTargetWidth] = useState(0);
-
-  const x = useSpring(0, {
-    bounce: 1 / 3,
-  });
-  const xWithUnit = useTransform(x, (latest) => `${latest}px`);
-  const scale = useTransform(
-    x,
-    () =>
-      `${1 + Math.abs(x.getVelocity() / 2000)}, ${1 + Math.abs(x.getVelocity()) / 4000}`,
-  );
-
-  useEffect(() => {
-    const groupElement = groupRef.current;
-    if (!groupElement) {
-      return;
-    }
-
-    const checkedElement = groupElement.querySelector(
-      "label:has(input:checked)",
-    );
-    if (!(checkedElement instanceof HTMLElement)) {
-      return;
-    }
-
-    const offsetLeft = checkedElement.offsetLeft;
-    const { offsetWidth: width } = checkedElement;
-
-    x.set(offsetLeft);
-    setTargetWidth(width);
-  }, [x, options, value]);
+  const id = useId();
+  const groupName = name ?? `${id}-segmented-control`;
 
   return (
     <div role="radiogroup" className={segmentedControlCva()} ref={groupRef}>
-      <motion.div
-        className={segmentedControlBackgroundContainerCva()}
-        ref={backgroundRef}
-        style={{
-          left: xWithUnit,
-          scale,
-        }}
-        animate={{
-          width: targetWidth,
-        }}
-      >
-        <div className={segmentedControlBackgroundCva()} />
-      </motion.div>
       {options.map(({ value: optionValue, label }) => {
         const isActive = optionValue === value;
 
@@ -115,6 +64,16 @@ export default function SegmentedControl({
               active: isActive,
             })}
           >
+            {isActive && (
+              <motion.div
+                className={segmentedControlBackgroundCva()}
+                layoutId={`${id}-selected-background`}
+                transition={{
+                  type: "spring",
+                  duration: 0.5,
+                }}
+              />
+            )}
             <input
               type="radio"
               className="sr-only"

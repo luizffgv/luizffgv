@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  JSX,
-  Suspense,
-  useCallback,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { JSX, Suspense, useCallback, useState } from "react";
 
 import ProjectsList from "@/app/projetos/_components/projects-list";
 import {
@@ -28,22 +21,6 @@ export default function ProjectsSection(): JSX.Element {
     setFilter(() => filter);
   }, []);
 
-  const projectsListRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    if (projectsListRef.current == null) {
-      console.error("projectsListRef.current is null");
-      return;
-    }
-
-    new Animation(
-      new KeyframeEffect(projectsListRef.current, [{ opacity: 0 }, {}], {
-        duration: 500,
-        easing: "ease",
-      }),
-    ).play();
-  }, [filter]);
-
   return (
     <div className="pt-[10vh]">
       <ProjectFilterContext.Provider
@@ -53,10 +30,7 @@ export default function ProjectsSection(): JSX.Element {
         }}
       >
         <div className="flex flex-col items-center gap-32">
-          <div
-            ref={projectsListRef}
-            className="w-full max-w-screen-2xl px-4 pb-[100vh]"
-          >
+          <div className="w-full max-w-screen-2xl px-4 pb-[100vh]">
             <ProjectsList />
           </div>
         </div>

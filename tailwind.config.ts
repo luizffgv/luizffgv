@@ -13,7 +13,9 @@ const config: Config = {
         "bg-dark": "#0a0a0a",
         "bg-close": "#ffffff",
         "bg-close-dark": "#0e0e0e",
-        "bg-button": "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
+        "bg-button": "transparent",
+        "border-button":
+          "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
         "bg-checkbox-unchecked":
           "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
         fg: "#1f273a",

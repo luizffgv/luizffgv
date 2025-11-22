@@ -6,6 +6,7 @@ import {
   LayoutGroup,
   motion,
   useScroll,
+  useTime,
   useTransform,
 } from "framer-motion";
 import {
@@ -53,20 +54,41 @@ export default function Hero(): JSX.Element {
     };
   }, [switchVisibleIcon]);
 
+  const time = useTime();
+
+  const rotationA = useTransform(time, (time) => `${time / 100 - 12}deg`);
+  const rotationB = useTransform(time, (time) => `-${time / 50 + 45}deg`);
+  const rotationC = useTransform(time, (time) => `${time / 100}deg`);
+
   return (
     <div
-      className="sm:min-h-auto relative isolate flex min-h-screen flex-col items-center justify-center gap-32 overflow-x-hidden bg-white py-64 transition-colors dark:bg-black dark:text-fg-on-primary"
+      className="sm:min-h-auto relative isolate flex min-h-screen flex-col items-center justify-center gap-32 overflow-x-hidden py-6 transition-colors dark:text-fg-on-primary"
       ref={containerRef}
     >
-      <div className="absolute h-[200px] w-[800px] rotate-12">
-        <RotatingColors colors={["cyan", "magenta", "cyan", "white"]} />
-      </div>
-      <div className="absolute h-[800px] w-[200px] rotate-45">
-        <RotatingColors
-          blur="125px"
-          colors={["cyan", "magenta", "cyan", "white"]}
-        />
-      </div>
+      <motion.div
+        className="absolute h-[200px] w-[800px]"
+        style={{
+          rotate: rotationA,
+        }}
+      >
+        <RotatingColors blur="125px" colors={["cyan", "magenta", "white"]} />
+      </motion.div>
+      <motion.div
+        className="absolute h-[800px] w-[200px]"
+        style={{
+          rotate: rotationB,
+        }}
+      >
+        <RotatingColors blur="125px" colors={["cyan", "magenta", "black"]} />
+      </motion.div>
+      <motion.div
+        className="absolute h-[800px] w-[200px]"
+        style={{
+          rotate: rotationC,
+        }}
+      >
+        <RotatingColors blur="125px" colors={["cyan", "magenta", "white"]} />
+      </motion.div>
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <AnimatePresence mode="wait">
           {visibleIcon === "code" && (
