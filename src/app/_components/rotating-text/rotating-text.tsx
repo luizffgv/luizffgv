@@ -15,7 +15,7 @@ export default function RotatingText({
       <LayoutGroup>
         <motion.span layout>
           <ReactBitsRotatingText
-            className="absolute inset-0 w-fit rounded-md bg-bg-close-dark/50 px-2 text-fg-dark transition-colors dark:bg-bg-close/50 dark:text-fg"
+            className="absolute inset-0 w-fit bg-bg-close-dark/50 px-2 text-fg-dark transition-colors dark:bg-bg-close/50 dark:text-fg"
             rotationInterval={2e3}
             texts={texts}
             transition={{

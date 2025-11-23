@@ -14,6 +14,10 @@ const config: Config = {
         "bg-close": "#ffffff",
         "bg-close-dark": "#0e0e0e",
         "bg-button": "transparent",
+        "bg-segmented-control": "theme(colors.bg-close)",
+        "bg-segmented-control-dark": "theme(colors.bg-close-dark)",
+        "border-segmented-control":
+          "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
         "border-button":
           "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
         "bg-checkbox-unchecked":

@@ -1,9 +1,4 @@
-import {
-  BriefcaseBusinessIcon,
-  CircleHelpIcon,
-  HeartIcon,
-  PencilIcon,
-} from "lucide-react";
+import { PencilIcon } from "lucide-react";
 import { JSX } from "react";
 
 import ColorCycler from "../color-cycler";
@@ -27,7 +22,10 @@ export default function Trajectory(): JSX.Element {
             <Timeline.Entry
               auxiliaryText="Você decide"
               customDot={
-                <CircleHelpIcon className="text-primary" strokeWidth={2.5} />
+                <div className="relative h-6 w-6">
+                  <div className="absolute inset-0 rotate-45 border-4 border-primary" />
+                  <div className="absolute inset-2 rotate-45 bg-primary" />
+                </div>
               }
               subtitle={
                 <>
@@ -55,10 +53,7 @@ export default function Trajectory(): JSX.Element {
             <Timeline.Entry
               auxiliaryText="Maio 2025"
               customDot={
-                <BriefcaseBusinessIcon
-                  className="text-primary"
-                  fill="currentColor"
-                />
+                <div className="h-6 w-6 rotate-45 border-4 border-primary" />
               }
               subtitle="Zenvia"
               title="Desenvolvedor júnior"
@@ -74,10 +69,7 @@ export default function Trajectory(): JSX.Element {
             <Timeline.Entry
               auxiliaryText="Maio 2024"
               customDot={
-                <BriefcaseBusinessIcon
-                  className="text-primary"
-                  fill="currentColor"
-                />
+                <div className="h-6 w-6 rotate-45 rounded-md border-4 border-primary" />
               }
               subtitle="Zenvia"
               title="Assistente de desenvolvimento"
@@ -101,7 +93,7 @@ export default function Trajectory(): JSX.Element {
             <Timeline.Entry
               auxiliaryText="2020"
               customDot={
-                <HeartIcon className="text-primary" fill="currentColor" />
+                <div className="h-6 w-6 rotate-45 rounded-full border-4 border-primary" />
               }
               title="Meu primeiro Hello World"
             ></Timeline.Entry>

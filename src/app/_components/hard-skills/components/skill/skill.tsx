@@ -4,11 +4,11 @@ import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
 import { JSX } from "react";
 
-const lineCva = cva("h-2 rounded-full", {
+const lineCva = cva("", {
   variants: {
     isShort: {
-      true: "bg-primary",
-      false: "bg-hr dark:bg-hr-dark",
+      true: "h-2 bg-primary",
+      false: "h-1 bg-hr dark:bg-hr-dark",
     },
   },
 });

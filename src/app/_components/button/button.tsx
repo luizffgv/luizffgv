@@ -19,7 +19,7 @@ const buttonCva = cva(
       },
       variant: {
         primary:
-          "border-border-button border-2 bg-bg-button text-primary backdrop-blur-md hover:bg-primary/15",
+          "border-2 border-border-button bg-bg-button text-primary hover:bg-primary/15",
         danger: "bg-danger text-fg-on-primary",
       } satisfies Record<Variant, string>,
     },

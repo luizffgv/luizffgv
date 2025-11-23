@@ -34,20 +34,20 @@ export default function Entry({
       <div className="flex flex-col items-center gap-2">
         <div
           className={clsx(
-            "w-2 grow rounded-b-full bg-timeline-line transition-colors dark:bg-timeline-line-dark",
+            "w-2 grow bg-timeline-line transition-colors dark:bg-timeline-line-dark",
             styles["line-end"],
           )}
         ></div>
         <div>
           {customDot == null ? (
-            <div className="h-6 w-6 rounded-full bg-primary" />
+            <div className="h-6 w-6 bg-primary" />
           ) : (
             customDot
           )}
         </div>
         <div
           className={clsx(
-            "w-2 grow rounded-t-full bg-timeline-line transition-colors dark:bg-timeline-line-dark",
+            "w-2 grow bg-timeline-line transition-colors dark:bg-timeline-line-dark",
             styles["line-start"],
           )}
         ></div>

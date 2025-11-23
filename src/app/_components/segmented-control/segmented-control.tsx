@@ -5,22 +5,26 @@ import { motion } from "framer-motion";
 import { JSX, ReactNode, useId, useRef } from "react";
 
 const segmentedControlOptionCva = cva(
-  "relative flex select-none items-center justify-center rounded-full px-3 py-2 text-base font-bold transition-all",
+  "relative flex select-none items-center justify-center px-8 py-2 text-base font-bold transition-all",
   {
     variants: {
       active: {
         true: "text-fg-on-primary dark:text-inherit",
-        false: "cursor-pointer text-primary",
+        false: "cursor-pointer text-primary hover:bg-primary/15",
       },
     },
   },
 );
 
 const segmentedControlCva = cva(
-  "relative inline-flex items-center gap-4 bg-bg-button text-sm transition-all",
+  "relative inline-flex items-center text-sm transition-all",
 );
 
-const segmentedControlBackgroundCva = cva("absolute inset-0 z-[-1] bg-primary");
+const segmentedControlBgCva = cva(
+  "bg-bg-segmented-control dark:bg-bg-segmented-control-dark border-border-segmented-control absolute inset-0 z-[-1] border-2",
+);
+
+const segmentedControlHighlightCva = cva("absolute inset-0 z-[-1] bg-primary");
 
 interface SegmentedControlLabelRendererProps {
   isActive: boolean;
@@ -54,6 +58,7 @@ export default function SegmentedControl({
 
   return (
     <div role="radiogroup" className={segmentedControlCva()} ref={groupRef}>
+      <div className={segmentedControlBgCva()} />
       {options.map(({ value: optionValue, label }) => {
         const isActive = optionValue === value;
 
@@ -66,7 +71,7 @@ export default function SegmentedControl({
           >
             {isActive && (
               <motion.div
-                className={segmentedControlBackgroundCva()}
+                className={segmentedControlHighlightCva()}
                 layoutId={`${id}-selected-background`}
                 transition={{
                   type: "spring",
