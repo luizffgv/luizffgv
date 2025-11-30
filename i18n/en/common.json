@@ -1,0 +1,83 @@
+{
+  "companies": {
+    "zenvia": "Zenvia"
+  },
+  "footer": {
+    "content": "Made with <Heart/>, over 250 commits and many redesigns and frameworks since 2021."
+  },
+  "hard-skills": {
+    "git": {
+      "description": "<p>I have experience with Git, in <strong>minimizing diffs</strong> and <strong>rewriting history</strong>, working comfortably in flows that prioritize <strong>rebases</strong>, <strong>merge commits</strong>, and/or <strong>squashes</strong>.</p>",
+      "title": "$t(tools.git)"
+    },
+    "npm-publishing": {
+      "description": "<p>I have professional experience with <strong>creating</strong>, <strong>publishing</strong>, and <strong>maintaining</strong> NPM packages, including <strong>type declarations</strong>, <strong>JSDoc documentation</strong>, <strong>release automation</strong>, and support for <strong>tree-shaking</strong>.</p>",
+      "title": "NPM Publishing"
+    },
+    "react": {
+      "description": "<p>I understand how <strong>rendering</strong> and <strong>reconciliation</strong> work, and I build reusable and efficient components that reduce the number of required renders.</p><p>I have experience with various React libraries, such as <strong>React Redux</strong>, <strong>Redux-Saga</strong>, <strong>TanStack Query</strong>, and <strong>React Hook Form</strong>.</p>",
+      "title": "$t(tools.react)"
+    },
+    "single-spa": {
+      "description": "<p>I have experience with <strong>single-spa</strong> and the creation of <strong>applications</strong> and <strong>parcels</strong>.</p>",
+      "title": "$t(tools.single-spa)"
+    },
+    "title": "My <1>hard skills</1>",
+    "typescript": {
+      "description": "<p>I have experience with TypeScript in the areas of <strong>type safety</strong> and <strong>ergonomics</strong>, implementing solutions that balance these factors to increase development agility and reduce the incidence of bugs.</p><p>I am comfortable with concepts such as <strong>structural typing</strong>, <strong>set theory</strong> as applied to types, <strong>covariance</strong> and <strong>contravariance</strong>, <strong>generic types</strong>, and <strong>type inference</strong>.</p>",
+      "title": "$t(tools.typescript)"
+    }
+  },
+  "hero": {
+    "subtitle": "<0>I'm a web developer focused on </0><RotatingText/>",
+    "subtitle-label": "I'm a web developer focused on Node.js, React and TypeScript",
+    "title": "Hi, my name is Luiz"
+  },
+  "language-switcher": {
+    "switch": "Switch language"
+  },
+  "my-github": {
+    "links": {
+      "my-github": "My GitHub",
+      "my-npm-packages": "My NPM packages"
+    },
+    "subtitle": "I have many open source projects and NPM packages",
+    "title": "Take a look at my <Link>GitHub</Link>"
+  },
+  "roles": {
+    "development-assistant": "Development assistant",
+    "junior-developer": "Junior developer"
+  },
+  "sections": {
+    "home": "Home",
+    "projects": "Projects"
+  },
+  "theme-switcher": {
+    "switch": "Switch theme"
+  },
+  "tools": {
+    "git": "Git",
+    "node-js": "Node.js",
+    "react": "React",
+    "single-spa": "single-spa",
+    "typescript": "TypeScript"
+  },
+  "trajectory": {
+    "dates": {
+      "2020": "2020",
+      "2024-05": "May 2024",
+      "2025-05": "May 2025"
+    },
+    "details": {
+      "assistant-maintenance": "Performed maintenance on web applications using ASP.NET, Next.js, single-spa, and Vite",
+      "mfe-i18n": "Implemented internationalization in a microfrontend application",
+      "react-component-library": "Developed a React component package (ESM and CJS) using Class Variance Authority, Jest, and CSS Modules, following a design system, with support for tree-shaking and type declarations"
+    },
+    "first-hello-world": "My first Hello World",
+    "my-role": "myRole",
+    "title": "My <1>trajectory</1>",
+    "writing": "Writing...",
+    "you-decide": "It's up to you",
+    "your-team": "yourTeam"
+  }
+}

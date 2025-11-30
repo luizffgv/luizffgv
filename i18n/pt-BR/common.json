@@ -1,0 +1,83 @@
+{
+  "companies": {
+    "zenvia": "Zenvia"
+  },
+  "footer": {
+    "content": "Feito com <Heart/>, mais de 250 commits, vários redesigns e vários frameworks desde 2021."
+  },
+  "hard-skills": {
+    "git": {
+      "description": "<p>Tenho experiência com Git, em <strong>minimizar diffs</strong> e <strong>reescrever histórico</strong>, trabalhando confortavelmente tanto em fluxos que priorizam <strong>rebases</strong>, <strong>merge commits</strong>, e/ou <strong>squashes</strong>.</p>",
+      "title": "$t(tools.git)"
+    },
+    "npm-publishing": {
+      "description": "<p>Tenho experiência profissional com <strong>criação</strong>, <strong>publicação</strong> e <strong>manutenção</strong> de pacotes NPM, incluindo <strong>declarações de tipos</strong>, <strong>documentação JSDoc</strong>, <strong>automação de releases</strong> e suporte a <strong>tree-shaking</strong>.</p>",
+      "title": "Publicação NPM"
+    },
+    "react": {
+      "description": "<p>Eu sei como funciona a <strong>renderização</strong> e <strong>reconciliação</strong>, crio componentes reutilizáveis e eficientes, reduzindo a quantidade de renderizações necessárias.</p><p> Tenho experiênca com várias bibliotecas React, como <strong>React Redux</strong>, <strong>Redux-Saga</strong>, <strong>TanStack Query</strong> e <strong>React Hook Form</strong>.</p>",
+      "title": "$t(tools.react)"
+    },
+    "single-spa": {
+      "description": "<p>Tenho experiência com <strong>single-spa</strong> e criação de <strong>applications</strong> e <strong>parcels</strong>.</p>",
+      "title": "$t(tools.single-spa)"
+    },
+    "title": "Minhas <1>hard skils</1>",
+    "typescript": {
+      "description": "<p>Tenho experiência com TypeScript nos âmbitos de <strong>segurança</strong> e <strong>ergonomia</strong>, implementando soluções que equilibram esses fatores para aumentar a agilidade e reduzir a incidência de bugs.</p><p>Sou confortável com os conceitos de <strong>tipagem estrutural</strong>, <strong>teoria dos conjuntos</strong> em relação a tipos, <strong>covariância</strong> e <strong>contravariância</strong>, <strong>tipos genéricos</strong> e <strong>inferência de tipos</strong>.</p>",
+      "title": "$t(tools.typescript)"
+    }
+  },
+  "hero": {
+    "subtitle": "<0>Eu sou um desenvolvedor focado em </0><RotatingText/>",
+    "subtitle-label": "Eu sou um desenvolvedor focado em Node.js, React e TypeScript",
+    "title": "Olá, meu nome é Luiz"
+  },
+  "language-switcher": {
+    "switch": "Mudar linguagem"
+  },
+  "my-github": {
+    "links": {
+      "my-github": "Meu GitHub",
+      "my-npm-packages": "Meus pacotes NPM"
+    },
+    "subtitle": "Eu tenho vários projetos open source e alguns pacotes NPM",
+    "title": "Dê uma olhada em meu <Link>GitHub</Link>"
+  },
+  "roles": {
+    "development-assistant": "Assistente de desenvolvimento",
+    "junior-developer": "Desenvolvedor júnior"
+  },
+  "sections": {
+    "home": "Início",
+    "projects": "Projetos"
+  },
+  "theme-switcher": {
+    "switch": "Mudar tema"
+  },
+  "tools": {
+    "git": "Git",
+    "node-js": "Node.js",
+    "react": "React",
+    "single-spa": "single-spa",
+    "typescript": "TypeScript"
+  },
+  "trajectory": {
+    "dates": {
+      "2020": "2020",
+      "2024-05": "Maio 2024",
+      "2025-05": "Maio 2025"
+    },
+    "details": {
+      "assistant-maintenance": "Realizei manutenção de aplicações web com ASP.NET, Next.js, single-spa e Vite",
+      "mfe-i18n": "Implementei internacionalização em uma aplicação de microfrontends",
+      "react-component-library": "Desenvolvi um pacote de componentes React ESM e CJS com Class Variance Authority, Jest e CSS Modules, seguindo um design system, com suporte a tree-shaking e declarações de tipos"
+    },
+    "first-hello-world": "Meu primeiro Hello World",
+    "my-role": "meuPapel",
+    "title": "Minha <1>trajetória</1>",
+    "writing": "Escrevendo...",
+    "you-decide": "Você decide",
+    "your-team": "suaEquipe"
+  }
+}
