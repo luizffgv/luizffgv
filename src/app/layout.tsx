@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Bree_Serif, Share_Tech_Mono } from "next/font/google";
-import { JSX } from "react";
+import { JSX, Suspense } from "react";
 
 import ClickSpark from "./_components/click-spark";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
+import InitI18Next from "./_components/init-i18next";
 import { ReactBitsNoise } from "./_components/react-bits-noise";
 import ReactScan from "./_components/react-scan";
 import "./globals.css";
@@ -70,17 +71,23 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
         ></script>
       </head>
       <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
-        <ClickSpark>
-          <ReactScan />
-          <div className="isolate z-[1]">
-            <Header></Header>
-            <div className="min-h-screen">{children}</div>
-            <Footer></Footer>
-          </div>
-          <div className="pointer-events-none fixed inset-0 opacity-50 dark:opacity-25">
-            <ReactBitsNoise />
-          </div>
-        </ClickSpark>
+        <InitI18Next>
+          <ClickSpark>
+            <ReactScan />
+            <div className="isolate z-[1]">
+              <Suspense>
+                <Header />
+              </Suspense>
+              <div className="min-h-screen">{children}</div>
+              <Suspense>
+                <Footer />
+              </Suspense>
+            </div>
+            <div className="pointer-events-none fixed inset-0 opacity-50 dark:opacity-25">
+              <ReactBitsNoise />
+            </div>
+          </ClickSpark>
+        </InitI18Next>
       </body>
     </html>
   );

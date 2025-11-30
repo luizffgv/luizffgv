@@ -16,6 +16,10 @@
     font-family: var(--font-bree-serif);
   }
 
+  ::selection {
+    background: hsl(var(--color-primary), 0.25);
+  }
+
   code {
     font-family: var(--font-share-tech-mono);
   }

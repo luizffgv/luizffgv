@@ -3,7 +3,6 @@
 import { useToggle } from "@mantine/hooks";
 import {
   AnimatePresence,
-  LayoutGroup,
   motion,
   useScroll,
   useTime,
@@ -15,13 +14,11 @@ import {
   CodeXmlIcon,
   TerminalIcon,
 } from "lucide-react";
-import { JSX, useEffect, useRef } from "react";
+import { JSX, Suspense, useEffect, useRef } from "react";
 
-import ColorCycler from "../color-cycler";
-import LayeredText from "../layered-text";
 import RotatingColors from "../rotating-colors";
-import RotatingText from "../rotating-text";
 import Icon from "./components/icon";
+import Text from "./components/text";
 
 export default function Hero(): JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,7 +60,7 @@ export default function Hero(): JSX.Element {
 
   return (
     <div
-      className="sm:min-h-auto relative isolate flex min-h-screen flex-col items-center justify-center gap-32 overflow-x-hidden py-6 transition-colors dark:text-fg-on-primary"
+      className="sm:min-h-auto relative isolate flex min-h-screen flex-col items-center justify-center gap-32 overflow-hidden py-6 transition-colors dark:text-fg-on-primary"
       ref={containerRef}
     >
       <motion.div
@@ -115,24 +112,9 @@ export default function Hero(): JSX.Element {
         </AnimatePresence>
       </div>
       <div className="z-[1] flex flex-col gap-2 px-8">
-        <h1 className="gap-5 text-center text-3xl font-bold text-fg-on-primary sm:text-5xl">
-          <ColorCycler>
-            <LayeredText depth="16px" layers={16} perspective="800px">
-              Olá, meu nome é Luiz
-            </LayeredText>
-          </ColorCycler>
-        </h1>
-        <LayoutGroup>
-          <p
-            className="text-center text-xl font-medium"
-            aria-label="Eu sou um desenvolvedor focado em Node.js, React e TypeScript"
-          >
-            <span aria-hidden>Eu sou um desenvolvedor focado em</span>{" "}
-            <motion.span aria-hidden className="inline-block " layout>
-              <RotatingText texts={["Node.js", "React", "TypeScript"]} />
-            </motion.span>
-          </p>
-        </LayoutGroup>
+        <Suspense>
+          <Text />
+        </Suspense>
       </div>
       <motion.div
         className="absolute inset-0"

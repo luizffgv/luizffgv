@@ -2,13 +2,16 @@
 
 import { SunMoonIcon } from "lucide-react";
 import { JSX } from "react";
+import { useTranslation } from "react-i18next";
 
 import Button from "@components/button";
 
 export default function ThemeSwitcher(): JSX.Element {
+  const { t } = useTranslation();
+
   return (
     <Button
-      aria-label="Mudar tema"
+      aria-label={t("theme-switcher.switch")}
       onClick={() => {
         localStorage.setItem(
           "theme-dark",
@@ -17,7 +20,7 @@ export default function ThemeSwitcher(): JSX.Element {
       }}
     >
       <SunMoonIcon />
-      <span className="hidden sm:inline">Mudar tema</span>
+      <span className="hidden sm:inline">{t("theme-switcher.switch")}</span>
     </Button>
   );
 }

@@ -34,7 +34,7 @@ export default function Entry({
       <div className="flex flex-col items-center gap-2">
         <div
           className={clsx(
-            "w-2 grow bg-timeline-line transition-colors dark:bg-timeline-line-dark",
+            "w-2 grow bg-gradient-to-t from-transparent to-timeline-line transition-colors dark:to-timeline-line-dark",
             styles["line-end"],
           )}
         ></div>
@@ -47,7 +47,7 @@ export default function Entry({
         </div>
         <div
           className={clsx(
-            "w-2 grow bg-timeline-line transition-colors dark:bg-timeline-line-dark",
+            "w-2 grow bg-gradient-to-b from-transparent to-timeline-line transition-colors dark:to-timeline-line-dark",
             styles["line-start"],
           )}
         ></div>

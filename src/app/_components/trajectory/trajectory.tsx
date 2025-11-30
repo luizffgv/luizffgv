@@ -1,5 +1,8 @@
+"use client";
+
 import { PencilIcon } from "lucide-react";
 import { JSX } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 import ColorCycler from "../color-cycler";
 import GlowingText from "../glowing-text";
@@ -7,20 +10,22 @@ import Timeline from "../timeline";
 import TitledSection from "../titled-section";
 
 export default function Trajectory(): JSX.Element {
+  const { t } = useTranslation();
+
   return (
     <ColorCycler offset={270}>
       <TitledSection
         level={2}
         title={
-          <>
+          <Trans t={t} i18nKey="trajectory.title">
             Minha <GlowingText>trajetória</GlowingText>
-          </>
+          </Trans>
         }
       >
         <div className="max-w-[90vw]">
           <Timeline.Root>
             <Timeline.Entry
-              auxiliaryText="Você decide"
+              auxiliaryText={t("trajectory.you-decide")}
               customDot={
                 <div className="relative h-6 w-6">
                   <div className="absolute inset-0 rotate-45 border-4 border-primary" />
@@ -32,7 +37,7 @@ export default function Trajectory(): JSX.Element {
                   <span className="text-gray-400 transition-colors dark:text-gray-800">
                     {"${"}
                   </span>
-                  suaEquipe
+                  {t("trajectory.your-team")}
                   <span className="text-gray-400 transition-colors dark:text-gray-800">
                     {"}"}
                   </span>
@@ -43,7 +48,7 @@ export default function Trajectory(): JSX.Element {
                   <span className="text-gray-400 transition-colors dark:text-gray-800">
                     {"${"}
                   </span>
-                  meuCargo
+                  {t("trajectory.my-role")}
                   <span className="text-gray-400 transition-colors dark:text-gray-800">
                     {"}"}
                   </span>
@@ -51,51 +56,41 @@ export default function Trajectory(): JSX.Element {
               }
             ></Timeline.Entry>
             <Timeline.Entry
-              auxiliaryText="Maio 2025"
+              auxiliaryText={t("trajectory.dates.2025-05")}
               customDot={
                 <div className="h-6 w-6 rotate-45 border-4 border-primary" />
               }
-              subtitle="Zenvia"
-              title="Desenvolvedor júnior"
+              subtitle={t("companies.zenvia")}
+              title={t("roles.junior-developer")}
             >
               <div className="text-primary">
                 <PencilIcon
                   className="mr-2 inline h-4 w-4"
                   fill="currentColor"
                 />{" "}
-                <span className="font-bold">Escrevendo...</span>
+                <span className="font-bold">{t("trajectory.writing")}</span>
               </div>
             </Timeline.Entry>
             <Timeline.Entry
-              auxiliaryText="Maio 2024"
+              auxiliaryText={t("trajectory.dates.2024-05")}
               customDot={
                 <div className="h-6 w-6 rotate-45 rounded-md border-4 border-primary" />
               }
-              subtitle="Zenvia"
-              title="Assistente de desenvolvimento"
+              subtitle={t("companies.zenvia")}
+              title={t("roles.development-assistant")}
             >
-              <p>
-                Desenvolvi um pacote de componentes React ESM e CJS com Class
-                Variance Authority, Jest e CSS Modules, seguindo um design
-                system, com suporte a tree-shaking e declarações de tipos
-              </p>
+              <p>{t("trajectory.details.react-component-library")}</p>
               <br />
-              <p>
-                Implementei internacionalização em uma aplicação de
-                microfrontends
-              </p>
+              <p>{t("trajectory.details.mfe-i18n")}</p>
               <br />
-              <p>
-                Realizei manutenção de aplicações web com ASP.NET, Next.js,
-                single-spa e Vite
-              </p>
+              <p>{t("trajectory.details.assistant-maintenance")}</p>
             </Timeline.Entry>
             <Timeline.Entry
-              auxiliaryText="2020"
+              auxiliaryText={t("trajectory.dates.2020")}
               customDot={
                 <div className="h-6 w-6 rotate-45 rounded-full border-4 border-primary" />
               }
-              title="Meu primeiro Hello World"
+              title={t("trajectory.first-hello-world")}
             ></Timeline.Entry>
           </Timeline.Root>
         </div>

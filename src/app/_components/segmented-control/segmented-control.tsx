@@ -21,7 +21,7 @@ const segmentedControlCva = cva(
 );
 
 const segmentedControlBgCva = cva(
-  "bg-bg-segmented-control dark:bg-bg-segmented-control-dark border-border-segmented-control absolute inset-0 z-[-1] border-2",
+  "absolute inset-0 z-[-1] border-2 border-border-segmented-control bg-bg-segmented-control dark:bg-bg-segmented-control-dark",
 );
 
 const segmentedControlHighlightCva = cva("absolute inset-0 z-[-1] bg-primary");
