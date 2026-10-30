@@ -1,6 +1,5 @@
 "use client";
 
-import { useMediaQuery } from "@mantine/hooks";
 import { cva } from "class-variance-authority";
 import { HomeIcon, WrenchIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
@@ -35,8 +34,6 @@ const HeaderImpl = memo(function HeaderImpl({
   const router = useRouter();
   const { t } = useTranslation();
 
-  const isMobile = useMediaQuery("(max-width: 512px)");
-
   const options = useMemo<SegmentedControlOption[]>(() => {
     const ENTRIES = [
       {
@@ -64,12 +61,13 @@ const HeaderImpl = memo(function HeaderImpl({
     return ENTRIES.map((entry) => ({
       label: ({ isActive }) => (
         <>
-          {entry.icon({ isActive })} {isMobile ? null : entry.name}
+          {entry.icon({ isActive })}{" "}
+          <span className="max-[512px]:hidden">{entry.name}</span>
         </>
       ),
       value: entry.href,
     }));
-  }, [isMobile, t]);
+  }, [t]);
 
   return (
     <header className={headerCva({ pinned: isVisible })}>

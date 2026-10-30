@@ -32,9 +32,8 @@ export default function GlassText({ text }: Props): JSX.Element {
       <svg className="absolute inset-0 size-full overflow-visible">
         <defs>
           <clipPath id={clipId}>
-            <text id={textId} ref={ref} y="0.9em">
-              {text}
-            </text>
+            {/* Empty until the scramble writes to it, so the text is not visible before it */}
+            <text id={textId} ref={ref} y="0.9em" />
           </clipPath>
         </defs>
         {/* Keeps the letters readable where there is little behind the glass */}
