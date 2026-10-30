@@ -202,28 +202,28 @@
       "2025-05": "Maio 2025"
     },
     "details": {
-      "assistant-maintenance": "Realizei manutenção de aplicações web com ASP.NET, Next.js, single-spa e Vite",
-      "frontend-monorepo": "Construí a base de um monorepo frontend, hoje usada por vários contribuidores",
-      "mfe-i18n": "Implementei internacionalização em uma aplicação de microfrontends",
-      "react-component-library": "Desenvolvi um pacote de componentes React ESM e CJS com Class Variance Authority, Jest e CSS Modules, seguindo um design system, com suporte a tree-shaking e declarações de tipos"
+      "frontend-monorepo": "Construí a base de um monorepo frontend, hoje usada por vários contribuidores"
     },
     "first-hello-world": "Meu primeiro Hello World",
     "my-role": "meuPapel",
-    "show-details": "Ver detalhes",
     "stats": {
       "builds": "Builds mais rápidas",
       "builds-detail": "ao eliminar ineficiências de configuração",
       "builds-value": ">40%",
       "components": "Componentes React",
-      "components-detail": "tree-shakable, com segurança de tipos e ergonomia",
+      "components-detail": "seguros em tipos e ergonômicos",
       "components-value": "40+",
       "js-load": "Carregamento do JS principal mais rápido",
       "js-load-detail": "com políticas de cache mais eficazes",
       "js-load-value": ">60%"
     },
     "tags": {
+      "agents": "Feito para agentes de IA",
       "architecture": "Arquitetura garantida",
-      "agents": "Feito para agentes de IA"
+      "component-library": "Biblioteca de componentes",
+      "i18n": "Internacionalização",
+      "maintenance": "Manutenção",
+      "microfrontends": "Microfrontends"
     },
     "title": "Minha <1>trajetória</1>",
     "writing": "Escrevendo...",
