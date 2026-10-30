@@ -211,7 +211,7 @@
       "builds-detail": "ao eliminar ineficiências de configuração",
       "builds-value": ">40%",
       "components": "componentes React",
-      "components-detail": "seguros em tipos e ergonômicos",
+      "components-detail": "focados em segurança de tipos e ergonomia",
       "components-value": "40+",
       "js-load": "menos tempo de carregamento do JS principal",
       "js-load-detail": "com políticas de cache mais eficazes",
