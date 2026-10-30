@@ -12,7 +12,7 @@ export default function Text(): JSX.Element {
   return (
     <>
       <h1 className="gap-5 text-center text-3xl font-bold text-fg-on-primary sm:text-5xl">
-        <ColorCycler>
+        <ColorCycler period={18}>
           <LayeredText depth="16px" layers={16} perspective="800px">
             {t("hero.title")}
           </LayeredText>
