@@ -39,12 +39,17 @@
   },
   "hard-skills": {
     "ai-assisted-development": {
-      "description": "<ul><li>Agent and subagent workflows, sequential and concurrent flows, and worktrees for parallel work</li><li>Skills and plugins, context optimization, and cost reduction</li><li>Tuning <strong>feedback loops</strong> so agents can verify their own work</li><li>Repository structure and automated guardrails that let <strong>parallel agents</strong> work with fewer obstacles</li></ul>",
+      "description": "<ul><li>Agent and subagent workflows, sequential and concurrent</li><li><strong>Worktrees</strong> for parallel work</li><li>Skills, plugins, context and cost optimization</li><li><strong>Feedback loops</strong> so agents verify their own work</li><li>Repositories built for <strong>parallel agents</strong></li></ul>",
       "shortcut": "AI",
       "title": "AI-assisted development"
     },
+    "build-performance": {
+      "description": "<ul><li><strong>Bundle optimization</strong> and <strong>bundle analysis</strong></li><li><strong>Caching policies</strong> for faster loads</li><li>Faster builds by removing configuration inefficiencies</li><li>Frontend tooling: <strong>Webpack</strong>, <strong>Rollup</strong>, <strong>Vite</strong></li></ul>",
+      "title": "Performance and tooling",
+      "shortcut": "Performance"
+    },
     "frontend-architecture": {
-      "description": "<ul><li><strong>Hexagonal architecture</strong> (ports and adapters) with strict boundaries</li><li>Acyclic dependency graph with rules <strong>automatically enforced</strong> by dependency-cruiser</li><li>Monorepos with <strong>pnpm</strong> workspaces and <strong>Turborepo</strong> task orchestration</li><li>Component libraries following a design system, with Class Variance Authority, CSS Modules, Jest, and multiple build modes (ESM and CJS)</li><li><strong>Build and load performance</strong>: removing configuration inefficiencies and applying effective caching policies</li></ul>",
+      "description": "<ul><li><strong>Hexagonal architecture</strong> with strict boundaries</li><li>Dependency rules <strong>enforced automatically</strong></li><li>Monorepos with <strong>pnpm</strong> and <strong>Turborepo</strong></li><li>Component libraries following a design system, in ESM and CJS</li></ul>",
       "shortcut": "Architecture",
       "title": "Frontend architecture and platform"
     },
@@ -54,23 +59,23 @@
       "title": "$t(tools.git)"
     },
     "npm-publishing": {
-      "description": "<ul><li>Creating, publishing, and maintaining NPM packages</li><li><strong>Type declarations</strong> and JSDoc documentation</li><li><strong>Release automation</strong> and tree-shaking support</li></ul>",
+      "description": "<ul><li>Creating, publishing, and maintaining packages</li><li><strong>Type declarations</strong> and JSDoc</li><li><strong>Release automation</strong> and tree-shaking</li></ul>",
       "shortcut": "NPM",
       "title": "NPM Publishing"
     },
     "react": {
-      "description": "<ul><li>Rendering and <strong>reconciliation</strong>, building reusable components that reduce unnecessary renders</li><li><strong>React 19</strong> patterns and <strong>React Compiler</strong></li><li>React Redux, Redux-Saga, <strong>TanStack Query</strong>, and React Hook Form</li></ul>",
+      "description": "<ul><li><strong>React 19</strong> patterns and <strong>React Compiler</strong></li><li>Reusable components that avoid unnecessary renders</li><li><strong>TanStack Query</strong>, React Redux, Redux-Saga, React Hook Form</li></ul>",
       "shortcut": "$t(tools.react)",
       "title": "$t(tools.react)"
     },
     "single-spa": {
-      "description": "<ul><li>Creating applications and <strong>parcels</strong></li><li>Adapting <strong>Next.js</strong> applications to single-spa with Webpack</li><li><strong>Internationalization</strong> in microfrontend applications</li></ul>",
+      "description": "<ul><li><strong>Applications</strong> and <strong>parcels</strong></li><li>Adapting <strong>Next.js</strong> apps with Webpack</li><li><strong>Internationalization</strong> across microfrontends</li></ul>",
       "shortcut": "$t(tools.single-spa)",
       "title": "$t(tools.single-spa)"
     },
     "title": "My <1>hard skills</1>",
     "typescript": {
-      "description": "<ul><li>Balancing <strong>type safety</strong> and ergonomics to increase agility and reduce bugs</li><li><strong>Structural typing</strong>, set theory applied to types, and covariance and contravariance</li><li>Generic types and type inference</li></ul>",
+      "description": "<ul><li><strong>Type safety</strong> balanced with ergonomics</li><li><strong>Structural typing</strong>, variance, generics, and inference</li></ul>",
       "shortcut": "$t(tools.typescript)",
       "title": "$t(tools.typescript)"
     }

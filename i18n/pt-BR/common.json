@@ -39,12 +39,17 @@
   },
   "hard-skills": {
     "ai-assisted-development": {
-      "description": "<ul><li>Fluxos com agentes e subagentes, fluxos sequenciais e concorrentes e worktrees para trabalho em paralelo</li><li>Skills e plugins, otimização de contexto e redução de custos</li><li>Ajuste de <strong>ciclos de feedback</strong> para que agentes verifiquem o próprio trabalho</li><li>Estrutura de repositório e proteções automáticas que permitem que <strong>agentes em paralelo</strong> trabalhem com menos obstáculos</li></ul>",
+      "description": "<ul><li>Fluxos com agentes e subagentes, sequenciais e concorrentes</li><li><strong>Worktrees</strong> para trabalho em paralelo</li><li>Skills, plugins, otimização de contexto e de custos</li><li><strong>Ciclos de feedback</strong> para agentes verificarem o próprio trabalho</li><li>Repositórios feitos para <strong>agentes em paralelo</strong></li></ul>",
       "shortcut": "IA",
       "title": "Desenvolvimento assistido por IA"
     },
+    "build-performance": {
+      "description": "<ul><li><strong>Otimização de bundle</strong> e <strong>análise de bundle</strong></li><li><strong>Políticas de cache</strong> para carregamentos mais rápidos</li><li>Builds mais rápidas ao eliminar ineficiências de configuração</li><li>Ferramentas de frontend: <strong>Webpack</strong>, <strong>Rollup</strong>, <strong>Vite</strong></li></ul>",
+      "title": "Performance e ferramentas",
+      "shortcut": "Performance"
+    },
     "frontend-architecture": {
-      "description": "<ul><li><strong>Arquitetura hexagonal</strong> (ports and adapters) com fronteiras estritas</li><li>Grafo acíclico de dependências com regras <strong>garantidas automaticamente</strong> pelo dependency-cruiser</li><li>Monorepos com workspaces do <strong>pnpm</strong> e orquestração de tarefas com <strong>Turborepo</strong></li><li>Bibliotecas de componentes seguindo um design system, com Class Variance Authority, CSS Modules, Jest e múltiplos modos de build (ESM e CJS)</li><li><strong>Performance de build e de carregamento</strong>: eliminação de ineficiências de configuração e políticas de cache eficazes</li></ul>",
+      "description": "<ul><li><strong>Arquitetura hexagonal</strong> com fronteiras estritas</li><li>Regras de dependência <strong>garantidas automaticamente</strong></li><li>Monorepos com <strong>pnpm</strong> e <strong>Turborepo</strong></li><li>Bibliotecas de componentes seguindo um design system, em ESM e CJS</li></ul>",
       "shortcut": "Arquitetura",
       "title": "Arquitetura e plataforma de frontend"
     },
@@ -54,23 +59,23 @@
       "title": "$t(tools.git)"
     },
     "npm-publishing": {
-      "description": "<ul><li>Criação, publicação e manutenção de pacotes NPM</li><li><strong>Declarações de tipos</strong> e documentação JSDoc</li><li><strong>Automação de releases</strong> e suporte a tree-shaking</li></ul>",
+      "description": "<ul><li>Criação, publicação e manutenção de pacotes</li><li><strong>Declarações de tipos</strong> e JSDoc</li><li><strong>Automação de releases</strong> e tree-shaking</li></ul>",
       "shortcut": "NPM",
       "title": "Publicação NPM"
     },
     "react": {
-      "description": "<ul><li>Renderização e <strong>reconciliação</strong>, criando componentes reutilizáveis que reduzem renderizações desnecessárias</li><li>Padrões do <strong>React 19</strong> e <strong>React Compiler</strong></li><li>React Redux, Redux-Saga, <strong>TanStack Query</strong> e React Hook Form</li></ul>",
+      "description": "<ul><li>Padrões do <strong>React 19</strong> e <strong>React Compiler</strong></li><li>Componentes reutilizáveis que evitam renderizações desnecessárias</li><li><strong>TanStack Query</strong>, React Redux, Redux-Saga, React Hook Form</li></ul>",
       "shortcut": "$t(tools.react)",
       "title": "$t(tools.react)"
     },
     "single-spa": {
-      "description": "<ul><li>Criação de applications e <strong>parcels</strong></li><li>Adaptação de aplicações <strong>Next.js</strong> para single-spa com Webpack</li><li><strong>Internacionalização</strong> em aplicações de microfrontends</li></ul>",
+      "description": "<ul><li><strong>Applications</strong> e <strong>parcels</strong></li><li>Adaptação de apps <strong>Next.js</strong> com Webpack</li><li><strong>Internacionalização</strong> entre microfrontends</li></ul>",
       "shortcut": "$t(tools.single-spa)",
       "title": "$t(tools.single-spa)"
     },
     "title": "Minhas <1>hard skills</1>",
     "typescript": {
-      "description": "<ul><li>Equilíbrio entre <strong>segurança de tipos</strong> e ergonomia para aumentar a agilidade e reduzir bugs</li><li><strong>Tipagem estrutural</strong>, teoria dos conjuntos aplicada a tipos, covariância e contravariância</li><li>Tipos genéricos e inferência de tipos</li></ul>",
+      "description": "<ul><li><strong>Segurança de tipos</strong> equilibrada com ergonomia</li><li><strong>Tipagem estrutural</strong>, variância, genéricos e inferência</li></ul>",
       "shortcut": "$t(tools.typescript)",
       "title": "$t(tools.typescript)"
     }
