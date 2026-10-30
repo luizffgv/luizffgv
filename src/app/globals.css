@@ -30,6 +30,24 @@
     font-family: var(--font-bree-serif);
   }
 
+  .font-code {
+    font-family: var(--font-share-tech-mono);
+  }
+
+  /* Blurs what is behind an element and boosts what is left of its color */
+  .backdrop-glass {
+    backdrop-filter: blur(5px) saturate(3) brightness(0.9) contrast(1.6);
+  }
+
+  .backdrop-glass:is(.dark *):not(.light *) {
+    backdrop-filter: blur(5px) saturate(4) brightness(2.5);
+  }
+
+  /* Dark mode alternative to the glass that dims what is behind an element */
+  .backdrop-smoked:is(.dark *):not(.light *) {
+    backdrop-filter: blur(5px) brightness(0.8);
+  }
+
   .transition-discrete {
     transition-behavior: allow-discrete;
   }

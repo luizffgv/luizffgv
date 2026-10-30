@@ -20,6 +20,10 @@ const buttonCva = cva(
       variant: {
         primary:
           "border-2 border-border-button bg-bg-button text-primary hover:bg-primary/15",
+        solid:
+          "bg-primary text-fg-on-primary hover:bg-primary/85 dark:bg-fg-on-primary dark:text-bg-dark dark:hover:bg-fg-dark",
+        outline:
+          "border-2 border-fg/40 bg-bg text-fg hover:border-fg dark:border-fg-on-primary/50 dark:bg-bg-dark dark:text-fg-on-primary dark:hover:border-fg-on-primary",
         danger: "bg-danger text-fg-on-primary",
       } satisfies Record<Variant, string>,
     },

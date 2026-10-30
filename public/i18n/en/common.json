@@ -76,9 +76,10 @@
     }
   },
   "hero": {
-    "subtitle": "<0>I'm a web developer focused on </0><RotatingText/>",
-    "subtitle-label": "I'm a web developer focused on Node.js, React and TypeScript",
-    "title": "Hi, my name is Luiz"
+    "greeting": "Hi, my name is",
+    "name": "Luiz",
+    "subtitle": "<0>I'm a web developer focused on </0><Tool/>",
+    "subtitle-label": "I'm a web developer focused on Node.js, React and TypeScript"
   },
   "language-switcher": {
     "switch": "Switch language"
