@@ -39,32 +39,32 @@
   },
   "hard-skills": {
     "ai-assisted-development": {
-      "description": "<p>I am familiar with AI-assisted development, including <strong>agent and subagent workflows</strong>, sequential and concurrent flows, and worktrees for parallel work.</p><p>I also work with skills and plugins, context optimization, cost reduction, and tuning <strong>feedback loops</strong> so agents can verify their own work.</p>",
+      "description": "<ul><li>Agent and subagent workflows, sequential and concurrent flows, and worktrees for parallel work</li><li>Skills and plugins, context optimization, and cost reduction</li><li>Tuning <strong>feedback loops</strong> so agents can verify their own work</li></ul>",
       "title": "AI-assisted development"
     },
     "frontend-architecture": {
-      "description": "<p>I have experience with <strong>hexagonal architecture</strong> (ports and adapters), with strict boundaries and an acyclic dependency graph automatically verified with <strong>dependency-cruiser</strong>.</p><p>I also have experience with frontend monorepos with pnpm and Turborepo, component libraries with Storybook, and multiple build modes.</p>",
+      "description": "<ul><li><strong>Hexagonal architecture</strong> (ports and adapters) with strict boundaries</li><li>Acyclic dependency graph verified automatically with <strong>dependency-cruiser</strong></li><li>Monorepos with pnpm and Turborepo</li><li>Component libraries with Storybook and multiple build modes</li></ul>",
       "title": "Frontend architecture and platform"
     },
     "git": {
-      "description": "<p>I have experience with Git, in <strong>minimizing diffs</strong> and <strong>rewriting history</strong>, working comfortably in flows that prioritize rebases, merge commits, and/or squashes.</p>",
+      "description": "<ul><li><strong>Minimizing diffs</strong> and <strong>rewriting history</strong></li><li>Comfortable with flows based on rebases, merge commits, and/or squashes</li></ul>",
       "title": "$t(tools.git)"
     },
     "npm-publishing": {
-      "description": "<p>I have professional experience with creating, publishing, and maintaining NPM packages, including <strong>type declarations</strong>, JSDoc documentation, <strong>release automation</strong>, and support for tree-shaking.</p>",
+      "description": "<ul><li>Creating, publishing, and maintaining NPM packages</li><li><strong>Type declarations</strong> and JSDoc documentation</li><li><strong>Release automation</strong> and tree-shaking support</li></ul>",
       "title": "NPM Publishing"
     },
     "react": {
-      "description": "<p>I understand how rendering and <strong>reconciliation</strong> work, and I build reusable and efficient components that reduce the number of required renders.</p><p>I have experience with various React libraries, such as React Redux, Redux-Saga, <strong>TanStack Query</strong>, and React Hook Form.</p>",
+      "description": "<ul><li>Rendering and <strong>reconciliation</strong>, building reusable components that reduce unnecessary renders</li><li>React Redux, Redux-Saga, <strong>TanStack Query</strong>, and React Hook Form</li></ul>",
       "title": "$t(tools.react)"
     },
     "single-spa": {
-      "description": "<p>I have experience with single-spa and the creation of applications and <strong>parcels</strong>.</p>",
+      "description": "<ul><li>Creating applications and <strong>parcels</strong></li></ul>",
       "title": "$t(tools.single-spa)"
     },
     "title": "My <1>hard skills</1>",
     "typescript": {
-      "description": "<p>I have experience with TypeScript in the areas of <strong>type safety</strong> and ergonomics, implementing solutions that balance these factors to increase development agility and reduce the incidence of bugs.</p><p>I am comfortable with concepts such as <strong>structural typing</strong>, set theory as applied to types, covariance and contravariance, generic types, and type inference.</p>",
+      "description": "<ul><li>Balancing <strong>type safety</strong> and ergonomics to increase agility and reduce bugs</li><li><strong>Structural typing</strong>, set theory applied to types, and covariance and contravariance</li><li>Generic types and type inference</li></ul>",
       "title": "$t(tools.typescript)"
     }
   },

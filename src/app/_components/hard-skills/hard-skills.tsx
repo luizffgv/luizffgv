@@ -31,10 +31,14 @@ export default function HardSkills(): JSX.Element {
           </Trans>
         }
       >
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-10">
           {SKILL_KEYS.map((key) => (
             <Skill key={key} title={t(`hard-skills.${key}.title`)}>
-              <Trans i18nKey={`hard-skills.${key}.description`} t={t} />
+              <Trans
+                i18nKey={`hard-skills.${key}.description`}
+                t={t}
+                components={{ ul: <ul />, li: <li /> }}
+              />
             </Skill>
           ))}
         </div>

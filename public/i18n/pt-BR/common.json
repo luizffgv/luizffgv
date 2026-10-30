@@ -39,32 +39,32 @@
   },
   "hard-skills": {
     "ai-assisted-development": {
-      "description": "<p>Sou familiarizado com desenvolvimento assistido por IA, incluindo <strong>fluxos com agentes e subagentes</strong>, fluxos sequenciais e concorrentes e worktrees para trabalho em paralelo.</p><p>Também trabalho com skills e plugins, otimização de contexto, redução de custos e ajuste de <strong>ciclos de feedback</strong> para que agentes verifiquem o próprio trabalho.</p>",
+      "description": "<ul><li>Fluxos com agentes e subagentes, fluxos sequenciais e concorrentes e worktrees para trabalho em paralelo</li><li>Skills e plugins, otimização de contexto e redução de custos</li><li>Ajuste de <strong>ciclos de feedback</strong> para que agentes verifiquem o próprio trabalho</li></ul>",
       "title": "Desenvolvimento assistido por IA"
     },
     "frontend-architecture": {
-      "description": "<p>Tenho experiência com <strong>arquitetura hexagonal</strong> (ports and adapters), com fronteiras estritas e grafo acíclico de dependências verificados automaticamente com <strong>dependency-cruiser</strong>.</p><p>Também tenho experiência com monorepos frontend com pnpm e Turborepo, bibliotecas de componentes com Storybook e múltiplos modos de build.</p>",
+      "description": "<ul><li><strong>Arquitetura hexagonal</strong> (ports and adapters) com fronteiras estritas</li><li>Grafo acíclico de dependências verificado automaticamente com <strong>dependency-cruiser</strong></li><li>Monorepos com pnpm e Turborepo</li><li>Bibliotecas de componentes com Storybook e múltiplos modos de build</li></ul>",
       "title": "Arquitetura e plataforma de frontend"
     },
     "git": {
-      "description": "<p>Tenho experiência com Git, em <strong>minimizar diffs</strong> e <strong>reescrever histórico</strong>, trabalhando confortavelmente tanto em fluxos que priorizam rebases, merge commits, e/ou squashes.</p>",
+      "description": "<ul><li><strong>Minimizar diffs</strong> e <strong>reescrever histórico</strong></li><li>Confortável com fluxos baseados em rebases, merge commits e/ou squashes</li></ul>",
       "title": "$t(tools.git)"
     },
     "npm-publishing": {
-      "description": "<p>Tenho experiência profissional com criação, publicação e manutenção de pacotes NPM, incluindo <strong>declarações de tipos</strong>, documentação JSDoc, <strong>automação de releases</strong> e suporte a tree-shaking.</p>",
+      "description": "<ul><li>Criação, publicação e manutenção de pacotes NPM</li><li><strong>Declarações de tipos</strong> e documentação JSDoc</li><li><strong>Automação de releases</strong> e suporte a tree-shaking</li></ul>",
       "title": "Publicação NPM"
     },
     "react": {
-      "description": "<p>Eu sei como funciona a renderização e <strong>reconciliação</strong>, crio componentes reutilizáveis e eficientes, reduzindo a quantidade de renderizações necessárias.</p><p> Tenho experiênca com várias bibliotecas React, como React Redux, Redux-Saga, <strong>TanStack Query</strong> e React Hook Form.</p>",
+      "description": "<ul><li>Renderização e <strong>reconciliação</strong>, criando componentes reutilizáveis que reduzem renderizações desnecessárias</li><li>React Redux, Redux-Saga, <strong>TanStack Query</strong> e React Hook Form</li></ul>",
       "title": "$t(tools.react)"
     },
     "single-spa": {
-      "description": "<p>Tenho experiência com single-spa e criação de applications e <strong>parcels</strong>.</p>",
+      "description": "<ul><li>Criação de applications e <strong>parcels</strong></li></ul>",
       "title": "$t(tools.single-spa)"
     },
     "title": "Minhas <1>hard skills</1>",
     "typescript": {
-      "description": "<p>Tenho experiência com TypeScript nos âmbitos de <strong>segurança</strong> e ergonomia, implementando soluções que equilibram esses fatores para aumentar a agilidade e reduzir a incidência de bugs.</p><p>Sou confortável com os conceitos de <strong>tipagem estrutural</strong>, teoria dos conjuntos em relação a tipos, covariância e contravariância, tipos genéricos e inferência de tipos.</p>",
+      "description": "<ul><li>Equilíbrio entre <strong>segurança de tipos</strong> e ergonomia para aumentar a agilidade e reduzir bugs</li><li><strong>Tipagem estrutural</strong>, teoria dos conjuntos aplicada a tipos, covariância e contravariância</li><li>Tipos genéricos e inferência de tipos</li></ul>",
       "title": "$t(tools.typescript)"
     }
   },

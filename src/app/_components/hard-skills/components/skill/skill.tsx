@@ -30,7 +30,7 @@ export default function Skill({ children, icon, title }: Props): JSX.Element {
           viewport={VIEWPORT}
         />
       </div>
-      <div className="flex flex-col gap-4 [&_strong]:font-normal [&_strong]:text-primary">
+      <div className="[&_li]:relative [&_li]:list-none [&_li]:before:absolute [&_li]:before:-left-5 [&_li]:before:top-[0.6em] [&_li]:before:size-2 [&_li]:before:rotate-45 [&_li]:before:border-[1.5px] [&_li]:before:border-primary [&_li]:before:content-[''] [&_strong]:font-normal [&_strong]:text-primary [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2 [&_ul]:pl-6">
         {children}
       </div>
     </div>
