@@ -222,7 +222,7 @@
       "architecture": "Enforced architecture",
       "component-library": "Component library",
       "i18n": "Internationalization",
-      "maintenance": "Maintenance",
+      "maintenance": "Web app maintenance",
       "microfrontends": "Microfrontends"
     },
     "title": "My <1>trajectory</1>",
