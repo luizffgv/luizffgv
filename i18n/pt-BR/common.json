@@ -44,7 +44,7 @@
       "title": "Desenvolvimento assistido por IA"
     },
     "frontend-architecture": {
-      "description": "<ul><li><strong>Arquitetura hexagonal</strong> (ports and adapters) com fronteiras estritas</li><li>Grafo acíclico de dependências verificado automaticamente com <strong>dependency-cruiser</strong></li><li>Monorepos com pnpm e Turborepo</li><li>Bibliotecas de componentes com Storybook e múltiplos modos de build</li></ul>",
+      "description": "<ul><li><strong>Arquitetura hexagonal</strong> (ports and adapters) com fronteiras estritas</li><li>Grafo acíclico de dependências com regras <strong>garantidas automaticamente</strong></li><li>Monorepos com workspaces e orquestração de tarefas</li><li>Bibliotecas de componentes documentadas com múltiplos modos de build</li></ul>",
       "shortcut": "Arquitetura",
       "title": "Arquitetura e plataforma de frontend"
     },
