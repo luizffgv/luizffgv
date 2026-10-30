@@ -209,12 +209,16 @@
     },
     "first-hello-world": "My first Hello World",
     "my-role": "myRole",
+    "show-details": "Show details",
     "stats": {
       "builds": "Faster builds",
+      "builds-detail": "by removing configuration inefficiencies",
       "builds-value": ">40%",
       "components": "React components",
+      "components-detail": "tree-shakable, with type safety and ergonomics",
       "components-value": "40+",
-      "js-load": "Faster JS load",
+      "js-load": "Faster main JS load",
+      "js-load-detail": "with more effective caching policies",
       "js-load-value": ">60%"
     },
     "title": "My <1>trajectory</1>",

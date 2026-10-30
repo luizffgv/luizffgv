@@ -209,12 +209,16 @@
     },
     "first-hello-world": "Meu primeiro Hello World",
     "my-role": "meuPapel",
+    "show-details": "Ver detalhes",
     "stats": {
       "builds": "Builds mais rápidas",
+      "builds-detail": "ao eliminar ineficiências de configuração",
       "builds-value": ">40%",
       "components": "Componentes React",
+      "components-detail": "tree-shakable, com segurança de tipos e ergonomia",
       "components-value": "40+",
-      "js-load": "Carregamento de JS mais rápido",
+      "js-load": "Carregamento do JS principal mais rápido",
+      "js-load-detail": "com políticas de cache mais eficazes",
       "js-load-value": ">60%"
     },
     "title": "Minha <1>trajetória</1>",
