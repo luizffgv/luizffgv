@@ -1,40 +1,105 @@
 {
+  "about": {
+    "interests": "My interests",
+    "philosophy": {
+      "content": "I love philosophy, especially the concepts of <strong>qualia</strong> and <strong>epiphenomenalism</strong>.",
+      "title": "Philosophy"
+    },
+    "poetry": {
+      "content": "Poetry is one of my favorite forms of expression. One of my favorite poems is <Link><Glow>Fire and Ice</Glow></Link> by Robert Frost.",
+      "title": "Poetry"
+    },
+    "title": "About me",
+    "topology": {
+      "content": "I haven't studied topology formally, but I love how topology can be as concrete as it is abstract, from the topology of a shirt to that of a manifold.",
+      "title": "Topology"
+    }
+  },
+  "career": {
+    "come-closer": "Come a little closer...",
+    "contact": "Contact me here",
+    "dont-wait": "How about securing me while you can?",
+    "talk": "Let's talk",
+    "wish": "I would l<Heart/>ve a <Glow>job</Glow> or an <Glow>internship</Glow>.",
+    "wish-label": "I would love a job or an internship"
+  },
   "companies": {
     "zenvia": "Zenvia"
+  },
+  "filters": {
+    "categories": "Categories",
+    "collapse": "Hide filters",
+    "expand": "Expand filters",
+    "languages": "Languages",
+    "libraries": "Libraries",
+    "uncategorized": "Uncategorized"
   },
   "footer": {
     "content": "Made with <Heart/>, over 250 commits and many redesigns and frameworks since 2021."
   },
   "hard-skills": {
+    "ai-assisted-development": {
+      "description": "<ul><li>Agent and subagent workflows, sequential and concurrent flows, and worktrees for parallel work</li><li>Skills and plugins, context optimization, and cost reduction</li><li>Tuning <strong>feedback loops</strong> so agents can verify their own work</li></ul>",
+      "shortcut": "AI",
+      "title": "AI-assisted development"
+    },
+    "frontend-architecture": {
+      "description": "<ul><li><strong>Hexagonal architecture</strong> (ports and adapters) with strict boundaries</li><li>Acyclic dependency graph verified automatically with <strong>dependency-cruiser</strong></li><li>Monorepos with pnpm and Turborepo</li><li>Component libraries with Storybook and multiple build modes</li></ul>",
+      "shortcut": "Architecture",
+      "title": "Frontend architecture and platform"
+    },
     "git": {
-      "description": "<p>I have experience with Git, in <strong>minimizing diffs</strong> and <strong>rewriting history</strong>, working comfortably in flows that prioritize <strong>rebases</strong>, <strong>merge commits</strong>, and/or <strong>squashes</strong>.</p>",
+      "description": "<ul><li><strong>Minimizing diffs</strong> and <strong>rewriting history</strong></li><li>Comfortable with flows based on rebases, merge commits, and/or squashes</li></ul>",
+      "shortcut": "$t(tools.git)",
       "title": "$t(tools.git)"
     },
     "npm-publishing": {
-      "description": "<p>I have professional experience with <strong>creating</strong>, <strong>publishing</strong>, and <strong>maintaining</strong> NPM packages, including <strong>type declarations</strong>, <strong>JSDoc documentation</strong>, <strong>release automation</strong>, and support for <strong>tree-shaking</strong>.</p>",
+      "description": "<ul><li>Creating, publishing, and maintaining NPM packages</li><li><strong>Type declarations</strong> and JSDoc documentation</li><li><strong>Release automation</strong> and tree-shaking support</li></ul>",
+      "shortcut": "NPM",
       "title": "NPM Publishing"
     },
     "react": {
-      "description": "<p>I understand how <strong>rendering</strong> and <strong>reconciliation</strong> work, and I build reusable and efficient components that reduce the number of required renders.</p><p>I have experience with various React libraries, such as <strong>React Redux</strong>, <strong>Redux-Saga</strong>, <strong>TanStack Query</strong>, and <strong>React Hook Form</strong>.</p>",
+      "description": "<ul><li>Rendering and <strong>reconciliation</strong>, building reusable components that reduce unnecessary renders</li><li>React Redux, Redux-Saga, <strong>TanStack Query</strong>, and React Hook Form</li></ul>",
+      "shortcut": "$t(tools.react)",
       "title": "$t(tools.react)"
     },
     "single-spa": {
-      "description": "<p>I have experience with <strong>single-spa</strong> and the creation of <strong>applications</strong> and <strong>parcels</strong>.</p>",
+      "description": "<ul><li>Creating applications and <strong>parcels</strong></li></ul>",
+      "shortcut": "$t(tools.single-spa)",
       "title": "$t(tools.single-spa)"
     },
     "title": "My <1>hard skills</1>",
     "typescript": {
-      "description": "<p>I have experience with TypeScript in the areas of <strong>type safety</strong> and <strong>ergonomics</strong>, implementing solutions that balance these factors to increase development agility and reduce the incidence of bugs.</p><p>I am comfortable with concepts such as <strong>structural typing</strong>, <strong>set theory</strong> as applied to types, <strong>covariance</strong> and <strong>contravariance</strong>, <strong>generic types</strong>, and <strong>type inference</strong>.</p>",
+      "description": "<ul><li>Balancing <strong>type safety</strong> and ergonomics to increase agility and reduce bugs</li><li><strong>Structural typing</strong>, set theory applied to types, and covariance and contravariance</li><li>Generic types and type inference</li></ul>",
+      "shortcut": "$t(tools.typescript)",
       "title": "$t(tools.typescript)"
     }
   },
   "hero": {
-    "subtitle": "<0>I'm a web developer focused on </0><RotatingText/>",
-    "subtitle-label": "I'm a web developer focused on Node.js, React and TypeScript",
-    "title": "Hi, my name is Luiz"
+    "greeting": "Hi, my name is",
+    "name": "Luiz",
+    "subtitle": "<0>I'm a web developer focused on </0><Tool/>",
+    "subtitle-label": "I'm a web developer focused on Node.js, React and TypeScript"
   },
   "language-switcher": {
     "switch": "Switch language"
+  },
+  "meta": {
+    "about": {
+      "description": "Learn about me here on my personal website.",
+      "title": "About me"
+    },
+    "home": {
+      "description": "Learn about me here on my personal website.",
+      "title": "About me"
+    },
+    "projects": {
+      "description": "See my projects here.",
+      "title": "My projects"
+    }
+  },
+  "modal": {
+    "close": "Close modal"
   },
   "my-github": {
     "links": {
@@ -43,6 +108,74 @@
     },
     "subtitle": "I have many open source projects and NPM packages",
     "title": "Take a look at my <Link>GitHub</Link>"
+  },
+  "project": {
+    "image": "Image of the project {{name}}",
+    "source-code": "View source code",
+    "visit": "Visit project"
+  },
+  "project-tags": {
+    "Biblioteca": "Library",
+    "Livro": "Book",
+    "Organização": "Organization",
+    "Pacote NPM": "NPM package",
+    "Site": "Website"
+  },
+  "projects": {
+    "blink-ultimate-teleportation": {
+      "description": "Installed by over 32 thousand different users, Blink is a mod written in Lua for Teardown, included in the official modpack for Xbox and PlayStation."
+    },
+    "codinstruct": {
+      "description": "An organization created as a college project, aimed at helping students learn C, JavaScript and Python. I worked mainly on the organization, the Sass and the C content."
+    },
+    "codinstruct-next": {
+      "description": "Next.js front end made for codinStruct, a project carried out at Rede de Ensino Doctum to produce educational content about programming."
+    },
+    "ekranoplan": {
+      "description": "General-purpose JS/TS library with simple and advanced features."
+    },
+    "figment": {
+      "description": "A C++ class that allows precise control over the lifetime of objects of any type. Similar to std::optional, but holds no information about the contained object."
+    },
+    "glimmer": {
+      "description": "A simple modular framework for Discord bots based on discord.js."
+    },
+    "globe": {
+      "description": "A website with a rotating globe made of dots, letting you use your own images as textures."
+    },
+    "goo": {
+      "description": "Configurable HTML element that provides an animated, goo-like background."
+    },
+    "htilesml": {
+      "description": "Experimental game using HTML elements and 3D CSS transforms."
+    },
+    "modern-c-sorting-algorithms": {
+      "description": "Collection of generic sorting algorithms making extensive use of the C18 standard, made to ease my college C assignments."
+    },
+    "phasmoo": {
+      "description": "A fully responsive website and PWA that filters ghosts to help with gameplay in the game Phasmophobia."
+    },
+    "separador-de-silabas": {
+      "description": "A Next.js website that splits text into syllables using an algorithm I created."
+    },
+    "shader-site": {
+      "description": "A website that helps you find the ideal Minecraft shader pack for you."
+    },
+    "spirit-box": {
+      "description": "Discord bot that generates a journal of notes for the game Phasmophobia, helping identify ghosts and share clues with your team."
+    },
+    "swapem": {
+      "description": "CLI tool and NPM package providing a transform stream that reads text and replaces directives with values from a JSON file."
+    },
+    "swash": {
+      "description": "React framework for inter-component communication via drag-and-drop interactions. Modular, extensible and customizable."
+    },
+    "ts-conversions": {
+      "description": "Library and NPM package providing utilities to perform safe or unsafe conversions and cut down on boilerplate in TypeScript."
+    },
+    "viewport-based-scaling": {
+      "description": "Website that generates CSS to set a property's value based on the viewport width, linearly interpolating between several pairs of points."
+    }
   },
   "roles": {
     "development-assistant": "Development assistant",
@@ -70,6 +203,7 @@
     },
     "details": {
       "assistant-maintenance": "Performed maintenance on web applications using ASP.NET, Next.js, single-spa, and Vite",
+      "frontend-monorepo": "Designed and built from scratch the foundation of a frontend monorepo with pnpm and Turborepo for a large-scale web application, with hexagonal architecture and boundaries automatically enforced with dependency-cruiser",
       "mfe-i18n": "Implemented internationalization in a microfrontend application",
       "react-component-library": "Developed a React component package (ESM and CJS) using Class Variance Authority, Jest, and CSS Modules, following a design system, with support for tree-shaking and type declarations"
     },
