@@ -6,6 +6,7 @@ import { JSX } from "react";
 export interface Props {
   children: React.ReactNode;
   footer?: React.ReactNode | undefined;
+  className?: string;
   layout?: boolean;
   padding?: string | number;
   transition?: Transition;
@@ -15,6 +16,7 @@ export interface Props {
 export default function Card({
   children,
   footer,
+  className,
   layout,
   padding = 24,
   transition,
@@ -29,10 +31,10 @@ export default function Card({
       style={{
         padding,
       }}
-      className={`bg-bg-close/75 shadow-lg backdrop-blur-xl transition-colors dark:bg-bg-close-dark/75 dark:shadow-sm`}
+      className={`flex flex-col bg-bg-close/75 shadow-lg backdrop-blur-xl transition-colors dark:bg-bg-close-dark/75 dark:shadow-sm ${className ?? ""}`}
     >
-      <div className="flex h-full w-full flex-col justify-between">
-        <div className="flex justify-center">{children}</div>
+      <div className="flex min-h-0 flex-col justify-between">
+        <div className="flex min-h-0 justify-center">{children}</div>
         {footer && <div className="mt-4 flex justify-center">{footer}</div>}
       </div>
     </motion.div>
