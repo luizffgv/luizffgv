@@ -205,7 +205,6 @@
       "assistant-maintenance": "Performed maintenance on web applications using ASP.NET, Next.js, single-spa, and Vite",
       "frontend-monorepo": "Designed and built from scratch the foundation of a frontend monorepo with pnpm and Turborepo for a large-scale web application, with hexagonal architecture and boundaries automatically enforced with dependency-cruiser",
       "mfe-i18n": "Implemented internationalization in a microfrontend application",
-      "modular-component-library": "Created the component library with Storybook and multiple build modes, which allow embedding pages in another application or running as a full React app",
       "react-component-library": "Developed a React component package (ESM and CJS) using Class Variance Authority, Jest, and CSS Modules, following a design system, with support for tree-shaking and type declarations"
     },
     "first-hello-world": "My first Hello World",
