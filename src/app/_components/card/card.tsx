@@ -31,7 +31,7 @@ export default function Card({
       style={{
         padding,
       }}
-      className={`flex flex-col border border-fg/10 bg-bg-close/75 shadow-lg backdrop-blur-xl transition-colors dark:border-fg-dark/10 dark:bg-bg-close-dark/75 dark:shadow-sm ${className ?? ""}`}
+      className={`flex flex-col border border-fg/5 bg-bg-close/75 shadow-lg backdrop-blur-xl transition-colors dark:border-fg-dark/10 dark:bg-bg-close-dark/75 dark:shadow-sm ${className ?? ""}`}
     >
       <div className="flex min-h-0 flex-col justify-between">
         <div className="flex min-h-0 justify-center">{children}</div>
