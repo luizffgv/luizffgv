@@ -203,12 +203,8 @@
     },
     "details": {
       "assistant-maintenance": "Realizei manutenção de aplicações web com ASP.NET, Next.js, single-spa e Vite",
-      "frontend-monorepo": "Construí do zero a base de um monorepo frontend, hoje usada por vários contribuidores",
+      "frontend-monorepo": "Construí a base de um monorepo frontend, hoje usada por vários contribuidores",
       "mfe-i18n": "Implementei internacionalização em uma aplicação de microfrontends",
-      "monorepo-agents": "Otimizado para desenvolvimento com agentes de IA em paralelo",
-      "monorepo-architecture": "Arquitetura hexagonal",
-      "monorepo-boundaries": "Fronteiras garantidas automaticamente com dependency-cruiser",
-      "monorepo-stack": "pnpm e Turborepo",
       "react-component-library": "Desenvolvi um pacote de componentes React ESM e CJS com Class Variance Authority, Jest e CSS Modules, seguindo um design system, com suporte a tree-shaking e declarações de tipos"
     },
     "first-hello-world": "Meu primeiro Hello World",
@@ -224,6 +220,10 @@
       "js-load": "Carregamento do JS principal mais rápido",
       "js-load-detail": "com políticas de cache mais eficazes",
       "js-load-value": ">60%"
+    },
+    "tags": {
+      "architecture": "Arquitetura garantida",
+      "agents": "Feito para agentes de IA"
     },
     "title": "Minha <1>trajetória</1>",
     "writing": "Escrevendo...",
