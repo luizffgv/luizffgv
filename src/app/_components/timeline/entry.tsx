@@ -55,7 +55,7 @@ export default function Entry({
       <div className="flex flex-col py-6">
         <h3 className="text-xl font-bold text-primary">{title}</h3>
         <p className="font-bold">{subtitle}</p>
-        <div className="max-w-prose text-sm text-fg-weak">{children}</div>
+        <div className="max-w-prose text-base">{children}</div>
       </div>
     </div>
   );

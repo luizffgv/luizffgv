@@ -1,33 +1,7 @@
 "use client";
 
-import { cva } from "class-variance-authority";
 import { motion } from "framer-motion";
 import { JSX } from "react";
-
-const lineCva = cva("", {
-  variants: {
-    alignment: {
-      left: null,
-      right: null,
-    },
-    isShort: {
-      true: "h-2 bg-primary",
-      false: "h-1 from-hr to-transparent dark:from-hr-dark",
-    },
-  },
-  compoundVariants: [
-    {
-      alignment: "left",
-      isShort: false,
-      class: "bg-gradient-to-l",
-    },
-    {
-      alignment: "right",
-      isShort: false,
-      class: "bg-gradient-to-r",
-    },
-  ],
-});
 
 type Props = {
   children: React.ReactNode;
@@ -35,36 +9,30 @@ type Props = {
   title: string;
 };
 
-export default function Skill({ children, icon, title }: Props): JSX.Element {
-  const isLeftAligned = (title.codePointAt(0) || 0) % 2 === 0;
+const VIEWPORT = { margin: "-20% 0px -20% 0px" };
 
+export default function Skill({ children, icon, title }: Props): JSX.Element {
   return (
     <div className="flex max-w-prose flex-col gap-4">
       <div className="flex items-center gap-4 text-primary">
         <motion.div
-          className="shrink grow"
-          initial={{ maxWidth: isLeftAligned ? 8 : undefined }}
-          whileInView={{ maxWidth: isLeftAligned ? 80 : undefined }}
-          viewport={{ margin: "-20% 0px -20% 0px" }}
-        >
-          <div
-            className={lineCva({ alignment: "left", isShort: isLeftAligned })}
-          />
-        </motion.div>
+          className="h-2 shrink-0 bg-primary"
+          initial={{ width: 12 }}
+          whileInView={{ width: 28 }}
+          viewport={VIEWPORT}
+        />
         {icon == null ? null : <div>{icon}</div>}
         <div className="text-2xl font-bold">{title}</div>
         <motion.div
-          className="shrink grow"
-          initial={{ maxWidth: isLeftAligned ? undefined : 8 }}
-          whileInView={{ maxWidth: isLeftAligned ? undefined : 80 }}
-          viewport={{ margin: "-20% 0px -20% 0px" }}
-        >
-          <div
-            className={lineCva({ alignment: "right", isShort: !isLeftAligned })}
-          />
-        </motion.div>
+          className="h-1 shrink grow bg-gradient-to-r from-hr to-transparent dark:from-hr-dark"
+          initial={{ opacity: 0.4 }}
+          whileInView={{ opacity: 1 }}
+          viewport={VIEWPORT}
+        />
       </div>
-      {children}
+      <div className="flex flex-col gap-4 [&_strong]:font-normal [&_strong]:text-primary">
+        {children}
+      </div>
     </div>
   );
 }

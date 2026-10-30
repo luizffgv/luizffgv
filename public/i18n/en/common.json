@@ -39,32 +39,32 @@
   },
   "hard-skills": {
     "ai-assisted-development": {
-      "description": "<p>I am familiar with <strong>AI-assisted development</strong>, including <strong>agent and subagent workflows</strong>, <strong>sequential and concurrent flows</strong>, and <strong>worktrees</strong> for parallel work.</p><p>I also work with <strong>skills</strong> and <strong>plugins</strong>, <strong>context optimization</strong>, <strong>cost reduction</strong>, and tuning <strong>feedback loops</strong> so agents can verify their own work.</p>",
+      "description": "<p>I am familiar with AI-assisted development, including <strong>agent and subagent workflows</strong>, sequential and concurrent flows, and worktrees for parallel work.</p><p>I also work with skills and plugins, context optimization, cost reduction, and tuning <strong>feedback loops</strong> so agents can verify their own work.</p>",
       "title": "AI-assisted development"
     },
     "frontend-architecture": {
-      "description": "<p>I have experience with <strong>hexagonal architecture</strong> (ports and adapters), with <strong>strict boundaries</strong> and an <strong>acyclic dependency graph</strong> automatically verified with <strong>dependency-cruiser</strong>.</p><p>I also have experience with <strong>frontend monorepos</strong> with <strong>pnpm</strong> and <strong>Turborepo</strong>, <strong>component libraries</strong> with <strong>Storybook</strong>, and <strong>multiple build modes</strong>.</p>",
+      "description": "<p>I have experience with <strong>hexagonal architecture</strong> (ports and adapters), with strict boundaries and an acyclic dependency graph automatically verified with <strong>dependency-cruiser</strong>.</p><p>I also have experience with frontend monorepos with pnpm and Turborepo, component libraries with Storybook, and multiple build modes.</p>",
       "title": "Frontend architecture and platform"
     },
     "git": {
-      "description": "<p>I have experience with Git, in <strong>minimizing diffs</strong> and <strong>rewriting history</strong>, working comfortably in flows that prioritize <strong>rebases</strong>, <strong>merge commits</strong>, and/or <strong>squashes</strong>.</p>",
+      "description": "<p>I have experience with Git, in <strong>minimizing diffs</strong> and <strong>rewriting history</strong>, working comfortably in flows that prioritize rebases, merge commits, and/or squashes.</p>",
       "title": "$t(tools.git)"
     },
     "npm-publishing": {
-      "description": "<p>I have professional experience with <strong>creating</strong>, <strong>publishing</strong>, and <strong>maintaining</strong> NPM packages, including <strong>type declarations</strong>, <strong>JSDoc documentation</strong>, <strong>release automation</strong>, and support for <strong>tree-shaking</strong>.</p>",
+      "description": "<p>I have professional experience with creating, publishing, and maintaining NPM packages, including <strong>type declarations</strong>, JSDoc documentation, <strong>release automation</strong>, and support for tree-shaking.</p>",
       "title": "NPM Publishing"
     },
     "react": {
-      "description": "<p>I understand how <strong>rendering</strong> and <strong>reconciliation</strong> work, and I build reusable and efficient components that reduce the number of required renders.</p><p>I have experience with various React libraries, such as <strong>React Redux</strong>, <strong>Redux-Saga</strong>, <strong>TanStack Query</strong>, and <strong>React Hook Form</strong>.</p>",
+      "description": "<p>I understand how rendering and <strong>reconciliation</strong> work, and I build reusable and efficient components that reduce the number of required renders.</p><p>I have experience with various React libraries, such as React Redux, Redux-Saga, <strong>TanStack Query</strong>, and React Hook Form.</p>",
       "title": "$t(tools.react)"
     },
     "single-spa": {
-      "description": "<p>I have experience with <strong>single-spa</strong> and the creation of <strong>applications</strong> and <strong>parcels</strong>.</p>",
+      "description": "<p>I have experience with single-spa and the creation of applications and <strong>parcels</strong>.</p>",
       "title": "$t(tools.single-spa)"
     },
     "title": "My <1>hard skills</1>",
     "typescript": {
-      "description": "<p>I have experience with TypeScript in the areas of <strong>type safety</strong> and <strong>ergonomics</strong>, implementing solutions that balance these factors to increase development agility and reduce the incidence of bugs.</p><p>I am comfortable with concepts such as <strong>structural typing</strong>, <strong>set theory</strong> as applied to types, <strong>covariance</strong> and <strong>contravariance</strong>, <strong>generic types</strong>, and <strong>type inference</strong>.</p>",
+      "description": "<p>I have experience with TypeScript in the areas of <strong>type safety</strong> and ergonomics, implementing solutions that balance these factors to increase development agility and reduce the incidence of bugs.</p><p>I am comfortable with concepts such as <strong>structural typing</strong>, set theory as applied to types, covariance and contravariance, generic types, and type inference.</p>",
       "title": "$t(tools.typescript)"
     }
   },
