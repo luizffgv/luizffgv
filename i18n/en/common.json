@@ -39,12 +39,12 @@
   },
   "hard-skills": {
     "ai-assisted-development": {
-      "description": "<ul><li>Agent and subagent workflows, sequential and concurrent flows, and worktrees for parallel work</li><li>Skills and plugins, context optimization, and cost reduction</li><li>Tuning <strong>feedback loops</strong> so agents can verify their own work</li></ul>",
+      "description": "<ul><li>Agent and subagent workflows, sequential and concurrent flows, and worktrees for parallel work</li><li>Skills and plugins, context optimization, and cost reduction</li><li>Tuning <strong>feedback loops</strong> so agents can verify their own work</li><li>Repository structure and automated guardrails that let <strong>parallel agents</strong> work with fewer obstacles</li></ul>",
       "shortcut": "AI",
       "title": "AI-assisted development"
     },
     "frontend-architecture": {
-      "description": "<ul><li><strong>Hexagonal architecture</strong> (ports and adapters) with strict boundaries</li><li>Acyclic dependency graph with <strong>automatically enforced</strong> rules</li><li>Monorepos with workspaces and task orchestration</li><li>Documented component libraries with multiple build modes</li></ul>",
+      "description": "<ul><li><strong>Hexagonal architecture</strong> (ports and adapters) with strict boundaries</li><li>Acyclic dependency graph with rules <strong>automatically enforced</strong> by dependency-cruiser</li><li>Monorepos with <strong>pnpm</strong> workspaces and <strong>Turborepo</strong> task orchestration</li><li>Component libraries following a design system, with Class Variance Authority, CSS Modules, Jest, and multiple build modes (ESM and CJS)</li><li><strong>Build and load performance</strong>: removing configuration inefficiencies and applying effective caching policies</li></ul>",
       "shortcut": "Architecture",
       "title": "Frontend architecture and platform"
     },
@@ -59,12 +59,12 @@
       "title": "NPM Publishing"
     },
     "react": {
-      "description": "<ul><li>Rendering and <strong>reconciliation</strong>, building reusable components that reduce unnecessary renders</li><li>React Redux, Redux-Saga, <strong>TanStack Query</strong>, and React Hook Form</li></ul>",
+      "description": "<ul><li>Rendering and <strong>reconciliation</strong>, building reusable components that reduce unnecessary renders</li><li><strong>React 19</strong> patterns and <strong>React Compiler</strong></li><li>React Redux, Redux-Saga, <strong>TanStack Query</strong>, and React Hook Form</li></ul>",
       "shortcut": "$t(tools.react)",
       "title": "$t(tools.react)"
     },
     "single-spa": {
-      "description": "<ul><li>Creating applications and <strong>parcels</strong></li></ul>",
+      "description": "<ul><li>Creating applications and <strong>parcels</strong></li><li>Adapting <strong>Next.js</strong> applications to single-spa with Webpack</li><li><strong>Internationalization</strong> in microfrontend applications</li></ul>",
       "shortcut": "$t(tools.single-spa)",
       "title": "$t(tools.single-spa)"
     },
