@@ -205,6 +205,7 @@
       "assistant-maintenance": "Realizei manutenção de aplicações web com ASP.NET, Next.js, single-spa e Vite",
       "frontend-monorepo": "Construí do zero a base de um monorepo frontend, hoje usada por vários contribuidores",
       "mfe-i18n": "Implementei internacionalização em uma aplicação de microfrontends",
+      "monorepo-agents": "Otimizado para desenvolvimento com agentes de IA em paralelo",
       "monorepo-architecture": "Arquitetura hexagonal",
       "monorepo-boundaries": "Fronteiras garantidas automaticamente com dependency-cruiser",
       "monorepo-stack": "pnpm e Turborepo",
