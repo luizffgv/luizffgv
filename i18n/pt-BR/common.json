@@ -203,8 +203,11 @@
     },
     "details": {
       "assistant-maintenance": "Realizei manutenção de aplicações web com ASP.NET, Next.js, single-spa e Vite",
-      "frontend-monorepo": "Projetei e construí do zero a base de um monorepo frontend com pnpm e Turborepo para uma aplicação web, com arquitetura hexagonal e fronteiras garantidas automaticamente com dependency-cruiser, e hoje serve de base para vários contribuidores",
+      "frontend-monorepo": "Construí do zero a base de um monorepo frontend, hoje usada por vários contribuidores",
       "mfe-i18n": "Implementei internacionalização em uma aplicação de microfrontends",
+      "monorepo-architecture": "Arquitetura hexagonal",
+      "monorepo-boundaries": "Fronteiras garantidas automaticamente com dependency-cruiser",
+      "monorepo-stack": "pnpm e Turborepo",
       "react-component-library": "Desenvolvi um pacote de componentes React ESM e CJS com Class Variance Authority, Jest e CSS Modules, seguindo um design system, com suporte a tree-shaking e declarações de tipos"
     },
     "first-hello-world": "Meu primeiro Hello World",
