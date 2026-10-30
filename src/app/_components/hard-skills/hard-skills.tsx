@@ -9,6 +9,8 @@ import TitledSection from "../titled-section";
 import Skill from "./components/skill/skill";
 
 const SKILL_KEYS = [
+  "ai-assisted-development",
+  "frontend-architecture",
   "typescript",
   "react",
   "single-spa",

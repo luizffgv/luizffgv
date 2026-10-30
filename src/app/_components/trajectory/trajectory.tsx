@@ -63,6 +63,10 @@ export default function Trajectory(): JSX.Element {
               subtitle={t("companies.zenvia")}
               title={t("roles.junior-developer")}
             >
+              <p>{t("trajectory.details.frontend-monorepo")}</p>
+              <br />
+              <p>{t("trajectory.details.modular-component-library")}</p>
+              <br />
               <div className="text-primary">
                 <PencilIcon
                   className="mr-2 inline h-4 w-4"

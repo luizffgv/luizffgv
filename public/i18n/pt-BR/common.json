@@ -38,6 +38,14 @@
     "content": "Feito com <Heart/>, mais de 250 commits, vários redesigns e vários frameworks desde 2021."
   },
   "hard-skills": {
+    "ai-assisted-development": {
+      "description": "<p>Sou familiarizado com <strong>desenvolvimento assistido por IA</strong>, incluindo <strong>fluxos com agentes e subagentes</strong>, <strong>fluxos sequenciais e concorrentes</strong> e <strong>worktrees</strong> para trabalho em paralelo.</p><p>Também trabalho com <strong>skills</strong> e <strong>plugins</strong>, <strong>otimização de contexto</strong>, <strong>redução de custos</strong> e ajuste de <strong>ciclos de feedback</strong> para que agentes verifiquem o próprio trabalho.</p>",
+      "title": "Desenvolvimento assistido por IA"
+    },
+    "frontend-architecture": {
+      "description": "<p>Tenho experiência com <strong>arquitetura hexagonal</strong> (ports and adapters), com <strong>fronteiras estritas</strong> e <strong>grafo acíclico de dependências</strong> verificados automaticamente com <strong>dependency-cruiser</strong>.</p><p>Também tenho experiência com <strong>monorepos frontend</strong> com <strong>pnpm</strong> e <strong>Turborepo</strong>, <strong>bibliotecas de componentes</strong> com <strong>Storybook</strong> e <strong>múltiplos modos de build</strong>.</p>",
+      "title": "Arquitetura e plataforma de frontend"
+    },
     "git": {
       "description": "<p>Tenho experiência com Git, em <strong>minimizar diffs</strong> e <strong>reescrever histórico</strong>, trabalhando confortavelmente tanto em fluxos que priorizam <strong>rebases</strong>, <strong>merge commits</strong>, e/ou <strong>squashes</strong>.</p>",
       "title": "$t(tools.git)"
@@ -187,7 +195,9 @@
     },
     "details": {
       "assistant-maintenance": "Realizei manutenção de aplicações web com ASP.NET, Next.js, single-spa e Vite",
+      "frontend-monorepo": "Projetei e construí do zero a base de um monorepo frontend com pnpm e Turborepo para uma aplicação web, com arquitetura hexagonal e fronteiras garantidas automaticamente com dependency-cruiser",
       "mfe-i18n": "Implementei internacionalização em uma aplicação de microfrontends",
+      "modular-component-library": "Criei a biblioteca de componentes com Storybook e múltiplos modos de build, que permitem embutir páginas em outra aplicação ou rodar como app React completo",
       "react-component-library": "Desenvolvi um pacote de componentes React ESM e CJS com Class Variance Authority, Jest e CSS Modules, seguindo um design system, com suporte a tree-shaking e declarações de tipos"
     },
     "first-hello-world": "Meu primeiro Hello World",
