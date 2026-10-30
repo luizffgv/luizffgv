@@ -6,7 +6,7 @@ import { JSX } from "react";
 import HeaderImpl from "./header-impl";
 
 export default function Header(): JSX.Element {
-  const pinned = useHeadroom();
+  const { pinned } = useHeadroom();
 
   return <HeaderImpl isVisible={pinned} />;
 }

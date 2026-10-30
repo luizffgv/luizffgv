@@ -137,6 +137,9 @@ export default defineConfig([
       "unicorn/no-keyword-prefix": "off",
       "unicorn/no-null": "off",
       "unicorn/no-nested-ternary": "off",
+      // SVG namespace URIs must stay http://; child indexing is intentional
+      "unicorn/prefer-https": "off",
+      "unicorn/better-dom-traversing": "off",
 
       "unicorn/numeric-separators-style": [
         "error",

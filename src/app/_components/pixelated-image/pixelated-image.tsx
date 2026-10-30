@@ -34,7 +34,8 @@ export default function PixelatedImage({
   src,
   width,
 }: Props): JSX.Element {
-  const [image, rect] = useResizeObserver<HTMLImageElement>();
+  const [observeImage, rect] = useResizeObserver<HTMLImageElement>();
+  const image = useRef<HTMLImageElement | null>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const [isImageLoaded, setIsImageLoaded] = useState(true);
 
@@ -81,7 +82,10 @@ export default function PixelatedImage({
           width,
         }}
         className="invisible"
-        ref={image}
+        ref={(element) => {
+          image.current = element;
+          observeImage(element);
+        }}
         alt=""
         src={src}
         onLoadStart={() => {
