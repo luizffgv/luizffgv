@@ -40,31 +40,38 @@
   "hard-skills": {
     "ai-assisted-development": {
       "description": "<ul><li>Fluxos com agentes e subagentes, fluxos sequenciais e concorrentes e worktrees para trabalho em paralelo</li><li>Skills e plugins, otimização de contexto e redução de custos</li><li>Ajuste de <strong>ciclos de feedback</strong> para que agentes verifiquem o próprio trabalho</li></ul>",
+      "shortcut": "IA",
       "title": "Desenvolvimento assistido por IA"
     },
     "frontend-architecture": {
       "description": "<ul><li><strong>Arquitetura hexagonal</strong> (ports and adapters) com fronteiras estritas</li><li>Grafo acíclico de dependências verificado automaticamente com <strong>dependency-cruiser</strong></li><li>Monorepos com pnpm e Turborepo</li><li>Bibliotecas de componentes com Storybook e múltiplos modos de build</li></ul>",
+      "shortcut": "Arquitetura",
       "title": "Arquitetura e plataforma de frontend"
     },
     "git": {
       "description": "<ul><li><strong>Minimizar diffs</strong> e <strong>reescrever histórico</strong></li><li>Confortável com fluxos baseados em rebases, merge commits e/ou squashes</li></ul>",
+      "shortcut": "$t(tools.git)",
       "title": "$t(tools.git)"
     },
     "npm-publishing": {
       "description": "<ul><li>Criação, publicação e manutenção de pacotes NPM</li><li><strong>Declarações de tipos</strong> e documentação JSDoc</li><li><strong>Automação de releases</strong> e suporte a tree-shaking</li></ul>",
+      "shortcut": "NPM",
       "title": "Publicação NPM"
     },
     "react": {
       "description": "<ul><li>Renderização e <strong>reconciliação</strong>, criando componentes reutilizáveis que reduzem renderizações desnecessárias</li><li>React Redux, Redux-Saga, <strong>TanStack Query</strong> e React Hook Form</li></ul>",
+      "shortcut": "$t(tools.react)",
       "title": "$t(tools.react)"
     },
     "single-spa": {
       "description": "<ul><li>Criação de applications e <strong>parcels</strong></li></ul>",
+      "shortcut": "$t(tools.single-spa)",
       "title": "$t(tools.single-spa)"
     },
     "title": "Minhas <1>hard skills</1>",
     "typescript": {
       "description": "<ul><li>Equilíbrio entre <strong>segurança de tipos</strong> e ergonomia para aumentar a agilidade e reduzir bugs</li><li><strong>Tipagem estrutural</strong>, teoria dos conjuntos aplicada a tipos, covariância e contravariância</li><li>Tipos genéricos e inferência de tipos</li></ul>",
+      "shortcut": "$t(tools.typescript)",
       "title": "$t(tools.typescript)"
     }
   },
