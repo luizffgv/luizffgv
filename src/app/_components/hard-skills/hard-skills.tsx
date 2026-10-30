@@ -5,6 +5,7 @@ import {
   Atom,
   Blocks,
   Braces,
+  Gauge,
   GitBranch,
   type LucideIcon,
   Package,
@@ -22,6 +23,7 @@ import Skill from "./components/skill/skill";
 const SKILL_KEYS = [
   "ai-assisted-development",
   "frontend-architecture",
+  "build-performance",
   "typescript",
   "react",
   "single-spa",
@@ -32,6 +34,7 @@ const SKILL_KEYS = [
 const SKILL_ICONS: Record<(typeof SKILL_KEYS)[number], LucideIcon> = {
   "ai-assisted-development": Sparkles,
   "frontend-architecture": Blocks,
+  "build-performance": Gauge,
   typescript: Braces,
   react: Atom,
   "single-spa": Puzzle,
@@ -76,7 +79,7 @@ export default function HardSkills(): JSX.Element {
             return (
               <Skill
                 key={key}
-                icon={<Icon aria-hidden size={24} />}
+                icon={<Icon aria-hidden size={28} />}
                 id={`skill-${key}`}
                 title={t(`hard-skills.${key}.title`)}
               >

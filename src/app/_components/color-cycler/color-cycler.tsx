@@ -35,9 +35,10 @@ export default function ColorCycler({
 
     const setHue = (degrees: number): void => {
       current.style.setProperty(
-        "--color-primary",
+        "--primary-light",
         `${degrees}, 70%, ${lightnessFor(degrees)}%`,
       );
+      current.style.setProperty("--primary-dark", `${degrees}, 80%, 68%`);
     };
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -77,7 +78,10 @@ export default function ColorCycler({
   }, [offset, period]);
 
   return (
-    <div className="contents" ref={ref}>
+    <div
+      className="contents [--color-primary:var(--primary-light)] dark:[--color-primary:var(--primary-dark)]"
+      ref={ref}
+    >
       {children}
     </div>
   );

@@ -39,12 +39,17 @@
   },
   "hard-skills": {
     "ai-assisted-development": {
-      "description": "<ul><li>Agent and subagent workflows, sequential and concurrent flows, and worktrees for parallel work</li><li>Skills and plugins, context optimization, and cost reduction</li><li>Tuning <strong>feedback loops</strong> so agents can verify their own work</li></ul>",
+      "description": "<ul><li>Agent and subagent workflows, sequential and concurrent</li><li><strong>Worktrees</strong> for parallel work</li><li>Skills, plugins, context and cost optimization</li><li><strong>Feedback loops</strong> so agents verify their own work</li><li>Repositories built for <strong>parallel agents</strong></li></ul>",
       "shortcut": "AI",
       "title": "AI-assisted development"
     },
+    "build-performance": {
+      "description": "<ul><li><strong>Bundle optimization</strong> and <strong>bundle analysis</strong></li><li><strong>Caching policies</strong> for faster loads</li><li>Faster builds by removing configuration inefficiencies</li><li>Frontend tooling: <strong>Webpack</strong>, <strong>Rollup</strong>, <strong>Vite</strong></li></ul>",
+      "title": "Performance and tooling",
+      "shortcut": "Performance"
+    },
     "frontend-architecture": {
-      "description": "<ul><li><strong>Hexagonal architecture</strong> (ports and adapters) with strict boundaries</li><li>Acyclic dependency graph with <strong>automatically enforced</strong> rules</li><li>Monorepos with workspaces and task orchestration</li><li>Documented component libraries with multiple build modes</li></ul>",
+      "description": "<ul><li><strong>Hexagonal architecture</strong> with strict boundaries</li><li>Dependency rules <strong>enforced automatically</strong></li><li>Monorepos with <strong>pnpm</strong> and <strong>Turborepo</strong></li><li>Component libraries following a design system, in ESM and CJS</li></ul>",
       "shortcut": "Architecture",
       "title": "Frontend architecture and platform"
     },
@@ -54,23 +59,23 @@
       "title": "$t(tools.git)"
     },
     "npm-publishing": {
-      "description": "<ul><li>Creating, publishing, and maintaining NPM packages</li><li><strong>Type declarations</strong> and JSDoc documentation</li><li><strong>Release automation</strong> and tree-shaking support</li></ul>",
+      "description": "<ul><li>Creating, publishing, and maintaining packages</li><li><strong>Type declarations</strong> and JSDoc</li><li><strong>Release automation</strong> and tree-shaking</li></ul>",
       "shortcut": "NPM",
       "title": "NPM Publishing"
     },
     "react": {
-      "description": "<ul><li>Rendering and <strong>reconciliation</strong>, building reusable components that reduce unnecessary renders</li><li>React Redux, Redux-Saga, <strong>TanStack Query</strong>, and React Hook Form</li></ul>",
+      "description": "<ul><li><strong>React 19</strong> patterns and <strong>React Compiler</strong></li><li>Reusable components that avoid unnecessary renders</li><li><strong>TanStack Query</strong>, React Redux, Redux-Saga, React Hook Form</li></ul>",
       "shortcut": "$t(tools.react)",
       "title": "$t(tools.react)"
     },
     "single-spa": {
-      "description": "<ul><li>Creating applications and <strong>parcels</strong></li></ul>",
+      "description": "<ul><li><strong>Applications</strong> and <strong>parcels</strong></li><li>Adapting <strong>Next.js</strong> apps with Webpack</li><li><strong>Internationalization</strong> across microfrontends</li></ul>",
       "shortcut": "$t(tools.single-spa)",
       "title": "$t(tools.single-spa)"
     },
     "title": "My <1>hard skills</1>",
     "typescript": {
-      "description": "<ul><li>Balancing <strong>type safety</strong> and ergonomics to increase agility and reduce bugs</li><li><strong>Structural typing</strong>, set theory applied to types, and covariance and contravariance</li><li>Generic types and type inference</li></ul>",
+      "description": "<ul><li><strong>Type safety</strong> balanced with ergonomics</li><li><strong>Structural typing</strong>, variance, generics, and inference</li></ul>",
       "shortcut": "$t(tools.typescript)",
       "title": "$t(tools.typescript)"
     }
@@ -202,13 +207,30 @@
       "2025-05": "May 2025"
     },
     "details": {
-      "assistant-maintenance": "Performed maintenance on web applications using ASP.NET, Next.js, single-spa, and Vite",
-      "frontend-monorepo": "Designed and built from scratch the foundation of a frontend monorepo with pnpm and Turborepo for a web application, with hexagonal architecture and boundaries automatically enforced with dependency-cruiser",
-      "mfe-i18n": "Implemented internationalization in a microfrontend application",
-      "react-component-library": "Developed a React component package (ESM and CJS) using Class Variance Authority, Jest, and CSS Modules, following a design system, with support for tree-shaking and type declarations"
+      "frontend-monorepo": "Built the foundation of a frontend monorepo, now serving multiple contributors"
     },
     "first-hello-world": "My first Hello World",
     "my-role": "myRole",
+    "stats": {
+      "builds": "faster builds",
+      "builds-detail": "by removing configuration inefficiencies",
+      "builds-value": ">40%",
+      "components": "React components",
+      "components-detail": "focused on type safety and ergonomics",
+      "components-value": "40+",
+      "js-load": "faster main JS load",
+      "js-load-detail": "with more effective caching policies",
+      "js-load-value": ">60%"
+    },
+    "tags": {
+      "agents": "Built for AI agents",
+      "architecture": "Enforced architecture",
+      "component-library": "Component library",
+      "i18n": "Internationalization",
+      "maintenance": "Web app maintenance",
+      "microfrontends": "Microfrontends",
+      "react": "React 19 and Compiler"
+    },
     "title": "My <1>trajectory</1>",
     "writing": "Writing...",
     "you-decide": "It's up to you",

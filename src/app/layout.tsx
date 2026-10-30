@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bree_Serif, Share_Tech_Mono } from "next/font/google";
+import { Inter, Share_Tech_Mono } from "next/font/google";
 import { JSX, Suspense } from "react";
 
 import ClickSpark from "./_components/click-spark";
@@ -11,10 +11,9 @@ import { ReactBitsNoise } from "./_components/react-bits-noise";
 import ReactScan from "./_components/react-scan";
 import "./globals.css";
 
-const breeSerif = Bree_Serif({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-bree-serif",
+  variable: "--font-inter",
 });
 
 const shareTechMono = Share_Tech_Mono({
@@ -40,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${breeSerif.variable} ${shareTechMono.variable} scroll-smooth`}
+      className={`${inter.variable} ${shareTechMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>

@@ -26,7 +26,7 @@ export default function GlassText({ text }: Props): JSX.Element {
       <span className="invisible">{text}</span>
       {/* Goes past the right edge as negative letter spacing makes text overflow */}
       <span
-        className="backdrop-glass backdrop-smoked absolute inset-y-0 -right-[0.1em] left-0 bg-primary/40 dark:bg-black/25"
+        className="backdrop-glass absolute inset-y-0 -right-[0.1em] left-0 bg-primary/40 dark:bg-white/25"
         style={{ clipPath: `url("#${clipId}")` }}
       />
       <svg className="absolute inset-0 size-full overflow-visible">
@@ -39,7 +39,7 @@ export default function GlassText({ text }: Props): JSX.Element {
         </defs>
         {/* Keeps the letters readable where there is little behind the glass */}
         <use
-          className="fill-none stroke-primary opacity-30 [stroke-width:0.005em] dark:stroke-fg-on-primary"
+          className="fill-none stroke-primary opacity-30 [stroke-width:0.005em] dark:stroke-fg-on-primary dark:opacity-60"
           href={`#${textId}`}
         />
       </svg>

@@ -13,7 +13,11 @@
 @layer base {
   :root {
     --color-primary: 270deg, 0%, 40%;
-    font-family: var(--font-bree-serif);
+    font-family: var(--font-inter);
+  }
+
+  .dark {
+    --color-primary: 270deg, 0%, 70%;
   }
 
   ::selection {
@@ -27,7 +31,7 @@
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-bree-serif);
+    font-family: var(--font-inter);
   }
 
   .font-code {

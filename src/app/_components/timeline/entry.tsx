@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { JSX } from "react";
 
+import Card from "../card";
 import { useTimelineContext } from "./_contexts/timeline";
 import styles from "./entry.module.scss";
 
@@ -24,9 +25,9 @@ export default function Entry({
   const { auxiliaryWidth } = useTimelineContext();
 
   return (
-    <div className={clsx("flex gap-6", styles.entry)}>
+    <div className={clsx("flex gap-4 sm:gap-6", styles.entry)}>
       <div
-        className="flex shrink-0 justify-end py-6"
+        className="hidden shrink-0 justify-end py-[33px] sm:flex"
         style={{ width: auxiliaryWidth }}
       >
         {auxiliaryText}
@@ -52,10 +53,20 @@ export default function Entry({
           )}
         ></div>
       </div>
-      <div className="flex flex-col py-6">
-        <h3 className="text-xl font-bold text-primary">{title}</h3>
-        <p className="font-bold">{subtitle}</p>
-        <div className="max-w-prose text-base">{children}</div>
+      <div className="min-w-0 max-w-prose py-3">
+        <Card
+          className="bg-gradient-to-r from-primary/10 to-transparent"
+          padding={20}
+        >
+          <div className="flex w-full flex-col">
+            <div className="font-code mb-1 text-sm text-primary sm:hidden">
+              {auxiliaryText}
+            </div>
+            <h3 className="text-2xl font-bold text-primary">{title}</h3>
+            <p className="font-bold">{subtitle}</p>
+            <div className="mt-3 text-base">{children}</div>
+          </div>
+        </Card>
       </div>
     </div>
   );
