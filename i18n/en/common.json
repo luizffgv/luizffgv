@@ -223,7 +223,8 @@
       "component-library": "Component library",
       "i18n": "Internationalization",
       "maintenance": "Web app maintenance",
-      "microfrontends": "Microfrontends"
+      "microfrontends": "Microfrontends",
+      "react": "React 19 and Compiler"
     },
     "title": "My <1>trajectory</1>",
     "writing": "Writing...",

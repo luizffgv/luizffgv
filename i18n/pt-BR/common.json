@@ -223,7 +223,8 @@
       "component-library": "Biblioteca de componentes",
       "i18n": "Internacionalização",
       "maintenance": "Manutenção de apps web",
-      "microfrontends": "Microfrontends"
+      "microfrontends": "Microfrontends",
+      "react": "React 19 e Compiler"
     },
     "title": "Minha <1>trajetória</1>",
     "writing": "Escrevendo...",
