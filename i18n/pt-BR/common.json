@@ -209,6 +209,14 @@
     },
     "first-hello-world": "Meu primeiro Hello World",
     "my-role": "meuPapel",
+    "stats": {
+      "builds": "Builds mais rápidas",
+      "builds-value": ">40%",
+      "components": "Componentes React",
+      "components-value": "40+",
+      "js-load": "Carregamento de JS mais rápido",
+      "js-load-value": ">60%"
+    },
     "title": "Minha <1>trajetória</1>",
     "writing": "Escrevendo...",
     "you-decide": "Você decide",

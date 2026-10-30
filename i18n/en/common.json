@@ -209,6 +209,14 @@
     },
     "first-hello-world": "My first Hello World",
     "my-role": "myRole",
+    "stats": {
+      "builds": "Faster builds",
+      "builds-value": ">40%",
+      "components": "React components",
+      "components-value": "40+",
+      "js-load": "Faster JS load",
+      "js-load-value": ">60%"
+    },
     "title": "My <1>trajectory</1>",
     "writing": "Writing...",
     "you-decide": "It's up to you",
