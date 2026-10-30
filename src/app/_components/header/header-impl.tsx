@@ -9,7 +9,6 @@ import { useTranslation } from "react-i18next";
 
 import ThemeSwitcher from "@components/theme-switcher";
 
-import ColorCycler from "../color-cycler";
 import LanguageSwitcher from "../language-switcher";
 import SegmentedControl from "../segmented-control";
 import { SegmentedControlOption } from "../segmented-control/segmented-control";
@@ -86,14 +85,7 @@ const HeaderImpl = memo(function HeaderImpl({
         </nav>
         <div className="flex gap-2">
           <ThemeSwitcher />
-          <div className="relative">
-            <LanguageSwitcher />
-            <ColorCycler>
-              <div className="pointer-events-none absolute right-0 top-0 -translate-y-1/2 translate-x-1/4 bg-primary px-1 text-fg-on-primary">
-                WIP
-              </div>
-            </ColorCycler>
-          </div>
+          <LanguageSwitcher />
         </div>
       </div>
     </header>

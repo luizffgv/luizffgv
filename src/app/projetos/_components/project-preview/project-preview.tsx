@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CodeXmlIcon, EyeIcon } from "lucide-react";
 import { JSX } from "react";
+import { useTranslation } from "react-i18next";
 
 import { ProjectRaw } from "@projects/_projects";
 
@@ -14,6 +15,13 @@ export interface Props {
 }
 
 export default function ProjectPreview({ project }: Props): JSX.Element {
+  const { t } = useTranslation();
+  const slug = project.name
+    .toLowerCase()
+    .normalize("NFD")
+    .replaceAll(/[\u0300-\u036F]/g, "")
+    .replaceAll(/[^\da-z]+/g, "-")
+    .replaceAll(/^-|-$/g, "");
   return (
     <div className="group flex w-[400px] shrink items-stretch">
       <Card transition={{ duration: 0.1 }}>
@@ -30,13 +38,13 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
                 <img
                   className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2 opacity-25 blur-xl transition-all group-hover:opacity-50 group-hover:blur-2xl"
                   src={`/project-images/${project.image}`}
-                  alt={`Imagem do projeto ${project.name}`}
+                  alt={t("project.image", { name: project.name })}
                   aria-hidden
                 />
                 <img
                   className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2"
                   src={`/project-images/${project.image}`}
-                  alt={`Imagem do projeto ${project.name}`}
+                  alt={t("project.image", { name: project.name })}
                   aria-hidden
                 />
               </div>
@@ -47,7 +55,7 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
             <div className="flex flex-row flex-wrap items-center justify-end gap-2">
               {project.url ? (
                 <Button
-                  aria-label="Visitar projeto"
+                  aria-label={t("project.visit")}
                   href={project.url}
                   isIcon
                   target="_blank"
@@ -58,7 +66,7 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
               ) : null}
               {project.repository ? (
                 <Button
-                  aria-label="Visualizar código-fonte"
+                  aria-label={t("project.source-code")}
                   href={project.repository}
                   isIcon
                   target="_blank"
@@ -68,7 +76,11 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
               ) : null}
             </div>
           </motion.div>
-          <motion.div layout>{project.description}</motion.div>
+          <motion.div layout>
+            {t(`projects.${slug}.description`, {
+              defaultValue: project.description,
+            })}
+          </motion.div>
         </div>
       </Card>
     </div>

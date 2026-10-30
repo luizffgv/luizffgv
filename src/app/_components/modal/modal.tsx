@@ -1,5 +1,6 @@
 import { XIcon } from "lucide-react";
 import { JSX, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 import Button from "@components/button";
 import Card from "@components/card";
@@ -13,6 +14,7 @@ export default function Modal({
   children: React.ReactNode;
   onDismiss?: () => void;
 }): JSX.Element {
+  const { t } = useTranslation();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export default function Modal({
           <Button
             variant="danger"
             onClick={onDismiss}
-            aria-label="Fechar modal"
+            aria-label={t("modal.close")}
           >
             <XIcon />
           </Button>

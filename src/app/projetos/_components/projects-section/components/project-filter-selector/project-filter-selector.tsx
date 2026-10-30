@@ -12,6 +12,7 @@ import {
   useMemo,
   useState,
 } from "react";
+import { useTranslation } from "react-i18next";
 
 import Button from "@/app/_components/button";
 import ColorCycler from "@/app/_components/color-cycler";
@@ -76,6 +77,7 @@ function matchingTags(project: ProjectRaw, tags: Set<Tag>): Set<Tag> {
 }
 
 export default function ProjectFilterSelector(): JSX.Element {
+  const { t } = useTranslation();
   const urlParams = useSearchParams();
   const { setFilter } = useContext(ProjectFilterContext);
   const [tags, setTags] = useState<{ value: Set<Tag> }>({
@@ -111,21 +113,25 @@ export default function ProjectFilterSelector(): JSX.Element {
   const renderTag = useCallback(
     (tag: Tag) => (
       <div key={tag} className="flex grow flex-col items-stretch">
-        <Checkbox value={tag} checked={tags.value.has(tag)}></Checkbox>
+        <Checkbox
+          value={tag}
+          label={t(`project-tags.${tag}`, { defaultValue: tag })}
+          checked={tags.value.has(tag)}
+        ></Checkbox>
       </div>
     ),
-    [tags],
+    [tags, t],
   );
 
   const getCategoryName = useCallback(
     (category: string) =>
       ({
-        category: "Categorias",
-        language: "Linguagens",
-        library: "Bibliotecas",
-        uncategorized: "Sem categoria",
+        category: t("filters.categories"),
+        language: t("filters.languages"),
+        library: t("filters.libraries"),
+        uncategorized: t("filters.uncategorized"),
       })[category],
-    [],
+    [t],
   );
 
   const handleClickExpand = useCallback(() => {
@@ -193,7 +199,7 @@ export default function ProjectFilterSelector(): JSX.Element {
               >
                 <ChevronDownIcon />{" "}
               </motion.span>
-              {isExpanded ? <>Ocultar filtros</> : <>Expandir filtros</>}
+              {isExpanded ? t("filters.collapse") : t("filters.expand")}
             </Button>
           </motion.div>
         </div>

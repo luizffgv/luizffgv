@@ -4,6 +4,8 @@ import { JSX } from "react";
 export interface Props {
   /** Value of the underlying input. */
   value: string;
+  /** Text displayed instead of the value. */
+  label?: string;
   /** Checkbox state. */
   checked: boolean;
   /** Handler for the change event. */
@@ -12,6 +14,7 @@ export interface Props {
 
 export default function Checkbox({
   value,
+  label,
   checked,
   onChange,
 }: Props): JSX.Element {
@@ -29,7 +32,7 @@ export default function Checkbox({
         checked={checked}
         onChange={onChange || (() => {})}
       />
-      {value}
+      {label ?? value}
     </label>
   );
 }

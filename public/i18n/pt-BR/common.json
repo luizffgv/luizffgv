@@ -1,6 +1,38 @@
 {
+  "about": {
+    "interests": "Meus interesses",
+    "philosophy": {
+      "content": "Eu adoro filosofia, principalmente os conceitos de <strong>qualia</strong> e <strong>epifenomenalismo</strong>.",
+      "title": "Filosofia"
+    },
+    "poetry": {
+      "content": "Poesia é uma das minhas formas de expressão que mais aprecio. Um de meus poemas favoritos é <Link><Glow>Fire and Ice</Glow></Link> de Robert Frost.",
+      "title": "Poesia"
+    },
+    "title": "Sobre mim",
+    "topology": {
+      "content": "Não estudei topologia especificamente, mas adoro como topologia pode ser tão concreta quanto abstrata, desde a topologia de uma camisa até a de uma variedade.",
+      "title": "Topologia"
+    }
+  },
+  "career": {
+    "come-closer": "Agora chega aqui pertinho...",
+    "contact": "Me contate aqui",
+    "dont-wait": "Que tal me garantir enquanto pode?",
+    "talk": "Vamos conversar",
+    "wish": "Eu ad<Heart/>raria um <Glow>emprego</Glow> ou um <Glow>estágio</Glow>.",
+    "wish-label": "Eu adoraria um emprego ou um estágio"
+  },
   "companies": {
     "zenvia": "Zenvia"
+  },
+  "filters": {
+    "categories": "Categorias",
+    "collapse": "Ocultar filtros",
+    "expand": "Expandir filtros",
+    "languages": "Linguagens",
+    "libraries": "Bibliotecas",
+    "uncategorized": "Sem categoria"
   },
   "footer": {
     "content": "Feito com <Heart/>, mais de 250 commits, vários redesigns e vários frameworks desde 2021."
@@ -36,6 +68,23 @@
   "language-switcher": {
     "switch": "Mudar linguagem"
   },
+  "meta": {
+    "about": {
+      "description": "Veja sobre mim aqui em meu site pessoal.",
+      "title": "Sobre mim"
+    },
+    "home": {
+      "description": "Veja sobre mim aqui em meu site pessoal.",
+      "title": "Sobre mim"
+    },
+    "projects": {
+      "description": "Veja meus projetos aqui.",
+      "title": "Meus projetos"
+    }
+  },
+  "modal": {
+    "close": "Fechar modal"
+  },
   "my-github": {
     "links": {
       "my-github": "Meu GitHub",
@@ -43,6 +92,74 @@
     },
     "subtitle": "Eu tenho vários projetos open source e alguns pacotes NPM",
     "title": "Dê uma olhada em meu <Link>GitHub</Link>"
+  },
+  "project": {
+    "image": "Imagem do projeto {{name}}",
+    "source-code": "Visualizar código-fonte",
+    "visit": "Visitar projeto"
+  },
+  "project-tags": {
+    "Biblioteca": "Biblioteca",
+    "Livro": "Livro",
+    "Organização": "Organização",
+    "Pacote NPM": "Pacote NPM",
+    "Site": "Site"
+  },
+  "projects": {
+    "blink-ultimate-teleportation": {
+      "description": "Instalado por mais de 32 mil usuários diferentes, Blink é um mod feito em Lua para Teardown incluso no modpack oficial para Xbox e PlayStation."
+    },
+    "codinstruct": {
+      "description": "Uma organização feita como projeto de faculdade, visando ajudar estudantes a aprender C, JavaScript e Python.  Trabalhei principalmente na organização, no Sass e no conteúdo de C."
+    },
+    "codinstruct-next": {
+      "description": "Front-end em Next.js feito para o codinStruct—projeto realizado na Rede de Ensino Doctum com o intuito de produzir conteúdos educacionais sobre programação."
+    },
+    "ekranoplan": {
+      "description": "Biblioteca JS/TS de uso geral com features simples e avançadas."
+    },
+    "figment": {
+      "description": "Uma classe em C++ que permite controle preciso da vida útil de objetos de qualquer tipo. Semelhante a std::optional, mas não contém informações sobre o objeto contido."
+    },
+    "glimmer": {
+      "description": "Um simples framework modular para bots de Discord baseado em discord.js."
+    },
+    "globe": {
+      "description": "Um site com um globo giratório formado por pontos, te permitindo usar suas próprias imagens como texturas."
+    },
+    "goo": {
+      "description": "Elemento HTML configurável que fornece um fundo animado com efeito de gosma."
+    },
+    "htilesml": {
+      "description": "Jogo experimental utilizando elementos HTML e transformações CSS 3D."
+    },
+    "modern-c-sorting-algorithms": {
+      "description": "Coleção de algoritmos de ordenação genéricos utilizando o padrão C18 extensivamente, feita para facilitar meus trabalhos de C na faculdade."
+    },
+    "phasmoo": {
+      "description": "Um website e PWA totalmente responsivo que filtra fantasmas para auxiliar no gameplay do jogo Phasmophobia."
+    },
+    "separador-de-silabas": {
+      "description": "Um site feito em Next.js que divide um texto em sílabas utilizando um algoritmo que criei."
+    },
+    "shader-site": {
+      "description": "Um site que te ajuda a encontrar o shaderpack de Minecraft ideal para você."
+    },
+    "spirit-box": {
+      "description": "Bot para Discord que gera um diário de anotações do jogo Phasmophobia, para auxiliar na identificação de fantasmas e no compartilhamento de pistas com sua equipe."
+    },
+    "swapem": {
+      "description": "Ferramenta CLI e pacote NPM fornecendo uma stream transform que lê texto e substitui diretivas por valores vindos de um arquivo JSON."
+    },
+    "swash": {
+      "description": "Framework React para comunicação inter-componente via interações de arrastar e soltar. Modular, extensível e customizável."
+    },
+    "ts-conversions": {
+      "description": "Biblioteca e pacote NPM fornecendo utilitários para realizar conversões seguras ou inseguras e diminuir código boilerplate no TypeScript."
+    },
+    "viewport-based-scaling": {
+      "description": "Site que gera CSS para definir o valor de uma propriedade baseado na largura do viewport, realizando interpolação linear entre vários pares de pontos."
+    }
   },
   "roles": {
     "development-assistant": "Assistente de desenvolvimento",

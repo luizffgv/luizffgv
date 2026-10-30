@@ -1,6 +1,38 @@
 {
+  "about": {
+    "interests": "My interests",
+    "philosophy": {
+      "content": "I love philosophy, especially the concepts of <strong>qualia</strong> and <strong>epiphenomenalism</strong>.",
+      "title": "Philosophy"
+    },
+    "poetry": {
+      "content": "Poetry is one of my favorite forms of expression. One of my favorite poems is <Link><Glow>Fire and Ice</Glow></Link> by Robert Frost.",
+      "title": "Poetry"
+    },
+    "title": "About me",
+    "topology": {
+      "content": "I haven't studied topology formally, but I love how topology can be as concrete as it is abstract, from the topology of a shirt to that of a manifold.",
+      "title": "Topology"
+    }
+  },
+  "career": {
+    "come-closer": "Come a little closer...",
+    "contact": "Contact me here",
+    "dont-wait": "How about securing me while you can?",
+    "talk": "Let's talk",
+    "wish": "I would l<Heart/>ve a <Glow>job</Glow> or an <Glow>internship</Glow>.",
+    "wish-label": "I would love a job or an internship"
+  },
   "companies": {
     "zenvia": "Zenvia"
+  },
+  "filters": {
+    "categories": "Categories",
+    "collapse": "Hide filters",
+    "expand": "Expand filters",
+    "languages": "Languages",
+    "libraries": "Libraries",
+    "uncategorized": "Uncategorized"
   },
   "footer": {
     "content": "Made with <Heart/>, over 250 commits and many redesigns and frameworks since 2021."
@@ -36,6 +68,23 @@
   "language-switcher": {
     "switch": "Switch language"
   },
+  "meta": {
+    "about": {
+      "description": "Learn about me here on my personal website.",
+      "title": "About me"
+    },
+    "home": {
+      "description": "Learn about me here on my personal website.",
+      "title": "About me"
+    },
+    "projects": {
+      "description": "See my projects here.",
+      "title": "My projects"
+    }
+  },
+  "modal": {
+    "close": "Close modal"
+  },
   "my-github": {
     "links": {
       "my-github": "My GitHub",
@@ -43,6 +92,74 @@
     },
     "subtitle": "I have many open source projects and NPM packages",
     "title": "Take a look at my <Link>GitHub</Link>"
+  },
+  "project": {
+    "image": "Image of the project {{name}}",
+    "source-code": "View source code",
+    "visit": "Visit project"
+  },
+  "project-tags": {
+    "Biblioteca": "Library",
+    "Livro": "Book",
+    "Organização": "Organization",
+    "Pacote NPM": "NPM package",
+    "Site": "Website"
+  },
+  "projects": {
+    "blink-ultimate-teleportation": {
+      "description": "Installed by over 32 thousand different users, Blink is a mod written in Lua for Teardown, included in the official modpack for Xbox and PlayStation."
+    },
+    "codinstruct": {
+      "description": "An organization created as a college project, aimed at helping students learn C, JavaScript and Python. I worked mainly on the organization, the Sass and the C content."
+    },
+    "codinstruct-next": {
+      "description": "Next.js front end made for codinStruct, a project carried out at Rede de Ensino Doctum to produce educational content about programming."
+    },
+    "ekranoplan": {
+      "description": "General-purpose JS/TS library with simple and advanced features."
+    },
+    "figment": {
+      "description": "A C++ class that allows precise control over the lifetime of objects of any type. Similar to std::optional, but holds no information about the contained object."
+    },
+    "glimmer": {
+      "description": "A simple modular framework for Discord bots based on discord.js."
+    },
+    "globe": {
+      "description": "A website with a rotating globe made of dots, letting you use your own images as textures."
+    },
+    "goo": {
+      "description": "Configurable HTML element that provides an animated, goo-like background."
+    },
+    "htilesml": {
+      "description": "Experimental game using HTML elements and 3D CSS transforms."
+    },
+    "modern-c-sorting-algorithms": {
+      "description": "Collection of generic sorting algorithms making extensive use of the C18 standard, made to ease my college C assignments."
+    },
+    "phasmoo": {
+      "description": "A fully responsive website and PWA that filters ghosts to help with gameplay in the game Phasmophobia."
+    },
+    "separador-de-silabas": {
+      "description": "A Next.js website that splits text into syllables using an algorithm I created."
+    },
+    "shader-site": {
+      "description": "A website that helps you find the ideal Minecraft shader pack for you."
+    },
+    "spirit-box": {
+      "description": "Discord bot that generates a journal of notes for the game Phasmophobia, helping identify ghosts and share clues with your team."
+    },
+    "swapem": {
+      "description": "CLI tool and NPM package providing a transform stream that reads text and replaces directives with values from a JSON file."
+    },
+    "swash": {
+      "description": "React framework for inter-component communication via drag-and-drop interactions. Modular, extensible and customizable."
+    },
+    "ts-conversions": {
+      "description": "Library and NPM package providing utilities to perform safe or unsafe conversions and cut down on boilerplate in TypeScript."
+    },
+    "viewport-based-scaling": {
+      "description": "Website that generates CSS to set a property's value based on the viewport width, linearly interpolating between several pairs of points."
+    }
   },
   "roles": {
     "development-assistant": "Development assistant",

@@ -3,6 +3,7 @@ import { Bree_Serif, Share_Tech_Mono } from "next/font/google";
 import { JSX, Suspense } from "react";
 
 import ClickSpark from "./_components/click-spark";
+import DocumentLanguage from "./_components/document-language";
 import Footer from "./_components/footer";
 import Header from "./_components/header";
 import InitI18Next from "./_components/init-i18next";
@@ -72,6 +73,7 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
       </head>
       <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
         <InitI18Next>
+          <DocumentLanguage />
           <ClickSpark>
             <ReactScan />
             <div className="isolate z-[1]">
