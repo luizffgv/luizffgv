@@ -207,13 +207,13 @@
     "first-hello-world": "Meu primeiro Hello World",
     "my-role": "meuPapel",
     "stats": {
-      "builds": "Builds mais rápidas",
+      "builds": "menos tempo de build",
       "builds-detail": "ao eliminar ineficiências de configuração",
       "builds-value": ">40%",
-      "components": "Componentes React",
+      "components": "componentes React",
       "components-detail": "seguros em tipos e ergonômicos",
       "components-value": "40+",
-      "js-load": "Carregamento do JS principal mais rápido",
+      "js-load": "menos tempo de carregamento do JS principal",
       "js-load-detail": "com políticas de cache mais eficazes",
       "js-load-value": ">60%"
     },
