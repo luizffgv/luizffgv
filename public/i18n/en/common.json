@@ -44,7 +44,7 @@
       "title": "AI-assisted development"
     },
     "frontend-architecture": {
-      "description": "<ul><li><strong>Hexagonal architecture</strong> (ports and adapters) with strict boundaries</li><li>Acyclic dependency graph verified automatically with <strong>dependency-cruiser</strong></li><li>Monorepos with pnpm and Turborepo</li><li>Component libraries with Storybook and multiple build modes</li></ul>",
+      "description": "<ul><li><strong>Hexagonal architecture</strong> (ports and adapters) with strict boundaries</li><li>Acyclic dependency graph with <strong>automatically enforced</strong> rules</li><li>Monorepos with workspaces and task orchestration</li><li>Documented component libraries with multiple build modes</li></ul>",
       "shortcut": "Architecture",
       "title": "Frontend architecture and platform"
     },
