@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CodeXmlIcon, EyeIcon } from "lucide-react";
+import { CodeXmlIcon, EyeIcon, FolderCodeIcon } from "lucide-react";
 import { JSX } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -31,7 +31,13 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
           role="group"
         >
           {project.image == null ? (
-            <motion.div className="aspect-[400/225] bg-primary/15" layout />
+            <motion.div
+              aria-hidden
+              className="flex aspect-[400/225] items-center justify-center bg-primary/15 text-primary"
+              layout
+            >
+              <FolderCodeIcon className="size-16" strokeWidth={1.5} />
+            </motion.div>
           ) : (
             <motion.div className="relative aspect-[400/225]" layout>
               <div className="absolute h-full w-full transition-transform group-hover:-translate-y-4">

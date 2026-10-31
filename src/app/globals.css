@@ -13,11 +13,13 @@
 @layer base {
   :root {
     --color-primary: 270deg, 0%, 40%;
+    --color-fg-on-primary: white;
     font-family: var(--font-inter);
   }
 
   .dark {
     --color-primary: 270deg, 0%, 70%;
+    --color-fg-on-primary: #0a0a0a;
   }
 
   ::selection {

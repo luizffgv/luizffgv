@@ -21,10 +21,10 @@ const buttonCva = cva(
         primary:
           "border-2 border-border-button bg-bg-button text-primary hover:bg-primary/15",
         solid:
-          "bg-primary text-fg-on-primary hover:bg-primary/85 dark:bg-fg-on-primary dark:text-bg-dark dark:hover:bg-fg-dark",
+          "bg-primary text-fg-on-primary hover:bg-primary/85 dark:bg-white dark:text-bg-dark dark:hover:bg-fg-dark",
         outline:
-          "border-2 border-fg/40 bg-bg text-fg hover:border-fg dark:border-fg-on-primary/50 dark:bg-bg-dark dark:text-fg-on-primary dark:hover:border-fg-on-primary",
-        danger: "bg-danger text-fg-on-primary",
+          "border-2 border-fg/40 bg-bg text-fg hover:border-fg dark:border-white/50 dark:bg-bg-dark dark:text-white dark:hover:border-white",
+        danger: "bg-danger text-white",
       } satisfies Record<Variant, string>,
     },
   },

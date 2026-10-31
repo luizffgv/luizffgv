@@ -38,7 +38,7 @@ export default function GlassText({ text }: Props): JSX.Element {
         </defs>
         {/* Keeps the letters readable where there is little behind the glass */}
         <use
-          className="fill-none stroke-primary opacity-30 [stroke-width:0.005em] dark:stroke-fg-on-primary dark:opacity-60"
+          className="fill-none stroke-primary opacity-30 [stroke-width:0.005em] dark:stroke-white dark:opacity-60"
           href={`#${textId}`}
         />
       </svg>

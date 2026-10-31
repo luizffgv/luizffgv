@@ -59,7 +59,7 @@ export default function Text(): JSX.Element {
             components={{
               Tool: (
                 <ScrambleText
-                  className="backdrop-glass w-fit border border-fg/15 bg-primary/15 px-2 lg:justify-self-start dark:border-fg-on-primary/20 dark:bg-primary/50"
+                  className="backdrop-glass w-fit border border-fg/15 bg-primary/15 px-2 lg:justify-self-start dark:border-white/20 dark:bg-primary/50"
                   texts={[
                     t("tools.node-js"),
                     t("tools.typescript"),

@@ -5,6 +5,10 @@ const CELL_HEIGHT = 16;
 const FONT_SIZE = 14;
 export const GLYPHS = String.raw`{}[]()<>/\=+-*&|;:.#$%01`;
 
+/** Viewport width at which the glyphs start growing with it. */
+const ZOOM_START_WIDTH = 1920;
+const MAX_ZOOM = 2;
+
 const POINTER_EASING = 0.15;
 const WAVE_SPEED = 900;
 
@@ -84,6 +88,8 @@ function createAtlas(fontFamily: string, scale: number): HTMLCanvasElement {
 function createMask(
   icon: HTMLImageElement,
   box: IconBox,
+  cellWidth: number,
+  cellHeight: number,
   columns: number,
   rows: number,
 ): Uint8Array {
@@ -98,10 +104,10 @@ function createMask(
 
   context.drawImage(
     icon,
-    (box.x - box.size / 2) / CELL_WIDTH,
-    (box.y - box.size / 2) / CELL_HEIGHT,
-    box.size / CELL_WIDTH,
-    box.size / CELL_HEIGHT,
+    (box.x - box.size / 2) / cellWidth,
+    (box.y - box.size / 2) / cellHeight,
+    box.size / cellWidth,
+    box.size / cellHeight,
   );
 
   const { data } = context.getImageData(0, 0, columns, rows);
@@ -202,7 +208,6 @@ export function startField(
   gl.uniform1i(uniform("uAtlas"), 0);
   gl.uniform1i(uniform("uMasks"), 1);
   gl.uniform1f(uniform("uGlyphCount"), GLYPHS.length);
-  gl.uniform2f(uniforms.cell, CELL_WIDTH, CELL_HEIGHT);
 
   gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
   createTexture(gl, 0, gl.TEXTURE_2D, gl.LINEAR);
@@ -284,11 +289,19 @@ export function startField(
     canvas.height = Math.round(height * scale);
     box = placeIcons(width, height);
 
-    const columns = Math.ceil(width / CELL_WIDTH);
-    const rows = Math.ceil(height / CELL_HEIGHT);
+    // Keeps the glyphs legible on large screens
+    const zoom = Math.min(Math.max(width / ZOOM_START_WIDTH, 1), MAX_ZOOM);
+    const cellWidth = CELL_WIDTH * zoom;
+    const cellHeight = CELL_HEIGHT * zoom;
+
+    const columns = Math.ceil(width / cellWidth);
+    const rows = Math.ceil(height / cellHeight);
     const masks = new Uint8Array(columns * rows * icons.length);
     for (const [index, image] of icons.entries()) {
-      masks.set(createMask(image, box, columns, rows), index * columns * rows);
+      masks.set(
+        createMask(image, box, cellWidth, cellHeight, columns, rows),
+        index * columns * rows,
+      );
     }
 
     gl.activeTexture(gl.TEXTURE0);
@@ -298,7 +311,7 @@ export function startField(
       gl.RGBA,
       gl.RGBA,
       gl.UNSIGNED_BYTE,
-      createAtlas(fontFamily, scale),
+      createAtlas(fontFamily, scale * zoom),
     );
 
     gl.activeTexture(gl.TEXTURE1);
@@ -316,6 +329,7 @@ export function startField(
     );
 
     gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform2f(uniforms.cell, cellWidth, cellHeight);
     gl.uniform1f(uniforms.scale, canvas.width / width);
     gl.uniform2f(uniforms.resolution, width, height);
     gl.uniform3f(uniforms.box, box.x, box.y, box.size);

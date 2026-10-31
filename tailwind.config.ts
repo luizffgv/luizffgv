@@ -25,7 +25,7 @@ const config: Config = {
         fg: "#1f273a",
         "fg-weak": "#949494",
         "fg-dark": "#ddd",
-        "fg-on-primary": "white",
+        "fg-on-primary": "var(--color-fg-on-primary)",
         "timeline-line":
           "hsl(var(--color-primary), calc(<alpha-value> * 0.15))",
         "timeline-line-dark":
