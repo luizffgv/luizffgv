@@ -15,14 +15,6 @@
       "title": "Topologia"
     }
   },
-  "career": {
-    "come-closer": "Agora chega aqui pertinho...",
-    "contact": "Me contate aqui",
-    "dont-wait": "Que tal me garantir enquanto pode?",
-    "talk": "Vamos conversar",
-    "wish": "Eu ad<Heart/>raria um <Glow>emprego</Glow> ou um <Glow>estágio</Glow>.",
-    "wish-label": "Eu adoraria um emprego ou um estágio"
-  },
   "companies": {
     "zenvia": "Zenvia"
   },
@@ -91,16 +83,16 @@
   },
   "meta": {
     "about": {
-      "description": "Veja sobre mim aqui em meu site pessoal.",
-      "title": "Sobre mim"
+      "description": "Conheça Luiz Fernando, desenvolvedor focado em Node.js, React e TypeScript.",
+      "title": "Sobre mim | Luiz Fernando"
     },
     "home": {
-      "description": "Veja sobre mim aqui em meu site pessoal.",
-      "title": "Sobre mim"
+      "description": "Site pessoal de Luiz Fernando, desenvolvedor focado em Node.js, React e TypeScript.",
+      "title": "Luiz Fernando | Desenvolvedor Node.js, React e TypeScript"
     },
     "projects": {
-      "description": "Veja meus projetos aqui.",
-      "title": "Meus projetos"
+      "description": "Veja os projetos de Luiz Fernando, de sites a bibliotecas e ferramentas.",
+      "title": "Meus projetos | Luiz Fernando"
     }
   },
   "modal": {
@@ -113,6 +105,10 @@
     },
     "subtitle": "Eu tenho vários projetos open source e alguns pacotes NPM",
     "title": "Dê uma olhada em meu <Link>GitHub</Link>"
+  },
+  "not-found": {
+    "home": "Voltar ao início",
+    "message": "Esta página não existe."
   },
   "project": {
     "image": "Imagem do projeto {{name}}",

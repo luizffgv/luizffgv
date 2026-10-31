@@ -10,6 +10,39 @@
   transition: scale 500ms cubic-bezier(0.18, 0.89, 0.32, 1.27);
 }
 
+@keyframes noise {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-173px, 311px);
+  }
+  20% {
+    transform: translate(289px, -97px);
+  }
+  30% {
+    transform: translate(-421px, -263px);
+  }
+  40% {
+    transform: translate(137px, 449px);
+  }
+  50% {
+    transform: translate(-59px, -383px);
+  }
+  60% {
+    transform: translate(397px, 211px);
+  }
+  70% {
+    transform: translate(-331px, 73px);
+  }
+  80% {
+    transform: translate(233px, -457px);
+  }
+  90% {
+    transform: translate(-491px, 149px);
+  }
+}
+
 @layer base {
   :root {
     --color-primary: 270deg, 0%, 40%;
@@ -45,12 +78,12 @@
     backdrop-filter: blur(5px) saturate(3) brightness(0.9) contrast(1.6);
   }
 
-  .backdrop-glass:is(.dark *):not(.light *) {
+  .backdrop-glass:is(.dark *) {
     backdrop-filter: blur(5px) saturate(4) brightness(2.5);
   }
 
   /* Dark mode alternative to the glass that dims what is behind an element */
-  .backdrop-smoked:is(.dark *):not(.light *) {
+  .backdrop-smoked:is(.dark *) {
     backdrop-filter: blur(5px) brightness(0.8);
   }
 

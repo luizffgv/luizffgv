@@ -14,7 +14,9 @@ export default function LanguageSwitcher(): JSX.Element {
     <Button
       aria-label={t("language-switcher.switch")}
       onClick={() => {
-        void i18n.changeLanguage(i18n.language === "pt-BR" ? "en" : "pt-BR");
+        const language = i18n.language === "pt-BR" ? "en" : "pt-BR";
+        localStorage.setItem("language", language);
+        void i18n.changeLanguage(language);
       }}
     >
       <LanguagesIcon />

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Inter, Share_Tech_Mono } from "next/font/google";
 import { JSX, Suspense } from "react";
+
+import ptBr from "@/public/i18n/pt-BR/common.json";
 
 import ClickSpark from "./_components/click-spark";
 import DocumentLanguage from "./_components/document-language";
@@ -8,8 +11,13 @@ import Footer from "./_components/footer";
 import Header from "./_components/header";
 import InitI18Next from "./_components/init-i18next";
 import { ReactBitsNoise } from "./_components/react-bits-noise";
-import ReactScan from "./_components/react-scan";
 import "./globals.css";
+
+// Development tool that shouldn't reach the production bundle
+const ReactScan =
+  process.env.NODE_ENV === "development"
+    ? dynamic(() => import("./_components/react-scan"))
+    : (): null => null;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,11 +31,16 @@ const shareTechMono = Share_Tech_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sobre mim",
-  description: "Veja sobre mim aqui em meu site pessoal.",
+  metadataBase: new URL("https://luizf.dev"),
+  title: ptBr.meta.home.title,
+  description: ptBr.meta.home.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
-    images: ["https://luizf.dev/banner.png"],
+    siteName: "luizf.dev",
+    images: ["/banner.png"],
   },
 };
 
@@ -72,7 +85,6 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
       </head>
       <body className="flex flex-col bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark">
         <InitI18Next>
-          <DocumentLanguage />
           <ClickSpark>
             <ReactScan />
             <div className="isolate z-[1]">
@@ -88,6 +100,10 @@ if (isDark === "true" || (isDark == undefined && deviceIsDark))
               <ReactBitsNoise />
             </div>
           </ClickSpark>
+          {/* Last so it changes the language after the rest has hydrated */}
+          <Suspense>
+            <DocumentLanguage />
+          </Suspense>
         </InitI18Next>
       </body>
     </html>
