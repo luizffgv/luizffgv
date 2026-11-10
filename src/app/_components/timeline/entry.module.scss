@@ -1,10 +1,12 @@
 .line-end {
   // Below sm the date sits above the title, so the marker is pushed down by
-  // its height to stay level with the title inside the card
-  max-height: 53px;
+  // its height to stay level with the title
+  min-height: 44px;
+  max-height: 44px;
 
   @media (min-width: 640px) {
-    max-height: 29px;
+    min-height: 20px;
+    max-height: 20px;
   }
 
   .entry:first-child & {

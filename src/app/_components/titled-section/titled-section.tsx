@@ -9,11 +9,17 @@ interface HeadingProps {
 /// A standard styled heading with a specified level.
 function Heading({ level, children }: HeadingProps): JSX.Element {
   return level === 1 ? (
-    <h1 className="mb-8 text-center text-3xl font-bold">{children}</h1>
+    <h1 className="font-display mb-8 text-balance text-center text-[length:clamp(1.75rem,4vw,3rem)] uppercase leading-[1.05] tracking-tight">
+      {children}
+    </h1>
   ) : level === 2 ? (
-    <h2 className="mb-12 text-center text-3xl font-bold">{children}</h2>
+    <h2 className="font-display mb-12 text-balance text-center text-[length:clamp(1.75rem,4vw,3rem)] uppercase leading-[1.05] tracking-tight">
+      {children}
+    </h2>
   ) : level === 3 ? (
-    <h3 className="mb-4 text-center text-xl">{children}</h3>
+    <h3 className="mb-4 text-balance text-center text-xl tracking-tight">
+      {children}
+    </h3>
   ) : level === 4 ? (
     <h4 className="mb-2 text-center text-lg">{children}</h4>
   ) : level === 5 ? (

@@ -11,10 +11,8 @@ export default function Home(): JSX.Element {
       <Hero />
       <div className="z-10 flex flex-col items-center gap-[480px] px-4 pb-[50vh] pt-64 transition-colors [grid-area:stack]">
         <Suspense>
-          <div className="flex flex-wrap-reverse justify-center gap-x-64 gap-y-[480px]">
-            <HardSkills></HardSkills>
-            <Trajectory></Trajectory>
-          </div>
+          <Trajectory></Trajectory>
+          <HardSkills></HardSkills>
           <MyGitHub></MyGitHub>
         </Suspense>
       </div>

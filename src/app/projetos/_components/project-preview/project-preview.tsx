@@ -1,7 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CodeXmlIcon, EyeIcon, FolderCodeIcon } from "lucide-react";
+import {
+  CodeXmlIcon,
+  ExternalLinkIcon,
+  EyeIcon,
+  FolderCodeIcon,
+} from "lucide-react";
 import { JSX } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -22,6 +27,8 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
     .replaceAll(/[\u0300-\u036F]/g, "")
     .replaceAll(/[^\da-z]+/g, "-")
     .replaceAll(/^-|-$/g, "");
+  const href = project.url ?? project.repository;
+  const hrefLabel = project.url ? t("project.visit") : t("project.source-code");
   return (
     <div className="group flex w-[400px] shrink items-stretch">
       <Card transition={{ duration: 0.1 }}>
@@ -32,28 +39,62 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
         >
           {project.image == null ? (
             <motion.div
-              aria-hidden
-              className="flex aspect-[400/225] items-center justify-center bg-primary/15 text-primary"
+              className="group/icon aspect-[400/225] bg-primary/15 text-primary [perspective:1000px]"
               layout
             >
-              <FolderCodeIcon className="size-16" strokeWidth={1.5} />
+              <a
+                aria-hidden={href ? undefined : true}
+                aria-label={href ? hrefLabel : undefined}
+                className="flex h-full w-full items-center justify-center"
+                href={href || undefined}
+                target="_blank"
+              >
+                <div
+                  className={`relative size-16 transition-transform duration-[333ms] [transform-style:preserve-3d] ${href ? "group-hover/icon:[transform:rotateY(180deg)]" : ""}`}
+                >
+                  <FolderCodeIcon
+                    className="absolute size-16 [backface-visibility:hidden]"
+                    strokeWidth={1.5}
+                  />
+                  <ExternalLinkIcon
+                    className="absolute size-16 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                    strokeWidth={1.5}
+                  />
+                </div>
+              </a>
             </motion.div>
           ) : (
-            <motion.div className="relative aspect-[400/225]" layout>
-              <div className="absolute h-full w-full transition-transform group-hover:-translate-y-4">
-                <img
-                  className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2 opacity-25 blur-xl transition-all group-hover:opacity-50 group-hover:blur-2xl"
-                  src={`/project-images/${project.image}`}
-                  alt={t("project.image", { name: project.name })}
+            <motion.div
+              className="group/flip relative aspect-[400/225] [perspective:1000px]"
+              layout
+            >
+              <a
+                aria-label={href ? hrefLabel : undefined}
+                className={`absolute block h-full w-full transition-transform duration-[333ms] [transform-style:preserve-3d] ${href ? "group-hover/flip:[transform:rotateY(180deg)]" : ""}`}
+                href={href || undefined}
+                target="_blank"
+              >
+                <div className="absolute h-full w-full [backface-visibility:hidden]">
+                  <img
+                    className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2 opacity-25 blur-xl"
+                    src={`/project-images/${project.image}`}
+                    alt={t("project.image", { name: project.name })}
+                    aria-hidden
+                  />
+                  <img
+                    className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2"
+                    src={`/project-images/${project.image}`}
+                    alt={t("project.image", { name: project.name })}
+                    aria-hidden
+                  />
+                </div>
+                <div
                   aria-hidden
-                />
-                <img
-                  className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2"
-                  src={`/project-images/${project.image}`}
-                  alt={t("project.image", { name: project.name })}
-                  aria-hidden
-                />
-              </div>
+                  className="absolute flex h-full w-full items-center justify-center bg-primary/15 text-primary [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                >
+                  <ExternalLinkIcon className="size-16" strokeWidth={1.5} />
+                </div>
+              </a>
             </motion.div>
           )}
           <motion.div className="flex justify-between gap-4" layout>

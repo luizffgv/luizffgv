@@ -99,7 +99,7 @@ export default function Trajectory(): JSX.Element {
                 </Tag>
               </div>
               <br />
-              <div className="text-primary">
+              <div>
                 <PencilIcon
                   className="mr-2 inline h-4 w-4"
                   fill="currentColor"

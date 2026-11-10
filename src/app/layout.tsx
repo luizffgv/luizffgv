@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { Inter, Share_Tech_Mono } from "next/font/google";
+import { Archivo_Black, Inter, Share_Tech_Mono } from "next/font/google";
 import { JSX, Suspense } from "react";
 
 import ptBr from "@/public/i18n/pt-BR/common.json";
@@ -22,6 +22,12 @@ const ReactScan =
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const archivoBlack = Archivo_Black({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-archivo-black",
 });
 
 const shareTechMono = Share_Tech_Mono({
@@ -52,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${shareTechMono.variable} scroll-smooth`}
+      className={`${inter.variable} ${archivoBlack.variable} ${shareTechMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>

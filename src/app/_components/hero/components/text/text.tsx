@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { MotionConfig, Variants, motion } from "framer-motion";
 import { ArrowRightIcon, AtSignIcon, LinkedinIcon } from "lucide-react";
-import { Archivo_Black } from "next/font/google";
 import { JSX } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -9,8 +8,6 @@ import Button from "@components/button";
 
 import GlassText from "../glass-text";
 import ScrambleText from "../scramble-text";
-
-const archivoBlack = Archivo_Black({ subsets: ["latin"], weight: "400" });
 
 const STAGGER: Variants = {
   visible: { transition: { staggerChildren: 0.12 } },
@@ -45,7 +42,7 @@ export default function Text(): JSX.Element {
           {/* The margin cancels the space at the left of the L */}
           <span
             className={clsx(
-              archivoBlack.className,
+              "font-display",
               "-ml-[0.072em] text-[length:clamp(5rem,min(17vw,30vh),13rem)] uppercase leading-[0.95] tracking-tighter",
             )}
           >

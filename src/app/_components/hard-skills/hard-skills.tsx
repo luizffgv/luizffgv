@@ -79,7 +79,7 @@ export default function HardSkills(): JSX.Element {
             return (
               <Skill
                 key={key}
-                icon={<Icon aria-hidden size={28} />}
+                icon={<Icon aria-hidden size={20} />}
                 id={`skill-${key}`}
                 title={t(`hard-skills.${key}.title`)}
               >
