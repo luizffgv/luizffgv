@@ -15,14 +15,6 @@
       "title": "Topology"
     }
   },
-  "career": {
-    "come-closer": "Come a little closer...",
-    "contact": "Contact me here",
-    "dont-wait": "How about securing me while you can?",
-    "talk": "Let's talk",
-    "wish": "I would l<Heart/>ve a <Glow>job</Glow> or an <Glow>internship</Glow>.",
-    "wish-label": "I would love a job or an internship"
-  },
   "companies": {
     "zenvia": "Zenvia"
   },
@@ -91,16 +83,16 @@
   },
   "meta": {
     "about": {
-      "description": "Learn about me here on my personal website.",
-      "title": "About me"
+      "description": "Get to know Luiz Fernando, a developer focused on Node.js, React and TypeScript.",
+      "title": "About me | Luiz Fernando"
     },
     "home": {
-      "description": "Learn about me here on my personal website.",
-      "title": "About me"
+      "description": "Personal website of Luiz Fernando, a developer focused on Node.js, React and TypeScript.",
+      "title": "Luiz Fernando | Node.js, React and TypeScript Developer"
     },
     "projects": {
-      "description": "See my projects here.",
-      "title": "My projects"
+      "description": "See the projects of Luiz Fernando, from websites to libraries and tools.",
+      "title": "My projects | Luiz Fernando"
     }
   },
   "modal": {
@@ -113,6 +105,10 @@
     },
     "subtitle": "I have many open source projects and NPM packages",
     "title": "Take a look at my <Link>GitHub</Link>"
+  },
+  "not-found": {
+    "home": "Back to home",
+    "message": "This page doesn't exist."
   },
   "project": {
     "image": "Image of the project {{name}}",

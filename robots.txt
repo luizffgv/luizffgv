@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://luizf.dev/sitemap.xml
