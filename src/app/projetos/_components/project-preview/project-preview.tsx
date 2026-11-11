@@ -7,7 +7,7 @@ import {
   EyeIcon,
   FolderCodeIcon,
 } from "lucide-react";
-import { JSX } from "react";
+import { JSX, MouseEvent, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ProjectRaw } from "@projects/_projects";
@@ -17,6 +17,53 @@ import Card from "../../../_components/card";
 
 export interface Props {
   project: ProjectRaw;
+}
+
+/**
+ * Two-step activation for touch: the first tap flips the card, the second one
+ * follows the link. Mouse and keyboard activate immediately.
+ */
+function useTouchFlip(): {
+  flipped: boolean;
+  onClick: (event: MouseEvent<HTMLAnchorElement>) => void;
+  onPointerDown: (event: React.PointerEvent) => void;
+  ref: React.RefObject<HTMLAnchorElement | null>;
+} {
+  const [flipped, setFlipped] = useState(false);
+  const isTouch = useRef(false);
+  const ref = useRef<HTMLAnchorElement | null>(null);
+
+  // Tapping anywhere else flips it back
+  useEffect(() => {
+    if (!flipped) {
+      return;
+    }
+    const reset = (event: PointerEvent): void => {
+      if (!ref.current?.contains(event.target as Node)) {
+        setFlipped(false);
+      }
+    };
+    document.addEventListener("pointerdown", reset);
+    return (): void => {
+      document.removeEventListener("pointerdown", reset);
+    };
+  }, [flipped]);
+
+  return {
+    flipped,
+    ref,
+    onPointerDown: (event): void => {
+      isTouch.current = event.pointerType === "touch";
+    },
+    onClick: (event): void => {
+      const touch = isTouch.current;
+      isTouch.current = false;
+      if (touch && !flipped) {
+        event.preventDefault();
+        setFlipped(true);
+      }
+    },
+  };
 }
 
 export default function ProjectPreview({ project }: Props): JSX.Element {
@@ -29,6 +76,7 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
     .replaceAll(/^-|-$/g, "");
   const href = project.url ?? project.repository;
   const hrefLabel = project.url ? t("project.visit") : t("project.source-code");
+  const { flipped, ...touchFlip } = useTouchFlip();
   return (
     <div className="group flex w-[400px] shrink items-stretch">
       <Card transition={{ duration: 0.1 }}>
@@ -43,14 +91,17 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
               layout
             >
               <a
+                {...touchFlip}
                 aria-hidden={href ? undefined : true}
                 aria-label={href ? hrefLabel : undefined}
-                className="flex h-full w-full items-center justify-center"
+                className="group/link flex h-full w-full items-center justify-center"
+                data-flipped={href ? flipped : undefined}
                 href={href || undefined}
+                rel="noreferrer"
                 target="_blank"
               >
                 <div
-                  className={`relative size-16 transition-transform duration-[333ms] [transform-style:preserve-3d] ${href ? "group-hover/icon:[transform:rotateY(180deg)]" : ""}`}
+                  className={`relative size-16 transition-transform duration-[333ms] [transform-style:preserve-3d] ${href ? "group-hover/icon:[transform:rotateY(180deg)] group-data-[flipped=true]/link:[transform:rotateY(180deg)]" : ""}`}
                 >
                   <FolderCodeIcon
                     className="absolute size-16 [backface-visibility:hidden]"
@@ -69,9 +120,12 @@ export default function ProjectPreview({ project }: Props): JSX.Element {
               layout
             >
               <a
+                {...touchFlip}
                 aria-label={href ? hrefLabel : undefined}
-                className={`absolute block h-full w-full transition-transform duration-[333ms] [transform-style:preserve-3d] ${href ? "group-hover/flip:[transform:rotateY(180deg)]" : ""}`}
+                className={`absolute block h-full w-full transition-transform duration-[333ms] [transform-style:preserve-3d] ${href ? "group-hover/flip:[transform:rotateY(180deg)] data-[flipped=true]:[transform:rotateY(180deg)]" : ""}`}
+                data-flipped={href ? flipped : undefined}
                 href={href || undefined}
+                rel="noreferrer"
                 target="_blank"
               >
                 <div className="absolute h-full w-full [backface-visibility:hidden]">
